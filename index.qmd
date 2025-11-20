@@ -1,0 +1,107 @@
+---
+title: "Entrevista Psiquiátrica e Exame do Estado Mental"
+subtitle: "Material Didático para Estudantes de Psiquiatria"
+author: "Henrique Alvarenga da Silva"
+---
+
+# Bem-vindo
+
+Este é um material didático completo sobre a **Entrevista Psiquiátrica** e o **Exame do Estado Mental (EEM)**, desenvolvido especialmente para estudantes de medicina e residentes de psiquiatria.
+
+## Objetivos de Aprendizagem
+
+Ao final do estudo deste material, você será capaz de:
+
+1. Compreender a importância e os princípios fundamentais da entrevista psiquiátrica
+2. Aplicar as três regras de ouro da entrevista em diferentes contextos clínicos
+3. Realizar um Exame do Estado Mental completo e sistemático
+4. Utilizar terminologia técnica apropriada para descrever fenômenos psicopatológicos (evite jargão desnecessário)
+5. Documentar adequadamente os achados da avaliação psiquiátrica
+6. Elaborar súmulas concisas e informativas do exame psíquico
+
+## Estrutura do Material
+
+### 📚 [Conteúdo Teórico](entrevista_psiquiatrica.html)
+
+- A importância da entrevista inicial
+- Técnicas de condução da entrevista
+- Estrutura da avaliação psiquiátrica completa
+- Itens do Exame do Estado Mental
+- Aspectos práticos da documentação
+- Considerações especiais e culturais
+
+### 📋 [Roteiro do EEM](roteiro_eem.html)
+
+Guia prático com:
+
+- Lista de itens do EEM
+- Descritores específicos para cada item
+- Terminologia técnica apropriada (evite jargão psiquiátrico)
+- Referência rápida para uso clínico
+
+### 👥 [Casos Clínicos](casos_clinicos_eem.html)
+
+Cinco casos detalhados para prática:
+
+1. **Maria, 34 anos** - Quadro depressivo grave
+2. **João, 28 anos** - Episódio maníaco
+3. **Carlos, 42 anos** - Transtorno delirante paranoide
+4. **Ana, 19 anos** - Quadro psicótico
+5. **Roberto, 55 anos** - Demência em estágio inicial
+
+## Como Usar Este Material
+
+### Para Estudo Individual
+
+1. Comece lendo o [Conteúdo Teórico](entrevista_psiquiatrica.html) completo
+2. Familiarize-se com o [Roteiro do EEM](roteiro_eem.html) e seus descritores
+3. Pratique com os [Casos Clínicos](casos_clinicos_eem.html)
+4. Elabore o EEM completo de cada caso
+5. Discuta suas respostas com colegas ou preceptores
+
+
+## Atividade Prática Sugerida
+
+### Exercício Individual
+
+Escolha um dos cinco casos clínicos e:
+
+1. Leia atentamente toda a descrição
+2. Elabore um Exame do Estado Mental completo (20 itens)
+3. Redija uma súmula técnica dos achados principais
+4. Liste 2-3 hipóteses diagnósticas baseadas apenas no EEM
+
+### Critérios de Qualidade
+
+Um bom EEM deve ser:
+
+- ✅ **Completo:** todos os 20 itens avaliados
+- ✅ **Técnico:** uso apropriado de terminologia psiquiátrica
+- ✅ **Objetivo:** baseado em observações concretas
+- ✅ **Descritivo:** sem interpretações prematuras
+- ✅ **Conciso:** súmula clara e informativa
+
+## Fundamentos Teóricos
+
+Este material é baseado principalmente em duas obras de referência da psiquiatria:
+
+- **Dalgalarrondo, P.** (2019). *Psicopatologia e semiologia dos transtornos mentais*. Artmed.
+- **Sadock, B. J., Sadock, V. A., & Ruiz, P.** (2017). *Compêndio de Psiquiatria*. Artmed.
+
+## Competências Desenvolvidas
+
+A prática consistente com este material desenvolverá:
+
+- **Habilidades de observação clínica**
+- **Capacidade de comunicação com pacientes**
+- **Raciocínio diagnóstico sistematizado**
+- **Documentação clínica de qualidade**
+- **Uso apropriado de terminologia psiquiátrica**
+- **Sensibilidade para aspectos culturais e éticos**
+
+
+---
+
+**Nota:** Este material é destinado exclusivamente para fins educacionais. A prática clínica deve sempre ocorrer sob supervisão apropriada.
+
+**Última atualização:** Novembro de 2024

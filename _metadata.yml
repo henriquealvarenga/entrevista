@@ -1,0 +1,9 @@
+
+
+# Bibliografia global
+bibliography: references/referencias.bib
+
+
+# Estilos de Citação e Referências
+csl: references/csl_styles/ABNT.csl  
+# csl: references/csl_styles/vancouver.csl  

@@ -1,0 +1,33 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Entrevista Psiquiátrica e Exame do Estado Mental"
+  site-url: "https://henriquealvarenga.com"
+  site-path: "/entrevista"
+  navbar:
+    background: primary
+    left:
+      - href: index.html
+        text: "Início"
+      - href: entrevista_psiquiatrica.html
+        text: "A Entrevista"
+      - href: roteiro_eem.html
+        text: "Roteiro"
+      - href: casos_clinicos_eem.html
+        text: "Casos"
+
+
+
+format:
+  html:
+    theme: 
+      - cosmo
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: false
+    df-print: paged
+    css: styles.css
+

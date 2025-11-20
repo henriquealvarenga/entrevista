@@ -1,0 +1,1210 @@
+---
+title: "Roteiro do Exame do Estado Mental"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    theme: cosmo
+
+---
+
+# Introdução
+
+Este roteiro expandido integra múltiplas fontes para fornecer o guia mais completo possível de descritores do Exame do Estado Mental. Foi desenvolvido especialmente para estudantes de psiquiatria que precisam de referência detalhada para documentação clínica.
+
+**Fontes Utilizadas:**\
+- Dalgalarrondo (2019) - Psicopatologia e Semiologia [@dalgalarrondo2019]\
+- Kaplan & Sadock (2017) - Compêndio de Psiquiatria [@kaplan2017]\
+- Material didático complementar de semiologia psiquiátrica\
+
+---
+
+# 1. Aspectos Gerais
+
+## 1.1 Aparência Física
+
+### Cuidados Pessoais e Higiene
+- Adequados (bem cuidado, asseado)
+- Prejudicados (descuidado, desleixado)
+- Precários (muito negligente)
+- Excessivos (preocupação exagerada)
+- Bizarros (padrões incomuns)
+
+### Vestimenta
+- Adequada (apropriada ao contexto, estação, idade)
+- Inadequada (inapropriada para o contexto)
+- Descuidada (mal-ajambrada, suja, rasgada)
+- Extravagante (chamativa, excêntrica)
+- Bizarra (estranha, fora do comum)
+- Sobreposta (várias camadas)
+- Desarrumada (desalinhada, amassada)
+- Formal (terno, vestido social)
+- Informal (roupas casuais)
+- Negligente (sujas, malconservadas)
+
+### Adornos e Acessórios
+- Ausentes
+- Discretos
+- Excessivos
+- Bizarros
+- Inadequados ao contexto
+
+### Cabelos
+- Alinhados, penteados
+- Em desalinho, desarrumados
+- Sujos
+
+
+### Expressão Facial
+- Neutra
+- Tensa, contraída, crispada
+- Chorosa, lacrimejante
+- Alegre, sorridente, radiante
+- Triste, abatida, entristecida
+- Perplexa, confusa, atônita
+- Ansiosa, preocupada, temerosa
+- Irritada, zangada, contrariada
+- Inexpressiva, sem vivacidade, apática
+- Hipomímica (expressão facial reduzida)
+- Hipermímica (expressão facial exagerada)
+- Enigmática
+
+### Contato Visual
+- Adequado (mantém contato visual apropriado)
+- Evitativo (evita olhar nos olhos)
+- Fixo (olhar fixo, penetrante)
+- Errante (olhos vagueando sem fixação)
+- Desviante (desvia quando questionado)
+- Vazio (olhar sem expressão)
+- Intenso (muito intenso, desconfortável)
+
+### Idade Aparente
+- Compatível com idade cronológica
+- Aparenta ser mais jovem
+- Aparenta ser mais velho
+
+## 1.2 Postura
+
+### Geral
+- Ereta, adequada
+- Curvada, encurvada
+- Rígida, tensa
+- Relaxada
+- Desleixada
+
+### Classificação por Atividade
+- **Ativa:** postura dinâmica, movimenta-se adequadamente
+- **Excessivamente ativa:** inquieto, não para quieto
+- **Passiva:** apático, indiferente, pouco reativo
+
+## 1.3 Atitude Frente ao Examinador
+
+### Atitudes Cooperativas
+- **Cordial:** educado, gentil
+- **Cooperativa/Cooperativo:** colabora com a entrevista, responde adequadamente
+- **Submissa:** atende passiva e imediatamente, sem questionar, todas as solicitações
+
+### Atitudes Não Cooperativas
+- **Não-cooperativa/Não cooperativo:** recusa-se a colaborar
+- **De oposição/Oposicionista:** ativamente opõe-se às solicitações
+- **Negativista:** recusa-se a participar, se opõe a tudo
+- **Reação de último momento:** após intenso negativismo, começa a cooperar
+
+### Atitudes Hostis
+- **Hostil:** demonstra agressividade verbal ou não verbal
+- **Beligerante:** provoca, irrita, parece querer confronto
+- **Querelante:** discute ou briga, sente-se ofendido ou prejudicado
+- **Arrogante:** prepotente, superior
+
+### Atitudes Defensivas
+- **De fuga:** tenta escapar ou encerrar a entrevista
+- **Desconfiada:** desconfiado, cauteloso
+- **Evasiva:** esquiva-se de responder, respostas vagas e inespecíficas
+- **De esquiva:** evita contato social, retraída
+- **Dissimuladora:** tenta ocultar sintomas ou fatos
+- **Simuladora:** tenta simular sintomas que aparentemente não tem
+
+### Atitudes Expansivas
+- **Expansiva:** fala alto, comporta-se como se fosse importante
+- **Desinibida:** sem pudor ou constrangimento adequado, age como se conhecesse o examinador há anos
+- **Sedutora:** tentadora, provocativa
+
+### Atitudes Manipulativas
+- **Manipuladora:** tenta controlar a situação em benefício próprio, com chantagens, indiretas ou ameaças
+- **Reivindicativa:** exige, de forma insistente, aquilo que julga ser seu direito, mesmo que inadequado
+- **Grudenta:** difícil encerrar a conversa, quer atenção, prolixidade
+
+### Atitudes Afetadas
+- **Afetada:** modo de falar, gesticular e andar muito teatral e artificial
+- **Amaneirada:** comportamento caricatural (ex: chama o examinador de "vossa excelência")
+- **Dramática/Teatral:** hiperemocionalidade exagerada
+- **Jocosa:** faz piadas (comum na mania)
+- **Irônica:** piadas e tom de voz refletem arrogância e agressividade
+
+### Atitudes de Retraimento
+- **Inibida/Contida:** não encara o examinador, pouco à vontade, se segura para não falar
+- **Esquiva:** não deseja contato social
+
+### Atitudes Emocionais
+- **Lamuriosa/Queixosa:** queixa-se constantemente, demonstra autopiedade
+- **Pueril:** comporta-se como criança
+- **Perplexa:** assustado, parece não entender o que está acontecendo
+- **Confusa:** desorientada, atordoada
+- **Deprimida:** entristecida, abatida
+- **Indiferente:** apática, desinteressada
+
+## 1.4 Comportamento e Atividade Psicomotora
+
+### Atividade Motora Global
+- **Normal**
+- **Agitação psicomotora:** aumento da atividade motora
+- **Hiperatividade:** atividade excessiva
+- **Inquietação/Acatisia:** impossibilidade de ficar parado
+- **Lentificação psicomotora:** diminuição global da atividade
+- **Inibição psicomotora:** ausência de respostas motoras adequadas
+- **Estupor:** imobilidade, mutismo, ausência de resposta
+- **Retardo motor:** movimentos lentos
+- **Atividades sem propósito:** movimentos não direcionados a objetivos
+
+### Movimentos Específicos
+- **Maneirismos:** movimentos bizarros, peculiares
+- **Estereotipias:** movimentos repetitivos, sem finalidade aparente
+- **Tiques:** movimentos involuntários, súbitos, repetitivos
+- **Gestos:** movimentação das mãos ao falar (adequados/excessivos/ausentes)
+- **Contrações musculares:** espasmos, tensão visível
+- **Tremores:** (especificar localização e características)
+
+### Marcha e Equilíbrio
+- **Normal**
+- **Lenta**
+- **Acelerada**
+- **Arrastada**
+- **Atáxica:** descoordenada
+- **Espástica**
+- **Parkinsoniana:** passos curtos, arrastados
+- **Ágil**
+- **Desajeitada**
+
+### Fenômenos Catatônicos
+- **Catalepsia:** manutenção de postura imposta
+- **Flexibilidade cérea:** resistência plástica à movimentação passiva
+- **Negativismo ativo:** faz o oposto do solicitado
+- **Negativismo passivo:** não faz nada quando solicitado
+- **Obediência automática:** execução automática de ordens
+- **Ecopraxia:** imitação automática de gestos do examinador
+
+### Outros
+- **Combatividade:** agressividade física
+- **Flexibilidade:** movimentos fluidos
+- **Rigidez:** tensão muscular aumentada
+
+---
+
+# 2. Nível de Consciência
+
+## 2.1 Alterações Quantitativas
+
+### Normal
+- **Lúcido/Vigil:** completamente alerta e responsivo
+- **Vigilante:** estado de alerta aumentado
+
+### Rebaixamento do Nível de Consciência
+- **Obnubilado/Sonolento:** tende a cair em sono quando não estimulado, necessário falar alto ou tocá-lo
+- **Confuso:** embotamento do sensório, dificuldade de compreensão, atordoamento, perplexidade, desorientação
+- **Torporoso:** sonolência acentuada, dificuldade de despertar
+- **Estuporoso:** ausência ou profunda diminuição de movimentos espontâneos, mutismo, responde apenas a estímulos vigorosos
+- **Comatoso:** abolição completa da consciência, não responde a estímulos
+
+### Elevação do Nível de Consciência
+- **Hiperalerta:** ansioso, com hiperatividade autonômica e respostas aumentadas aos estímulos
+
+### Flutuações
+- **Flutuante:** alternâncias no nível de consciência
+
+## 2.2 Alterações Qualitativas
+
+### Estreitamento do Campo da Consciência
+- Consciência restrita a determinadas vivências
+- Perda da capacidade de reflexão
+- Outras vivências tornam-se inacessíveis
+- **Estado crepuscular:** consciência restrita com possível desorientação
+
+---
+
+# 3. Atenção
+
+## 3.1 Componentes da Atenção
+
+### Tenacidade
+Capacidade de fixar a atenção sobre determinada área ou objeto:
+- **Hipotenaz:** dificuldade em fixar a atenção
+- **Normotenaz:** capacidade normal de fixação
+- **Hipertenaz:** fixação excessiva
+
+### Vigilância
+Qualidade que permite mudar o foco de um objeto para outro:
+- **Hipovigil:** dificuldade em mudar o foco
+- **Normovigil:** capacidade normal de alternar
+- **Hipervigil:** mudança excessiva de foco
+
+## 3.2 Alterações Patológicas
+
+### Diminuição da Atenção
+- **Hipoprosexia:** diminuição global da atenção, perda da concentração, fatigabilidade aumentada, dificuldade de percepção e compreensão
+- **Aprosexia:** abolição total da capacidade de atenção
+
+### Aumento da Atenção
+- **Hiperprosexia:** atenção exacerbada, concentração indefinida sobre certos objetos
+- **Distração:** superconcentração ativa (normal)
+
+### Instabilidade da Atenção
+- **Distraibilidade:** instabilidade e mobilidade patológica da atenção voluntária
+
+---
+
+# 4. Orientação
+
+## 4.1 Orientação Autopsíquica
+Orientação em relação a si mesmo:
+- **Orientado:** sabe nome, idade, data de nascimento, profissão, estado civil
+- **Desorientado:** confuso quanto à própria identidade
+- **Parcialmente desorientado:** incerteza sobre alguns dados pessoais
+
+## 4.2 Orientação Alopsíquica
+
+### Orientação Temporal
+- **Orientado:** sabe dia da semana, dia do mês, mês, ano, hora aproximada, época do ano
+- **Desorientado temporal**
+- **Parcialmente desorientado:** sabe alguns dados, outros não
+- **Confuso quanto à data/hora/duração dos eventos**
+
+### Orientação Espacial
+- **Orientado:** sabe onde está (tipo de local, nome, cidade, estado, país)
+- **Desorientado espacial**
+- **Parcialmente desorientado:** reconhece alguns aspectos do local
+
+### Padrão de Desorientação
+> **Regra clínica:** Desorientação ocorre nesta ordem:
+> Tempo → Espaço → Em relação a si mesmo
+
+---
+
+# 5. Memória
+
+## 5.1 Classificação Temporal
+
+### Memória Imediata (Curtíssimo Prazo)
+- **Preservada:** retém informação por poucos segundos
+- **Comprometida:** dificuldade em reter
+- **Teste:** repetir dígitos ou palavras imediatamente
+
+### Memória Recente (Curto Prazo)
+- **Preservada:** recorda eventos de minutos a 6 horas
+- **Comprometida:** dificuldade com eventos recentes
+- **Com lacunas:** falhas parciais
+- **Teste:** O que comeu ontem? Há quanto tempo está internado?
+
+### Memória Remota (Longo Prazo)
+- **Preservada:** recorda eventos de meses a muitos anos
+- **Comprometida:** dificuldade com o passado distante
+- **Seletivamente preservada:** recorda alguns períodos, outros não
+- **Vaga:** recordações imprecisas
+- **Teste:** Nome dos pais, data de casamento, escola que frequentou
+
+## 5.2 Classificação por Sistema Cerebral
+
+### Memória de Trabalho
+- **Preservada**
+- **Comprometida**
+- **Teste:** Pegar folha com mão direita, dobrar ao meio, colocar no chão
+
+### Memória Episódica
+- **Preservada:** recordação consciente de fatos reais
+- **Comprometida**
+- **Teste:** Contar história e pedir que recorde após alguns minutos
+
+### Memória Semântica
+- **Preservada:** conhecimentos de objetos, fatos, palavras
+- **Comprometida**
+- **Teste:** Nomear objetos, falar nomes de animais em 1 minuto
+
+## 5.3 Alterações Quantitativas
+
+### Amnésias
+- **Amnésia anterógrada:** não fixa novos elementos após evento traumático
+- **Amnésia retrógrada:** perda de memória para fatos anteriores ao evento
+- **Amnésia lacunar:** lacunas específicas
+- **Amnésia global:** perda abrangente
+
+## 5.4 Alterações Qualitativas
+
+### Distorções da Memória
+
+- **Falsas memórias:** acréscimos de elementos falsos a um núcleo verdadeiro de lembrança\
+- **Confabulações:** preenchimento de lacunas de memória com conteúdo imaginário, sem intenção de mentir\
+- **Pseudomemórias:** "lembranças" de eventos que nunca ocorreram\
+- **Pseudologia fantástica:** histórias fantasiosas extensas, vividas com intensidade
+- **Falso reconhecimento:** identifica estranhos como familiares\
+- **Déjà vu:** sensação de já ter vivido o momento\
+- **Jamais vu:** sensação de nunca ter visto algo familiar\
+
+---
+
+# 6. Sensopercepção
+
+## 6.1 Alterações Quantitativas
+
+### Hiperestesias
+- Aumento da sensibilidade perceptiva\
+
+### Hipoestesias
+- Diminuição da sensibilidade\
+
+### Anestesias
+- Ausência de sensibilidade\
+
+## 6.2 Ilusões
+Percepção deformada de objeto real e presente\
+
+**Ocorrem em três condições:**
+1. Rebaixamento do nível de consciência
+2. Fadiga grave ou falta de atenção
+3. Estados afetivos intensos (ilusões catatímicas)
+
+## 6.3 Alucinações
+Percepção sem objeto presente, sem estímulo sensorial
+
+### Alucinações Auditivas
+- **Vozes:** mais comuns em quadros mentais
+- **Audioverbais:** escuta vozes sem estímulo real
+- **Vozes de comando:** ordenam ações
+- **Vozes que comentam:** comentam atividades
+- **Dialogantes:** duas ou mais vozes conversando
+- **Sons, ruídos, músicas**
+
+**Fenômenos relacionados (esquizofrenia):**
+- **Sonorização do pensamento:** escuta próprios pensamentos
+- **Sonorização como vivência delirante:** escuta pensamentos introduzidos por outros
+- **Difusão do pensamento:** sensação de que outros ouvem seus pensamentos
+- **Eco do pensamento:** pensamentos ecoam
+
+### Alucinações Visuais
+- **Figuras, cenas, vultos:** mais comuns em quadros neurológicos
+- **Micropsias:** objetos parecem menores
+- **Macropsias:** objetos parecem maiores
+- **Especificar:** clareza, cor, movimento, localização
+
+### Alucinações Táteis
+- **Sensações na pele**
+- **Formicação:** sensação de insetos na pele
+- **Comum em:** esquizofrenia, delirium tremens, uso de cocaína
+
+### Alucinações Olfativas
+- **Percepção de odores inexistentes**
+
+### Alucinações Gustativas
+- **Percepção de sabores inexistentes**
+
+### Alucinações Cenestésicas
+- **Sensações viscerais bizarras:** cérebro encolhendo, órgãos apodrecendo
+
+### Alucinações Cinestésicas
+- **Sensações de movimento do corpo:** corpo afundando, flutuando
+
+### Alucinações Hipnagógicas/Hipnopômpicas
+- **Ao adormecer ou despertar** (podem ser normais)
+
+### Alucinoses
+- Paciente reconhece caráter patológico da alucinação
+- Critica imediatamente
+- Mais frequente em quadros psicoorgânicos
+
+**Perguntas para investigação:**
+- Tem observado coisas que não consegue explicar?
+- Ouve vozes de pessoas estranhas?
+- Ouve vozes sem saber de onde vem?
+- Vêm de dentro da cabeça ou de fora?
+- O que dizem essas vozes?
+- Tem visões? De dia ou à noite?
+- Apenas quando está acordando ou adormecendo?
+
+---
+
+# 7. Pensamento
+
+## 7.1 Curso do Pensamento
+Velocidade e fluxo ao longo do tempo
+
+### Normal
+- **Fluxo adequado**
+- **Velocidade normal**
+
+### Aceleração
+- **Acelerado/Taquipsíquico:** pensamento muito rápido
+- **Fuga de ideias:** aceleração extrema com perda de associações lógicas, associações por assonância
+- **Pressão para falar:** necessidade incoercível de falar
+
+### Lentificação
+- **Lentificado/Bradipsíquico:** progride lentamente
+- **Latência de resposta:** demora para responder
+- **Prolixo:** excessivamente detalhado
+- **Circunstancial:** detalhes irrelevantes, mas retorna ao objetivo
+- **Tangencial:** desvia sem retornar
+
+### Interrupções
+- **Bloqueio do pensamento:** interrupção súbita e brusca
+- **Roubo do pensamento:** sensação de pensamento roubado por força externa
+
+## 7.2 Forma do Pensamento
+Estrutura e organização
+
+### Normal
+- **Lógico e coerente:** organizado, com nexo causal
+- **Abstrato:** capacidade de abstração preservada
+- **Concreto:** capacidade de abstração mantida
+
+### Desorganização Leve a Moderada
+- **Afrouxamento das associações:** associações menos articuladas
+- **Descarrilhamento:** extravios do curso normal
+
+### Desorganização Grave
+- **Dissociação:** perda progressiva da sequência lógica
+- **Desagregação:** perda total da coerência
+- **Incoerente:** sem nexo entre ideias
+- **Ilógico:** sem lógica aparente
+
+### Alterações Específicas
+- **Perseverativo:** repetição de temas ou palavras
+- **Com associações frouxas:** conexões tênues
+- **Neologismos:** criação de palavras novas
+- **Salada de palavras/Jargonofasia:** palavras sem sentido
+- **Para-respostas:** respostas não relacionadas à pergunta
+
+## 7.3 Conteúdo do Pensamento
+Temas predominantes
+
+### Normal
+- **Adequado ao contexto**
+- **Rico e variado**
+- **Pobre:** escassez de conteúdo
+
+### Ideias Prevalentes ou Sobrevaloradas
+- Preocupações dominantes
+- Convicções intensas com carga afetiva
+- Egossintônicas (aceitas pelo paciente)
+- Fazem sentido para o paciente
+
+### Ideias Obsessivas
+- Pensamentos intrusivos, repetitivos
+- Egodistônicos (indesejáveis)
+- Paciente tenta resistir
+- Geram ansiedade
+
+### Ideias Fóbicas
+- Medos irracionais específicos
+- Reconhecidos como exagerados
+
+### Ideias Delirantes
+Ver seção 15 (Juízo de Realidade) para detalhamento completo
+
+### Preocupações Específicas
+- **Suicidas:** ideação, planos, intenção
+- **Homicidas:** ideação, planos, intenção
+- **Persecutórias**
+- **De referência**
+- **Religiosas**
+- **Sexuais**
+- **De grandeza/poder/riqueza**
+- **De ruína/culpa**
+- **Hipocondríacas**
+
+---
+
+# 8. Linguagem
+
+## 8.1 Produção Verbal
+
+### Volume
+- **Normal**
+- **Hipofonia:** volume baixo, voz baixa
+- **Hiperfonia:** volume alto
+
+### Velocidade
+- **Normal**
+- **Bradilalia:** fala muito devagar, forma lenta e difícil
+- **Taquilalia:** produção aumentada e acelerada
+- **Logorreia:** fluxo incessante de palavras, pode perder lógica
+- **Pressão para falar:** incoercível, não consegue parar
+
+### Fluxo
+- **Fluente**
+- **Não fluente**
+- **Loquacidade:** aumento sem prejuízo lógico
+
+### Articulação
+- **Clara**
+- **Disartria:** articulação prejudicada
+- **Arrastada**
+
+### Tom e Prosódia
+- **Normal:** entonação adequada
+- **Monotônico:** sem variação
+- **Infantilizado:** tom pueril
+- **Choroso:** lacrimoso
+- **Irritado:** zangado
+- **Ansioso:** tenso
+- **Agudo**
+- **Grave**
+
+### Latência
+- **Normal**
+- **Latência de resposta:** demora para responder
+
+## 8.2 Alterações Específicas
+
+### Ausência ou Redução
+- **Mutismo:** ausência completa de resposta verbal
+- **Mutismo seletivo:** fala apenas em certas situações
+
+### Repetições
+- **Perseveração:** repetição automática esteriotipada
+- **Estereotipia verbal:** repetição mecânica sem sentido
+- **Ecolalia:** repetição das palavras do entrevistador
+- **Palilalia:** repetição da própria última palavra
+- **Verbigeração:** repetição monótona sem sentido comunicativo
+
+### Alterações do Conteúdo
+- **Neologismos:** invenção de palavras novas
+- **Salada de palavras:** sequência sem nexo
+- **Para-respostas:** respostas não relacionadas
+- **Glossolalia:** sons sem sentido imitando fala
+
+### Alterações Motoras da Fala
+- **Tiques verbais:** sons guturais recorrentes
+- **Coprolalia:** emissão involuntária de palavras obscenas
+
+### Outras
+- **Solilóquio:** gesticula/fala sozinho
+- **Mussitação:** murmuração inaudível sem sentido
+
+## 8.3 Afasias
+
+### Afasia de Broca (Não Fluente)
+- Compromete expressão
+- Compreensão preservada
+- Sabe o que quer dizer, mas não consegue pronunciar
+
+### Afasia de Wernicke (Fluente)
+- Compromete recepção
+- Fala fluente sem sentido
+- Não compreende adequadamente
+
+### Compreensão
+- **Preservada:** compreende adequadamente
+- **Comprometida:** dificuldade de compreensão
+- **Parcialmente comprometida:** compreende comandos simples, não complexos
+
+---
+
+# 9. Inteligência
+
+## 9.1 Avaliação Geral
+
+### Informações a Coletar
+- Desenvolvimento escolar
+- Idade de ingresso
+- Repetências
+- Dificuldades específicas
+- Quando/por que parou
+
+### Capacidades a Avaliar
+- Adaptação ao meio
+- Aprendizado com experiência
+- Pensamento abstrato
+- Resolução de problemas
+- Conhecimentos gerais
+- Capacidade de cálculo
+
+## 9.2 Classificação Funcional
+
+### Normal
+- **Estimada na média:** funcionamento aparentemente normal
+- **Acima da média:** capacidade superior
+
+### Abaixo da Média
+- **Inteligência limítrofe:** QI 70-84 (não é DI)
+- **Deficiência intelectual leve:** QI 50-69
+- **Deficiência intelectual moderada:** QI 35-49
+- **Deficiência intelectual grave:** QI 20-34
+- **Deficiência intelectual profunda:** QI < 20
+
+### Deterioração
+- **Demência:** deterioração orgânica global
+
+## 9.3 Aspectos Específicos
+
+### Abstração
+- **Preservada:** interpreta provérbios, metáforas
+- **Comprometida:** pensamento concreto
+- **Dificuldade de abstração**
+
+### Conhecimentos Gerais
+- **Adequados ao nível cultural**
+- **Limitados**
+- **Muito restritos**
+
+### Cálculo
+- **Preservado**
+- **Comprometido**
+
+---
+
+# 10. Juízo de Realidade
+
+## 10.1 Normal
+- **Preservado:** avaliação adequada da realidade
+
+## 10.2 Alterações
+
+### Ideias Prevalentes ou Sobrevaloradas
+- Importância afetiva enorme
+- Egossintônicas
+- Fazem sentido para o paciente
+- Não são delírios
+
+### Delírios
+Juízos patologicamente falsos
+
+## 10.3 Características dos Delírios
+
+### Quatro Características Essenciais
+1. **Convicção extraordinária:** impossível colocar em dúvida
+2. **Irremovível:** impossível modificar por argumentação
+3. **Conteúdo falso:** geralmente impossível
+4. **Individual:** não compartilhado por grupos culturais
+
+### Sete Dimensões (Indicadores de Gravidade)
+
+**1. Grau de Convicção**
+- Inabalável
+- Com dúvidas
+- Oscilante
+
+**2. Extensão**
+- Circunscrito a uma área
+- Envolve várias áreas da vida
+- Pervasivo
+
+**3. Bizarrice ou Implausibilidade**
+- Possível
+- Improvável
+- Bizarro/Impossível
+
+**4. Desorganização**
+- Sistematizado (lógica própria)
+- Parcialmente organizado
+- Fragmentado/Caótico
+
+**5. Pressão ou Preocupação**
+- Pouco envolvido
+- Moderadamente preocupado
+- Totalmente absorvido
+
+**6. Resposta Afetiva**
+- Pouco abalado
+- Moderadamente ansioso/triste
+- Intensamente perturbado
+
+**7. Comportamento Desviante**
+- Não age segundo o delírio
+- Age ocasionalmente
+- Atos perigosos/frequentes
+
+### Congruência com Humor
+- **Congruente:** delírio compatível com humor (ex: depressão + delírio de ruína)
+- **Incongruente:** delírio incompatível (pior prognóstico)
+
+## 10.4 Surgimento e Evolução do Delírio
+
+### Fase Pré-Delirante
+- **Trema/Humor delirante:** aflição, ansiedade intensa, perplexidade
+- Sensação de que algo terrível vai acontecer
+- Duração: horas a dias
+
+### Revelação do Delírio
+- **Apofania:** revelação súbita - "ah, então é isso!"
+- **Anástrofe:** mundo se volta para o delirante
+- Alívio inicial após revelação
+
+### Fase Apocalíptica
+- Desorganização após revelação
+- Sintomas catatônicos possíveis
+- Excitação psicomotora
+- Alterações da consciência do Eu
+
+### Consolidação
+- Cristalização do delírio
+- Elaboração intelectual
+
+### Fase Residual
+- Perda de impulso e afetividade
+- Isolamento
+
+## 10.5 Tipos de Delírios
+
+### Persecutórios
+- Crença de ser perseguido, ameaçado
+- Complô, conspirações
+- Inimigos
+
+**Perguntas:**
+- Tem motivos para desconfiar de alguém?
+- Alguém tentou prejudicá-lo?
+- Recebeu ameaças?
+- Alguém o persegue?
+- Trata-se de algum complô?
+- Como pensa se defender?
+
+### De Referência
+- Eventos externos se referem ao paciente
+- Pessoas falam dele, fazem sinais
+- TV/rádio transmitem mensagens
+
+**Perguntas:**
+- As pessoas falam de você?
+- Alguém te espia ou faz sinais?
+- Viu na TV algo a seu respeito?
+- Quais as intenções delas?
+
+### De Influência
+- Pensamentos/ações controlados externamente
+- Forças, máquinas, pessoas controlam
+- Pensamentos impostos ou roubados
+
+### De Grandeza
+- Poderes especiais
+- Riqueza excepcional
+- Identidade especial
+- Missão importante
+
+**Perguntas:**
+- Sente-se forte, especial?
+- Tem algum talento ou habilidade especial?
+- Tem projetos ou realizações especiais?
+- Você é uma pessoa rica?
+
+### De Ruína
+- Crença de estar arruinado
+- Perda financeira irreversível
+- Família passará fome
+
+### De Culpa
+- Culpa patológica
+- Cometeu pecados graves
+- Merece punição
+
+**Perguntas:**
+- Tem pensamentos negativos?
+- Há algo que se arrepende?
+- Fez mal a alguém?
+- As pessoas o condenam?
+
+### Hipocondríacos/Somáticos
+- Crença de estar doente
+- Órgãos estragados
+- Doenças graves não detectadas
+
+**Perguntas:**
+- Preocupa-se com sua saúde?
+- Que partes do corpo estão doentes?
+- Algo está errado com seu corpo?
+
+### De Ciúmes
+- Certeza infundada de infidelidade
+- Interpretação de sinais
+
+**Perguntas:**
+- Você confia em sua esposa/esposo?
+- Tem motivos para suspeitar?
+- Tem provas de traição?
+- Como tem certeza?
+
+### Religiosos/Místicos
+- Relação especial com Deus
+- Missão divina
+- Possessão
+- Influência de espíritos
+
+**Perguntas:**
+- Você é uma pessoa religiosa?
+- Teve contato com espíritos?
+- Recebeu influência sobrenatural?
+- Tem relação especial com Deus?
+
+### Niilistas
+- Negação da existência
+- Órgãos não funcionam
+- Está morto
+- Mundo acabou
+
+### Bizarros
+- Conteúdo impossível, absurdo
+- Alienígenas, controle mental
+- Transformações impossíveis
+
+---
+
+# 11. Vida Afetiva
+
+## 11.1 Humor (Estado de Humor Basal)
+Estado emocional de fundo, mais duradouro
+
+### Classificação Quantitativa
+- **Hipertímico:** humor elevado
+- **Eutímico:** humor normal
+- **Hipotímico:** humor rebaixado
+
+### Descritores Qualitativos
+- **Eutímico:** normal, adequado
+- **Deprimido/Hipotímico:** triste, melancólico
+- **Melancólico:** tristeza profunda
+- **Elevado/Hipertímico:** alegre, expansivo
+- **Eufórico:** alegria exagerada, patológica
+- **Elação:** euforia + expansão do Eu, grandeza
+- **Expansivo:** contagiante, exuberante
+- **Exaltado:** muito elevado
+- **Irritável:** irritadiço, explosivo
+- **Disfórico:** irritação, amargura, desgosto, agressividade
+- **Lábil:** oscilações frequentes e rápidas
+- **Incontinente:** perda do controle emocional
+
+## 11.2 Afeto (Expressão Emocional Observável)
+Manifestação externa, observável, das emoções
+
+### Adequação
+- **Adequado/Apropriado:** condizente com conteúdo e contexto
+- **Inadequado/Discordante/Inapropriado:** incongruente
+- **Congruente:** corresponde ao humor referido
+- **Incongruente:** não corresponde ao humor
+- **Sintonia:** capacidade de adequar ao ambiente
+- **Irradiação:** capacidade de irradiar afeto
+
+### Amplitude/Quantidade
+- **Amplo:** bem-modulado, variado
+- **Normal:** variação adequada
+- **Restrito/Embotado:** amplitude reduzida
+- **Embotado:** marcadamente reduzido
+- **Aplanado/Achatado:** praticamente ausente
+- **Hipermodulado:** expressão exagerada
+- **Normomodulado:** modulação normal
+- **Hipomodulado:** expressão reduzida
+
+### Variação
+- **Adequado:** variações normais
+- **Lábil:** mudanças rápidas e frequentes
+- **Labilidade afetiva:** oscilações súbitas e imotivadas
+- **Incontinência afetiva:** não consegue conter reações
+- **Superficial:** raso, sem profundidade
+
+### Qualidade/Tom
+- **Disfórico**
+- **Feliz**
+- **Eutímico**
+- **Irritável**
+- **Irritado**
+- **Agitado**
+- **Choroso/Soluçante**
+
+## 11.3 Alterações Específicas
+
+### Diminuição/Ausência
+- **Apatia:** diminuição da excitabilidade emotiva, "não sinto nada"
+- **Anedonia:** incapacidade de sentir prazer
+- **Pobreza de sentimentos:** perda progressiva das vivências afetivas
+- **Embotamento afetivo:** perda profunda de vivências afetivas
+- **Sentimento de falta de sentimento:** incapacidade que causa sofrimento
+- **Indiferença afetiva (belle indifférence):** frieza diante dos sintomas
+
+### Desorganização
+- **Inadequação/Paratimia:** reação incongruente
+- **Ambivalência afetiva:** sentimentos opostos simultâneos
+
+### Características Especiais
+- **Puerilidade:** ri ou chora por motivos banais, afetividade superficial
+- **Irritabilidade patológica:** hiperreatividade hostil e agressiva
+
+---
+
+# 12. Volição
+
+## 12.1 Normal
+- **Vontade preservada:** capacidade de decisão e execução mantida
+- **Motivação adequada**
+
+## 12.2 Diminuição ou Ausência
+- **Hipobulia:** diminuição da vontade e iniciativa
+- **Abulia:** ausência de vontade, incapacidade de decidir e agir
+
+## 12.3 Aumento
+- **Hiperbulia:** aumento patológico da vontade e iniciativa
+
+## 12.4 Alterações Específicas
+- **Ambivalência volitiva:** dificuldade em decidir, vontades contraditórias
+
+---
+
+# 13. Psicomotricidade
+
+## 13.1 Atividade Motora Global
+- **Normal:** atividade adequada
+- **Agitação psicomotora:** aumento marcante
+- **Hiperatividade:** atividade excessiva
+- **Inquietação/Acatisia:** impossibilidade de ficar parado
+- **Lentificação psicomotora:** diminuição global
+- **Inibição psicomotora:** ausência de respostas sem déficit motor primário
+- **Estupor:** perda de atividade espontânea, consciência aparentemente preservada
+- **Retardo motor:** movimentos lentos
+
+## 13.2 Movimentos Anormais
+- **Estereotipias:** movimentos repetitivos sem finalidade
+- **Maneirismos:** movimentos bizarros peculiares
+- **Tiques:** movimentos involuntários súbitos
+- **Tremores:** (especificar localização)
+- **Carfologia:** movimento de pegar fios imaginários
+- **Discinesias:** movimentos involuntários anormais
+
+## 13.3 Fenômenos Catatônicos
+- **Catalepsia:** manutenção de postura imposta
+- **Flexibilidade cérea:** resistência plástica
+- **Negativismo ativo:** faz o oposto
+- **Negativismo passivo:** não faz nada
+- **Obediência automática:** execução automática
+- **Ecopraxia:** imitação de gestos
+
+## 13.4 Marcha
+- **Normal**
+- **Lenta**
+- **Acelerada**
+- **Arrastada**
+- **Atáxica**
+- **Espástica**
+- **Parkinsoniana**
+
+---
+
+# 14. Controle de Impulsos
+
+## 14.1 Ato Impulsivo
+Características:
+- Abolição de fases de intenção/deliberação/decisão
+- Egossintônico (não percebe como inadequado)
+- Associado a impulsos patológicos
+- Incapacidade de tolerar frustração
+
+## 14.2 Ato Compulsivo
+Características:
+- Desconforto subjetivo
+- Egodistônico (indesejável)
+- Tentativa de resistir
+- Alívio após realização
+- Frequentemente associado a obsessões
+
+## 14.3 Outros
+- **Impulsividade:** ações sem planejamento ou consideração de consequências
+- **Compulsões:** atos repetitivos em resposta a impulsos irresistíveis
+
+---
+
+# 15. Consciência e Valoração do Eu
+
+## 15.1 Consciência de Atividade do Eu
+**Normal:** tudo que o Eu faz é vivenciado como próprio
+
+### Alterações:
+
+**Alteração da Consciência de Existência:**
+- Suspensão da sensação do próprio Eu
+- "Sou apenas uma máquina"
+- "Sinto-me como um nada, um morto"
+
+**Alteração da Consciência de Execução:**
+- Pensamentos feitos/impostos por outros
+- Roubo do pensamento
+- Ações controladas externamente
+- Vivências de influência
+
+## 15.2 Consciência de Unidade do Eu
+**Normal:** Eu sentido como uno e indivisível
+
+### Alterações:
+- Sentimento de divisão radical
+- "Sou anjo e demônio ao mesmo tempo"
+- Ambivalência profunda
+
+## 15.3 Consciência da Identidade do Eu no Tempo
+**Normal:** consciência de ser o mesmo ao longo do tempo
+
+### Alterações:
+- "Não sou a mesma pessoa de antes"
+- Perda da continuidade temporal
+
+## 15.4 Consciência de Oposição do Eu ao Mundo
+**Normal:** percepção clara da separação entre Eu e mundo exterior
+
+### Alterações:
+- **Despersonalização:** estranheza em relação a si mesmo
+- **Desrealização:** sensação de irrealidade do mundo
+- **Difusão de identidade:** perda dos limites do Eu
+- **Transitivismo:** transformação em animal/objeto
+- **Publicação do pensamento**
+- **Sonorização do pensamento**
+- **Eco do pensamento**
+
+---
+
+# 16. Vivência do Tempo e do Espaço
+
+## 16.1 Temporal
+- **Normal**
+- **Aceleração:** tempo passa rapidamente demais
+- **Retardo:** tempo parece parado ou muito lento
+- **Atemporalidade:** perda da noção temporal
+- **Déjà vu:** sensação de já ter vivido
+- **Jamais vu:** sensação de nunca ter visto algo familiar
+
+## 16.2 Espacial
+- **Normal**
+- **Micropsia:** objetos parecem menores
+- **Macropsia:** objetos parecem maiores
+- **Metamorfopsia:** distorção da forma
+- **Dismegalopsia:** alteração das distâncias
+
+---
+
+# 17. Personalidade
+
+## 17.1 Traços Principais
+
+### Cluster A (Excêntricos)
+- **Traços paranoides:** desconfiança, sensibilidade a críticas, hostilidade
+- **Traços esquizoides:** distanciamento afetivo, preferência por solidão
+- **Traços esquizotípicos:** excentricidade, pensamento mágico
+
+### Cluster B (Dramáticos)
+- **Traços histriônicos/histéricos:** dramaticidade, busca de atenção, emocionalidade excessiva
+- **Traços narcisistas:** grandiosidade, necessidade de admiração
+- **Traços borderline:** instabilidade, impulsividade, medo de abandono
+- **Traços antissociais:** desrespeito por normas, impulsividade, ausência de remorso
+
+### Cluster C (Ansiosos)
+- **Traços evitativos:** esquiva social, medo de rejeição
+- **Traços dependentes:** necessidade excessiva de apoio, dificuldade em decidir
+- **Traços obsessivos:** perfeccionismo, rigidez, necessidade de controle
+
+### Outros
+- **Traços ansiosos:** preocupação excessiva
+- **Traços impulsivos:** dificuldade de controle
+
+---
+
+# 18. Contratransferência
+
+Sentimentos, reações emocionais e pensamentos que o paciente desperta no entrevistador
+
+## 18.1 Descritores
+- **Empatia:** sentimento de compreensão e conexão
+- **Simpatia:** sentimento positivo
+- **Antipatia:** sentimento negativo
+- **Rejeição:** desejo de afastar-se
+- **Tédio:** desinteresse
+- **Ansiedade:** apreensão
+- **Medo:** temor
+- **Irritação:** contrariedade
+- **Frustração:** impotência
+- **Confusão:** dificuldade em compreender
+- **Proteção:** desejo de cuidar
+- **Compaixão:** pena
+- **Sedução:** atração
+- **Competição:** rivalidade
+
+---
+
+# 19. Crítica e Insight
+
+## 19.1 Juízo Crítico
+Capacidade de autoavaliar-se e ter visão realista de si
+
+## 19.2 Insight
+Compreensão sobre si, dificuldades, estado emocional, doença e consequências
+
+### Três Componentes (David, 1990):
+1. Consciência da doença
+2. Modo de nomear/renomear sintomas
+3. Adesão a tratamentos
+
+### Níveis de Insight
+- **Insight completo:** reconhece doença, sintomas, aceita tratamento
+- **Insight parcial:** reconhece alguns aspectos
+- **Insight ausente:** não reconhece estar doente
+- **Crítica preservada:** reconhece sintomas como patológicos
+- **Crítica comprometida:** não reconhece anormalidade
+- **Nega doença:** rejeita ativamente
+- **Ambivalente:** dúvida sobre estar doente
+
+---
+
+# 20. Desejo de Ajuda e Motivação
+
+## 20.1 Desejo de Ajuda
+- **Forte:** busca ativa de tratamento
+- **Moderado:** aceita com alguma motivação
+- **Fraco:** pouca motivação
+- **Ausente:** não vê necessidade
+- **Ambivalente:** oscila entre querer e não querer
+
+## 20.2 Voluntariedade do Tratamento
+- **Voluntário:** procurou espontaneamente
+- **Involuntário:** trazido por terceiros
+- **Compulsório:** determinação judicial
+
+---
+
+# Súmula Psicopatológica
+
+Ao final do exame, elabore uma súmula concisa destacando:
+
+## Agrupamento por Sistemas
+
+### Sistema 1: Funções Cognitivas
+(Afetadas em transtornos psico-orgânicos)\
+- Consciência\
+- Atenção, vigilância\
+- Orientação\
+- Memória\
+- Linguagem\
+- Inteligência\
+
+### Sistema 2: Vida Afetiva e Comportamento
+(Afetadas em transtornos afetivos, neuróticos e de personalidade)\
+- Humor\
+- Afeto, modulação\
+- Psicomotricidade\
+- Controle de impulsos\
+- Volição\
+
+### Sistema 3: Funções Psicóticas
+(Afetadas em transtornos psicóticos)\
+- Pensamento (curso, forma, conteúdo)\
+- Juízo de realidade\
+- Sensopercepção\
+- Consciência do Eu\
+- Juízo de morbidade/insight\
+
+---
+
+# Referências
+
+::: {#refs}
+:::
+
+---
