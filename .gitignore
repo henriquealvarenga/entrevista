@@ -23,6 +23,8 @@ venv/
 *.Rproj
 
 
-# IMPORTANTE: NÃO ignorar a pasta docs/ 
+# IMPORTANTE: NÃO ignorar a pasta docs/
 # pois é ela que o GitHub Pages usa!
 # !docs/
+/.quarto/
+**/*.quarto_ipynb
