@@ -223,4 +223,3 @@ HIPÓTESES DIAGNÓSTICAS PRINCIPAIS
 3. [Hipótese 3]
 ```
 
-Boa prática!
