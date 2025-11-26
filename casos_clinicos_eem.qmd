@@ -1,6 +1,6 @@
 ---
 title: "Casos Clínicos"
-subtitle: "Escolha um caso e elabore o Exame do Estado Menta completo"
+subtitle: "Escolha um caso e elabore o Exame do Estado Mental completo"
 format:
   html:
     toc: true
