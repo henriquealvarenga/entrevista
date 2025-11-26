@@ -9,13 +9,13 @@ website:
   navbar:
     background: primary
     left:
-      - href: index.html
+      - href: index.qmd
         text: "Início"
-      - href: entrevista_psiquiatrica.html
+      - href: 01-entrevista_psiquiatrica.qmd
         text: "A Entrevista"
-      - href: roteiro_eem.html
+      - href: 02-roteiro_eem.qmd
         text: "Roteiro"
-      - href: casos_clinicos_eem.html
+      - href: 03-casos_clinicos.qmd
         text: "Casos"
 
 
