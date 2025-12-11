@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://henriquealvarenga.com/index.html</loc>
-    <lastmod>2025-11-26T09:50:17.693Z</lastmod>
-  </url>
-  <url>
     <loc>https://henriquealvarenga.com/extras/README_material.html</loc>
     <lastmod>2025-11-20T15:08:58.000Z</lastmod>
   </url>
@@ -19,6 +15,10 @@
   <url>
     <loc>https://henriquealvarenga.com/02-roteiro_eem.html</loc>
     <lastmod>2025-11-20T13:15:34.649Z</lastmod>
+  </url>
+  <url>
+    <loc>https://henriquealvarenga.com/index.html</loc>
+    <lastmod>2025-12-11T23:58:38.902Z</lastmod>
   </url>
   <url>
     <loc>https://henriquealvarenga.com/03-casos_clinicos.html</loc>

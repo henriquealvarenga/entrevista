@@ -102,6 +102,12 @@ A prática consistente com este material desenvolverá:
 
 ---
 
+::: {.callout-note appearance="simple"}
+## Agradecimento
+
+Agradeço especialmente à Dra. Juliane Batista Longatti pela cessão de seu roteiro didático sobre o Exame Psíquico, material que tem sido fundamental na formação de estudantes de medicina. Sua sistematização dos descritores psicopatológicos contribuiu significativamente para a clareza e completude deste capítulo.
+:::
+
 **Nota:** Este material é destinado exclusivamente para fins educacionais. A prática clínica deve sempre ocorrer sob supervisão apropriada.
 
 **Última atualização:** 25 Novembro de 2025
