@@ -87,6 +87,25 @@ Contribuições são bem-vindas via *issues* ou *pull requests*, especialmente:
 :::
 
 ::: {.about-section}
+## Crédito das imagens
+
+### Capa do material
+
+::: {.content-visible when-format="html"}
+[![Capa do material](images/capa.jpg){.cover-credit-thumb fig-alt="Foto em preto e branco da cabeça de uma mulher"}](https://unsplash.com/pt-br/fotografias/uma-foto-em-preto-e-branco-da-cabeca-de-uma-mulher-3xnAoMZXvnM)
+:::
+
+| Campo                  | Informação |
+|------------------------|-----------|
+| **Autoria da imagem**  | [Resource Database](https://unsplash.com/pt-br/@resourcedatabase) |
+| **Fonte / plataforma** | [Unsplash](https://unsplash.com/pt-br/fotografias/uma-foto-em-preto-e-branco-da-cabeca-de-uma-mulher-3xnAoMZXvnM) |
+| **Licença**            | [Unsplash License](https://unsplash.com/license) |
+| **Tipografia da capa** | Henrique Alvarenga da Silva — Playfair Display sobre a imagem |
+
+: Crédito da imagem de capa {.striped tbl-colwidths="[28,72]"}
+:::
+
+::: {.about-section}
 ## Licenciamento
 
 Este trabalho está licenciado sob **Creative Commons Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional (CC BY-NC-SA 4.0)**.
