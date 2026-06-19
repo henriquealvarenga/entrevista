@@ -1,0 +1,54 @@
+---
+title: "9. Inteligência"
+---
+
+## 9.1 Avaliação Geral
+
+### Informações a Coletar
+- Desenvolvimento escolar
+- Idade de ingresso
+- Repetências
+- Dificuldades específicas
+- Quando/por que parou
+
+### Capacidades a Avaliar
+- Adaptação ao meio
+- Aprendizado com experiência
+- Pensamento abstrato
+- Resolução de problemas
+- Conhecimentos gerais
+- Capacidade de cálculo
+
+## 9.2 Classificação Funcional
+
+### Normal
+- **Estimada na média:** funcionamento aparentemente normal
+- **Acima da média:** capacidade superior
+
+### Abaixo da Média
+- **Inteligência limítrofe:** QI 70-84 (não é DI)
+- **Deficiência intelectual leve:** QI 50-69
+- **Deficiência intelectual moderada:** QI 35-49
+- **Deficiência intelectual grave:** QI 20-34
+- **Deficiência intelectual profunda:** QI < 20
+
+### Deterioração
+- **Demência:** deterioração orgânica global
+
+## 9.3 Aspectos Específicos
+
+### Abstração
+- **Preservada:** interpreta provérbios, metáforas
+- **Comprometida:** pensamento concreto
+- **Dificuldade de abstração**
+
+### Conhecimentos Gerais
+- **Adequados ao nível cultural**
+- **Limitados**
+- **Muito restritos**
+
+### Cálculo
+- **Preservado**
+- **Comprometido**
+
+---

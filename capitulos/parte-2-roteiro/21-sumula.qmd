@@ -1,0 +1,34 @@
+---
+title: "Súmula Psicopatológica"
+---
+
+Ao final do exame, elabore uma súmula concisa destacando:
+
+## Agrupamento por Sistemas
+
+### Sistema 1: Funções Cognitivas
+(Afetadas em transtornos psico-orgânicos)\
+- Consciência\
+- Atenção, vigilância\
+- Orientação\
+- Memória\
+- Linguagem\
+- Inteligência\
+
+### Sistema 2: Vida Afetiva e Comportamento
+(Afetadas em transtornos afetivos, neuróticos e de personalidade)\
+- Humor\
+- Afeto, modulação\
+- Psicomotricidade\
+- Controle de impulsos\
+- Volição\
+
+### Sistema 3: Funções Psicóticas
+(Afetadas em transtornos psicóticos)\
+- Pensamento (curso, forma, conteúdo)\
+- Juízo de realidade\
+- Sensopercepção\
+- Consciência do Eu\
+- Juízo de morbidade/insight\
+
+---

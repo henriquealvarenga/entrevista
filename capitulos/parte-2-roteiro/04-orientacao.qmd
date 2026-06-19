@@ -1,0 +1,28 @@
+---
+title: "4. Orientação"
+---
+
+## 4.1 Orientação Autopsíquica
+Orientação em relação a si mesmo:
+- **Orientado:** sabe nome, idade, data de nascimento, profissão, estado civil
+- **Desorientado:** confuso quanto à própria identidade
+- **Parcialmente desorientado:** incerteza sobre alguns dados pessoais
+
+## 4.2 Orientação Alopsíquica
+
+### Orientação Temporal
+- **Orientado:** sabe dia da semana, dia do mês, mês, ano, hora aproximada, época do ano
+- **Desorientado temporal**
+- **Parcialmente desorientado:** sabe alguns dados, outros não
+- **Confuso quanto à data/hora/duração dos eventos**
+
+### Orientação Espacial
+- **Orientado:** sabe onde está (tipo de local, nome, cidade, estado, país)
+- **Desorientado espacial**
+- **Parcialmente desorientado:** reconhece alguns aspectos do local
+
+### Padrão de Desorientação
+> **Regra clínica:** Desorientação ocorre nesta ordem:
+> Tempo → Espaço → Em relação a si mesmo
+
+---

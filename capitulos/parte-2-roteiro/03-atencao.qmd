@@ -1,0 +1,32 @@
+---
+title: "3. Atenção"
+---
+
+## 3.1 Componentes da Atenção
+
+### Tenacidade
+Capacidade de fixar a atenção sobre determinada área ou objeto:
+- **Hipotenaz:** dificuldade em fixar a atenção
+- **Normotenaz:** capacidade normal de fixação
+- **Hipertenaz:** fixação excessiva
+
+### Vigilância
+Qualidade que permite mudar o foco de um objeto para outro:
+- **Hipovigil:** dificuldade em mudar o foco
+- **Normovigil:** capacidade normal de alternar
+- **Hipervigil:** mudança excessiva de foco
+
+## 3.2 Alterações Patológicas
+
+### Diminuição da Atenção
+- **Hipoprosexia:** diminuição global da atenção, perda da concentração, fatigabilidade aumentada, dificuldade de percepção e compreensão
+- **Aprosexia:** abolição total da capacidade de atenção
+
+### Aumento da Atenção
+- **Hiperprosexia:** atenção exacerbada, concentração indefinida sobre certos objetos
+- **Distração:** superconcentração ativa (normal)
+
+### Instabilidade da Atenção
+- **Distraibilidade:** instabilidade e mobilidade patológica da atenção voluntária
+
+---

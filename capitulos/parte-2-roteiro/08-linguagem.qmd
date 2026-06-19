@@ -1,0 +1,87 @@
+---
+title: "8. Linguagem"
+---
+
+## 8.1 Produção Verbal
+
+### Volume
+- **Normal**
+- **Hipofonia:** volume baixo, voz baixa
+- **Hiperfonia:** volume alto
+
+### Velocidade
+- **Normal**
+- **Bradilalia:** fala muito devagar, forma lenta e difícil
+- **Taquilalia:** produção aumentada e acelerada
+- **Logorreia:** fluxo incessante de palavras, pode perder lógica
+- **Pressão para falar:** incoercível, não consegue parar
+
+### Fluxo
+- **Fluente**
+- **Não fluente**
+- **Loquacidade:** aumento sem prejuízo lógico
+
+### Articulação
+- **Clara**
+- **Disartria:** articulação prejudicada
+- **Arrastada**
+
+### Tom e Prosódia
+- **Normal:** entonação adequada
+- **Monotônico:** sem variação
+- **Infantilizado:** tom pueril
+- **Choroso:** lacrimoso
+- **Irritado:** zangado
+- **Ansioso:** tenso
+- **Agudo**
+- **Grave**
+
+### Latência
+- **Normal**
+- **Latência de resposta:** demora para responder
+
+## 8.2 Alterações Específicas
+
+### Ausência ou Redução
+- **Mutismo:** ausência completa de resposta verbal
+- **Mutismo seletivo:** fala apenas em certas situações
+
+### Repetições
+- **Perseveração:** repetição automática esteriotipada
+- **Estereotipia verbal:** repetição mecânica sem sentido
+- **Ecolalia:** repetição das palavras do entrevistador
+- **Palilalia:** repetição da própria última palavra
+- **Verbigeração:** repetição monótona sem sentido comunicativo
+
+### Alterações do Conteúdo
+- **Neologismos:** invenção de palavras novas
+- **Salada de palavras:** sequência sem nexo
+- **Para-respostas:** respostas não relacionadas
+- **Glossolalia:** sons sem sentido imitando fala
+
+### Alterações Motoras da Fala
+- **Tiques verbais:** sons guturais recorrentes
+- **Coprolalia:** emissão involuntária de palavras obscenas
+
+### Outras
+- **Solilóquio:** gesticula/fala sozinho
+- **Mussitação:** murmuração inaudível sem sentido
+
+## 8.3 Afasias
+
+### Afasia de Broca (Não Fluente)
+- Compromete expressão
+- Compreensão preservada
+- Sabe o que quer dizer, mas não consegue pronunciar
+
+### Afasia de Wernicke (Fluente)
+- Compromete recepção
+- Fala fluente sem sentido
+- Não compreende adequadamente
+
+### Compreensão
+- **Preservada:** compreende adequadamente
+- **Comprometida:** dificuldade de compreensão
+- **Parcialmente comprometida:** compreende comandos simples, não complexos
+
+---

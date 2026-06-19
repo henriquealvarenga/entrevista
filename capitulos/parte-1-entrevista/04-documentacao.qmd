@@ -1,0 +1,23 @@
+---
+title: "Aspectos Práticos da Documentação"
+---
+
+## Registro por Escrito
+
+Ao final da entrevista, forma-se o esboço do caso na mente do entrevistador. O relato do caso por escrito deve conter, de preferência, as próprias palavras que o paciente e os informantes usaram ao descrever os sintomas mais relevantes [@dalgalarrondo2019].
+
+### Princípios para Boa Documentação
+
+1. **Linguagem simples e precisa:** O relato deve ser compreensível, evitando jargão desnecessário
+2. **Detalhado mas não prolixo:** Pormenorizado no essencial, conciso no secundário
+3. **Uso sóbrio de terminologia técnica:** Proporcional ao grau de conhecimento obtido do caso
+4. **Caligrafia legível e estilo claro:** Frases e parágrafos curtos
+5. **Evitar interpretações precoces:** Não forçar significados psicológicos, psicanalíticos ou biológicos prematuramente
+
+### Valor Legal
+
+O relato escrito tem, além de valor médico, importante valor legal. É um documento que, sendo bem-redigido, poderá ser decisivo em questões legais futuras [@dalgalarrondo2019].
+
+## Perspectiva Longitudinal versus Transversal
+
+A avaliação psiquiátrica possui uma dimensão longitudinal (histórica, temporal) e outra transversal (momentânea, atual) da vida do paciente [@dalgalarrondo2019]. Sem a dimensão longitudinal, a transversal fica obscura e incompleta. Assim, as relações temporais devem ser claramente descritas.

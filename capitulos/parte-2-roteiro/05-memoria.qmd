@@ -1,0 +1,62 @@
+---
+title: "5. Memória"
+---
+
+## 5.1 Classificação Temporal
+
+### Memória Imediata (Curtíssimo Prazo)
+- **Preservada:** retém informação por poucos segundos
+- **Comprometida:** dificuldade em reter
+- **Teste:** repetir dígitos ou palavras imediatamente
+
+### Memória Recente (Curto Prazo)
+- **Preservada:** recorda eventos de minutos a 6 horas
+- **Comprometida:** dificuldade com eventos recentes
+- **Com lacunas:** falhas parciais
+- **Teste:** O que comeu ontem? Há quanto tempo está internado?
+
+### Memória Remota (Longo Prazo)
+- **Preservada:** recorda eventos de meses a muitos anos
+- **Comprometida:** dificuldade com o passado distante
+- **Seletivamente preservada:** recorda alguns períodos, outros não
+- **Vaga:** recordações imprecisas
+- **Teste:** Nome dos pais, data de casamento, escola que frequentou
+
+## 5.2 Classificação por Sistema Cerebral
+
+### Memória de Trabalho
+- **Preservada**
+- **Comprometida**
+- **Teste:** Pegar folha com mão direita, dobrar ao meio, colocar no chão
+
+### Memória Episódica
+- **Preservada:** recordação consciente de fatos reais
+- **Comprometida**
+- **Teste:** Contar história e pedir que recorde após alguns minutos
+
+### Memória Semântica
+- **Preservada:** conhecimentos de objetos, fatos, palavras
+- **Comprometida**
+- **Teste:** Nomear objetos, falar nomes de animais em 1 minuto
+
+## 5.3 Alterações Quantitativas
+
+### Amnésias
+- **Amnésia anterógrada:** não fixa novos elementos após evento traumático
+- **Amnésia retrógrada:** perda de memória para fatos anteriores ao evento
+- **Amnésia lacunar:** lacunas específicas
+- **Amnésia global:** perda abrangente
+
+## 5.4 Alterações Qualitativas
+
+### Distorções da Memória
+
+- **Falsas memórias:** acréscimos de elementos falsos a um núcleo verdadeiro de lembrança\
+- **Confabulações:** preenchimento de lacunas de memória com conteúdo imaginário, sem intenção de mentir\
+- **Pseudomemórias:** "lembranças" de eventos que nunca ocorreram\
+- **Pseudologia fantástica:** histórias fantasiosas extensas, vividas com intensidade
+- **Falso reconhecimento:** identifica estranhos como familiares\
+- **Déjà vu:** sensação de já ter vivido o momento\
+- **Jamais vu:** sensação de nunca ter visto algo familiar\
+
+---

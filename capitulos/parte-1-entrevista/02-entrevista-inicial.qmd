@@ -1,0 +1,76 @@
+---
+title: "A Entrevista Inicial"
+---
+
+## Importância e Objetivos
+
+A entrevista inicial é considerada um momento crucial no diagnóstico e no tratamento em saúde mental [@dalgalarrondo2019]. Esse primeiro contato, sendo bem-conduzido, deve produzir no paciente uma sensação de confiança e de esperança em relação ao alívio do sofrimento. Entrevistas iniciais mal conduzidas, nas quais o profissional é, involuntariamente ou não, negligente ou hostil com o paciente, geralmente são seguidas de abandono do tratamento.
+
+## A Primeira Impressão
+
+Logo no início, o olhar e toda a comunicação não verbal já têm sua importância: é o centro da comunicação, que inclui toda a carga emocional do ver e ser visto, do gesto, da postura, das vestimentas, do modo de sorrir ou expressar sofrimento [@dalgalarrondo2019]. Mayer-Gross, Slater e Roth assinalam que "a primeira impressão tem o seu valor próprio e dificilmente poderá ser recapturada em ocasiões posteriores" [@dalgalarrondo2019, p. 69].
+
+Pesquisas empíricas demonstraram que, em profissionais com experiência clínica, os primeiros três minutos da entrevista são extremamente significativos, sendo muitas vezes úteis tanto para a identificação do perfil dominante de sintomas do paciente como para a formulação da hipótese diagnóstica final [@dalgalarrondo2019].
+
+## As Três Regras de Ouro da Entrevista
+
+### Primeira Regra: Pacientes Organizados
+
+Pacientes organizados mentalmente, com inteligência normal, com escolaridade boa ou razoável, fora de um "estado psicótico", devem ser entrevistados de forma mais aberta, permitindo que falem e se expressem de maneira mais fluente e espontânea. O entrevistador fala pouco, fazendo algumas pontuações para que o paciente "conte a sua história" [@dalgalarrondo2019].
+
+### Segunda Regra: Pacientes Desorganizados
+
+Pacientes desorganizados, com nível intelectual baixo, em estado psicótico ou paranoide, "travados" por alto nível de ansiedade, devem ser entrevistados de forma mais estruturada. Nesse caso, o entrevistador fala mais, faz perguntas mais simples e dirigidas (perguntas fáceis de serem compreendidas e respondidas) [@dalgalarrondo2019].
+
+### Terceira Regra: Abordagem Gradual
+
+Nos primeiros contatos com pacientes muito tímidos, ansiosos ou paranoides, deve-se fazer primeiro perguntas neutras (nome, onde mora, profissão, estado civil, nome de familiares, etc.), para apenas, gradativamente, começar a formular perguntas "mais quentes" (às vezes, constrangedoras para o paciente) [@dalgalarrondo2019]. Vale a sabedoria popular que diz: "O mingau quente se come pela beirada".
+
+## Estrutura da Avaliação Psiquiátrica
+
+A avaliação psiquiátrica completa engloba cinco componentes principais [@dalgalarrondo2019]:
+
+### 1. Entrevista Inicial e Anamnese
+
+Na anamnese, o entrevistador se interessa tanto pelos sintomas objetivos como pela vivência subjetiva do paciente em relação àqueles sintomas; pela cronologia dos fenômenos e pelos dados pessoais e familiares. Além disso, o entrevistador permanece atento às reações do paciente ao fazer os seus relatos, realizando assim parte do exame psíquico durante a coleta da história [@dalgalarrondo2019].
+
+A anamnese deve incluir:
+
+- Dados sociodemográficos completos
+- Queixa principal ou problema central
+- História da doença atual (HDA)
+- Antecedentes mórbidos pessoais (somáticos e psíquicos)
+- Hábitos e uso de substâncias químicas
+- Antecedentes mórbidos familiares
+- História de vida do paciente
+- Avaliação das interações familiares e sociais
+
+### 2. Exame Psíquico (Exame do Estado Mental)
+
+O exame psíquico é o exame do estado mental atual, realizado com cuidado e minúcia pelo entrevistador desde o início da entrevista até a fase final [@dalgalarrondo2019]. Este será detalhado extensivamente na próxima seção.
+
+### 3. Exame Físico Geral e Neurológico
+
+Deve ser mais ou menos detalhado a partir das hipóteses diagnósticas que se formam com os dados da anamnese e do exame do estado mental. Caso o profissional suspeite de doença física, deverá examinar o paciente somaticamente em detalhes; caso suspeite de distúrbio neurológico ou neuropsiquiátrico, o exame neurológico deverá ser completo e detalhado [@dalgalarrondo2019].
+
+### 4. Exames Complementares Psicológicos
+
+Incluem avaliações por meio de testes da personalidade e da cognição (psicodiagnóstico e testes neuropsicológicos) [@kaplan2017].
+
+### 5. Exames Complementares Laboratoriais
+
+Incluem exames laboratoriais (exame bioquímico, citológico e imunológico do líquido cerebrospinal, hemograma, eletrólitos, metabólitos, hormônios, etc.), exames de neuroimagem (tomografia computadorizada do cérebro, ressonância magnética do cérebro, SPECT, etc.) e neurofisiológicos (EEG, potenciais evocados, etc.) [@dalgalarrondo2019].
+
+## Aspectos Práticos da Entrevista
+
+### Preparação e Apresentação
+
+É conveniente que o profissional se apresente, dizendo seu nome, se necessário, sua profissão e especialidade e, se for o caso, a razão da entrevista. A confidencialidade, a privacidade e o sigilo devem ser explicitamente garantidos caso se note o paciente tímido ou desconfiado [@dalgalarrondo2019].
+
+### Ambiente da Entrevista
+
+Deve-se providenciar um local com o mínimo de privacidade e conforto para a entrevista. No caso de pacientes muito irritados, potencialmente agressivos, deve-se evitar lugares trancados e de difícil acesso ou evasão [@dalgalarrondo2019].
+
+### Linguagem e Comunicação
+
+É necessário utilizar linguagem e vocabulário compatíveis com o nível intelectual do paciente, adequados ao seu universo cultural e aos seus valores morais e religiosos [@dalgalarrondo2019]. É conveniente utilizar perguntas mais abertas para os pacientes com bom nível intelectual. Para pacientes com déficit intelectual, quadros demenciais ou muito desestruturados, empregar perguntas mais fechadas, mais estruturadas, que permitam respostas do tipo "sim" ou "não".

@@ -1,0 +1,12 @@
+---
+title: "Introdução"
+---
+
+Este roteiro expandido integra múltiplas fontes para fornecer o guia mais completo possível de descritores do Exame do Estado Mental. Foi desenvolvido especialmente para estudantes de psiquiatria que precisam de referência detalhada para documentação clínica.
+
+**Fontes Utilizadas:**\
+- Dalgalarrondo (2019) - Psicopatologia e Semiologia [@dalgalarrondo2019]\
+- Kaplan & Sadock (2017) - Compêndio de Psiquiatria [@kaplan2017]\
+- Material didático complementar de semiologia psiquiátrica\
+
+---
