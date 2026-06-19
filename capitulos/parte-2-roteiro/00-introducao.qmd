@@ -2,7 +2,7 @@
 title: "Introdução"
 ---
 
-Este roteiro integra múltiplas fontes para fornecer um guia abrangente de descritores do Exame do Estado Mental. Foi desenvolvido para estudantes de medicina que precisam de referência detalhada para documentação clínica.
+Este roteiro integra múltiplas fontes para fornecer um guia resumido de descritores do Exame do Estado Mental. Foi desenvolvido para estudantes de medicina que precisam de referência detalhada para documentação clínica.
 
 **Fontes Utilizadas:**\
 - Dalgalarrondo (2019) - Psicopatologia e Semiologia [@dalgalarrondo2019]\
