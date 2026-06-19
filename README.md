@@ -1,9 +1,9 @@
 # Entrevista Psiquiátrica e Exame do Estado Mental
 
-Livro Quarto (**type: book**) com material didático sobre a **Entrevista
-Psiquiátrica** e o **Exame do Estado Mental (EEM)**, para estudantes de medicina
-e residentes de psiquiatria. Organizado em três partes: a entrevista (teoria), o
-roteiro detalhado dos 20 itens do EEM (referência) e casos clínicos (prática).
+Livro Quarto (**type: book**) com material didático resumido sobre a **Entrevista
+Psiquiátrica** e o **Exame do Estado Mental (EEM)**, para estudantes de medicina.
+Organizado em três partes: a entrevista (teoria), o roteiro detalhado dos 20 itens
+do EEM (referência) e casos clínicos (prática).
 
 Publicado em: **https://henriquealvarenga.com/entrevista/**
 

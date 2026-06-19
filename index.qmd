@@ -5,9 +5,8 @@ number-sections: false
 
 # Prefácio {.unnumbered}
 
-Este é um material didático completo sobre a **Entrevista Psiquiátrica** e o
-**Exame do Estado Mental (EEM)**, desenvolvido para estudantes de medicina e
-residentes de psiquiatria.
+Este é um material didático resumido sobre a **Entrevista Psiquiátrica** e o
+**Exame do Estado Mental (EEM)**, desenvolvido para estudantes de medicina.
 
 ## Sobre este material
 
@@ -33,8 +32,6 @@ correspondente na Parte II.
 ## Públicos
 
 - **Estudantes de Medicina** em rotação por psiquiatria.
-- **Residentes de psiquiatria** e profissionais de saúde mental.
-- **Preceptores** que buscam material clínico utilizável para o ensino.
 :::
 
 ## Como navegar

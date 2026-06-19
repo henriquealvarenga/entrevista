@@ -7,7 +7,7 @@ language: _language-pt.yml
 
 book:
   title: "Entrevista Psiquiátrica e Exame do Estado Mental"
-  subtitle: "Material didático para estudantes de medicina e residentes de psiquiatria"
+  subtitle: "Material didático resumido para estudantes de medicina"
   site-url: "https://henriquealvarenga.com/entrevista/"
 
   author:
