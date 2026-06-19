@@ -63,3 +63,5 @@ Este material é baseado principalmente em duas obras de referência da psiquiat
 
 - **Dalgalarrondo, P.** (2019). *Psicopatologia e semiologia dos transtornos mentais*. Artmed. [@dalgalarrondo2019]
 - **Sadock, B. J., Sadock, V. A., & Ruiz, P.** (2017). *Compêndio de Psiquiatria*. Artmed. [@kaplan2017]
+- **Sims, A.; Oyebode, F. (ed.)** (2018). *Sims' Symptoms in the Mind: Textbook of Descriptive Psychopathology* (6ª ed.). Elsevier. [@sims2018]
+
