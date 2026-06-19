@@ -1,33 +1,140 @@
 project:
-  type: website
-  output-dir: docs
+  type: book
+  output-dir: docs          # publicado via GitHub Actions; gitignored
 
-website:
+lang: pt-BR
+language: _language-pt.yml
+
+book:
   title: "Entrevista Psiquiátrica e Exame do Estado Mental"
-  site-url: "https://henriquealvarenga.com"
-  site-path: "/entrevista"
-  navbar:
-    background: primary
-    left:
-      - href: index.qmd
-        text: "Início"
-      - href: 01-entrevista_psiquiatrica.qmd
-        text: "A Entrevista"
-      - href: 02-roteiro_eem.qmd
-        text: "Roteiro"
-      - href: 03-casos_clinicos.qmd
-        text: "Casos"
+  subtitle: "Material didático para estudantes de medicina e residentes de psiquiatria"
+  site-url: "https://henriquealvarenga.com/entrevista/"
 
+  author:
+    - name: "Henrique Alvarenga da Silva"
+      orcid: 0000-0001-9799-5240
+      email: henrique@ufsj.edu.br
+      affiliations:
+        - name: Universidade Federal de São João del-Rei (UFSJ)
+          department: Curso de Medicina
+  date: today
+  date-format: "DD [de] MMMM [de] YYYY"
 
+  description: |
+    Material didático sobre a Entrevista Psiquiátrica e o Exame do Estado Mental
+    (EEM): princípios da entrevista, roteiro detalhado dos 20 itens do EEM com
+    seus descritores psicopatológicos, e casos clínicos para prática.
+  keyword: "psiquiatria, exame do estado mental, entrevista psiquiátrica, psicopatologia, semiologia, educação médica"
+
+  cover-image: images/capa.jpg
+  favicon: images/favicon.jpg
+  image: images/capa.jpg
+
+  repo-url: https://github.com/henriquealvarenga/entrevista
+  repo-branch: main
+  repo-actions: [edit, issue]
+  search: true
+  sharing: [twitter, facebook, linkedin]
+  page-navigation: true
+  back-to-top-navigation: true
+
+  sidebar:
+    style: docked
+    collapse-level: 1
+    border: true
+
+  chapters:
+    - index.qmd
+    - apresentacao.qmd
+    - part: "Parte I — A Entrevista Psiquiátrica"
+      chapters:
+        - capitulos/parte-1-entrevista/01-introducao.qmd
+        - capitulos/parte-1-entrevista/02-entrevista-inicial.qmd
+        - capitulos/parte-1-entrevista/03-exame-estado-mental.qmd
+        - capitulos/parte-1-entrevista/04-documentacao.qmd
+        - capitulos/parte-1-entrevista/05-consideracoes-especiais.qmd
+        - capitulos/parte-1-entrevista/06-conclusao.qmd
+    - part: "Parte II — Roteiro do Exame do Estado Mental"
+      chapters:
+        - capitulos/parte-2-roteiro/00-introducao.qmd
+        - capitulos/parte-2-roteiro/01-aspectos-gerais.qmd
+        - capitulos/parte-2-roteiro/02-nivel-de-consciencia.qmd
+        - capitulos/parte-2-roteiro/03-atencao.qmd
+        - capitulos/parte-2-roteiro/04-orientacao.qmd
+        - capitulos/parte-2-roteiro/05-memoria.qmd
+        - capitulos/parte-2-roteiro/06-sensopercepcao.qmd
+        - capitulos/parte-2-roteiro/07-pensamento.qmd
+        - capitulos/parte-2-roteiro/08-linguagem.qmd
+        - capitulos/parte-2-roteiro/09-inteligencia.qmd
+        - capitulos/parte-2-roteiro/10-juizo-de-realidade.qmd
+        - capitulos/parte-2-roteiro/11-vida-afetiva.qmd
+        - capitulos/parte-2-roteiro/12-volicao.qmd
+        - capitulos/parte-2-roteiro/13-psicomotricidade.qmd
+        - capitulos/parte-2-roteiro/14-controle-de-impulsos.qmd
+        - capitulos/parte-2-roteiro/15-consciencia-e-valoracao-do-eu.qmd
+        - capitulos/parte-2-roteiro/16-vivencia-do-tempo-e-do-espaco.qmd
+        - capitulos/parte-2-roteiro/17-personalidade.qmd
+        - capitulos/parte-2-roteiro/18-contratransferencia.qmd
+        - capitulos/parte-2-roteiro/19-critica-e-insight.qmd
+        - capitulos/parte-2-roteiro/20-desejo-de-ajuda-e-motivacao.qmd
+        - capitulos/parte-2-roteiro/21-sumula.qmd
+    - part: "Parte III — Casos Clínicos"
+      chapters:
+        - casos/00-instrucoes.qmd
+        - casos/01-maria.qmd
+        - casos/02-joao.qmd
+        - casos/03-carlos.qmd
+        - casos/04-ana.qmd
+        - casos/05-roberto.qmd
+        - casos/06-ranier.qmd
+        - casos/99-orientacoes.qmd
+    - creditos.qmd
+    - references.qmd
+
+  page-footer:
+    left: "© 2026 Henrique Alvarenga — Material didático UFSJ · CC BY-NC-SA 4.0"
+    right:
+      - icon: github
+        href: https://github.com/henriquealvarenga/entrevista
+
+bibliography: references/references.bib
+csl: references/csl_styles/ABNT.csl
+citeproc: true
+link-citations: true
+link-bibliography: true
+reference-section-title: "Referências"
 
 format:
   html:
-    theme: 
+    theme:
       - cosmo
+      - theme-editorial.scss
+    css: styles.css
+    fontsize: 1.05em
+    linestretch: 1.65
+    mainfont: "Inter"
+    monofont: "JetBrains Mono"
     toc: true
     toc-depth: 3
-    number-sections: true
+    toc-title: "Nesta página"
+    number-sections: false
     code-fold: false
-    df-print: paged
-    css: styles.css
+    code-tools: false
+    smooth-scroll: true
+    citations-hover: true
+    crossrefs-hover: true
+    footnotes-hover: true
+    callout-appearance: simple
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    anchor-sections: true
+    highlight-style: github
+    link-external-newwindow: true
+    mermaid:
+      theme: neutral
 
+execute:
+  freeze: auto
+  echo: false
+  warning: false
+  message: false

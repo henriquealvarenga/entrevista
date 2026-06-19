@@ -1,0 +1,33 @@
+---
+title: "Orientações para o Exercício"
+---
+
+Para o caso escolhido, elabore:
+
+1. **Exame do Estado Mental completo**, seguindo todos os 20 itens do roteiro
+2. **Súmula do exame psíquico** (um parágrafo resumindo os principais achados)
+3. **Hipóteses diagnósticas** (baseando-se apenas no EEM, liste 2-3 possibilidades diagnósticas que você consideraria)
+
+**Exemplo de estrutura para sua resposta:**
+
+```
+CASO ESCOLHIDO: [Número e nome]
+
+EXAME DO ESTADO MENTAL
+
+1. Aspecto Geral e Apresentação
+   [Sua descrição]
+
+2. Nível de Consciência
+   [Sua descrição]
+
+[... continuar para todos os 20 itens]
+
+SÚMULA DO EXAME PSÍQUICO
+[Seu resumo técnico em um parágrafo]
+
+HIPÓTESES DIAGNÓSTICAS PRINCIPAIS
+1. [Hipótese 1]
+2. [Hipótese 2]
+3. [Hipótese 3]
+```

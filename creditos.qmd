@@ -1,0 +1,146 @@
+---
+subtitle: "Autor, metodologia, licença e como citar"
+toc: true
+number-sections: false
+---
+
+# Créditos {.unnumbered}
+
+## Autor
+
+**Henrique Alvarenga da Silva**
+
+Médico psiquiatra. Professor de Psiquiatria do Curso de Medicina da Universidade Federal de São João del-Rei (UFSJ) e professor na AFYA Educacional. Especialista em Psiquiatria e Psicopatologia, com foco em metodologia de pesquisa e educação médica baseada em evidências. Mestre em Educação Médica.
+
+::: {.contact-links}
+[🌐 Site pessoal](https://www.henriquealvarenga.com){.contact-link}
+[📧 E-mail](mailto:henrique@ufsj.edu.br){.contact-link}
+[🆔 ORCID](https://orcid.org/0000-0001-9799-5240){.contact-link}
+[📚 GitHub](https://github.com/henriquealvarenga){.contact-link}
+:::
+
+::: {.about-section}
+## Agradecimentos
+
+Agradecimento especial à **Dra. Juliane Batista Longatti** pela cessão de seu
+roteiro didático sobre o Exame Psíquico, cuja sistematização dos descritores
+psicopatológicos foi fundamental para a Parte II deste material.
+:::
+
+::: {.about-section}
+## Metodologia e tecnologias
+
+Este recurso foi construído usando ferramentas de código aberto e ciência aberta:
+
+::: {.tech-stack}
+::: {.tech-item}
+#### Escrita & Estrutura
+**Quarto** — Sistema de publicação científica
+**Markdown** — Linguagem de marcação
+**BibTeX** — Gerenciamento bibliográfico
+:::
+
+::: {.tech-item}
+#### Desenvolvimento
+**Positron IDE** — Ambiente integrado
+**Git/GitHub** — Controle de versão
+**GitHub Actions** — Publicação automática
+:::
+
+::: {.tech-item}
+#### Pesquisa
+**PubMed** — Base bibliográfica
+**Zotero** — Gerenciamento de referências
+**DOI verification** — Validação de citações
+:::
+
+::: {.tech-item}
+#### Design
+**CSS moderno** — Interface responsiva
+**Tema editorial** — Tipografia serif/sans
+**Self-hosted fonts** — Playfair, Inter, JetBrains Mono
+:::
+:::
+
+### Inteligência artificial
+
+::: {.callout-note}
+## Transparência sobre uso de IA
+
+A IA foi utilizada como ferramenta de apoio, não substituto do trabalho intelectual. Toda informação foi verificada, todas as referências conferidas individualmente. A responsabilidade pelo conteúdo final é integralmente do autor.
+:::
+:::
+
+::: {.about-section}
+## Repositório e colaboração
+
+O código-fonte está disponível publicamente:
+
+🔗 **Repositório:** [github.com/henriquealvarenga/entrevista](https://github.com/henriquealvarenga/entrevista)
+
+Contribuições são bem-vindas via *issues* ou *pull requests*, especialmente:
+
+- Correções bibliográficas
+- Sugestões de novos casos clínicos
+- Melhorias na interface
+- Apontamentos conceituais e revisões
+:::
+
+::: {.about-section}
+## Licenciamento
+
+Este trabalho está licenciado sob **Creative Commons Atribuição-NãoComercial-CompartilhaIgual 4.0 Internacional (CC BY-NC-SA 4.0)**.
+
+**Você pode:**
+
+- **Compartilhar** — copiar e redistribuir o material
+- **Adaptar** — remixar, transformar e criar a partir do material
+
+**Sob as condições:**
+
+- **Atribuição** — dar crédito apropriado
+- **NãoComercial** — não usar para fins comerciais
+- **CompartilhaIgual** — distribuir contribuições sob a mesma licença
+
+🔗 [Texto completo da licença](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR)
+:::
+
+::: {.about-section}
+## Citação sugerida {#citacao-sugerida}
+
+::: {.panel-tabset}
+
+### ABNT (NBR 6023)
+
+SILVA, Henrique Alvarenga da. **Entrevista Psiquiátrica e Exame do Estado Mental**: material didático. São João del-Rei: Edição do Autor, 2026. E-book. Disponível em: <https://henriquealvarenga.com/entrevista/>. Acesso em: [inserir data de acesso].
+
+### Vancouver
+
+Silva HA. Entrevista Psiquiátrica e Exame do Estado Mental: material didático [Internet]. São João del-Rei (MG): Edição do Autor; 2026 [citado em ano mês dia]. Disponível em: https://henriquealvarenga.com/entrevista/
+
+### BibTeX
+
+```bibtex
+@misc{silva_entrevista_eem_2026,
+  author    = {Silva, Henrique Alvarenga da},
+  title     = {Entrevista Psiquiátrica e Exame do Estado Mental: material didático},
+  publisher = {Edição do Autor},
+  address   = {São João del-Rei, MG, Brasil},
+  year      = {2026},
+  url        = {https://henriquealvarenga.com/entrevista/},
+  note      = {E-book; material didático}
+}
+```
+
+:::
+:::
+
+::: {.about-section}
+## Contato
+
+Dúvidas, sugestões ou correções:
+
+📧 [henrique@ufsj.edu.br](mailto:henrique@ufsj.edu.br)
+
+Ou via *issues* no [repositório GitHub](https://github.com/henriquealvarenga/entrevista).
+:::

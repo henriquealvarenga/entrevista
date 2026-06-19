@@ -1,0 +1,7 @@
+---
+title: "Introdução"
+---
+
+A entrevista psiquiátrica constitui a base fundamental da prática clínica em saúde mental. Ela representa muito mais do que uma simples coleta de informações: é um encontro interpessoal complexo onde se estabelece uma relação terapêutica, se formula um diagnóstico pluridimensional e se inicia o processo de compreensão do sofrimento psíquico do paciente [@dalgalarrondo2019].
+
+Como afirmou Harry Stack Sullivan, "o domínio da técnica de realizar entrevistas é o que qualifica especificamente o profissional habilidoso" [@dalgalarrondo2019, p. 69]. A entrevista psiquiátrica exige não apenas conhecimento teórico, mas também sensibilidade interpessoal, capacidade de observação aguçada e habilidade para estabelecer rapport com diferentes tipos de pacientes.

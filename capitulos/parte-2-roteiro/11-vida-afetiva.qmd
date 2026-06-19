@@ -1,0 +1,82 @@
+---
+title: "11. Vida Afetiva"
+---
+
+## 11.1 Humor (Estado de Humor Basal)
+Estado emocional de fundo, mais duradouro
+
+### Classificação Quantitativa
+- **Hipertímico:** humor elevado
+- **Eutímico:** humor normal
+- **Hipotímico:** humor rebaixado
+
+### Descritores Qualitativos
+- **Eutímico:** normal, adequado
+- **Deprimido/Hipotímico:** triste, melancólico
+- **Melancólico:** tristeza profunda
+- **Elevado/Hipertímico:** alegre, expansivo
+- **Eufórico:** alegria exagerada, patológica
+- **Elação:** euforia + expansão do Eu, grandeza
+- **Expansivo:** contagiante, exuberante
+- **Exaltado:** muito elevado
+- **Irritável:** irritadiço, explosivo
+- **Disfórico:** irritação, amargura, desgosto, agressividade
+- **Lábil:** oscilações frequentes e rápidas
+- **Incontinente:** perda do controle emocional
+
+## 11.2 Afeto (Expressão Emocional Observável)
+Manifestação externa, observável, das emoções
+
+### Adequação
+- **Adequado/Apropriado:** condizente com conteúdo e contexto
+- **Inadequado/Discordante/Inapropriado:** incongruente
+- **Congruente:** corresponde ao humor referido
+- **Incongruente:** não corresponde ao humor
+- **Sintonia:** capacidade de adequar ao ambiente
+- **Irradiação:** capacidade de irradiar afeto
+
+### Amplitude/Quantidade
+- **Amplo:** bem-modulado, variado
+- **Normal:** variação adequada
+- **Restrito/Embotado:** amplitude reduzida
+- **Embotado:** marcadamente reduzido
+- **Aplanado/Achatado:** praticamente ausente
+- **Hipermodulado:** expressão exagerada
+- **Normomodulado:** modulação normal
+- **Hipomodulado:** expressão reduzida
+
+### Variação
+- **Adequado:** variações normais
+- **Lábil:** mudanças rápidas e frequentes
+- **Labilidade afetiva:** oscilações súbitas e imotivadas
+- **Incontinência afetiva:** não consegue conter reações
+- **Superficial:** raso, sem profundidade
+
+### Qualidade/Tom
+- **Disfórico**
+- **Feliz**
+- **Eutímico**
+- **Irritável**
+- **Irritado**
+- **Agitado**
+- **Choroso/Soluçante**
+
+## 11.3 Alterações Específicas
+
+### Diminuição/Ausência
+- **Apatia:** diminuição da excitabilidade emotiva, "não sinto nada"
+- **Anedonia:** incapacidade de sentir prazer
+- **Pobreza de sentimentos:** perda progressiva das vivências afetivas
+- **Embotamento afetivo:** perda profunda de vivências afetivas
+- **Sentimento de falta de sentimento:** incapacidade que causa sofrimento
+- **Indiferença afetiva (belle indifférence):** frieza diante dos sintomas
+
+### Desorganização
+- **Inadequação/Paratimia:** reação incongruente
+- **Ambivalência afetiva:** sentimentos opostos simultâneos
+
+### Características Especiais
+- **Puerilidade:** ri ou chora por motivos banais, afetividade superficial
+- **Irritabilidade patológica:** hiperreatividade hostil e agressiva
+
+---

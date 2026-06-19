@@ -1,0 +1,17 @@
+---
+title: "20. Desejo de Ajuda e Motivação"
+---
+
+## 20.1 Desejo de Ajuda
+- **Forte:** busca ativa de tratamento
+- **Moderado:** aceita com alguma motivação
+- **Fraco:** pouca motivação
+- **Ausente:** não vê necessidade
+- **Ambivalente:** oscila entre querer e não querer
+
+## 20.2 Voluntariedade do Tratamento
+- **Voluntário:** procurou espontaneamente
+- **Involuntário:** trazido por terceiros
+- **Compulsório:** determinação judicial
+
+---

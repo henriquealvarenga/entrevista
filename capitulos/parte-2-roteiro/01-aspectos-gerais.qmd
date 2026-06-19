@@ -1,0 +1,182 @@
+---
+title: "1. Aspectos Gerais"
+---
+
+## 1.1 Aparência Física
+
+### Cuidados Pessoais e Higiene
+- Adequados (bem cuidado, asseado)
+- Prejudicados (descuidado, desleixado)
+- Precários (muito negligente)
+- Excessivos (preocupação exagerada)
+- Bizarros (padrões incomuns)
+
+### Vestimenta
+- Adequada (apropriada ao contexto, estação, idade)
+- Inadequada (inapropriada para o contexto)
+- Descuidada (mal-ajambrada, suja, rasgada)
+- Extravagante (chamativa, excêntrica)
+- Bizarra (estranha, fora do comum)
+- Sobreposta (várias camadas)
+- Desarrumada (desalinhada, amassada)
+- Formal (terno, vestido social)
+- Informal (roupas casuais)
+- Negligente (sujas, malconservadas)
+
+### Adornos e Acessórios
+- Ausentes
+- Discretos
+- Excessivos
+- Bizarros
+- Inadequados ao contexto
+
+### Cabelos
+- Alinhados, penteados
+- Em desalinho, desarrumados
+- Sujos
+
+
+### Expressão Facial
+- Neutra
+- Tensa, contraída, crispada
+- Chorosa, lacrimejante
+- Alegre, sorridente, radiante
+- Triste, abatida, entristecida
+- Perplexa, confusa, atônita
+- Ansiosa, preocupada, temerosa
+- Irritada, zangada, contrariada
+- Inexpressiva, sem vivacidade, apática
+- Hipomímica (expressão facial reduzida)
+- Hipermímica (expressão facial exagerada)
+- Enigmática
+
+### Contato Visual
+- Adequado (mantém contato visual apropriado)
+- Evitativo (evita olhar nos olhos)
+- Fixo (olhar fixo, penetrante)
+- Errante (olhos vagueando sem fixação)
+- Desviante (desvia quando questionado)
+- Vazio (olhar sem expressão)
+- Intenso (muito intenso, desconfortável)
+
+### Idade Aparente
+- Compatível com idade cronológica
+- Aparenta ser mais jovem
+- Aparenta ser mais velho
+
+## 1.2 Postura
+
+### Geral
+- Ereta, adequada
+- Curvada, encurvada
+- Rígida, tensa
+- Relaxada
+- Desleixada
+
+### Classificação por Atividade
+- **Ativa:** postura dinâmica, movimenta-se adequadamente
+- **Excessivamente ativa:** inquieto, não para quieto
+- **Passiva:** apático, indiferente, pouco reativo
+
+## 1.3 Atitude Frente ao Examinador
+
+### Atitudes Cooperativas
+- **Cordial:** educado, gentil
+- **Cooperativa/Cooperativo:** colabora com a entrevista, responde adequadamente
+- **Submissa:** atende passiva e imediatamente, sem questionar, todas as solicitações
+
+### Atitudes Não Cooperativas
+- **Não-cooperativa/Não cooperativo:** recusa-se a colaborar
+- **De oposição/Oposicionista:** ativamente opõe-se às solicitações
+- **Negativista:** recusa-se a participar, se opõe a tudo
+- **Reação de último momento:** após intenso negativismo, começa a cooperar
+
+### Atitudes Hostis
+- **Hostil:** demonstra agressividade verbal ou não verbal
+- **Beligerante:** provoca, irrita, parece querer confronto
+- **Querelante:** discute ou briga, sente-se ofendido ou prejudicado
+- **Arrogante:** prepotente, superior
+
+### Atitudes Defensivas
+- **De fuga:** tenta escapar ou encerrar a entrevista
+- **Desconfiada:** desconfiado, cauteloso
+- **Evasiva:** esquiva-se de responder, respostas vagas e inespecíficas
+- **De esquiva:** evita contato social, retraída
+- **Dissimuladora:** tenta ocultar sintomas ou fatos
+- **Simuladora:** tenta simular sintomas que aparentemente não tem
+
+### Atitudes Expansivas
+- **Expansiva:** fala alto, comporta-se como se fosse importante
+- **Desinibida:** sem pudor ou constrangimento adequado, age como se conhecesse o examinador há anos
+- **Sedutora:** tentadora, provocativa
+
+### Atitudes Manipulativas
+- **Manipuladora:** tenta controlar a situação em benefício próprio, com chantagens, indiretas ou ameaças
+- **Reivindicativa:** exige, de forma insistente, aquilo que julga ser seu direito, mesmo que inadequado
+- **Grudenta:** difícil encerrar a conversa, quer atenção, prolixidade
+
+### Atitudes Afetadas
+- **Afetada:** modo de falar, gesticular e andar muito teatral e artificial
+- **Amaneirada:** comportamento caricatural (ex: chama o examinador de "vossa excelência")
+- **Dramática/Teatral:** hiperemocionalidade exagerada
+- **Jocosa:** faz piadas (comum na mania)
+- **Irônica:** piadas e tom de voz refletem arrogância e agressividade
+
+### Atitudes de Retraimento
+- **Inibida/Contida:** não encara o examinador, pouco à vontade, se segura para não falar
+- **Esquiva:** não deseja contato social
+
+### Atitudes Emocionais
+- **Lamuriosa/Queixosa:** queixa-se constantemente, demonstra autopiedade
+- **Pueril:** comporta-se como criança
+- **Perplexa:** assustado, parece não entender o que está acontecendo
+- **Confusa:** desorientada, atordoada
+- **Deprimida:** entristecida, abatida
+- **Indiferente:** apática, desinteressada
+
+## 1.4 Comportamento e Atividade Psicomotora
+
+### Atividade Motora Global
+- **Normal**
+- **Agitação psicomotora:** aumento da atividade motora
+- **Hiperatividade:** atividade excessiva
+- **Inquietação/Acatisia:** impossibilidade de ficar parado
+- **Lentificação psicomotora:** diminuição global da atividade
+- **Inibição psicomotora:** ausência de respostas motoras adequadas
+- **Estupor:** imobilidade, mutismo, ausência de resposta
+- **Retardo motor:** movimentos lentos
+- **Atividades sem propósito:** movimentos não direcionados a objetivos
+
+### Movimentos Específicos
+- **Maneirismos:** movimentos bizarros, peculiares
+- **Estereotipias:** movimentos repetitivos, sem finalidade aparente
+- **Tiques:** movimentos involuntários, súbitos, repetitivos
+- **Gestos:** movimentação das mãos ao falar (adequados/excessivos/ausentes)
+- **Contrações musculares:** espasmos, tensão visível
+- **Tremores:** (especificar localização e características)
+
+### Marcha e Equilíbrio
+- **Normal**
+- **Lenta**
+- **Acelerada**
+- **Arrastada**
+- **Atáxica:** descoordenada
+- **Espástica**
+- **Parkinsoniana:** passos curtos, arrastados
+- **Ágil**
+- **Desajeitada**
+
+### Fenômenos Catatônicos
+- **Catalepsia:** manutenção de postura imposta
+- **Flexibilidade cérea:** resistência plástica à movimentação passiva
+- **Negativismo ativo:** faz o oposto do solicitado
+- **Negativismo passivo:** não faz nada quando solicitado
+- **Obediência automática:** execução automática de ordens
+- **Ecopraxia:** imitação automática de gestos do examinador
+
+### Outros
+- **Combatividade:** agressividade física
+- **Flexibilidade:** movimentos fluidos
+- **Rigidez:** tensão muscular aumentada
+
+---

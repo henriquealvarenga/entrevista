@@ -1,113 +1,58 @@
 ---
-title: "Entrevista Psiquiátrica e Exame do Estado Mental"
-subtitle: "Material Didático para Estudantes de Psiquiatria"
-author: "Henrique Alvarenga da Silva"
+toc: true
+number-sections: false
 ---
 
-# Bem-vindo
+# Prefácio {.unnumbered}
 
-Este é um material didático completo sobre a **Entrevista Psiquiátrica** e o **Exame do Estado Mental (EEM)**, desenvolvido especialmente para estudantes de medicina e residentes de psiquiatria.
+Este é um material didático completo sobre a **Entrevista Psiquiátrica** e o
+**Exame do Estado Mental (EEM)**, desenvolvido para estudantes de medicina e
+residentes de psiquiatria.
 
-## Objetivos de Aprendizagem
+## Sobre este material
 
-Ao final do estudo deste material, você será capaz de:
+O conteúdo está organizado em três partes complementares:
 
-1. Compreender a importância e os princípios fundamentais da entrevista psiquiátrica
-2. Aplicar as três regras de ouro da entrevista em diferentes contextos clínicos
-3. Realizar um Exame do Estado Mental completo e sistemático
-4. Utilizar terminologia técnica apropriada para descrever fenômenos psicopatológicos (evite jargão desnecessário)
-5. Documentar adequadamente os achados da avaliação psiquiátrica
-6. Elaborar súmulas concisas e informativas do exame psíquico
+- **Parte I — A Entrevista Psiquiátrica:** o tratamento conceitual e narrativo
+  da entrevista e do exame psíquico — princípios, técnicas de condução e uma
+  visão geral dos componentes do EEM.
+- **Parte II — Roteiro do Exame do Estado Mental:** a referência detalhada de
+  consulta, com um capítulo para cada um dos 20 itens do EEM e seus descritores
+  psicopatológicos.
+- **Parte III — Casos Clínicos:** casos para prática da elaboração do EEM.
 
-## Estrutura do Material
+::: {.callout-tip appearance="simple"}
+A Parte I apresenta cada item do exame em visão geral; para os descritores
+completos e a terminologia técnica de cada item, consulte o capítulo
+correspondente na Parte II.
+:::
 
-### 📚 [Conteúdo Teórico](entrevista_psiquiatrica.html)
+## A quem se destina
 
-- A importância da entrevista inicial
-- Técnicas de condução da entrevista
-- Estrutura da avaliação psiquiátrica completa
-- Itens do Exame do Estado Mental
-- Aspectos práticos da documentação
-- Considerações especiais e culturais
+::: {.callout-note appearance="simple"}
+## Públicos
 
-### 📋 [Roteiro do EEM](roteiro_eem.html)
+- **Estudantes de Medicina** em rotação por psiquiatria.
+- **Residentes de psiquiatria** e profissionais de saúde mental.
+- **Preceptores** que buscam material clínico utilizável para o ensino.
+:::
 
-Guia prático com:
+## Como navegar
 
-- Lista de itens do EEM
-- Descritores específicos para cada item
-- Terminologia técnica apropriada (evite jargão psiquiátrico)
-- Referência rápida para uso clínico
-
-### 👥 [Casos Clínicos](casos_clinicos_eem.html)
-
-Cinco casos detalhados para prática:
-
-1. **Maria, 34 anos** - Quadro depressivo grave
-2. **João, 28 anos** - Episódio maníaco
-3. **Carlos, 42 anos** - Transtorno delirante paranoide
-4. **Ana, 19 anos** - Quadro psicótico
-5. **Roberto, 55 anos** - Demência em estágio inicial
-
-## Como Usar Este Material
-
-### Para Estudo Individual
-
-1. Comece lendo o [Conteúdo Teórico](entrevista_psiquiatrica.html) completo
-2. Familiarize-se com o [Roteiro do EEM](roteiro_eem.html) e seus descritores
-3. Pratique com os [Casos Clínicos](casos_clinicos_eem.html)
-4. Elabore o EEM completo de cada caso
-5. Discuta suas respostas com colegas ou preceptores
-
-
-## Atividade Prática Sugerida
-
-### Exercício Individual
-
-Escolha um dos cinco casos clínicos e:
-
-1. Leia atentamente toda a descrição
-2. Elabore um Exame do Estado Mental completo (20 itens)
-3. Redija uma súmula técnica dos achados principais
-4. Liste 2-3 hipóteses diagnósticas baseadas apenas no EEM
-
-### Critérios de Qualidade
-
-Um bom EEM deve ser:
-
-- ✅ **Completo:** todos os 20 itens avaliados
-- ✅ **Técnico:** uso apropriado de terminologia psiquiátrica
-- ✅ **Objetivo:** baseado em observações concretas
-- ✅ **Descritivo:** sem interpretações prematuras
-- ✅ **Conciso:** súmula clara e informativa
-
-## Fundamentos Teóricos
-
-Este material é baseado principalmente em duas obras de referência da psiquiatria:
-
-- **Dalgalarrondo, P.** (2019). *Psicopatologia e semiologia dos transtornos mentais*. Artmed.
-- **Sadock, B. J., Sadock, V. A., & Ruiz, P.** (2017). *Compêndio de Psiquiatria*. Artmed.
-
-## Competências Desenvolvidas
-
-A prática consistente com este material desenvolverá:
-
-- **Habilidades de observação clínica**
-- **Capacidade de comunicação com pacientes**
-- **Raciocínio diagnóstico sistematizado**
-- **Documentação clínica de qualidade**
-- **Uso apropriado de terminologia psiquiátrica**
-- **Sensibilidade para aspectos culturais e éticos**
-
+O material é dividido em partes (ver barra lateral). Use a busca (canto superior)
+para localizar termos, e o sumário "Nesta página" à direita para saltar entre
+seções do capítulo atual.
 
 ---
 
 ::: {.callout-note appearance="simple"}
 ## Agradecimento
 
-Agradeço especialmente à Dra. Juliane Batista Longatti pela cessão de seu roteiro didático sobre o Exame Psíquico, material que tem sido fundamental na formação de estudantes de medicina. Sua sistematização dos descritores psicopatológicos contribuiu significativamente para a clareza e completude deste capítulo.
+Agradeço especialmente à Dra. Juliane Batista Longatti pela cessão de seu roteiro
+didático sobre o Exame Psíquico, material que tem sido fundamental na formação de
+estudantes de medicina. Sua sistematização dos descritores psicopatológicos
+contribuiu significativamente para a clareza e completude deste material.
 :::
 
-**Nota:** Este material é destinado exclusivamente para fins educacionais. A prática clínica deve sempre ocorrer sob supervisão apropriada.
-
-**Última atualização:** 25 Novembro de 2025
+**Nota:** Este material é destinado exclusivamente para fins educacionais. A
+prática clínica deve sempre ocorrer sob supervisão apropriada.

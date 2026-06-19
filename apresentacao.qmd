@@ -1,0 +1,65 @@
+---
+title: "Apresentação"
+toc: true
+number-sections: false
+---
+
+# Apresentação {.unnumbered}
+
+## Objetivos de Aprendizagem
+
+Ao final do estudo deste material, você será capaz de:
+
+1. Compreender a importância e os princípios fundamentais da entrevista psiquiátrica.
+2. Aplicar as três regras de ouro da entrevista em diferentes contextos clínicos.
+3. Realizar um Exame do Estado Mental completo e sistemático.
+4. Utilizar terminologia técnica apropriada para descrever fenômenos psicopatológicos (evitando jargão desnecessário).
+5. Documentar adequadamente os achados da avaliação psiquiátrica.
+6. Elaborar súmulas concisas e informativas do exame psíquico.
+
+## Como Usar Este Material
+
+### Para Estudo Individual
+
+1. Comece lendo a **Parte I — A Entrevista Psiquiátrica** na íntegra.
+2. Familiarize-se com a **Parte II — Roteiro do EEM** e seus descritores.
+3. Pratique com os **Casos Clínicos** (Parte III).
+4. Elabore o EEM completo de cada caso.
+5. Discuta suas respostas com colegas ou preceptores.
+
+### Atividade Prática Sugerida
+
+Escolha um dos casos clínicos e:
+
+1. Leia atentamente toda a descrição.
+2. Elabore um Exame do Estado Mental completo (20 itens).
+3. Redija uma súmula técnica dos achados principais.
+4. Liste 2–3 hipóteses diagnósticas baseadas apenas no EEM.
+
+### Critérios de Qualidade
+
+Um bom EEM deve ser:
+
+- ✅ **Completo:** todos os 20 itens avaliados.
+- ✅ **Técnico:** uso apropriado de terminologia psiquiátrica.
+- ✅ **Objetivo:** baseado em observações concretas.
+- ✅ **Descritivo:** sem interpretações prematuras.
+- ✅ **Conciso:** súmula clara e informativa.
+
+## Competências Desenvolvidas
+
+A prática consistente com este material desenvolverá:
+
+- **Habilidades de observação clínica**
+- **Capacidade de comunicação com pacientes**
+- **Raciocínio diagnóstico sistematizado**
+- **Documentação clínica de qualidade**
+- **Uso apropriado de terminologia psiquiátrica**
+- **Sensibilidade para aspectos culturais e éticos**
+
+## Fundamentos Teóricos
+
+Este material é baseado principalmente em duas obras de referência da psiquiatria:
+
+- **Dalgalarrondo, P.** (2019). *Psicopatologia e semiologia dos transtornos mentais*. Artmed. [@dalgalarrondo2019]
+- **Sadock, B. J., Sadock, V. A., & Ruiz, P.** (2017). *Compêndio de Psiquiatria*. Artmed. [@kaplan2017]

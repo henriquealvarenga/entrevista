@@ -1,0 +1,27 @@
+---
+title: "17. Personalidade"
+---
+
+## 17.1 Traços Principais
+
+### Cluster A (Excêntricos)
+- **Traços paranoides:** desconfiança, sensibilidade a críticas, hostilidade
+- **Traços esquizoides:** distanciamento afetivo, preferência por solidão
+- **Traços esquizotípicos:** excentricidade, pensamento mágico
+
+### Cluster B (Dramáticos)
+- **Traços histriônicos/histéricos:** dramaticidade, busca de atenção, emocionalidade excessiva
+- **Traços narcisistas:** grandiosidade, necessidade de admiração
+- **Traços borderline:** instabilidade, impulsividade, medo de abandono
+- **Traços antissociais:** desrespeito por normas, impulsividade, ausência de remorso
+
+### Cluster C (Ansiosos)
+- **Traços evitativos:** esquiva social, medo de rejeição
+- **Traços dependentes:** necessidade excessiva de apoio, dificuldade em decidir
+- **Traços obsessivos:** perfeccionismo, rigidez, necessidade de controle
+
+### Outros
+- **Traços ansiosos:** preocupação excessiva
+- **Traços impulsivos:** dificuldade de controle
+
+---
