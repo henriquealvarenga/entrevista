@@ -47,7 +47,7 @@ A anamnese deve incluir:
 
 ### 2. Exame Psíquico (Exame do Estado Mental)
 
-O exame psíquico é o exame do estado mental atual, realizado com cuidado e minúcia pelo entrevistador desde o início da entrevista até a fase final [@dalgalarrondo2019]. Este será detalhado extensivamente na próxima seção.
+O exame psíquico é o exame do estado mental atual, realizado com cuidado pelo entrevistador desde o início da entrevista até a fase final [@dalgalarrondo2019]. Ele é detalhado no capítulo [O Exame do Estado Mental](03-exame-estado-mental.qmd).
 
 ### 3. Exame Físico Geral e Neurológico
 

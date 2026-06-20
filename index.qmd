@@ -12,9 +12,8 @@ Este é um material didático resumido sobre a **Entrevista Psiquiátrica** e o
 
 O conteúdo está organizado em três partes complementares:
 
-- **Parte I — A Entrevista Psiquiátrica:** o tratamento conceitual e narrativo
-  da entrevista e do exame psíquico — princípios, técnicas de condução e uma
-  visão geral dos componentes do EEM.
+- **Parte I — A Entrevista Psiquiátrica:** a parte teórica — princípios da
+  entrevista, técnicas de condução e uma visão geral dos componentes do EEM.
 - **Parte II — Roteiro do Exame do Estado Mental:** a referência detalhada de
   consulta, com um capítulo para cada um dos 20 itens do EEM e seus descritores
   psicopatológicos.
@@ -45,10 +44,10 @@ seções do capítulo atual.
 ::: {.callout-note appearance="simple"}
 ## Agradecimento
 
-Agradeço especialmente à Dra. Juliane Batista Longatti pela cessão de seu roteiro
-didático sobre o Exame Psíquico, material que tem sido fundamental na formação de
-estudantes de medicina. Sua sistematização dos descritores psicopatológicos
-contribuiu significativamente para a clareza e completude deste material.
+Agradeço à Dra. Juliane Batista Longatti pela cessão de seu roteiro didático sobre
+o Exame Psíquico, que tem ajudado na formação de estudantes de medicina. Sua
+sistematização dos descritores psicopatológicos contribuiu para a clareza deste
+material.
 :::
 
 **Nota:** Este material é destinado exclusivamente para fins educacionais. A
