@@ -229,7 +229,8 @@ main.content > * {
 /* -------------------------------------------------------------------------
    7. Capa na barra lateral — 30% menor e centralizada
    ------------------------------------------------------------------------- */
-.quarto-cover-image {
+/* seletor composto (.classe.classe) p/ vencer o .img-fluid do Bootstrap */
+.quarto-cover-image.img-fluid {
   display: block;
   max-width: 70%;
   margin-inline: auto;
