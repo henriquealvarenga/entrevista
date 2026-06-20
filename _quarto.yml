@@ -27,7 +27,7 @@ book:
   keyword: "psiquiatria, exame do estado mental, entrevista psiquiátrica, psicopatologia, semiologia, educação médica"
 
   cover-image: images/capa.jpg
-  favicon: images/favicon.jpg
+  favicon: images/favicon.png
   image: images/capa.jpg
 
   repo-url: https://github.com/henriquealvarenga/entrevista

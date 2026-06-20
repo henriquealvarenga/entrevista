@@ -75,6 +75,8 @@ Contribuições são bem-vindas via *issues* ou *pull requests*, especialmente:
 | **Tipografia da capa** | Henrique Alvarenga da Silva — Playfair Display sobre a imagem |
 
 : Crédito da imagem de capa {.striped tbl-colwidths="[28,72]"}
+
+O **favicon** é um recorte da mesma imagem na forma de um cérebro; a silhueta usada como máscara vem do [Font Awesome Free](https://fontawesome.com/) (ícones sob licença CC BY 4.0).
 :::
 
 ::: {.about-section}
