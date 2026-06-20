@@ -13,7 +13,7 @@ book:
   author:
     - name: "Henrique Alvarenga da Silva"
       orcid: 0000-0001-9799-5240
-      email: henrique@ufsj.edu.br
+      email: henriquealvarenga@ufsj.edu.br
       affiliations:
         - name: Universidade Federal de São João del-Rei (UFSJ)
           department: Curso de Medicina
@@ -102,7 +102,6 @@ csl: references/csl_styles/ABNT.csl
 citeproc: true
 link-citations: true
 link-bibliography: true
-reference-section-title: "Referências"
 
 format:
   html:
