@@ -16,6 +16,14 @@ references/_PDFs/
 PDF_version/
 
 # =============================================================================
+# Imagens — fontes editáveis e originais NÃO versionadas (só os finais .jpg/.png/.svg)
+# =============================================================================
+# arquivos-fonte do Pixelmator
+images/*.pxd
+# imagens originais baixadas do Unsplash
+images/*-unsplash.jpg
+
+# =============================================================================
 # Sandbox do Claude Code (worktrees, settings locais)
 # =============================================================================
 .claude/
