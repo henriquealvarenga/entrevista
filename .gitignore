@@ -13,6 +13,7 @@ _book/
 # PDFs — NÃO versionados (ficam apenas no disco local)
 # =============================================================================
 references/_PDFs/
+references/PDF/
 PDF_version/
 
 # =============================================================================
