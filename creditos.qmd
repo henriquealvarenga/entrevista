@@ -28,46 +28,18 @@ psicopatológicos foi fundamental para a Parte II deste material.
 :::
 
 ::: {.about-section}
-## Metodologia e tecnologias
+## Como foi feito
 
-Este recurso foi construído usando ferramentas de código aberto e ciência aberta:
-
-::: {.tech-stack}
-::: {.tech-item}
-#### Escrita & Estrutura
-**Quarto** — Sistema de publicação científica
-**Markdown** — Linguagem de marcação
-**BibTeX** — Gerenciamento bibliográfico
-:::
-
-::: {.tech-item}
-#### Desenvolvimento
-**Positron IDE** — Ambiente integrado
-**Git/GitHub** — Controle de versão
-**GitHub Actions** — Publicação automática
-:::
-
-::: {.tech-item}
-#### Pesquisa
-**PubMed** — Base bibliográfica
-**Zotero** — Gerenciamento de referências
-**DOI verification** — Validação de citações
-:::
-
-::: {.tech-item}
-#### Design
-**CSS moderno** — Interface responsiva
-**Tema editorial** — Tipografia serif/sans
-**Self-hosted fonts** — Playfair, Inter, JetBrains Mono
-:::
-:::
-
-### Inteligência artificial
+Esta apostila foi escrita em [Quarto](https://quarto.org) (Markdown, com BibTeX
+para as referências) e publicada no GitHub Pages. As fontes (Playfair Display,
+Inter e JetBrains Mono) são self-hosted.
 
 ::: {.callout-note}
-## Transparência sobre uso de IA
+## Sobre o uso de IA
 
-A IA foi utilizada como ferramenta de apoio, não substituto do trabalho intelectual. Toda informação foi verificada, todas as referências conferidas individualmente. A responsabilidade pelo conteúdo final é integralmente do autor.
+A IA foi usada apenas como ferramenta de apoio. Toda informação foi verificada e
+as referências conferidas individualmente. A responsabilidade pelo conteúdo final
+é do autor.
 :::
 :::
 
