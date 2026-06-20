@@ -232,6 +232,6 @@ main.content > * {
 /* seletor composto (.classe.classe) p/ vencer o .img-fluid do Bootstrap */
 .quarto-cover-image.img-fluid {
   display: block;
-  max-width: 70%;
+  max-width: 50%;
   margin-inline: auto;
 }
