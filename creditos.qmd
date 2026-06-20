@@ -64,13 +64,13 @@ Contribuições são bem-vindas via *issues* ou *pull requests*, especialmente:
 ### Capa do material
 
 ::: {.content-visible when-format="html"}
-[![Capa do material](images/capa.jpg){.cover-credit-thumb fig-alt="Foto em preto e branco da cabeça de uma mulher"}](https://unsplash.com/pt-br/fotografias/uma-foto-em-preto-e-branco-da-cabeca-de-uma-mulher-3xnAoMZXvnM)
+[![Capa do material](images/capa.jpg){.cover-credit-thumb fig-alt="Padrão abstrato de linhas curvas em tons de azul-petróleo"}](https://unsplash.com/pt-br/fotografias/padrao-de-fundo-qD5Err_lJ5Y)
 :::
 
 | Campo                  | Informação |
 |------------------------|-----------|
-| **Autoria da imagem**  | [Resource Database](https://unsplash.com/pt-br/@resourcedatabase) |
-| **Fonte / plataforma** | [Unsplash](https://unsplash.com/pt-br/fotografias/uma-foto-em-preto-e-branco-da-cabeca-de-uma-mulher-3xnAoMZXvnM) |
+| **Autoria da imagem**  | [Arthur Mazi](https://unsplash.com/pt-br/@arthurbizkit) |
+| **Fonte / plataforma** | [Unsplash](https://unsplash.com/pt-br/fotografias/padrao-de-fundo-qD5Err_lJ5Y) |
 | **Licença**            | [Unsplash License](https://unsplash.com/license) |
 | **Tipografia da capa** | Henrique Alvarenga da Silva — Playfair Display sobre a imagem |
 
