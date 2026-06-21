@@ -69,6 +69,11 @@ Percepção sem objeto presente, sem estímulo sensorial
 - Critica imediatamente
 - Mais frequente em quadros psicoorgânicos
 
+::: {.callout-note appearance="simple"}
+## Pseudoalucinação: um termo a usar com cautela
+*Pseudoalucinação* é um dos termos mais confusos da psicopatologia. Sims o chama de "um dos fenômenos menos compreendidos" e registra que seu uso "se perdeu", sendo empregado em dois sentidos contraditórios — ora como percepção vívida em um "espaço subjetivo interno" (Jaspers/Kandinsky), ora como alucinação reconhecida pelo paciente como irreal, isto é, *com insight* (Hare) [@sims2018]. Na prática, o ponto relevante é o diagnóstico diferencial: nem toda experiência semelhante a uma percepção é uma alucinação patológica. Ver [Discrepâncias · D5](../apendices/discrepancias.qmd#sec-d5-pseudoalucinacao).
+:::
+
 **Perguntas para investigação:**
 - Tem observado coisas que não consegue explicar?
 - Ouve vozes de pessoas estranhas?

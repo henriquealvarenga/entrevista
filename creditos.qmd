@@ -10,21 +10,15 @@ number-sections: false
 
 **Henrique Alvarenga da Silva**
 
-Médico psiquiatra. Professor de Psiquiatria do Curso de Medicina da Universidade Federal de São João del-Rei (UFSJ) e professor na AFYA Educacional. Especialista em Psiquiatria e Psicopatologia, com foco em metodologia de pesquisa e educação médica baseada em evidências. Mestre em Educação Médica.
+Médico psiquiatra. Professor de Psiquiatria do Curso de Medicina da Universidade Federal de São João del-Rei (UFSJ) e professor na AFYA Educacional. 
+Especialista em Psiquiatria e Psicopatologia, com foco em metodologia de pesquisa e educação médica baseada em evidências. 
+Mestre em Educação Médica.
 
 ::: {.contact-links}
 [🌐 Site pessoal](https://www.henriquealvarenga.com){.contact-link}
-[📧 E-mail](mailto:henrique@ufsj.edu.br){.contact-link}
+[📧 E-mail](mailto:henriquealvarenga@ufsj.edu.br){.contact-link}
 [🆔 ORCID](https://orcid.org/0000-0001-9799-5240){.contact-link}
 [📚 GitHub](https://github.com/henriquealvarenga){.contact-link}
-:::
-
-::: {.about-section}
-## Agradecimentos
-
-Agradecimento especial à **Dra. Juliane Batista Longatti** pela cessão de seu
-roteiro didático sobre o Exame Psíquico, cuja sistematização dos descritores
-psicopatológicos foi fundamental para a Parte II deste material.
 :::
 
 ::: {.about-section}
@@ -105,23 +99,23 @@ Este trabalho está licenciado sob **Creative Commons Atribuição-NãoComercial
 
 ### ABNT (NBR 6023)
 
-SILVA, Henrique Alvarenga da. **Entrevista Psiquiátrica e Exame do Estado Mental**: material didático. São João del-Rei: Edição do Autor, 2026. E-book. Disponível em: <https://henriquealvarenga.com/entrevista/>. Acesso em: [inserir data de acesso].
+SILVA, Henrique Alvarenga da. **Entrevista Psiquiátrica e Exame do Estado Mental**: uma breve introdução. São João del-Rei: Edição do Autor, 2026. E-book. Disponível em: <https://henriquealvarenga.com/entrevista/>. Acesso em: [inserir data de acesso].
 
 ### Vancouver
 
-Silva HA. Entrevista Psiquiátrica e Exame do Estado Mental: material didático [Internet]. São João del-Rei (MG): Edição do Autor; 2026 [citado em ano mês dia]. Disponível em: https://henriquealvarenga.com/entrevista/
+Silva HA. Entrevista Psiquiátrica e Exame do Estado Mental: uma breve introdução [Internet]. São João del-Rei (MG): Edição do Autor; 2026 [citado em ano mês dia]. Disponível em: https://henriquealvarenga.com/entrevista/
 
 ### BibTeX
 
 ```bibtex
 @misc{silva_entrevista_eem_2026,
   author    = {Silva, Henrique Alvarenga da},
-  title     = {Entrevista Psiquiátrica e Exame do Estado Mental: material didático},
+  title     = {Entrevista Psiquiátrica e Exame do Estado Mental: uma breve introdução},
   publisher = {Edição do Autor},
   address   = {São João del-Rei, MG, Brasil},
   year      = {2026},
   url        = {https://henriquealvarenga.com/entrevista/},
-  note      = {E-book; material didático}
+  note      = {E-book; uma breve introdução}
 }
 ```
 
@@ -133,7 +127,7 @@ Silva HA. Entrevista Psiquiátrica e Exame do Estado Mental: material didático 
 
 Dúvidas, sugestões ou correções:
 
-📧 [henrique@ufsj.edu.br](mailto:henrique@ufsj.edu.br)
+📧 [henriquealvarenga@ufsj.edu.br](mailto:henriquealvarenga@ufsj.edu.br)
 
 Ou via *issues* no [repositório GitHub](https://github.com/henriquealvarenga/entrevista).
 :::

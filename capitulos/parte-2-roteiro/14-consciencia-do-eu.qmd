@@ -1,8 +1,8 @@
 ---
-title: "15. Consciência e Valoração do Eu"
+title: "14. Consciência do Eu"
 ---
 
-## 15.1 Consciência de Atividade do Eu
+## 14.1 Consciência de Atividade do Eu
 **Normal:** tudo que o Eu faz é vivenciado como próprio
 
 ### Alterações:
@@ -18,7 +18,7 @@ title: "15. Consciência e Valoração do Eu"
 - Ações controladas externamente
 - Vivências de influência
 
-## 15.2 Consciência de Unidade do Eu
+## 14.2 Consciência de Unidade do Eu
 **Normal:** Eu sentido como uno e indivisível
 
 ### Alterações:
@@ -26,21 +26,20 @@ title: "15. Consciência e Valoração do Eu"
 - "Sou anjo e demônio ao mesmo tempo"
 - Ambivalência profunda
 
-## 15.3 Consciência da Identidade do Eu no Tempo
+## 14.3 Consciência da Identidade do Eu no Tempo
 **Normal:** consciência de ser o mesmo ao longo do tempo
 
 ### Alterações:
 - "Não sou a mesma pessoa de antes"
 - Perda da continuidade temporal
 
-## 15.4 Consciência de Oposição do Eu ao Mundo
+## 14.4 Consciência de Oposição do Eu ao Mundo
 **Normal:** percepção clara da separação entre Eu e mundo exterior
 
 ### Alterações:
 - **Despersonalização:** estranheza em relação a si mesmo
 - **Desrealização:** sensação de irrealidade do mundo
-- **Difusão de identidade:** perda dos limites do Eu
-- **Transitivismo:** transformação em animal/objeto
+- **Perda dos limites do Eu:** o Eu deixa de se diferenciar do mundo externo (identificação maciça com objetos ou pessoas)
 - **Publicação do pensamento**
 - **Sonorização do pensamento**
 - **Eco do pensamento**

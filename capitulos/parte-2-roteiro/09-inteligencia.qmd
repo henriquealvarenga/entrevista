@@ -19,21 +19,33 @@ title: "9. Inteligência"
 - Conhecimentos gerais
 - Capacidade de cálculo
 
-## 9.2 Classificação Funcional
+## 9.2 Classificação
 
 ### Normal
 - **Estimada na média:** funcionamento aparentemente normal
 - **Acima da média:** capacidade superior
 
-### Abaixo da Média
-- **Inteligência limítrofe:** QI 70-84 (não é DI)
-- **Deficiência intelectual leve:** QI 50-69
-- **Deficiência intelectual moderada:** QI 35-49
-- **Deficiência intelectual grave:** QI 20-34
-- **Deficiência intelectual profunda:** QI < 20
+### Deficiência Intelectual
+A deficiência intelectual (DI) não se define por um número de QI isolado: exige **dois** componentes — déficit do funcionamento **intelectual** (raciocínio, aprendizagem, solução de problemas) **e** do funcionamento **adaptativo** —, com início no período do desenvolvimento [@kaplan2017, p. 291; @dalgalarrondo2019].
+
+A terminologia evoluiu: o que a CID-10 e o DSM-IV chamavam de *retardo mental* tornou-se *deficiência intelectual (transtorno do desenvolvimento intelectual)* no DSM-5 (2013) e *transtornos do desenvolvimento intelectual* (código 6A00) na CID-11, em vigor desde 2022 [@kaplan2017, p. 291; @who1993cid10; @who2022cid11].
+
+Por trás dessa mudança de nome há uma distinção conceitual. A CID classifica *condições de saúde* (transtornos), enquanto o termo *deficiência* pertence à Classificação Internacional de Funcionalidade (CIF), que descreve as *consequências funcionais*. Por isso a CID-11 fala em *transtornos do desenvolvimento intelectual*: o transtorno é a condição de saúde; a deficiência, suas repercussões na vida da pessoa. A escolha tem também um peso prático — é a CID, e não a CIF, que a maioria dos países usa para definir a responsabilidade do Estado em prover cuidado. Nesse marco, o quadro é entendido como uma **meta-síndrome**: um agrupamento de condições de etiologias diversas unidas pelo déficit do funcionamento cognitivo, de modo análogo à demência [@salvadorcarulla2011; @bertelli2016].
+
+**Da era do QI ao funcionamento adaptativo.** Por boa parte do século XX, a gravidade da DI foi graduada pelo **quociente de inteligência (QI)**, herança dos testes de Binet e Wechsler — era psicométrica cujo limite o próprio Wechsler resumiu com ironia: "inteligência é aquilo que os meus testes medem" [@dalgalarrondo2019, p. 277]. A CID-10 e o DSM-IV consolidaram a classificação por faixas de QI:
+
+| Grau (CID-10 / DSM-IV) | Faixa de QI |
+|---|---|
+| Limítrofe (não é DI) | 70–84 |
+| DI leve | 50–69 |
+| DI moderada | 35–49 |
+| DI grave | 20–34 |
+| DI profunda | < 20 |
+
+O **DSM-5 (2013)** abandonou as faixas de QI como base da gravidade e passou a graduá-la pelo **funcionamento adaptativo**, em três domínios — **conceitual** (habilidades acadêmicas), **social** (relacionamentos) e **prático** (autocuidado) [@kaplan2017, p. 1120]; a **CID-11 (2022)** seguiu a mesma direção, enfatizando o funcionamento adaptativo [@who2022cid11]. A mudança se justifica porque "o desempenho adaptativo determina o nível de suporte necessário [e] as pontuações do QI são menos válidas nas partes inferiores da faixa" [@kaplan2017, p. 291]. Ver [Discrepâncias · D6](../apendices/discrepancias.qmd#sec-d6-deficiencia-intelectual).
 
 ### Deterioração
-- **Demência:** deterioração orgânica global
+- **Demência:** deterioração orgânica global de uma inteligência previamente desenvolvida (distinta da DI, que é do desenvolvimento)
 
 ## 9.3 Aspectos Específicos
 

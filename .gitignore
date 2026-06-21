@@ -99,3 +99,6 @@ node_modules/
 .env.local
 
 /.quarto/
+
+# Projeto R separado (não faz parte do livro)
+_ProjetoR_DelusionDimension/

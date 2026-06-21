@@ -46,6 +46,7 @@ book:
   chapters:
     - index.qmd
     - apresentacao.qmd
+    - agradecimentos.qmd
     - part: "Parte I — A Entrevista Psiquiátrica"
       chapters:
         - capitulos/parte-1-entrevista/01-introducao.qmd
@@ -69,13 +70,13 @@ book:
         - capitulos/parte-2-roteiro/10-juizo-de-realidade.qmd
         - capitulos/parte-2-roteiro/11-vida-afetiva.qmd
         - capitulos/parte-2-roteiro/12-volicao.qmd
-        - capitulos/parte-2-roteiro/13-psicomotricidade.qmd
-        - capitulos/parte-2-roteiro/14-controle-de-impulsos.qmd
-        - capitulos/parte-2-roteiro/15-consciencia-e-valoracao-do-eu.qmd
-        - capitulos/parte-2-roteiro/16-vivencia-do-tempo-e-do-espaco.qmd
+        - capitulos/parte-2-roteiro/13-controle-de-impulsos.qmd
+        - capitulos/parte-2-roteiro/14-consciencia-do-eu.qmd
+        - capitulos/parte-2-roteiro/15-vivencia-do-tempo-e-do-espaco.qmd
+        - capitulos/parte-2-roteiro/16-psicomotricidade.qmd
         - capitulos/parte-2-roteiro/17-personalidade.qmd
         - capitulos/parte-2-roteiro/18-contratransferencia.qmd
-        - capitulos/parte-2-roteiro/19-critica-e-insight.qmd
+        - capitulos/parte-2-roteiro/19-insight.qmd
         - capitulos/parte-2-roteiro/20-desejo-de-ajuda-e-motivacao.qmd
         - capitulos/parte-2-roteiro/21-sumula.qmd
     - part: "Parte III — Casos Clínicos"
@@ -88,6 +89,9 @@ book:
         - casos/05-roberto.qmd
         - casos/06-ranier.qmd
         - casos/99-orientacoes.qmd
+    - part: "Apêndices"
+      chapters:
+        - capitulos/apendices/discrepancias.qmd
     - creditos.qmd
     - references.qmd
 

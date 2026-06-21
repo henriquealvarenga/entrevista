@@ -1,0 +1,28 @@
+---
+title: "13. Controle de Impulsos"
+---
+
+O **ato voluntário** percorre fases — intenção → deliberação → decisão → execução. O ato impulsivo é um "curto-circuito" dessas fases, saltando da intenção direto à execução [@dalgalarrondo2019, p. 178].
+
+Numa visão mais ampla, a impulsividade pode ser entendida como falha na capacidade de coordenar a ação ao longo do tempo — de formar e sustentar intenções e planos, na linha da teoria do *agente planejador* de Bratman [@bratman1987] ([mais sobre intencionalidade](https://henriquealvarenga.com/intencionalidade)).
+
+## 13.1 Ato Impulsivo
+Características:
+- Abolição de fases de intenção/deliberação/decisão
+- Egossintônico (não percebe como inadequado)
+- Associado a impulsos patológicos
+- Incapacidade de tolerar frustração
+
+## 13.2 Ato Compulsivo
+Características:
+- Desconforto subjetivo
+- Egodistônico (indesejável)
+- Tentativa de resistir
+- Alívio após realização
+- Frequentemente associado a obsessões
+
+## 13.3 Outros
+- **Impulsividade:** ações sem planejamento ou consideração de consequências
+- **Compulsões:** atos repetitivos em resposta a impulsos irresistíveis
+
+---

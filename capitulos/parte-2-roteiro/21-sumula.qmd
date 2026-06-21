@@ -2,7 +2,7 @@
 title: "Súmula Psicopatológica"
 ---
 
-Ao final do exame, elabore uma súmula concisa destacando:
+A súmula é a **síntese final** do exame: um resumo conciso dos achados, redigido em linguagem técnica [@dalgalarrondo2019]. Ao elaborá-la, pode ajudar agrupar as funções:
 
 ## Agrupamento por Sistemas
 
@@ -29,6 +29,8 @@ Ao final do exame, elabore uma súmula concisa destacando:
 - Juízo de realidade\
 - Sensopercepção\
 - Consciência do Eu\
-- Juízo de morbidade/insight\
+- Insight\
+
+Este agrupamento é um **recurso didático**, não uma regra rígida: muitas funções se alteram em mais de uma categoria (por exemplo, a psicomotricidade muda na depressão, na esquizofrenia e nos quadros orgânicos).
 
 ---

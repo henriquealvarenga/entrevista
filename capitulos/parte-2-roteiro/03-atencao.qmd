@@ -16,6 +16,11 @@ Qualidade que permite mudar o foco de um objeto para outro:
 - **Normovigil:** capacidade normal de alternar
 - **Hipervigil:** mudança excessiva de foco
 
+::: {.callout-warning appearance="simple"}
+## Atenção ao termo *vigilância*
+Aqui, *vigilância* é usada no sentido de **Dalgalarrondo**: a mobilidade da atenção, a capacidade de **mudar** o foco (oposto de tenacidade). Sims e Kaplan empregam o mesmo termo em sentido praticamente inverso — **atenção sustentada**, isto é, manter o foco ao longo do tempo (o que aqui se aproxima da *tenacidade*) [@sims2018; @kaplan2017]. Ver [Discrepâncias · D3](../apendices/discrepancias.qmd#sec-d3-vigilancia).
+:::
+
 ## 3.2 Alterações Patológicas
 
 ### Diminuição da Atenção

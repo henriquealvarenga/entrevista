@@ -27,6 +27,10 @@ Estado emocional de fundo, mais duradouro
 ## 11.2 Afeto (Expressão Emocional Observável)
 Manifestação externa, observável, das emoções
 
+::: {.callout-note appearance="simple"}
+A distinção **humor × afeto** que adotamos — humor como estado interno e sustentado, afeto como sua expressão observável — segue o **DSM/Kaplan** [@kaplan2017]. A tradição clássica (Dalgalarrondo) organiza a *afetividade* de outro modo: um termo guarda-chuva com cinco modalidades (humor, emoções, sentimentos, afetos, paixões), em que *afeto* não designa "a expressão observável" [@dalgalarrondo2019, p. 155]. Ver [Discrepâncias · D8](../apendices/discrepancias.qmd#sec-d8-humor-afeto).
+:::
+
 ### Adequação
 - **Adequado/Apropriado:** condizente com conteúdo e contexto
 - **Inadequado/Discordante/Inapropriado:** incongruente
@@ -36,14 +40,18 @@ Manifestação externa, observável, das emoções
 - **Irradiação:** capacidade de irradiar afeto
 
 ### Amplitude/Quantidade
-- **Amplo:** bem-modulado, variado
-- **Normal:** variação adequada
-- **Restrito/Embotado:** amplitude reduzida
-- **Embotado:** marcadamente reduzido
-- **Aplanado/Achatado:** praticamente ausente
-- **Hipermodulado:** expressão exagerada
-- **Normomodulado:** modulação normal
-- **Hipomodulado:** expressão reduzida
+A amplitude do afeto varia ao longo de uma gradação, cuja avaliação, na prática clínica, é **subjetiva**:
+
+- **Amplo:** bem-modulado e variado (normal)
+- **Restrito:** variação reduzida, mas ainda presente
+- **Embotado:** redução acentuada da expressão emocional
+- **Aplanado (achatado):** expressão emocional praticamente ausente
+
+Quanto à modulação, descreve-se ainda como **hipermodulado** (exagerado), **normomodulado** ou **hipomodulado** (reduzido).
+
+::: {.callout-note appearance="simple"}
+Diferente do nível de consciência (Escala de Glasgow), a amplitude do afeto não dispõe de uma escala numérica de uso clínico rotineiro. O polo do **embotamento/aplanamento**, porém, é operacionalizado em instrumentos de pesquisa de sintomas negativos — como a **PANSS** (item "afeto embotado", pontuado de 1 a 7) e a **SANS** (Andreasen) —, que ancoram a avaliação em sinais observáveis: expressão facial, gestos e prosódia da voz [@kaplan2017].
+:::
 
 ### Variação
 - **Adequado:** variações normais

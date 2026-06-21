@@ -10,10 +10,11 @@ title: "12. Volição"
 - **Hipobulia:** diminuição da vontade e iniciativa
 - **Abulia:** ausência de vontade, incapacidade de decidir e agir
 
-## 12.3 Aumento
-- **Hiperbulia:** aumento patológico da vontade e iniciativa
+A hipobulia/abulia costuma vir acompanhada de apatia e fadiga fácil, sendo típica das depressões graves e dos quadros com sintomas negativos, em que corresponde ao que o DSM chama de **avolição** [@dalgalarrondo2019, p. 177; @kaplan2017].
 
-## 12.4 Alterações Específicas
+O termo *abulia* não se aplica quando a indiferença volitiva é **ativamente buscada** pelo próprio indivíduo — como o desapego cultivado por certos filósofos (p. ex., os estoicos) —, situação que não constitui psicopatologia [@dalgalarrondo2019, p. 177].
+
+## 12.3 Alterações Específicas
 - **Ambivalência volitiva:** dificuldade em decidir, vontades contraditórias
 
 ---

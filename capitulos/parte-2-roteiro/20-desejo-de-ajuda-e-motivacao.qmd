@@ -9,9 +9,13 @@ title: "20. Desejo de Ajuda e Motivação"
 - **Ausente:** não vê necessidade
 - **Ambivalente:** oscila entre querer e não querer
 
+A ambivalência é comum e trabalhável: a **entrevista motivacional** é uma técnica que explora os sentimentos conflitantes do paciente para fortalecer sua motivação para a mudança [@kaplan2017].
+
 ## 20.2 Voluntariedade do Tratamento
-- **Voluntário:** procurou espontaneamente
-- **Involuntário:** trazido por terceiros
-- **Compulsório:** determinação judicial
+As três modalidades correspondem às formas de internação definidas pela Lei nº 10.216/2001 [@brasil2001lei10216]:
+
+- **Voluntário:** o paciente procura ou consente espontaneamente
+- **Involuntário:** sem o consentimento do paciente, a pedido de terceiros (com indicação médica)
+- **Compulsório:** determinado por ordem judicial
 
 ---

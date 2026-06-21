@@ -2,6 +2,8 @@
 title: "8. Linguagem"
 ---
 
+A **fala** e a **linguagem** são dimensões distintas. A *fala* é o ato motor de articular sons; suas alterações dizem respeito a volume, velocidade e articulação (p. ex., disartria, gagueira). A *linguagem* é o sistema simbólico que dá sentido à comunicação; suas alterações comprometem o significado (p. ex., afasias, neologismos) [@sims2018]. 
+
 ## 8.1 Produção Verbal
 
 ### Volume
@@ -47,7 +49,7 @@ title: "8. Linguagem"
 - **Mutismo seletivo:** fala apenas em certas situações
 
 ### Repetições
-- **Perseveração:** repetição automática esteriotipada
+- **Perseveração:** repetição automática estereotipada
 - **Estereotipia verbal:** repetição mecânica sem sentido
 - **Ecolalia:** repetição das palavras do entrevistador
 - **Palilalia:** repetição da própria última palavra

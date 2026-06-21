@@ -1,8 +1,5 @@
 # Referências {.unnumbered}
 
-As referências citadas ao longo do material são listadas automaticamente abaixo
-(processadas pelo Citeproc do Pandoc a partir de `references/references.bib`,
-no estilo ABNT).
 
 ::: {#refs}
 :::

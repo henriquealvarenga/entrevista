@@ -14,17 +14,30 @@ title: "10. Juízo de Realidade"
 - Não são delírios
 
 ### Delírios
-Juízos patologicamente falsos
+Crença ou juízo que o paciente sustenta com convicção extraordinária, refratário a contra-argumentos e incompatível com seu contexto social, cultural e educacional [@sims2018]. O delírio **não se define pela falsidade** do conteúdo: pode até ser objetivamente verdadeiro (como no ciúme delirante). O que o caracteriza é o *modo* anômalo de crer, não o conteúdo ser falso [@sims2018; @dalgalarrondo2019, p. 214].
 
-## 10.3 Características dos Delírios
+Um ponto é decisivo: quem decide que uma crença é delirante é sempre um **observador externo**, não o próprio paciente. Não há definição *fenomenológica* de delírio, pois, subjetivamente, ele é **indistinguível de uma crença verdadeira** — o paciente o sustenta com a mesma convicção com que qualquer pessoa sustenta as suas [@sims2018].
 
-### Quatro Características Essenciais
-1. **Convicção extraordinária:** impossível colocar em dúvida
-2. **Irremovível:** impossível modificar por argumentação
-3. **Conteúdo falso:** geralmente impossível
-4. **Individual:** não compartilhado por grupos culturais
+::: {.callout-warning appearance="simple"}
+## A definição de delírio é controversa
+Não há conceito consensual de delírio. A definição clássica de Jaspers — (1) juízo falso, (2) de convicção extraordinária, (3) irremovível por contra-argumentos e (4) de conteúdo impossível — é a mais citada, mas **cada um desses critérios é contestado**: o delírio pode não ser falso (ciúme delirante); crenças normais também são mantidas com convicção extrema; alguns delírios cedem a contra-argumentos; e o conteúdo nem sempre é impossível [@sims2018; @berrios1996]. Há ainda debate sobre se o delírio é mesmo uma "crença". Ver [Discrepâncias · D7](../apendices/discrepancias.qmd#sec-d7-delirio).
+:::
 
-### Sete Dimensões (Indicadores de Gravidade)
+## 10.3 Características Clássicas (Jaspers)
+
+A definição clássica — útil na prática, mas debatida (ver acima) — reúne quatro características:
+
+1. **Convicção extraordinária:** sustentado com certeza subjetiva incomparável
+2. **Irremovível:** resistente à argumentação e à evidência contrária
+3. **Conteúdo geralmente impossível ou implausível**
+4. **Não compartilhado** pelo grupo social/cultural do paciente
+
+### Dimensões da experiência delirante
+Em vez de uma definição única, Kendler et al. (1983) mostraram que o delírio é um **fenômeno multidimensional**: descreveram **cinco dimensões pouco correlacionadas entre si** (nenhum par se correlacionou fortemente), de modo que o delírio não é tudo-ou-nada, mas uma questão de grau em eixos independentes [@kendler1983]. Sims acrescenta outras duas dimensões úteis na prática [@sims2018].
+
+Essa abordagem dimensional é operacionalizada em instrumentos validados, como o **PSYRATS** (subescala de delírios), criado por Haddock et al. [@haddock1999], cuja estrutura dimensional foi estudada em amostra multicêntrica [@woodward2014] e que dispõe de versão portuguesa validada [@tellescorreia2017].
+
+*Dimensões de Kendler (1983):*
 
 **1. Grau de Convicção**
 - Inabalável
@@ -51,6 +64,8 @@ Juízos patologicamente falsos
 - Moderadamente preocupado
 - Totalmente absorvido
 
+*Dimensões adicionais (Sims):*
+
 **6. Resposta Afetiva**
 - Pouco abalado
 - Moderadamente ansioso/triste
@@ -65,7 +80,21 @@ Juízos patologicamente falsos
 - **Congruente:** delírio compatível com humor (ex: depressão + delírio de ruína)
 - **Incongruente:** delírio incompatível (pior prognóstico)
 
-## 10.4 Surgimento e Evolução do Delírio
+## 10.4 Delírio Primário e Secundário
+
+- **Delírio secundário:** compreensível a partir de outra alteração psíquica ou do contexto — p. ex., decorrente do humor (delírio de ruína na depressão) ou do ambiente cultural [@sims2018; @dalgalarrondo2019, p. 214].
+- **Delírio primário:** não é compreensível em termos de outra psicopatologia; surge de modo autóctone ("nativo do solo") e é, na formulação de Jaspers, **psicologicamente incompreensível**. Tem valor diagnóstico (associa-se sobretudo à esquizofrenia) [@sims2018; @dalgalarrondo2019, p. 214].
+
+**Experiências delirantes primárias** (Jaspers / Schneider):
+
+- **Intuição (ou ocorrência) delirante** (*Wahneinfall*): a ideia delirante surge de súbito, "do nada", em fase única; autóctone e autorreferente.
+- **Percepção delirante** (*Wahnwahrnehmung*): uma percepção real e banal recebe, subitamente, significado delirante de imensa importância pessoal — em **duas fases** (a percepção; depois o revestimento delirante). É sintoma de primeira ordem de Schneider. Distingue-se da *interpretação delirante*, em que a percepção apenas se encaixa num sistema delirante já existente.
+- **Atmosfera (ou humor) delirante** (*Wahnstimmung*): o mundo parece sutilmente alterado, sinistro e carregado de significado ainda indefinido — corresponde ao *trema* de Conrad (próxima seção).
+- **Memória delirante:** uma lembrança recebe significado delirante (interpretação delirante de algo recordado).
+
+Citações: [@sims2018; @dalgalarrondo2019, p. 216].
+
+## 10.5 Surgimento e Evolução do Delírio
 
 ### Fase Pré-Delirante
 - **Trema/Humor delirante:** aflição, ansiedade intensa, perplexidade
@@ -91,7 +120,7 @@ Juízos patologicamente falsos
 - Perda de impulso e afetividade
 - Isolamento
 
-## 10.5 Tipos de Delírios
+## 10.6 Tipos de Delírios
 
 ### Persecutórios
 - Crença de ser perseguido, ameaçado

@@ -2,10 +2,11 @@
 title: "18. Contratransferência"
 ---
 
-Sentimentos, reações emocionais e pensamentos que o paciente desperta no entrevistador
+Sentimentos, reações emocionais e pensamentos que o paciente desperta no entrevistador.
+
+A reação emocional do examinador é, ela própria, **informação clínica**: reconhecida, ajuda a compreender o paciente (p. ex., tédio ou sonolência podem acompanhar certos quadros); não reconhecida, vira fonte de viés [@kaplan2017]. Classicamente (Freud), o termo designava a transferência do próprio profissional, vista como obstáculo [@dalgalarrondo2019]; hoje é usada também como instrumento.
 
 ## 18.1 Descritores
-- **Empatia:** sentimento de compreensão e conexão
 - **Simpatia:** sentimento positivo
 - **Antipatia:** sentimento negativo
 - **Rejeição:** desejo de afastar-se

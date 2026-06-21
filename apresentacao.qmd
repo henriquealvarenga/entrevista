@@ -8,10 +8,7 @@ number-sections: false
 
 ## Objetivos de Aprendizagem
 
-Ao final do estudo deste material, você será capaz de:
-
 1. Compreender a importância e os princípios fundamentais da entrevista psiquiátrica.
-2. Aplicar as três regras de ouro da entrevista em diferentes contextos clínicos.
 3. Realizar um Exame do Estado Mental completo e sistemático.
 4. Utilizar terminologia técnica apropriada para descrever fenômenos psicopatológicos (evitando jargão desnecessário).
 5. Documentar adequadamente os achados da avaliação psiquiátrica.
@@ -36,32 +33,10 @@ Escolha um dos casos clínicos e:
 3. Redija uma súmula técnica dos achados principais.
 4. Liste 2–3 hipóteses diagnósticas baseadas apenas no EEM.
 
-### Critérios de Qualidade
+::: {.callout-note appearance="simple"}
+## Uma obra em construção
 
-Um bom EEM deve ser:
+Este material ainda está **em construção** e em constante revisão. **Sugestões, correções e revisões são muito bem-vindas** — de colegas, estudantes e preceptores. Você pode contribuir pelo [repositório no GitHub](https://github.com/henriquealvarenga/entrevista) (via *issues* ou *pull requests*) ou por e-mail ([henriquealvarenga@ufsj.edu.br](mailto:henriquealvarenga@ufsj.edu.br)).
+:::
 
-- ✅ **Completo:** todos os 20 itens avaliados.
-- ✅ **Técnico:** uso apropriado de terminologia psiquiátrica.
-- ✅ **Objetivo:** baseado em observações concretas.
-- ✅ **Descritivo:** sem interpretações prematuras.
-- ✅ **Conciso:** súmula clara e informativa.
-
-## Competências Trabalhadas
-
-O estudo deste material pode ajudar a desenvolver:
-
-- **Habilidades de observação clínica**
-- **Capacidade de comunicação com pacientes**
-- **Raciocínio diagnóstico sistematizado**
-- **Documentação clínica de qualidade**
-- **Uso apropriado de terminologia psiquiátrica**
-- **Sensibilidade para aspectos culturais e éticos**
-
-## Fundamentos Teóricos
-
-Este material é baseado principalmente em duas obras de referência da psiquiatria:
-
-- **Dalgalarrondo, P.** (2019). *Psicopatologia e semiologia dos transtornos mentais*. Artmed. [@dalgalarrondo2019]
-- **Sadock, B. J., Sadock, V. A., & Ruiz, P.** (2017). *Compêndio de Psiquiatria*. Artmed. [@kaplan2017]
-- **Sims, A.; Oyebode, F. (ed.)** (2018). *Sims' Symptoms in the Mind: Textbook of Descriptive Psychopathology* (6ª ed.). Elsevier. [@sims2018]
 

@@ -1,0 +1,208 @@
+---
+title: "Discrepâncias entre as Fontes"
+---
+
+A psicopatologia descritiva é uma disciplina centenária, mas sua linguagem **ainda não atingiu um consenso pleno**. Como observa Sims, um dos grandes problemas do método fenomenológico é a "natureza confusa da terminologia": ideias quase idênticas recebem classificações distintas conforme a base teórica de quem as descreve, e um mesmo termo pode assumir significados diferentes — por vezes opostos — entre autores [@sims2018]. 
+
+Quando as fontes divergem, seguimos preferencialmente a convenção da fonte principal (Sims) e sinalizamos a divergência. Em alguns casos, porém, o próprio termo é tão disputado que preferimos **descrever o fenômeno** a aplicar um rótulo — pois a descrição é mais segura do que um nome sem consenso.
+
+## Hierarquia de fontes adotada
+
+1. **Sims — *Sintomas da Mente*** [@sims2018] · *fonte principal*
+2. **Dalgalarrondo — *Psicopatologia e Semiologia dos Transtornos Mentais*** [@dalgalarrondo2019]
+3. **Kaplan & Sadock — *Compêndio de Psiquiatria*** [@kaplan2017] · *referência complementar*
+
+## Como ler cada entrada
+
+Cada divergência recebe um identificador (**D1**, **D2**, …) para facilitar a referência cruzada a partir dos capítulos do roteiro. Toda entrada traz: onde o termo aparece no livro, uma comparação lado a lado entre as fontes, quando aplicável a convenção adotada, e as citações com a página exata (do livro impresso, não do PDF).
+
+---
+
+## D1 — Catalepsia × Flexibilidade cérea {#sec-d1-catalepsia}
+
+**Onde aparece:** Parte II · cap. 1 (Aspectos Gerais) — *Fenômenos catatônicos*.
+
+**A divergência:** os dois termos têm definições **invertidas** entre as tradições.
+
+| Fenômeno observado | Sims · Dalgalarrondo *(adotado)* | Kaplan & Sadock · DSM-5 |
+|---|---|---|
+| Postura imposta pelo examinador é **mantida** ("moldável como cera") | **Flexibilidade cérea** | **Catalepsia** |
+| **Resistência** plástica à movimentação passiva | **Catalepsia** | **Flexibilidade cérea** |
+
+**O que dizem as fontes:**
+
+- **Sims:** a flexibilidade cérea ocorre quando "os membros do paciente são colocados em qualquer posição pelo entrevistador e permanecem na posição por tempo prolongado" [@sims2018].
+- **Dalgalarrondo:** a catalepsia é "um acentuado exagero do tônus postural, com grande redução da mobilidade passiva [...] hipertonia muscular global de tipo plástico"; já na flexibilidade cerácea o corpo "é colocado pelo examinador em determinada posição [...] e assim permanece, como se fosse um homem de cera, moldável por uma outra pessoa" [@dalgalarrondo2019, p. 185].
+- **Kaplan & Sadock (DSM-5):** "Catalepsia (i.e., indução passiva de uma postura mantida contra a gravidade)"; "Flexibilidade cérea (i.e., resistência leve ao posicionamento pelo examinador)" [@kaplan2017, p. 345].
+
+---
+
+## D2 — *Estupor*: nível de consciência ou síndrome psicomotora? {#sec-d2-estupor}
+
+**Onde aparece:** Parte II · cap. 2 (Nível de Consciência) e cap. 1 (Aspectos Gerais).
+
+**A divergência:** o termo *estupor* tem dois referentes, conforme a disciplina.
+
+| Tradição | O que "estupor" designa |
+|---|---|
+| **Psiquiátrica / fenomenológica** (Sims, Dalgalarrondo) | Síndrome psicomotora: mutismo + acinesia, com vigília/consciência aparentemente preservada |
+| **Neurológica** (Plum & Posner) · **Kaplan / DSM-5** | Nível de rebaixamento do despertar, entre a obnubilação e o coma; desperta só a estímulo vigoroso e contínuo |
+
+**O que dizem as fontes:**
+
+- **Sims:** o estupor "difere do coma e não se encontra em uma escala indo da vigília ao coma"; reservado para "mutismo e acinesia… em paciente que parece desperto e até mesmo alerta" [@sims2018].
+- **Dalgalarrondo:** estupor = "perda de toda a atividade espontânea… na vigência de um nível de consciência aparentemente preservado"; tratado no capítulo de psicomotricidade [@dalgalarrondo2019, p. 185].
+- **Plum & Posner:** estupor = estado de profundo sono ou ausência de resposta do qual o sujeito só é despertado por estimulação vigorosa e contínua; distinguem-no expressamente do estupor psiquiátrico (catatonia, depressão grave) [@plum2019].
+- **Kaplan:** lista o estupor entre os estados de rebaixamento ("sonolência, estupor, letargia… coma") [@kaplan2017].
+
+---
+
+## D3 — *Vigilância*: mobilidade ou sustentação da atenção? {#sec-d3-vigilancia}
+
+**Onde aparece:** Parte II · cap. 3 (Atenção); também cap. 2 (Nível de Consciência).
+
+**A divergência:** o termo *vigilância* designa qualidades quase opostas da atenção, conforme a tradição.
+
+| Tradição | "Vigilância" designa |
+|---|---|
+| **Dalgalarrondo** (latina/clássica) *(usado no roteiro)* | Mobilidade da atenção: capacidade de mudar o foco (oposto de tenacidade) |
+| **Sims** · **Kaplan** (inglesa) | Atenção sustentada: manter o foco ao longo do tempo (≈ tenacidade) |
+
+**O que dizem as fontes:**
+
+- **Dalgalarrondo:** "A vigilância é definida como a qualidade da atenção que permite ao indivíduo mudar seu foco de um objeto para outro" [@dalgalarrondo2019, p. 102].
+- **Sims:** entre os aspectos da atenção lista "atenção sustentada ou vigilância, atenção compartilhada e atenção alternante" [@sims2018].
+- **Kaplan:** refere-se a "atenção/vigilância sustentada" como a manutenção do foco ao longo do tempo [@kaplan2017].
+
+**Nota adicional:** há ainda um terceiro uso — *vigilância* como **alerta/arousal** (estado de despertar), empregado por Sims no capítulo da consciência e, no roteiro, no cap. 2 ("vigilante" = alerta aumentado).
+
+---
+
+## D4 — *Déjà vu* / *jamais vu*: alteração da memória ou do reconhecimento? {#sec-d4-dejavu}
+
+**Onde aparece:** Parte II · cap. 5 (Memória) — alterações qualitativas.
+
+**A divergência:** é de **classificação**. O *déjà vu* (e o *jamais vu*) costuma ser listado entre as paramnésias, no rol das alterações da memória; mas as fontes o entendem como distúrbio do **reconhecimento/familiaridade**, não da memória propriamente.
+
+| Fonte | Como classifica o *déjà vu* |
+|---|---|
+| Agrupamento didático usual | Entre as **paramnésias**, nas alterações da memória |
+| **Sims** | "**Não é essencialmente um transtorno da memória**", mas da sensação de familiaridade diante de evento novo |
+| **Kaplan** | "**Ilusão de reconhecimento**" (e o *jamais vu*, "fenômeno paramnésico") |
+
+**O que dizem as fontes:**
+
+- **Sims:** "Déjà vu não é essencialmente um transtorno da memória, e sim um distúrbio no qual a sensação de familiaridade… ocorre em relação a um evento novo"; trata-os como *paramnésia de identificação* [@sims2018].
+- **Kaplan:** define *déjà vu* como "ilusão de reconhecimento visual na qual uma nova situação é incorretamente reconhecida"; *jamais vu* como "fenômeno paramnésico" [@kaplan2017].
+- **Dalgalarrondo:** não os inclui entre as paramnésias da memória (ilusão e alucinação mnêmicas, fabulações, criptomnésia, ecmnésia) [@dalgalarrondo2019].
+
+---
+
+## D5 — *Pseudoalucinação*: um termo, vários sentidos (e a colisão com *alucinose*) {#sec-d5-pseudoalucinacao}
+
+**Onde aparece:** Parte II · cap. 6 (Sensopercepção).
+
+**A divergência:** *pseudoalucinação* é, segundo Sims, "um dos fenômenos menos compreendidos da psicopatologia". Berrios mostra que o uso do termo "se perdeu", aplicado a pelo menos cinco fenômenos distintos; Kräupl Taylor aponta **dois sentidos mutuamente contraditórios**:
+
+| Sentido | Definição | Origem |
+|---|---|---|
+| **Espaço subjetivo interno** | Percepção com toda a nitidez de uma real, mas vivenciada no "espaço interno", involuntária e não evocável à vontade | Jaspers, a partir de Kandinsky |
+| **Alucinação com insight** | Percepção no espaço externo, vívida, mas reconhecida pelo paciente como irreal | Hare (1973) |
+
+**A colisão com *alucinose*:** o segundo sentido (alucinação com insight, de Hare) descreve quase o mesmo que Dalgalarrondo chama de **alucinose** — a alucinação criticada e reconhecida como patológica, "periférica ao Eu" [@dalgalarrondo2019, p. 130]. Mesmo fenômeno, nomes diferentes conforme a tradição.
+
+**O que dizem as fontes:**
+
+- **Sims:** o termo é dos menos compreendidos; usado em dois sentidos contraditórios; sua importância está no *diagnóstico diferencial* da alucinação, pois "não é necessariamente psicopatológica" [@sims2018].
+- **Dalgalarrondo:** inclui a pseudoalucinação entre as alterações qualitativas da sensopercepção, ao lado da ilusão, da alucinação e da alucinose [@dalgalarrondo2019].
+
+**Na prática:** importa descrever a experiência — onde ocorre (espaço interno ou externo), sua nitidez e se há ou não *insight* — e considerar o diagnóstico diferencial, já que nem toda vivência perceptiva é uma alucinação patológica.
+
+---
+
+## D6 — Gravidade da deficiência intelectual: QI ou funcionamento adaptativo? {#sec-d6-deficiencia-intelectual}
+
+**Onde aparece:** Parte II · cap. 9 (Inteligência).
+
+**A divergência:** os sistemas graduam a gravidade da DI sobre bases diferentes — e isso mudou ao longo do tempo, junto com o próprio nome do quadro.
+
+| Sistema | Termo | Base da gravidade |
+|---|---|---|
+| **CID-10 / DSM-IV** | Retardo mental | Faixas de **QI** |
+| **DSM-5 (2013)** | Deficiência intelectual | **Funcionamento adaptativo** (conceitual, social, prático) |
+| **CID-11 (2022)** | Transtornos do desenvolvimento intelectual | Ênfase no **funcionamento adaptativo** |
+
+**O que dizem as fontes:**
+
+- **Kaplan (DSM-5):** "No DSM-5, vários níveis de gravidade da deficiência intelectual são determinados com base no desempenho adaptativo, e não com base nas pontuações do QI… o desempenho adaptativo determina o nível de suporte necessário [e] as pontuações do QI são menos válidas nas partes inferiores da faixa" [@kaplan2017, p. 291].
+- **AAIDD:** DI = limitações significativas no funcionamento intelectual e no comportamento adaptativo (conceitual, social e prático) [@kaplan2017, p. 1119].
+- **CID-11 (OMS):** substituiu "retardo mental" por "transtornos do desenvolvimento intelectual" (6A00), com ênfase no funcionamento adaptativo [@who2022cid11].
+- **Dalgalarrondo:** mantém a tabela por faixas de QI (tradição CID-10), mas exige déficit adaptativo para o diagnóstico [@dalgalarrondo2019].
+
+**Em todas as abordagens:** o diagnóstico nunca se faz por QI isolado — exige comprometimento adaptativo. A tendência atual desloca o eixo da gravidade do número de QI para o grau de suporte de que a pessoa necessita.
+
+---
+
+## D7 — Delírio é uma "crença falsa"? A definição em disputa {#sec-d7-delirio}
+
+**Onde aparece:** Parte II · cap. 10 (Juízo de Realidade).
+
+**A divergência:** não há definição consensual de delírio. A definição clássica (Jaspers), reproduzida na maioria dos manuais, costuma ser apresentada como assentada — mas cada um de seus critérios é contestado.
+
+| Critério clássico (Jaspers) | A crítica |
+|---|---|
+| Juízo **falso** | Pode ser objetivamente verdadeiro (ciúme delirante) — a falsidade não é essencial |
+| **Convicção** extraordinária | Crenças normais também são mantidas com convicção extrema |
+| **Irremovível** por contra-argumento | Alguns delírios cedem a contra-argumentos |
+| Conteúdo **impossível** | O conteúdo delirante nem sempre é impossível |
+
+**O que dizem as fontes:**
+
+- **Sims:** "Continua a haver muita discussão e controvérsia sobre a definição de delírio… Cada um desses critérios sofreu críticas" [@sims2018].
+- **Spitzer:** os delírios afirmam um *saber*, não um *crer* — por isso são expressos com convicção e não se abrem a discussão [@sims2018].
+- **Berrios:** "os delírios são atos de discurso vazio que se impõem como crenças", de conteúdo incidental e sem qualidade informativa; a noção de "crença errada" é uma construção do século XIX [@berrios1996].
+- **Kendler et al.:** em vez de uma definição única, mostraram que o delírio é multidimensional — cinco dimensões pouco correlacionadas (convicção, extensão, bizarrice, desorganização, pressão) —, uma abordagem dimensional, não categórica [@kendler1983].
+- **Debate atual (Bortolotti):** as objeções à ideia de delírio-como-crença valem igualmente para crenças normais — logo, faz sentido tratá-los como crenças anômalas [@sims2018].
+
+A definição clássica é apresentada por sua utilidade prática, com a ressalva explícita de que é contestada — o delírio não se caracteriza pela falsidade do conteúdo, mas pelo modo anômalo de crer e pela incompatibilidade com o contexto do paciente.
+
+---
+
+## D8 — Humor × afeto: definição do DSM ou taxonomia clássica? {#sec-d8-humor-afeto}
+
+**Onde aparece:** Parte II · cap. 11 (Vida Afetiva).
+
+**A divergência:** o que se entende por "afeto" muda conforme a tradição.
+
+| Tradição | Como organiza |
+|---|---|
+| **DSM / Kaplan** *(adotado no roteiro)* | *Humor* = estado emocional interno e sustentado; *afeto* = sua **expressão observável** pelo examinador (analogia: clima × tempo) |
+| **Clássica (Dalgalarrondo, Jaspers)** | *Afetividade* é o termo guarda-chuva, com cinco modalidades — humor, emoções, sentimentos, afetos, paixões; *afeto* é uma dessas modalidades, não "a expressão observável" |
+
+**O que dizem as fontes:**
+
+- **Kaplan:** humor = "tom de sentimento generalizado e sustentado, experimentado internamente"; afeto = a expressividade observada pelo examinador (expressão facial, gestos, voz) [@kaplan2017].
+- **Dalgalarrondo:** "afetividade é um termo genérico, que compreende várias modalidades de vivências afetivas, como o humor, as emoções e os sentimentos"; distingue cinco tipos (humor, emoções, sentimentos, afetos, paixões) [@dalgalarrondo2019, p. 155].
+
+Excepcionalmente, adotamos a distinção humor/afeto do DSM por ser a que estrutura o Exame do Estado Mental (humor subjetivo relatado × afeto observado), sinalizando que "afeto", aqui, tem o sentido do DSM, não o da taxonomia clássica.
+
+---
+
+## D9 — Transtornos da personalidade: categorias ou dimensões? {#sec-d9-personalidade}
+
+**Onde aparece:** Parte II · cap. 17 (Personalidade).
+
+**A divergência:** a base da classificação mudou — dos tipos categoriais para um modelo dimensional.
+
+| Sistema | Modelo |
+|---|---|
+| **DSM-5 (Seção II) / CID-10** | **Categorial:** ~10 tipos em 3 *clusters* (A excêntricos, B dramáticos, C ansiosos) |
+| **CID-11 (2022)** | **Dimensional:** um único diagnóstico, graduado por gravidade (leve/moderado/grave) + domínios de traços (afetividade negativa, distanciamento, dissocialidade, desinibição, anancasmo) + padrão *borderline* |
+
+**O que dizem as fontes:**
+
+- **Kaplan / Dalgalarrondo:** descrevem os tipos categoriais em *clusters* (tradição DSM/CID-10) [@kaplan2017; @dalgalarrondo2019].
+- **CID-11 (OMS):** abandonou os tipos; classifica por gravidade da disfunção do *self* e interpessoal, com domínios de traços contínuos com a personalidade normal [@who2022cid11].
+- O próprio **DSM-5** traz, na Seção III, um *modelo alternativo* dimensional, semelhante ao da CID-11.
+
+Apresentamos os *clusters* (ainda muito usados e mantidos no DSM-5 Seção II) e o modelo dimensional da CID-11, sinalizando a transição.

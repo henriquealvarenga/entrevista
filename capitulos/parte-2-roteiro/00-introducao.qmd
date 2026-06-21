@@ -4,9 +4,14 @@ title: "Introdução"
 
 Este roteiro integra múltiplas fontes para fornecer um guia resumido de descritores do Exame do Estado Mental. Foi desenvolvido para estudantes de medicina que precisam de referência detalhada para documentação clínica.
 
+A linguagem da psicopatologia ainda não atingiu um consenso pleno. Como observa Sims, um dos grandes problemas do método fenomenológico é a "natureza confusa da terminologia": ideias quase idênticas recebem classificações distintas conforme a base teórica de quem as descreve, e um mesmo termo pode assumir significados diferentes entre autores [@sims2018]. Já Jaspers advertia que a fenomenologia, embora seja "uma das pedras fundamentais da psicopatologia", "é ainda muito bruta" [@sims2018]. Por isso, ao longo deste roteiro adotamos preferencialmente a terminologia de **Sims** (fonte principal) e de **Dalgalarrondo**, sinalizando de forma explícita — em destaques ao longo do texto — os pontos em que as fontes divergem, como ocorre, por exemplo, entre *catalepsia* e *flexibilidade cérea*.
+
+Vale, porém, um lembrete pedagógico. O que há de mais valioso no estudo da psicopatologia é aprender **quais fenômenos** já foram reconhecidos e descritos ao longo de sua história — não decorar o jargão técnico que os nomeia. O nome é apenas uma etiqueta convencional, sujeita às divergências mencionadas acima; o fenômeno é o que de fato importa observar e registrar. Saber **descrever** que o paciente, colocado pelo examinador em uma postura desconfortável, nela permanece por longo tempo, como se fosse moldável, é mais importante do que lembrar se isso se chama "flexibilidade cérea" ou "catalepsia". Use este roteiro, portanto, para *reconhecer e descrever* fenômenos: a terminologia é um meio, não um fim. Na neurologia, Plum e Posner recomendam o mesmo: descrever os estímulos aplicados e as respostas obtidas, "em vez de usar termos menos precisos" [@plum2019].
+
 **Fontes Utilizadas:**\
-- Dalgalarrondo (2019) - Psicopatologia e Semiologia [@dalgalarrondo2019]\
-- Kaplan & Sadock (2017) - Compêndio de Psiquiatria [@kaplan2017]\
+- Sims (2018) — Sintomas da Mente [@sims2018] · *fonte principal*\
+- Dalgalarrondo (2019) — Psicopatologia e Semiologia [@dalgalarrondo2019]\
+- Kaplan & Sadock (2017) — Compêndio de Psiquiatria [@kaplan2017] · *referência complementar*\
 - Material didático complementar de semiologia psiquiátrica\
 
 ---

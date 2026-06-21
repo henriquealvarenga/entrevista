@@ -41,22 +41,32 @@ title: "5. Memória"
 
 ## 5.3 Alterações Quantitativas
 
-### Amnésias
-- **Amnésia anterógrada:** não fixa novos elementos após evento traumático
+### Hipermnésia
+- Afluxo acelerado de lembranças, em maior número, porém com perda de clareza e precisão; traduz mais a aceleração geral do ritmo psíquico (taquipsiquismo) do que uma alteração propriamente da memória [@dalgalarrondo2019, p. 145]
+
+### Amnésias (hipomnésias)
+Amnésia, de forma genérica, é a perda da memória — da capacidade de fixar ou da de evocar conteúdos [@dalgalarrondo2019, p. 145].
+
+- **Amnésia anterógrada:** incapacidade de fixar novos conteúdos a partir do início do quadro (p. ex., TCE, síndrome de Korsakoff)
 - **Amnésia retrógrada:** perda de memória para fatos anteriores ao evento
-- **Amnésia lacunar:** lacunas específicas
+- **Amnésia lacunar:** lacunas específicas (p. ex., para o período de um estado crepuscular)
 - **Amnésia global:** perda abrangente
 
-## 5.4 Alterações Qualitativas
+## 5.4 Alterações Qualitativas (Paramnésias)
 
 ### Distorções da Memória
 
-- **Falsas memórias:** acréscimos de elementos falsos a um núcleo verdadeiro de lembrança\
-- **Confabulações:** preenchimento de lacunas de memória com conteúdo imaginário, sem intenção de mentir\
-- **Pseudomemórias:** "lembranças" de eventos que nunca ocorreram\
+- **Falsas memórias (ilusão mnêmica):** acréscimo de elementos falsos a um núcleo verdadeiro de lembrança\
+- **Pseudomemórias (alucinação mnêmica):** "lembranças" de eventos que nunca ocorreram, sem qualquer núcleo verdadeiro\
+- **Confabulações:** preenchimento de lacunas de memória com conteúdo imaginário, sem intenção de mentir (típica da síndrome de Korsakoff)\
+- **Criptomnésia:** lembrança vivida como ideia ou descoberta nova, sem ser reconhecida como lembrança\
 - **Pseudologia fantástica:** histórias fantasiosas extensas, vividas com intensidade
 - **Falso reconhecimento:** identifica estranhos como familiares\
-- **Déjà vu:** sensação de já ter vivido o momento\
-- **Jamais vu:** sensação de nunca ter visto algo familiar\
+- **Déjà vu:** sensação de familiaridade diante de algo novo (como se já tivesse vivido o momento)\
+- **Jamais vu:** ausência de familiaridade diante de algo conhecido\
+
+::: {.callout-note appearance="simple"}
+*Déjà vu* e *jamais vu* são tradicionalmente agrupados entre as paramnésias, mas Sims e Kaplan os entendem como distúrbios do **reconhecimento/familiaridade**, não da memória propriamente [@sims2018; @kaplan2017]. Ver [Discrepâncias · D4](../apendices/discrepancias.qmd#sec-d4-dejavu).
+:::
 
 ---

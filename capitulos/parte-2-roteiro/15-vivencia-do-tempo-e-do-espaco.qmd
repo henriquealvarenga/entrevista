@@ -1,0 +1,25 @@
+---
+title: "15. Vivência do Tempo e do Espaço"
+---
+
+## 15.1 Vivência do Tempo
+- **Normal**
+- **Aceleração:** o tempo parece passar rápido demais (mania/taquipsiquismo)
+- **Retardo:** o tempo parece parado ou muito lento (depressão/bradipsiquismo)
+- **Atemporalidade:** perda da noção e da continuidade temporal
+
+*(Déjà vu / jamais vu são fenômenos de reconhecimento — ver cap. [Memória](05-memoria.qmd).)*
+
+## 15.2 Vivência do Espaço
+O espaço *vivido* (subjetivo) altera-se conforme o estado afetivo [@dalgalarrondo2019, p. 117]:
+
+- **Mania:** espaço dilatado, amplo, sem fronteiras
+- **Depressão:** espaço encolhido, contraído, escuro, pouco penetrável
+- **Quadros paranoides:** espaço externo vivido como invasivo e ameaçador
+- **Agorafobia:** espaço externo sufocante, pesado, potencialmente aniquilador
+
+::: {.callout-note appearance="simple"}
+*Micropsia, macropsia, metamorfopsia* e *dismegalopsia* são distorções **perceptivas** do tamanho/forma dos objetos — pertencem à sensopercepção (ver [Sensopercepção](06-sensopercepcao.qmd)), não à vivência subjetiva do espaço.
+:::
+
+---

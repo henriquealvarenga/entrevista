@@ -17,9 +17,9 @@ Velocidade e fluxo ao longo do tempo
 ### Lentificação
 - **Lentificado/Bradipsíquico:** progride lentamente
 - **Latência de resposta:** demora para responder
-- **Prolixo:** excessivamente detalhado
-- **Circunstancial:** detalhes irrelevantes, mas retorna ao objetivo
-- **Tangencial:** desvia sem retornar
+- **Prolixo:** excessivamente detalhado; a circunstancialidade e a tangencialidade são tipos de pensamento prolixo [@dalgalarrondo2019, p. 199]
+  - **Circunstancial:** detalhes irrelevantes, mas retorna ao objetivo
+  - **Tangencial:** desvia sem retornar ao ponto central
 
 ### Interrupções
 - **Bloqueio do pensamento:** interrupção súbita e brusca
@@ -30,8 +30,11 @@ Estrutura e organização
 
 ### Normal
 - **Lógico e coerente:** organizado, com nexo causal
-- **Abstrato:** capacidade de abstração preservada
-- **Concreto:** capacidade de abstração mantida
+- **Abstrato:** capacidade de abstração preservada (compreende metáforas, provérbios, duplo sentido)
+
+### Pensamento Concreto (concretismo)
+- Perda da capacidade de abstração: o pensamento fica "aderido ao nível sensorial", com interpretação literal de metáforas e provérbios
+- Ocorre na deficiência mental, nas demências e na esquizofrenia [@dalgalarrondo2019, p. 198; @sims2018]
 
 ### Desorganização Leve a Moderada
 - **Afrouxamento das associações:** associações menos articuladas

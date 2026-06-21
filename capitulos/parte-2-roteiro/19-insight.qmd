@@ -1,0 +1,23 @@
+---
+title: "19. Insight"
+---
+
+*Insight* é a capacidade do paciente de reconhecer seu estado mórbido — a "atitude correta diante da mudança patológica em si mesmo" [@lewis1934; @sims2018]. Muitos pacientes, apesar de sintomas graves, não os reconhecem como tais.
+
+A avaliação do insight é sempre um **juízo do observador externo** (o examinador), não uma medida que o próprio paciente fornece. Por isso é delicada: deve-se evitar confundir *falta de insight* com a mera **discordância** do paciente em relação ao modelo de doença do médico [@sims2018].
+
+## 19.1 Componentes do Insight
+David (1990) propôs três componentes [@david1990]:
+
+1. **Consciência da doença**
+2. **Capacidade de nomear/renomear os sintomas** como patológicos
+3. **Adesão ao tratamento**
+
+## 19.2 O insight é um continuum
+Não é tudo-ou-nada: varia das **ideias obsessivas** (muito insight) → **ideias sobrevaloradas** (intermediário) → **ideias delirantes** (ausência de insight) [@dalgalarrondo2019].
+
+## 19.3 Graus na prática
+- **Completo:** reconhece a doença e os sintomas, aceita tratamento
+- **Parcial:** reconhece alguns aspectos
+- **Ausente:** não reconhece estar doente
+- **Negação ativa** / **Ambivalência** (dúvida sobre estar doente)

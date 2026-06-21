@@ -2,7 +2,9 @@
 title: "17. Personalidade"
 ---
 
-## 17.1 Traços Principais
+A personalidade resulta da combinação entre o **temperamento** (disposições inatas, de base psicofisiológica) e o **caráter** (o temperamento moldado pela história e pelo meio sociocultural) [@dalgalarrondo2019, p. 257].
+
+## 17.1 Modelo categorial (DSM-5 / CID-10)
 
 ### Cluster A (Excêntricos)
 - **Traços paranoides:** desconfiança, sensibilidade a críticas, hostilidade
@@ -23,5 +25,16 @@ title: "17. Personalidade"
 ### Outros
 - **Traços ansiosos:** preocupação excessiva
 - **Traços impulsivos:** dificuldade de controle
+
+## 17.2 Modelo dimensional (CID-11)
+A CID-11 **abandonou os tipos categoriais**: há um único diagnóstico de *transtorno da personalidade*, graduado por **gravidade** — leve, moderado, grave (além da *dificuldade de personalidade*, subliminar) —, conforme a disfunção do **self** e das **relações interpessoais** [@who2022cid11]. A esse diagnóstico acrescentam-se **domínios de traços** proeminentes (contínuos com a personalidade normal):
+
+- **Afetividade negativa**
+- **Distanciamento** (*detachment*)
+- **Dissocialidade**
+- **Desinibição**
+- **Anancasmo** (*anankastia*)
+
+Pode-se ainda especificar um **padrão *borderline***. Ver [Discrepâncias · D9](../apendices/discrepancias.qmd#sec-d9-personalidade).
 
 ---

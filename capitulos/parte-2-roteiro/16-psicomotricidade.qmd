@@ -1,0 +1,44 @@
+---
+title: "16. Psicomotricidade"
+---
+
+Estes fenômenos também aparecem, de forma resumida, em [Aspectos Gerais → Comportamento e Atividade Psicomotora](01-aspectos-gerais.qmd); aqui recebem maior detalhe.
+
+## 16.1 Atividade Motora Global
+- **Normal:** atividade adequada
+- **Agitação psicomotora:** aumento marcante
+- **Hiperatividade:** atividade excessiva
+- **Inquietação:** dificuldade de permanecer parado; agitação motora inespecífica
+- **Acatisia:** sensação subjetiva de inquietação interna, com necessidade irresistível de mover-se (sobretudo as pernas); habitualmente associada ao uso de neurolépticos [@sims2018; @dalgalarrondo2019]
+- **Lentificação psicomotora:** diminuição global
+- **Inibição psicomotora:** ausência de respostas sem déficit motor primário
+- **Estupor:** perda de atividade espontânea, com consciência aparentemente preservada (ver [Discrepâncias · D2](../apendices/discrepancias.qmd#sec-d2-estupor))
+- **Retardo motor:** movimentos lentos
+
+## 16.2 Movimentos Anormais
+- **Estereotipias:** movimentos repetitivos e uniformes, sem finalidade ou objetivo aparente
+- **Maneirismos:** gestos e movimentos bizarros, caricaturas exageradas ou afetadas de ações normais e propositadas
+- **Tiques:** movimentos involuntários súbitos
+- **Tremores:** (especificar localização)
+- **Discinesias:** movimentos involuntários anormais
+
+## 16.3 Fenômenos Catatônicos
+- **Catalepsia:** exagero do tônus postural, com hipertonia muscular plástica e resistência à movimentação passiva dos segmentos corporais [@dalgalarrondo2019, p. 185]
+- **Flexibilidade cérea:** o examinador coloca o paciente (ou parte do corpo) em determinada posição, mesmo desconfortável, e ela é mantida por tempo prolongado — "moldável como cera" [@sims2018; @dalgalarrondo2019, p. 185]
+- **Negativismo ativo:** faz o oposto do solicitado
+- **Negativismo passivo:** não faz nada quando solicitado
+- **Obediência automática:** execução automática de ordens
+- **Ecopraxia:** imitação automática de gestos do examinador
+
+Sobre a inversão terminológica destes dois primeiros termos entre as fontes, ver [Discrepâncias · D1](../apendices/discrepancias.qmd#sec-d1-catalepsia).
+
+## 16.4 Marcha
+- **Normal**
+- **Lenta**
+- **Acelerada**
+- **Arrastada**
+- **Atáxica**
+- **Espástica**
+- **Parkinsoniana**
+
+---

@@ -1,0 +1,9 @@
+---
+number-sections: false
+---
+
+# Agradecimentos {.unnumbered}
+
+Agradecimento especial à **Dra. Juliane Batista Longatti** pela cessão de seu roteiro didático sobre o Exame Psíquico, que tem auxiliado na formação de estudantes de medicina. Sua sistematização dos descritores psicopatológicos foi fundamental para a Parte II deste material e contribuiu para a clareza do conjunto.
+
+Agradeço também aos **estudantes**, pelas inúmeras correções e contribuições ao longo das atividades em sala de aula, que ajudaram a aprimorar este material.

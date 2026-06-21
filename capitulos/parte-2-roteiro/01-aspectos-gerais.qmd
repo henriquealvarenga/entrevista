@@ -2,6 +2,13 @@
 title: "1. Aspectos Gerais"
 ---
 
+::: {.callout-note appearance="simple"}
+## Sobre os termos deste capítulo
+Boa parte dos descritores reunidos aqui — sobretudo os de **aparência** e de **atitude frente ao examinador** — não são termos técnicos da psicopatologia, com definição precisa e delimitada, mas **modos usuais de descrever** o que se observa. Palavras como *cordial*, *desconfiada*, *desleixada* ou *teatral* pertencem à linguagem comum da observação clínica: registram a impressão que o paciente causa — uma leitura inevitavelmente subjetiva, que diz tanto de quem observa quanto de quem é observado. Seu valor está na descrição atenta e honesta, não na precisão conceitual.
+
+Isso os distingue dos fenômenos descritos nos capítulos seguintes — como os da sensopercepção, do pensamento ou do juízo de realidade —, em que cada termo carrega uma definição técnica rigorosa (e, por vezes, disputada entre as fontes). Aqui, o essencial é **descrever bem**; ali, é também **nomear com precisão**.
+:::
+
 ## 1.1 Aparência Física
 
 ### Cuidados Pessoais e Higiene
@@ -136,11 +143,14 @@ title: "1. Aspectos Gerais"
 
 ## 1.4 Comportamento e Atividade Psicomotora
 
+> Detalhamento em [Psicomotricidade](16-psicomotricidade.qmd).
+
 ### Atividade Motora Global
 - **Normal**
 - **Agitação psicomotora:** aumento da atividade motora
 - **Hiperatividade:** atividade excessiva
-- **Inquietação/Acatisia:** impossibilidade de ficar parado
+- **Inquietação:** dificuldade de permanecer parado; agitação motora inespecífica
+- **Acatisia:** sensação subjetiva de inquietação interna, com necessidade irresistível de mover-se (sobretudo as pernas); habitualmente associada ao uso de neurolépticos [@sims2018; @dalgalarrondo2019]
 - **Lentificação psicomotora:** diminuição global da atividade
 - **Inibição psicomotora:** ausência de respostas motoras adequadas
 - **Estupor:** imobilidade, mutismo, ausência de resposta
@@ -148,8 +158,8 @@ title: "1. Aspectos Gerais"
 - **Atividades sem propósito:** movimentos não direcionados a objetivos
 
 ### Movimentos Específicos
-- **Maneirismos:** movimentos bizarros, peculiares
-- **Estereotipias:** movimentos repetitivos, sem finalidade aparente
+- **Maneirismos:** gestos e movimentos bizarros, que são caricaturas exageradas ou afetadas de ações normais e propositadas
+- **Estereotipias:** movimentos repetitivos e uniformes, sem finalidade ou objetivo aparente
 - **Tiques:** movimentos involuntários, súbitos, repetitivos
 - **Gestos:** movimentação das mãos ao falar (adequados/excessivos/ausentes)
 - **Contrações musculares:** espasmos, tensão visível
@@ -167,12 +177,17 @@ title: "1. Aspectos Gerais"
 - **Desajeitada**
 
 ### Fenômenos Catatônicos
-- **Catalepsia:** manutenção de postura imposta
-- **Flexibilidade cérea:** resistência plástica à movimentação passiva
+- **Catalepsia:** exagero do tônus postural, com hipertonia muscular plástica e resistência à movimentação passiva dos segmentos corporais [@dalgalarrondo2019, p. 185]
+- **Flexibilidade cérea:** o examinador coloca o paciente (ou parte do corpo) em determinada posição, mesmo desconfortável, e ela é mantida por tempo prolongado — "moldável como cera" [@sims2018; @dalgalarrondo2019, p. 185]
 - **Negativismo ativo:** faz o oposto do solicitado
 - **Negativismo passivo:** não faz nada quando solicitado
 - **Obediência automática:** execução automática de ordens
 - **Ecopraxia:** imitação automática de gestos do examinador
+
+::: {.callout-warning appearance="simple"}
+## Divergência entre as fontes: *catalepsia* × *flexibilidade cérea*
+A nomenclatura desses dois fenômenos é **invertida** entre as tradições. Adotamos aqui a convenção de **Sims** (fonte principal) e de **Dalgalarrondo**: *flexibilidade cérea* designa a manutenção da postura imposta pelo examinador ("moldável como cera"), e *catalepsia* designa a hipertonia plástica com resistência à movimentação passiva [@sims2018; @dalgalarrondo2019, p. 185]. O **Kaplan & Sadock**, seguindo o DSM-5, define os termos de modo oposto: *catalepsia* = "indução passiva de uma postura mantida contra a gravidade" e *flexibilidade cérea* = "resistência leve ao posicionamento pelo examinador" [@kaplan2017, p. 345]. Ver o registro completo em [Discrepâncias · D1](../apendices/discrepancias.qmd#sec-d1-catalepsia).
+:::
 
 ### Outros
 - **Combatividade:** agressividade física

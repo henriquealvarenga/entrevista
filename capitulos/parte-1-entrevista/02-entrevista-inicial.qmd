@@ -12,6 +12,29 @@ Logo no início, o olhar e toda a comunicação não verbal já têm sua import�
 
 Pesquisas empíricas demonstraram que, em profissionais com experiência clínica, os primeiros três minutos da entrevista são extremamente significativos, sendo muitas vezes úteis tanto para a identificação do perfil dominante de sintomas do paciente como para a formulação da hipótese diagnóstica final [@dalgalarrondo2019].
 
+## Aliança Terapêutica e Rupturas
+
+A **aliança terapêutica** é a base relacional do encontro clínico. Bordin definiu-a por três componentes interdependentes: o **vínculo** afetivo entre paciente e profissional, o **acordo sobre os objetivos** do tratamento e o **acordo sobre as tarefas** para alcançá-los [@bordin1979]. A força dessa aliança é um dos principais preditores de bom desfecho. A relação não é mero pano de fundo: é nela que paciente e profissional co-constroem o entendimento do sofrimento [@mahoney2005constructivism].
+
+### Rupturas da aliança
+
+Uma **ruptura** é uma deterioração na relação entre paciente e profissional — uma tensão ou quebra no vínculo, nos objetivos ou nas tarefas [@safranmuran1996]. Rupturas são comuns e resultam da contribuição de **ambos** os participantes. Costumam manifestar-se de dois modos [@safran2011repairing]:
+
+- **Afastamento (*withdrawal*):** o paciente se retrai — fica evasivo, monossilábico, condescendente só na superfície ou muda de assunto.
+- **Confrontação (*confrontation*):** o paciente expressa diretamente insatisfação, crítica ou hostilidade ao profissional ou ao tratamento.
+
+### Reparo das rupturas
+
+Mais importante do que evitar rupturas é **repará-las** — e o reparo, quando ocorre, melhora o desfecho, às vezes mais do que uma relação sem rupturas [@safranmuran1996; @safran2011repairing]. Na prática:
+
+1. **Perceber** a ruptura (mudança no tom, no engajamento ou no clima da entrevista).
+2. **Não reagir defensivamente**; suspender momentaneamente a agenda e voltar a atenção à relação.
+3. **Nomear e explorar** o que está acontecendo, com curiosidade e sem culpabilizar.
+4. **Validar** a experiência do paciente e reconhecer a própria parte.
+5. **Renegociar** objetivos e tarefas, quando necessário.
+
+Bem conduzida, a ruptura deixa de ser obstáculo e torna-se uma **oportunidade**: um momento privilegiado para compreender os padrões relacionais do paciente [@safranmuran1996].
+
 ## As Três Regras de Ouro da Entrevista
 
 ### Primeira Regra: Pacientes Organizados

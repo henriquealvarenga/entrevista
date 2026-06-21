@@ -28,9 +28,9 @@ correspondente na Parte II.
 ## A quem se destina
 
 ::: {.callout-note appearance="simple"}
-## Públicos
+## Público
 
-- **Estudantes de Medicina** em rotação por psiquiatria.
+- **Estudantes de Medicina**
 :::
 
 ## Como navegar
@@ -40,15 +40,6 @@ para localizar termos, e o sumário "Nesta página" à direita para saltar entre
 seções do capítulo atual.
 
 ---
-
-::: {.callout-note appearance="simple"}
-## Agradecimento
-
-Agradeço à Dra. Juliane Batista Longatti pela cessão de seu roteiro didático sobre
-o Exame Psíquico, que tem ajudado na formação de estudantes de medicina. Sua
-sistematização dos descritores psicopatológicos contribuiu para a clareza deste
-material.
-:::
 
 **Nota:** Este material é destinado exclusivamente para fins educacionais. A
 prática clínica deve sempre ocorrer sob supervisão apropriada.

@@ -2,31 +2,56 @@
 title: "2. Nível de Consciência"
 ---
 
+O nível de consciência tem duas faces, e cada tradição clínica desenvolveu melhor uma delas. As alterações **quantitativas** — o eixo do *despertar* (*arousal*), da vigília plena ao coma — são tratadas com mais rigor e objetividade pela **neurologia**. Esse eixo tem substrato anatomofisiológico definido (sistema reticular ativador ascendente, tronco encefálico e diencéfalo), e é na clínica neurológica — trauma, acidente vascular, encefalopatias — que sua graduação precisa orienta decisões urgentes. Daí terem surgido instrumentos operacionais como a Escala de Coma de Glasgow e o escore FOUR, e a obra de referência de Plum e Posner [@plum2019].
+
+À psicopatologia psiquiátrica cabe sobretudo o eixo **qualitativo**: o estreitamento do campo da consciência, o estado crepuscular, o estado onírico, a dissociação — descritos em detalhe por Sims e Dalgalarrondo. A distinção entre os dois eixos é a mesma de que partem Plum e Posner: a consciência tem *conteúdo* (cortical) e *despertar* (*arousal*).
+
+Seja qual for o eixo, mais importante do que escolher o rótulo certo é **descrever o estímulo aplicado e a resposta obtida**. Como advertem Plum e Posner, "nenhuma escala é adequada para todos os pacientes; a melhor conduta é simplesmente descrever os achados" [@plum2019].
+
 ## 2.1 Alterações Quantitativas
 
 ### Normal
 - **Lúcido/Vigil:** completamente alerta e responsivo
-- **Vigilante:** estado de alerta aumentado
 
 ### Rebaixamento do Nível de Consciência
-- **Obnubilado/Sonolento:** tende a cair em sono quando não estimulado, necessário falar alto ou tocá-lo
-- **Confuso:** embotamento do sensório, dificuldade de compreensão, atordoamento, perplexidade, desorientação
-- **Torporoso:** sonolência acentuada, dificuldade de despertar
-- **Estuporoso:** ausência ou profunda diminuição de movimentos espontâneos, mutismo, responde apenas a estímulos vigorosos
-- **Comatoso:** abolição completa da consciência, não responde a estímulos
+Do alerta ao coma, o despertar reduz-se de forma contínua; os termos abaixo marcam pontos aproximados. Na prática, registre o estímulo aplicado e a resposta obtida e, quando indicado, o escore da Escala de Coma de Glasgow [@plum2019].
+
+- **Obnubilado/Sonolento (turvação da consciência):** redução leve a moderada do despertar; lentidão da compreensão, dificuldade de atenção; tende a "cair no sono" quando não estimulado [@dalgalarrondo2019, p. 96; @sims2018]
+- **Torporoso (sopor):** sonolência acentuada; desperta só a estímulo enérgico (sobretudo doloroso) e logo retorna ao sono [@dalgalarrondo2019, p. 96]
+- **Comatoso:** olhos fechados, sem despertar mesmo a estímulos vigorosos; nos graus profundos, abolição das respostas [@plum2019; @dalgalarrondo2019, p. 96]
+
+::: {.callout-note appearance="simple"}
+O termo **confuso** ("paciente confuso") não designa um grau de despertar, mas um quadro clínico — em geral o *delirium* —, com desorientação, déficit de atenção, perplexidade e pensamento incoerente. Dalgalarrondo recomenda reservar *delirium* para essas síndromes confusionais [@dalgalarrondo2019, p. 96].
+:::
+
+::: {.callout-warning appearance="simple"}
+## Divergência entre as fontes: o *estupor* é um nível de consciência?
+O termo *estupor* tem sentidos diferentes conforme a disciplina. Na tradição **psiquiátrica/fenomenológica** (Sims, Dalgalarrondo), designa uma **síndrome psicomotora** — mutismo e acinesia em paciente que parece desperto, com consciência aparentemente preservada (ver [Aspectos Gerais → Fenômenos catatônicos](01-aspectos-gerais.qmd)). Na **neurologia** (Plum & Posner) e em Kaplan/DSM-5, designa um **nível de rebaixamento do despertar**, do qual o paciente só é despertado por estímulo vigoroso. Diante dessa ambiguidade, em vez de classificar o paciente como "estuporoso", preferimos **descrever o que se observa**: o grau de despertar pela resposta ao estímulo (ou pela Escala de Glasgow) e, à parte, o quadro motor (mutismo, acinesia, imobilidade). Ver [Discrepâncias · D2](../apendices/discrepancias.qmd#sec-d2-estupor).
+:::
 
 ### Elevação do Nível de Consciência
-- **Hiperalerta:** ansioso, com hiperatividade autonômica e respostas aumentadas aos estímulos
+- **Vigilante / Hiperalerta:** estado de *alerta* (arousal) aumentado — ansioso, com hiperatividade autonômica e respostas aumentadas aos estímulos. (Aqui, *vigilante* = despertar aumentado; não confundir com a *vigilância* da atenção, [cap. 3](03-atencao.qmd) e [Discrepâncias · D3](../apendices/discrepancias.qmd#sec-d3-vigilancia).)
 
 ### Flutuações
 - **Flutuante:** alternâncias no nível de consciência
 
 ## 2.2 Alterações Qualitativas
 
+Caracterizam-se por mudança parcial ou focal do campo da consciência — parte preservada, parte alterada —, em geral com algum grau de rebaixamento do despertar associado [@dalgalarrondo2019].
+
 ### Estreitamento do Campo da Consciência
-- Consciência restrita a determinadas vivências
-- Perda da capacidade de reflexão
-- Outras vivências tornam-se inacessíveis
-- **Estado crepuscular:** consciência restrita com possível desorientação
+- Consciência restrita a um círculo de vivências, com perda da capacidade de reflexão; outras vivências tornam-se inacessíveis
+
+### Estado Crepuscular
+- Estreitamento transitório do campo da consciência, de **início e fim abruptos** e duração variável (de minutos a semanas)
+- **Atividade motora coordenada preservada**, permitindo atos automáticos
+- Em geral, **amnésia lacunar** para o episódio
+- Associado a epilepsia, intoxicações, traumatismo craniano e quadros dissociativos [@dalgalarrondo2019, p. 98; @sims2018]
+
+### Estado Onírico (oniroide)
+- Turvação da consciência acompanhada de vivência semelhante a um sonho muito vívido, com intensa atividade alucinatória visual de caráter cênico e forte carga emocional; frequente no delirium tremens [@dalgalarrondo2019, p. 97]
+
+### Dissociação da Consciência
+- Fragmentação ou divisão do campo da consciência, com perda da unidade psíquica habitual; ocorre em quadros dissociativos [@dalgalarrondo2019]
 
 ---

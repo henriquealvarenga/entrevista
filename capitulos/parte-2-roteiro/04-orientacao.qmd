@@ -25,4 +25,14 @@ Orientação em relação a si mesmo:
 > **Regra clínica:** Desorientação ocorre nesta ordem:
 > Tempo → Espaço → Em relação a si mesmo
 
+## 4.3 Tipos de Desorientação (segundo o mecanismo)
+
+A desorientação não é um fenômeno único: identificar seu mecanismo ajuda a orientar o diagnóstico [@dalgalarrondo2019, p. 111].
+
+- **Por rebaixamento do nível de consciência** (confusa ou torporosa): a turvação da consciência prejudica a atenção e a percepção, impedindo o paciente de apreender e integrar a realidade. É a forma mais comum, característica do *delirium*.
+- **Amnéstica** (por déficit de memória imediata e recente): o paciente não retém as informações do ambiente e perde a noção do fluir do tempo e do deslocamento no espaço. Típica da síndrome de Korsakoff. A desorientação **demencial** aproxima-se dela, somando agnosias e desorganização global das funções cognitivas.
+- **Apática ou abúlica**: por apatia e desinteresse profundos, o paciente não se atém aos estímulos do ambiente. Comum na depressão grave.
+- **Delirante**: imerso no delírio, o paciente "habita" o tempo ou o lugar delirantes. É frequente a **dupla orientação**, em que a orientação falsa (delirante) coexiste com a correta — o paciente afirma estar no inferno, cercado de demônios, mas reconhece também que está numa enfermaria.
+- **Por déficit intelectual** (deficiência mental) e **por dissociação** (quadros dissociativos): completam os principais mecanismos descritos.
+
 ---
