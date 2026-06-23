@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atividades — Entrevista Psiquiátrica e Exame do Estado Mental</title>
+
+<!-- =========================================================================
+     HUB DAS ATIVIDADES (SPEC §2,§4,§5)
+     Página única (substitui o dropdown do navbar). Um portão de identidade: o
+     aluno entra UMA vez; a presença (ou não) do código de aula decide o modo.
+       • Entrar na aula  → código + grupo (lista fixa) → mapa do campeonato.
+       • Treinar sozinho → sem código → grade livre das atividades.
+     Standalone, fullscreen, sem o sidebar do livro. Tema editorial herdado
+     (paper off-white + laranja queimado, fontes self-hosted). Sem CDN.
+     ========================================================================= -->
+
+<style>
+@font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+@font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Italic.woff2") format("woff2"); font-weight:400; font-style:italic; font-display:swap; }
+@font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"); font-weight:700; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-Medium.woff2") format("woff2"); font-weight:500; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-SemiBold.woff2") format("woff2"); font-weight:600; font-display:swap; }
+@font-face { font-family:"JetBrains Mono"; src:url("../fonts/JetBrainsMono-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+
+:root{
+  --paper:#F9F9F7; --paper-content:#ffffff; --sidebar-bg:#f2f2ee;
+  --border-color:#e5e5e0; --border-soft:#dcdcd8;
+  --text-primary:#1a1a1a; --text-body:#333; --text-secondary:#444; --text-muted:#888;
+  --brand:#b45309; --brand-dark:#92400e; --brand-soft:rgba(180,83,9,.08); --brand-line:rgba(180,83,9,.20);
+  --ok:#2f7d4f; --ok-soft:rgba(47,125,79,.10);
+  --font-sans:"Inter",ui-sans-serif,system-ui,sans-serif;
+  --font-serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --font-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{ background:var(--paper); color:var(--text-body); font-family:var(--font-sans); line-height:1.6; -webkit-font-smoothing:antialiased; }
+.wrap{max-width:720px; margin:0 auto; padding:32px 18px 80px}
+
+h1,h2,h3{font-family:var(--font-serif); font-weight:700; color:var(--text-primary); line-height:1.15; margin:0 0 .4em}
+h1{font-size:1.9rem} h2{font-size:1.35rem} h3{font-size:1.05rem}
+p{margin:0 0 1em}
+.muted{color:var(--text-muted)} .small{font-size:.86rem}
+.kicker{font-family:var(--font-mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--brand); margin-bottom:.5em}
+
+/* ---- Dois cards de entrada ---- */
+.cards{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:24px}
+@media(max-width:560px){ .cards{grid-template-columns:1fr} }
+.hubcard{display:block; text-align:left; width:100%; cursor:pointer; font-family:var(--font-sans);
+  background:var(--paper-content); border:1px solid var(--border-color); border-radius:6px; padding:24px 22px;
+  transition:border-color .15s, box-shadow .15s, transform .1s; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.hubcard:hover{border-color:var(--brand); box-shadow:0 3px 10px rgba(0,0,0,.06)}
+.hubcard:active{transform:translateY(1px)}
+.hubcard .ico{font-size:1.8rem; display:block; margin-bottom:10px}
+.hubcard .ttl{font-family:var(--font-serif); font-size:1.2rem; font-weight:700; color:var(--text-primary); display:block; margin-bottom:6px}
+.hubcard .sub{font-size:.9rem; color:var(--text-muted); display:block}
+
+/* ---- Botões ---- */
+.btn{font-family:var(--font-sans); font-size:.95rem; font-weight:600; cursor:pointer;
+  border:1px solid var(--brand); background:var(--brand); color:#fff; padding:11px 20px; border-radius:3px; transition:background .15s}
+.btn:hover{background:var(--brand-dark); border-color:var(--brand-dark)}
+.btn.ghost{background:transparent; color:var(--brand)}
+.btn.ghost:hover{background:var(--brand-soft)}
+.row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:18px}
+.backlink{display:inline-block; background:none; border:none; color:var(--text-muted); font-family:var(--font-sans);
+  font-size:.88rem; cursor:pointer; padding:0; margin-bottom:14px}
+.backlink:hover{color:var(--brand)}
+
+input[type=text]{width:100%; font-family:var(--font-mono); font-size:1.3rem; letter-spacing:.08em; text-transform:uppercase;
+  padding:12px 14px; border:1px solid var(--border-color); border-radius:4px}
+input[type=text]:focus{outline:none; border-color:var(--brand)}
+label.lbl{display:block; font-size:.84rem; font-weight:600; color:var(--text-secondary); margin:14px 0 6px}
+.card{background:var(--paper-content); border:1px solid var(--border-color); border-radius:6px; padding:24px; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+
+/* ---- Barra de contexto (sessão + grupo + sair) ---- */
+.ctxbar{display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; justify-content:space-between;
+  background:var(--sidebar-bg); border:1px solid var(--border-color); border-radius:6px; padding:12px 16px; margin-bottom:22px; font-size:.9rem}
+.ctxbar .id{color:var(--text-secondary)}
+.ctxbar .id b{color:var(--text-primary); font-family:var(--font-mono)}
+
+/* ---- Lista fixa de grupos ---- */
+.grupos{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px}
+@media(min-width:480px){ .grupos{grid-template-columns:1fr 1fr 1fr} }
+.grupo-opt{font-family:var(--font-sans); font-size:1rem; font-weight:600; cursor:pointer; text-align:center;
+  background:var(--paper-content); border:1px solid var(--border-color); border-radius:4px; padding:16px 10px; color:var(--text-primary);
+  transition:border-color .12s, background .12s}
+.grupo-opt:hover{border-color:var(--brand); background:var(--brand-soft)}
+
+/* ---- Mapa do campeonato ---- */
+.mapa{list-style:none; margin:8px 0 0; padding:0}
+.etapa{display:flex; align-items:center; gap:14px; width:100%; text-align:left; font-family:var(--font-sans);
+  background:var(--paper-content); border:1px solid var(--border-color); border-radius:6px; padding:16px 18px; margin-bottom:10px;
+  cursor:pointer; transition:border-color .12s, background .12s}
+.etapa:hover:not(:disabled){border-color:var(--brand)}
+.etapa:disabled{cursor:not-allowed; opacity:.55}
+.etapa .mark{font-size:1.25rem; width:1.6em; text-align:center; flex:0 0 auto}
+.etapa .info{flex:1 1 auto}
+.etapa .info .nome{font-family:var(--font-serif); font-size:1.1rem; font-weight:700; color:var(--text-primary)}
+.etapa .info .est{font-size:.82rem; color:var(--text-muted)}
+.etapa.feita{background:var(--ok-soft); border-color:rgba(47,125,79,.30)}
+.etapa.feita .est{color:var(--ok)}
+.etapa.atual{border-color:var(--brand); box-shadow:0 0 0 1px var(--brand-line)}
+.etapa.atual .est{color:var(--brand); font-weight:600}
+
+/* ---- Grade livre (treino) ---- */
+.grade{display:grid; grid-template-columns:1fr; gap:10px; margin-top:8px}
+@media(min-width:520px){ .grade{grid-template-columns:1fr 1fr} }
+.grade-card{display:block; text-align:left; cursor:pointer; font-family:var(--font-sans);
+  background:var(--paper-content); border:1px solid var(--border-color); border-radius:6px; padding:18px 20px;
+  transition:border-color .12s, box-shadow .12s}
+.grade-card:hover{border-color:var(--brand); box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.grade-card .nome{font-family:var(--font-serif); font-size:1.1rem; font-weight:700; color:var(--text-primary)}
+.grade-card .tag{font-family:var(--font-mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted)}
+
+.err{font-size:.86rem; color:#c44; display:none; margin-top:8px}
+.read-cta{margin-top:34px; padding-top:18px; border-top:1px solid var(--border-color); font-size:.9rem; color:var(--text-secondary)}
+.read-cta cite{font-family:var(--font-serif); font-style:italic; color:var(--text-primary)}
+.read-cta a{color:var(--brand); text-decoration:none; font-weight:600}
+.read-cta a:hover{color:var(--brand-dark); text-decoration:underline}
+
+.view{display:none} .view.active{display:block; animation:fade .25s ease}
+@keyframes fade{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Atividades · Exame do Estado Mental</div>
+  <h1>Vamos começar</h1>
+
+  <!-- ============ VIEW: cards ============ -->
+  <section id="v-cards" class="view active">
+    <p class="muted">Escolham como vão participar.</p>
+    <div class="cards">
+      <button class="hubcard" id="cardAula">
+        <span class="ico">🎓</span>
+        <span class="ttl">Entrar na aula</span>
+        <span class="sub">código + seu grupo · campeonato em sequência, com ranking no telão</span>
+      </button>
+      <button class="hubcard" id="cardTreino">
+        <span class="ico">🔁</span>
+        <span class="ttl">Treinar sozinho</span>
+        <span class="sub">sem código, ordem livre · refaça à vontade e veja o gabarito</span>
+      </button>
+    </div>
+    <p class="read-cta"><a href="../index.html" title="Início" aria-label="Início">🏠 Início</a></p>
+  </section>
+
+  <!-- ============ VIEW: aula — código ============ -->
+  <section id="v-codigo" class="view">
+    <button class="backlink" data-back="v-cards">← voltar</button>
+    <h2>Entrar na aula</h2>
+    <div class="card">
+      <p class="small muted" style="margin-bottom:6px">Digitem o código que o professor projetou na tela.</p>
+      <label class="lbl" for="codigo">Código da sessão</label>
+      <input type="text" id="codigo" placeholder="ABCDE" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="12">
+      <p class="err" id="codigoErr"></p>
+      <div class="row"><button class="btn" id="codigoBtn">Continuar →</button></div>
+    </div>
+  </section>
+
+  <!-- ============ VIEW: aula — grupo ============ -->
+  <section id="v-grupo" class="view">
+    <button class="backlink" data-back="v-codigo">← trocar código</button>
+    <h2>Qual é o grupo de vocês?</h2>
+    <p class="muted small">Sessão <b id="grupoSessao" style="font-family:var(--font-mono); color:var(--brand)"></b>. Toquem no número do grupo.</p>
+    <div class="grupos" id="grupoLista"></div>
+  </section>
+
+  <!-- ============ VIEW: mapa do campeonato ============ -->
+  <section id="v-mapa" class="view">
+    <div class="ctxbar">
+      <span class="id">Sessão <b id="mapaSessao"></b> · <b id="mapaGrupo"></b></span>
+      <button class="btn ghost" id="sairAula">Sair / trocar grupo</button>
+    </div>
+    <h2>O campeonato</h2>
+    <p class="muted small">Façam as etapas em ordem. Cada uma libera a próxima; a concluída fica só para rever.</p>
+    <ol class="mapa" id="mapaLista"></ol>
+  </section>
+
+  <!-- ============ VIEW: grade livre (treino) ============ -->
+  <section id="v-grade" class="view">
+    <div class="ctxbar">
+      <span class="id">🔁 Modo treino — nada é enviado, refaça à vontade</span>
+      <button class="btn ghost" id="sairTreino">Sair</button>
+    </div>
+    <h2>Treinar sozinho</h2>
+    <p class="muted small">Escolham qualquer atividade, em qualquer ordem.</p>
+    <div class="grade" id="gradeLista"></div>
+  </section>
+
+</div>
+
+<!-- Sem CDN. O hub só precisa da identidade e do registry; não fala com o backend. -->
+<script src="lib/aula.js"></script>
+<script src="lib/hub-config.js"></script>
+<script>
+"use strict";
+
+const ATIVIDADES = window.HUB_ATIVIDADES;
+
+/* ---- Navegação entre views ---- */
+function mostrar(id){
+  document.querySelectorAll(".view").forEach(v => v.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  window.scrollTo({ top:0, behavior:"smooth" });
+}
+document.querySelectorAll("[data-back]").forEach(b =>
+  b.addEventListener("click", () => mostrar(b.dataset.back)));
+
+/* ---- Quantidade de grupos (SPEC §4): ?grupos= > painel-num-grupos > default 6, clamp 2–10 ---- */
+function numGrupos(){
+  let n = parseInt(new URLSearchParams(location.search).get("grupos"), 10);
+  if (!n || isNaN(n)) { try { n = parseInt(localStorage.getItem("painel-num-grupos"), 10); } catch(e){} }
+  if (!n || isNaN(n)) n = 6;
+  return Math.max(2, Math.min(10, n));
+}
+
+/* =========================================================================
+   MODO AULA
+   ========================================================================= */
+const cAula = document.getElementById("cardAula");
+cAula.addEventListener("click", () => { mostrar("v-codigo"); document.getElementById("codigo").focus(); });
+
+document.getElementById("codigo").addEventListener("input", () => {
+  document.getElementById("codigoErr").style.display = "none";
+});
+document.getElementById("codigoBtn").addEventListener("click", entrarComCodigo);
+document.getElementById("codigo").addEventListener("keydown", e => { if (e.key === "Enter") entrarComCodigo(); });
+
+function entrarComCodigo(){
+  const s = document.getElementById("codigo").value.trim().toUpperCase();
+  const err = document.getElementById("codigoErr");
+  if (!s){ err.textContent = "Digite o código que o professor projetou."; err.style.display = "block"; return; }
+  irGrupo(s);
+}
+
+function irGrupo(sessao){
+  document.getElementById("grupoSessao").textContent = sessao;
+  const lista = document.getElementById("grupoLista"); lista.innerHTML = "";
+  const n = numGrupos();
+  for (let i = 1; i <= n; i++){
+    const nome = "Grupo " + i;
+    const b = document.createElement("button");
+    b.className = "grupo-opt"; b.textContent = nome;
+    b.addEventListener("click", () => {
+      AULA.gravar({ modo:"aula", sessao:sessao, grupo:nome });   // identidade gravada UMA vez
+      location.href = ATIVIDADES[0].arquivo;   // aula: direto para a SALA DE ESPERA da atividade (sem o mapa)
+    });
+    lista.appendChild(b);
+  }
+  mostrar("v-grupo");
+}
+
+function irMapa(sessao, grupo){
+  document.getElementById("mapaSessao").textContent = sessao;
+  document.getElementById("mapaGrupo").textContent = grupo;
+  const done = AULA.concluidas(sessao, grupo);
+  const lista = document.getElementById("mapaLista"); lista.innerHTML = "";
+
+  let atualAtribuida = false;
+  ATIVIDADES.forEach(a => {
+    const feita = done.indexOf(a.id) !== -1;
+    let estado, mark, est;
+    if (feita){ estado = "feita"; mark = "✓"; est = "concluída — toque para rever"; }
+    else if (!atualAtribuida){ estado = "atual"; mark = "▶"; est = "é a vez de vocês"; atualAtribuida = true; }
+    else { estado = "bloqueada"; mark = "🔒"; est = "conclua a anterior para liberar"; }
+
+    const li = document.createElement("li");
+    const b = document.createElement("button");
+    b.className = "etapa " + estado;
+    b.disabled = (estado === "bloqueada");
+    b.innerHTML = `<span class="mark">${mark}</span>` +
+      `<span class="info"><span class="nome">${a.titulo}</span><br><span class="est">${est}</span></span>`;
+    if (estado !== "bloqueada"){
+      b.addEventListener("click", () => { location.href = a.arquivo; }); // a atividade lê a identidade
+    }
+    li.appendChild(b); lista.appendChild(li);
+  });
+  mostrar("v-mapa");
+}
+
+document.getElementById("sairAula").addEventListener("click", () => {
+  if (!confirm("Sair e trocar de grupo? Isto não apaga as respostas já enviadas — só a identidade neste aparelho.")) return;
+  AULA.limpar();
+  document.getElementById("codigo").value = "";
+  mostrar("v-cards");
+});
+
+/* =========================================================================
+   MODO TREINO
+   ========================================================================= */
+document.getElementById("cardTreino").addEventListener("click", () => {
+  AULA.gravar({ modo:"treino" });
+  irGrade();
+});
+
+function irGrade(){
+  const lista = document.getElementById("gradeLista"); lista.innerHTML = "";
+  ATIVIDADES.forEach(a => {
+    const card = document.createElement("a");
+    card.className = "grade-card"; card.href = a.arquivo;
+    card.innerHTML = `<span class="nome">${a.titulo}</span><br>` +
+      `<span class="tag">${a.pontua ? "pontua" : "sem placar"}</span>`;
+    lista.appendChild(card);
+  });
+  mostrar("v-grade");
+}
+
+document.getElementById("sairTreino").addEventListener("click", () => {
+  AULA.limpar();
+  mostrar("v-cards");
+});
+
+/* =========================================================================
+   BOOT — retoma a identidade existente (não repergunta nada)
+   ========================================================================= */
+(function boot(){
+  const id = AULA.ler();
+  if (id && id.modo === "aula" && id.sessao && id.grupo){ location.href = ATIVIDADES[0].arquivo; return; }
+  if (id && id.modo === "treino"){ irGrade(); return; }
+  mostrar("v-cards");
+})();
+</script>
+</body>
+</html>

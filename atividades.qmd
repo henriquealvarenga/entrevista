@@ -1,0 +1,27 @@
+---
+title: "Atividades em grupo"
+subtitle: "Um campeonato de 5 rodadas sobre o Exame do Estado Mental"
+---
+
+As atividades são um **campeonato em grupos**, jogado em sala. Cada grupo usa um
+aparelho; o professor projeta um código no telão e acompanha as respostas ao vivo.
+São cinco rodadas, numa escalada que vai do detalhe ao paciente inteiro:
+
+1. **Nomear o fenômeno** — reconhecer e nomear o que se observa nos casos.
+2. **Fronteiras** — separar os termos mais confundíveis (ilusão × alucinação, obsessão × delírio…).
+3. **Dimensões do delírio** — avaliar delírios em cinco dimensões e ver onde a turma diverge.
+4. **Síndrome no EEM** — da constelação de achados ao quadro mais provável.
+5. **O caso completo** — os seis casos do livro, num sprint diagnóstico.
+
+::: {.callout-tip appearance="simple"}
+## Entrar
+
+<a class="btn btn-primary" href="atividades/index.html" role="button">Abrir as atividades →</a>
+
+Os alunos entram com o **código da sessão** (projetado pelo professor) e escolhem
+o **grupo**. Sem código, dá para **treinar sozinho**, em qualquer ordem.
+:::
+
+<p class="text-muted" style="font-size:.9em">Professor — o
+<a href="atividades/painel.html">painel de controle</a> gera o código da sessão e
+mostra o placar ao vivo (acesso restrito por login).</p>

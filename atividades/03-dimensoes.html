@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rodada 3 — Dimensões do delírio</title>
+
+<!-- =========================================================================
+     RODADA 3 — DIMENSÕES DO DELÍRIO (classificação dimensional)
+     App self-contained, sem CDN, orientado a dados. Tema editorial do livro.
+     Pensado para 1 dispositivo por grupo. Por caso, o grupo classifica 5
+     DIMENSÕES (Convicção, Extensão, Bizarrice, Desorganização, Preocupação) em
+     Baixa/Média/Alta. Três pontuam por BANDA DE REFERÊNCIA do professor; as
+     outras duas ficam para discussão. Envio INCREMENTAL ao Supabase via upsert
+     (atividade:"dimensoes", dados.casos cumulativo). O telão mostra a DIVERGÊNCIA
+     da turma por dimensão. Mesmo banco/lib das demais.
+     ========================================================================= -->
+
+<style>
+@font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+@font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Italic.woff2") format("woff2"); font-weight:400; font-style:italic; font-display:swap; }
+@font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"); font-weight:700; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-Medium.woff2") format("woff2"); font-weight:500; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-SemiBold.woff2") format("woff2"); font-weight:600; font-display:swap; }
+@font-face { font-family:"JetBrains Mono"; src:url("../fonts/JetBrainsMono-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+
+:root{
+  --paper:#F9F9F7; --paper-content:#ffffff; --sidebar-bg:#f2f2ee;
+  --border-color:#e5e5e0; --border-soft:#dcdcd8;
+  --text-primary:#1a1a1a; --text-body:#333; --text-secondary:#444; --text-muted:#888;
+  --brand:#b45309; --brand-dark:#92400e; --brand-soft:rgba(180,83,9,.08); --brand-line:rgba(180,83,9,.20);
+  --ok:#2f7d4f; --ok-soft:rgba(47,125,79,.10);
+  --warn:#b07a14; --warn-soft:rgba(176,122,20,.12);
+  --font-sans:"Inter",ui-sans-serif,system-ui,sans-serif;
+  --font-serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --font-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{ background:var(--paper); color:var(--text-body); font-family:var(--font-sans); line-height:1.6; -webkit-font-smoothing:antialiased; }
+.wrap{max-width:780px; margin:0 auto; padding:24px 18px 80px}
+
+h1,h2,h3{font-family:var(--font-serif); font-weight:700; color:var(--text-primary); line-height:1.15; margin:0 0 .4em}
+h1{font-size:1.7rem} h2{font-size:1.3rem} h3{font-size:1.05rem}
+p{margin:0 0 1em}
+.muted{color:var(--text-muted)} .small{font-size:.86rem}
+.kicker{font-family:var(--font-mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--brand); margin-bottom:.5em}
+
+.card{background:var(--paper-content); border:1px solid var(--border-color); border-radius:4px; padding:22px; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.vinheta{font-size:1.06rem; line-height:1.7; color:var(--text-secondary); border-left:3px solid var(--brand-line); padding-left:16px; margin:.2em 0 0}
+
+.btn{font-family:var(--font-sans); font-size:.95rem; font-weight:600; cursor:pointer;
+  border:1px solid var(--brand); background:var(--brand); color:#fff; padding:11px 20px; border-radius:3px; transition:background .15s}
+.btn:hover{background:var(--brand-dark); border-color:var(--brand-dark)}
+.btn:disabled{opacity:.4; cursor:not-allowed}
+.btn.ghost{background:transparent; color:var(--brand)}
+.btn.ghost:hover{background:var(--brand-soft)}
+.row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:18px}
+.row.end{justify-content:flex-end}
+
+/* ---- Lista de dimensões (intro) ---- */
+.dimlegend{list-style:none; margin:14px 0 0; padding:0}
+.dimlegend li{padding:8px 0; border-top:1px solid var(--border-color); font-size:.92rem}
+.dimlegend li:first-child{border-top:none}
+.dimlegend b{font-family:var(--font-serif); color:var(--text-primary)}
+.dimlegend .tag{font-family:var(--font-mono); font-size:.66rem; text-transform:uppercase; letter-spacing:.05em; padding:2px 7px; border-radius:20px; margin-left:6px; vertical-align:middle}
+.tag.placar{background:var(--brand-soft); color:var(--brand); border:1px solid var(--brand-line)}
+.tag.debate{background:var(--sidebar-bg); color:var(--text-muted); border:1px solid var(--border-color)}
+
+/* ---- Grade de classificação (por caso) ---- */
+.dim-list{margin-top:10px}
+.dim-row{padding:14px 0; border-top:1px solid var(--border-color)}
+.dim-row:first-child{border-top:none}
+.dim-head{margin-bottom:8px}
+.dim-nome{font-family:var(--font-serif); font-weight:700; font-size:1.05rem; color:var(--text-primary)}
+.dim-desc{display:block; font-size:.84rem; color:var(--text-muted); margin-top:1px}
+.niveis{display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px}
+.niv{font-family:var(--font-sans); font-size:.95rem; font-weight:600; cursor:pointer; text-align:center;
+  border:1px solid var(--border-color); background:var(--paper-content); color:var(--text-primary);
+  padding:11px 8px; border-radius:4px; transition:border-color .12s, background .12s, color .12s}
+.niv:hover{border-color:var(--brand); background:var(--brand-soft)}
+.niv.sel{border-color:var(--brand); background:var(--brand); color:#fff}
+
+/* ---- Progresso / topo ---- */
+.topbar{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; font-size:.82rem; color:var(--text-muted)}
+.progress{height:5px; background:var(--border-color); border-radius:3px; overflow:hidden; margin-bottom:22px}
+.progress > i{display:block; height:100%; background:var(--brand); width:0; transition:width .3s}
+.score{font-family:var(--font-mono); color:var(--brand); font-weight:500}
+
+/* ---- Síntese ---- */
+.badge{display:inline-block; font-family:var(--font-mono); font-size:.8rem; padding:6px 12px; border:1px solid var(--brand); color:var(--brand); border-radius:20px; margin:4px 0}
+.synth-list{margin-top:18px; border-top:1px solid var(--border-color)}
+.synth-list .item{border-bottom:1px solid var(--border-color); padding:12px 0}
+.synth-list .item b{font-family:var(--font-serif)}
+.synth-list .dimline{font-size:.86rem; margin-top:3px}
+.synth-list .hit{color:var(--ok); font-weight:600}
+.synth-list .miss{color:var(--warn)}
+.synth-list .deb{color:var(--text-muted)}
+.sync-msg{margin-top:4px}
+.sync-msg.ok{color:var(--ok)}
+.sync-msg.erro{color:var(--warn)}
+.read-cta{margin-top:26px; padding-top:18px; border-top:1px solid var(--border-color); font-size:.92rem; color:var(--text-secondary)}
+.read-cta a{color:var(--brand); text-decoration:none; font-weight:600}
+.read-cta a:hover{color:var(--brand-dark); text-decoration:underline}
+
+.hidden{display:none !important}
+.step{display:none} .step.active{display:block; animation:fade .25s ease}
+@keyframes fade{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ ENTRADA ============ -->
+  <section id="intro" class="step active">
+    <div class="kicker">Rodada 3 · Dimensões do delírio</div>
+    <h1>O delírio não é tudo ou nada</h1>
+    <p>Em vez de perguntar "é delírio, sim ou não?", esta rodada pede que vocês <b>graduem</b> cada caso em cinco <b>dimensões</b>. A mesma crença pode ser muito convicta e pouco bizarra; muito bizarra e perfeitamente organizada. É assim que o delírio se descreve de verdade.</p>
+    <p>Para cada caso, marquem <b>Baixa, Média ou Alta</b> em cada dimensão:</p>
+    <ul class="dimlegend" id="dimLegend"></ul>
+    <p class="small" style="margin-top:14px">Três dimensões entram no <b>placar</b>, por uma <b>banda de referência</b>; <b>Bizarrice</b> e <b>Extensão</b> ficam <b>para a discussão</b> — porque ali, de propósito, não há gabarito. No telão vocês vão ver <b>onde a turma concordou e onde se dividiu</b>.</p>
+    <p class="small muted">Trabalhem em grupo, num só aparelho.</p>
+    <div class="row"><button class="btn" id="startBtn">Começar →</button></div>
+  </section>
+
+  <!-- ============ LOOP DE CASOS ============ -->
+  <section id="loop" class="step">
+    <div class="topbar">
+      <span id="caseCounter">Caso 1 de 8</span>
+      <span class="score">Pontos: <span id="scoreVal">0</span></span>
+    </div>
+    <div class="progress"><i id="progressBar"></i></div>
+
+    <h2 id="casoNome">O caso</h2>
+    <p class="vinheta" id="casoVinheta"></p>
+
+    <div class="dim-list" id="dimList"></div>
+
+    <div class="row end"><button class="btn" id="nextBtn" disabled>Próximo caso →</button></div>
+  </section>
+
+  <!-- ============ SÍNTESE ============ -->
+  <section id="synth" class="step">
+    <div class="kicker">Fim da rodada</div>
+    <h1>O placar de vocês</h1>
+    <p>Grupo <b id="synthGroup"></b>. Vocês marcaram <span class="score" id="synthScore"></span> de <span id="synthTotal"></span> pontos nas dimensões com banda de referência.</p>
+    <div id="synthBadge"></div>
+
+    <div class="synth-list" id="synthList"></div>
+
+    <div class="card" style="margin-top:18px; background:var(--sidebar-bg)">
+      <h3>Para o debate de turma</h3>
+      <p class="small" style="margin-bottom:0">• Em qual caso a turma mais <b>divergiu</b> — e em qual dimensão?<br>• Comparem <b>Schreber × Carla</b>: os dois são bizarros, mas a <b>desorganização</b> é oposta. Bizarrice e desorganização são o mesmo eixo?<br>• A <b>Daniela</b> tem delírio? O que muda quando a <b>convicção</b> é baixa e a <b>crítica</b>, preservada?<br>• Onde a <b>Bizarrice</b> dependeu da <b>cultura</b> de quem avaliou (Helena, os anjos)?</p>
+    </div>
+
+    <p class="small sync-msg" id="syncMsg" style="margin-top:14px"></p>
+    <div class="row">
+      <button class="btn ghost" id="restartBtn">Refazer</button>
+      <a class="btn" id="voltarHub" href="index.html" style="display:none">Voltar →</a>
+    </div>
+
+    <p class="read-cta"><a href="../index.html" title="Início" aria-label="Início">🏠 Início</a></p>
+  </section>
+
+</div>
+
+<script src="lib/supabase-config.js"></script>
+<script src="lib/supabase.js"></script>
+<script src="lib/aula.js"></script>
+<script src="lib/sfx.js"></script>
+<script src="lib/03-dimensoes-data.js"></script>
+
+<script>
+"use strict";
+
+const DIMENSOES = window.DIMENSOES_DATA.DIMENSOES;
+const NIVEIS    = window.DIMENSOES_DATA.NIVEIS;
+const CASOS     = window.DIMENSOES_DATA.CASOS;
+const TOTAL     = CASOS.length;
+
+/* maxPontos = soma das dimensões pontuadas com banda em cada caso. */
+const MAX_PONTOS = CASOS.reduce((s,c) =>
+  s + DIMENSOES.filter(d => d.pontua && c.banda && c.banda[d.chave]).length, 0);
+
+/* =========================================================================
+   ESTADO
+   ========================================================================= */
+const estado = { sessao:"", grupo:"", idx:0, respostas:[], atual:{} };
+// respostas[i] = { caso_id, ratings:{conviccao,extensao,bizarrice,desorganizacao,preocupacao} }
+
+const ATIVIDADE = "dimensoes";
+function chaveEstado(s,g){ return `dimensoes:estado:${s}:${g}`; }
+function chavePendente(s,g){ return `dimensoes:pendente:${s}:${g}`; }
+
+function lerEstadoSalvo(s,g){
+  try { return JSON.parse(localStorage.getItem(chaveEstado(s,g)) || "null"); }
+  catch(e){ return null; }
+}
+function salvarLocal(){
+  try {
+    localStorage.setItem(chaveEstado(estado.sessao, estado.grupo), JSON.stringify({
+      sessao:estado.sessao, grupo:estado.grupo, idx:estado.idx, respostas:estado.respostas
+    }));
+  } catch(e){}
+}
+function limparLocal(s,g){
+  try { localStorage.removeItem(chaveEstado(s,g)); localStorage.removeItem(chavePendente(s,g)); } catch(e){}
+}
+
+/* Pontos de um caso = nº de dimensões pontuadas cujo nível cai na banda. */
+function pontosDoCaso(caso_id, ratings){
+  const caso = CASOS.find(c => c.id === caso_id);
+  if (!caso || !caso.banda || !ratings) return 0;
+  let p = 0;
+  DIMENSOES.forEach(d => {
+    if (!d.pontua) return;
+    const banda = caso.banda[d.chave];
+    if (banda && ratings[d.chave] && banda.indexOf(ratings[d.chave]) !== -1) p++;
+  });
+  return p;
+}
+function scoreTotal(){
+  return estado.respostas.reduce((s,r) => s + (r ? pontosDoCaso(r.caso_id, r.ratings) : 0), 0);
+}
+
+/* Payload CUMULATIVO: só os casos concluídos (com 5 dimensões marcadas). */
+function montarPayload(){
+  const casos = estado.respostas
+    .filter(r => r && r.ratings && Object.keys(r.ratings).length === DIMENSOES.length)
+    .map(r => ({ caso_id:r.caso_id, ratings:r.ratings }));
+  return { sessao:estado.sessao, atividade:ATIVIDADE, grupo:estado.grupo, pontuacao:scoreTotal(), dados:{ casos } };
+}
+
+let syncPendente = false;
+let reenvioTimer = null;
+function refletirSync(){
+  const el = document.getElementById("syncMsg"); if (!el) return;
+  if (MODO !== "aula"){ el.className = "small sync-msg ok"; el.textContent = "Modo treino — as respostas ficam só neste aparelho."; return; }
+  if (syncPendente){ el.className = "small sync-msg erro"; el.textContent = "Respostas salvas neste aparelho. Sem conexão com a turma — tentando reenviar…"; }
+  else { el.className = "small sync-msg ok"; el.textContent = "✓ Respostas salvas automaticamente."; }
+}
+function guardarPendente(payload){ syncPendente = true; try { localStorage.setItem(chavePendente(estado.sessao, estado.grupo), JSON.stringify(payload)); } catch(e){} agendarReenvio(); }
+function limparPendente(){ syncPendente = false; try { localStorage.removeItem(chavePendente(estado.sessao, estado.grupo)); } catch(e){} }
+function lerPendente(){ try { return JSON.parse(localStorage.getItem(chavePendente(estado.sessao, estado.grupo)) || "null"); } catch(e){ return null; } }
+function agendarReenvio(){
+  if (reenvioTimer) return;
+  reenvioTimer = setInterval(async ()=>{
+    const pend = lerPendente();
+    if (!pend){ clearInterval(reenvioTimer); reenvioTimer = null; return; }
+    if (!(window.SB && SB.configValida())) return;
+    try { const r = await SB.enviarResultado(pend); if (r.ok){ limparPendente(); clearInterval(reenvioTimer); reenvioTimer = null; refletirSync(); } } catch(e){}
+  }, 8000);
+}
+async function enviar(payload){
+  if (MODO !== "aula"){ return; }
+  try {
+    if (!(window.SB && SB.configValida())){ guardarPendente(payload); return; }
+    const r = await SB.enviarResultado(payload);
+    if (r.ok) limparPendente(); else guardarPendente(payload);
+  } catch(e){ guardarPendente(payload); }
+  refletirSync();
+}
+function salvarProgresso(){ salvarLocal(); enviar(montarPayload()); }
+
+/* =========================================================================
+   NAVEGAÇÃO
+   ========================================================================= */
+function show(sectionId){
+  document.querySelectorAll(".wrap > .step").forEach(s=>s.classList.remove("active"));
+  document.getElementById(sectionId).classList.add("active");
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+/* =========================================================================
+   IDENTIDADE (lê do hub)
+   ========================================================================= */
+const CTX = AULA.exigir();
+let MODO = CTX ? CTX.modo : "aula";
+if (CTX) bootAtividade();
+
+function bootAtividade(){
+  SFX.montarBotaoMudo();
+  estado.sessao = CTX.sessao; estado.grupo = CTX.grupo;
+  renderLegenda();
+  const salvo = lerEstadoSalvo(CTX.sessao, CTX.grupo);
+  const completos = salvo && Array.isArray(salvo.respostas)
+    ? salvo.respostas.filter(r => r && r.ratings && Object.keys(r.ratings).length === DIMENSOES.length).length : 0;
+
+  if (completos >= TOTAL){
+    Object.assign(estado, { respostas:salvo.respostas.slice(0,TOTAL), idx:TOTAL });
+    montarSintese(); show("synth"); return;
+  }
+  if (completos > 0){
+    Object.assign(estado, { respostas:salvo.respostas.slice(0,completos), idx:completos });
+    show("loop"); carregarCaso(); return;
+  }
+  show("intro");
+}
+
+function renderLegenda(){
+  const ul = document.getElementById("dimLegend"); if (!ul) return;
+  ul.innerHTML = DIMENSOES.map(d =>
+    `<li><b>${d.nome}</b><span class="tag ${d.pontua ? "placar" : "debate"}">${d.pontua ? "placar" : "discussão"}</span><br><span class="muted small">${d.desc}</span></li>`
+  ).join("");
+}
+
+document.getElementById("startBtn").addEventListener("click", ()=>{
+  limparLocal(estado.sessao, estado.grupo);
+  Object.assign(estado, { idx:0, respostas:[], atual:{} });
+  syncPendente = false; SFX.click();
+  show("loop"); carregarCaso();
+});
+
+/* =========================================================================
+   LOOP DE CASOS
+   ========================================================================= */
+function carregarCaso(){
+  const caso = CASOS[estado.idx];
+  document.getElementById("caseCounter").textContent = `Caso ${estado.idx+1} de ${TOTAL}`;
+  document.getElementById("progressBar").style.width = (estado.idx/TOTAL*100)+"%";
+  document.getElementById("scoreVal").textContent = scoreTotal();
+  document.getElementById("casoNome").textContent = caso.nome;
+  document.getElementById("casoVinheta").innerHTML = caso.vinheta;
+
+  estado.atual = {};
+  const box = document.getElementById("dimList"); box.innerHTML = "";
+  DIMENSOES.forEach(d => {
+    const row = document.createElement("div"); row.className = "dim-row"; row.dataset.dim = d.chave;
+    const niv = NIVEIS.map(n => `<button class="niv" data-niv="${n.chave}">${n.label}</button>`).join("");
+    row.innerHTML =
+      `<div class="dim-head"><span class="dim-nome">${d.nome}</span><span class="dim-desc">${d.desc}</span></div>` +
+      `<div class="niveis">${niv}</div>`;
+    row.querySelectorAll(".niv").forEach(b => b.addEventListener("click", ()=>{
+      row.querySelectorAll(".niv").forEach(x => x.classList.remove("sel"));
+      b.classList.add("sel");
+      estado.atual[d.chave] = b.dataset.niv;
+      SFX.click();
+      document.getElementById("nextBtn").disabled = (Object.keys(estado.atual).length !== DIMENSOES.length);
+    }));
+    box.appendChild(row);
+  });
+  document.getElementById("nextBtn").disabled = true;
+  document.getElementById("nextBtn").textContent = (estado.idx >= TOTAL-1) ? "Ver a síntese →" : "Próximo caso →";
+  show("loop");
+}
+
+document.getElementById("nextBtn").addEventListener("click", ()=>{
+  if (Object.keys(estado.atual).length !== DIMENSOES.length) return;
+  const caso = CASOS[estado.idx];
+  estado.respostas[estado.idx] = { caso_id: caso.id, ratings: Object.assign({}, estado.atual) };
+  if (pontosDoCaso(caso.id, estado.atual) > 0) SFX.acerto(); else SFX.click();
+  salvarProgresso();
+  estado.idx++;
+  if (estado.idx >= TOTAL){ montarSintese(); show("synth"); }
+  else carregarCaso();
+});
+
+/* =========================================================================
+   SÍNTESE
+   ========================================================================= */
+function nivelLabel(chave){ const n = NIVEIS.find(x=>x.chave===chave); return n ? n.label : "—"; }
+
+function montarSintese(){
+  document.getElementById("progressBar").style.width = "100%";
+  document.getElementById("synthGroup").textContent = estado.grupo;
+  document.getElementById("synthScore").textContent = scoreTotal();
+  document.getElementById("synthTotal").textContent = MAX_PONTOS;
+
+  const pct = MAX_PONTOS ? scoreTotal()/MAX_PONTOS : 0;
+  let titulo;
+  if (pct >= 0.75) titulo = "Olhar dimensional afiado";
+  else if (pct >= 0.5) titulo = "Boa calibração";
+  else titulo = "Aprendiz das dimensões";
+  document.getElementById("synthBadge").innerHTML = `<span class="badge">${titulo}</span>`;
+
+  const list = document.getElementById("synthList"); list.innerHTML = "";
+  estado.respostas.forEach(r => {
+    if (!r) return;
+    const caso = CASOS.find(c=>c.id===r.caso_id);
+    const div = document.createElement("div"); div.className = "item";
+    const head = document.createElement("b"); head.textContent = caso.nome; div.appendChild(head);
+    DIMENSOES.forEach(d => {
+      const rate = r.ratings[d.chave];
+      const line = document.createElement("div"); line.className = "dimline";
+      const banda = caso.banda && caso.banda[d.chave];
+      if (d.pontua && banda){
+        const hit = banda.indexOf(rate) !== -1;
+        const faixa = banda.map(nivelLabel).join("/");
+        line.innerHTML = `<span class="${hit?"hit":"miss"}">${hit?"✓":"✗"}</span> ${d.nome}: vocês <b>${nivelLabel(rate)}</b> · banda ${faixa}`;
+      } else {
+        line.innerHTML = `<span class="deb">•</span> ${d.nome}: vocês <b>${nivelLabel(rate)}</b> <span class="deb">(discussão)</span>`;
+      }
+      div.appendChild(line);
+    });
+    if (caso.caso_completo){
+      const lk = document.createElement("div"); lk.className = "dimline";
+      lk.innerHTML = `<a href="${caso.caso_completo}" target="_blank" rel="noopener" style="color:var(--brand);font-weight:600;text-decoration:none">ler o caso completo →</a>`;
+      div.appendChild(lk);
+    }
+    list.appendChild(div);
+  });
+
+  refletirSync(); salvarProgresso();
+  if (MODO === "aula") AULA.marcarConcluida(estado.sessao, estado.grupo, ATIVIDADE);
+  ajustarBotoesFim();
+}
+
+function ajustarBotoesFim(){
+  const restart = document.getElementById("restartBtn");
+  const voltar  = document.getElementById("voltarHub");
+  if (!restart || !voltar) return;
+  if (MODO === "aula"){ restart.style.display = "none"; voltar.style.display = ""; voltar.textContent = "Voltar ao campeonato →"; }
+  else { restart.style.display = ""; voltar.style.display = ""; voltar.textContent = "Voltar às atividades →"; }
+}
+
+document.getElementById("restartBtn").addEventListener("click", ()=>{
+  if (!confirm("Isto recomeça do zero. Tem certeza?")) return;
+  limparLocal(estado.sessao, estado.grupo);
+  if (reenvioTimer){ clearInterval(reenvioTimer); reenvioTimer = null; }
+  syncPendente = false;
+  estado.idx = 0; estado.respostas = []; estado.atual = {};
+  carregarCaso();
+});
+</script>
+</body>
+</html>

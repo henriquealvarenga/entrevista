@@ -1,0 +1,18 @@
+---
+title: "John Forbes Nash Jr. (1928–2015)"
+nocite: |
+  @nasar1998a, @oconnor2015, @pbsnash, @nasar1998b
+---
+
+John Forbes Nash Jr. (1928–2015) foi matemático norte-americano, ganhador do Prêmio Nobel de Economia em 1994 pelo trabalho em teoria dos jogos. Brilhante e criativo desde cedo, Nash foi professor em Princeton e no MIT. A partir do final da década de 1950, começou a apresentar sintomas psicóticos, com delírios persecutórios e de grandeza, que levaram a várias internações psiquiátricas. Sua história foi retratada na biografia *A Beautiful Mind* (Sylvia Nasar, 1998) e no filme homônimo de 2001.
+
+No auge de sua carreira, Nash começou a demonstrar comportamentos estranhos: passava horas escrevendo cartas a embaixadas estrangeiras, acreditando estar envolvido em missões secretas de política internacional. Relatava que mensagens codificadas eram enviadas a ele por meio de jornais e revistas, e que deveria decifrá-las para ajudar na salvação do mundo contra conspirações comunistas. Convicto de sua importância geopolítica, tentou renunciar ao cargo em Princeton alegando estar chamado para assumir posição de liderança mundial. Em outras ocasiões, dizia-se destinado a se tornar o "Príncipe da Paz". Seus delírios persecutórios incluíam a crença de que estava sendo seguido por agentes do governo, que interceptavam suas comunicações e ameaçavam sua segurança. Apesar da estranheza das crenças, Nash articulava esses delírios de modo coerente, construindo explicações lógicas dentro de sua narrativa. O impacto na vida pessoal foi severo: seu casamento entrou em crise, abandonou cargos acadêmicos, teve dificuldades financeiras e passou períodos internado. Ainda assim, Nash preservava, em intervalos, lampejos de raciocínio matemático sofisticado, oscilando entre genialidade e psicose.
+
+## Referências
+
+::: {#refs}
+:::
+
+::: {.callout-note appearance="simple"}
+Caso da **Galeria de delírios**, usado na atividade interativa [Dimensões do delírio](../../../atividades/index.html) — em que se classifica o delírio em cinco dimensões (convicção, extensão, bizarrice, desorganização e preocupação).
+:::

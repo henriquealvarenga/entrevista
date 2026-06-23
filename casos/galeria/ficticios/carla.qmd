@@ -1,0 +1,9 @@
+---
+title: "Carla, 27 anos"
+---
+
+Carla, 27 anos, estudante de artes visuais, começou há alguns meses a relatar que seu corpo está sendo gradualmente substituído por peças mecânicas invisíveis. Afirma que o coração já foi trocado por uma engrenagem e que seus olhos agora são câmeras que transmitem imagens para uma base secreta no deserto do Saara. Em diferentes momentos da consulta, diz também que seus professores foram substituídos por robôs disfarçados e que sua mãe foi clonada, de modo que a pessoa que vive com ela em casa "não é a verdadeira mãe, mas uma cópia defeituosa". Quando questionada sobre como esses elementos se relacionam, Carla dá respostas fragmentadas, muda de tema rapidamente e, por vezes, mistura narrativas sem conexão lógica. Passa a maior parte do dia trancada no quarto, pintando telas que descreve como "mapas para decifrar a invasão das máquinas". Dorme pouco, refere sentir-se constantemente vigiada e demonstra ansiedade intensa.
+
+::: {.callout-note appearance="simple"}
+**Caso fictício**, elaborado para fins didáticos. Usado na atividade interativa [Dimensões do delírio](../../../atividades/index.html) — em que se classifica o delírio em cinco dimensões (convicção, extensão, bizarrice, desorganização e preocupação).
+:::

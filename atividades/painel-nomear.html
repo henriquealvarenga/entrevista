@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel piloto — Rodada 1 (lockstep)</title>
+
+<!-- =========================================================================
+     PAINEL PILOTO — Rodada 1 "Nomear o fenômeno", modo AULA lockstep.
+     O professor conduz a turma questão a questão (Peer Instruction):
+       responder (voto 1) → divisão → re-votar (voto 2) → gabarito → próxima.
+     PILOTO LOCAL: usa o backend local do PONTEIRO (BroadcastChannel) e lê as
+     respostas dos grupos do localStorage — testável numa máquina só (este painel
+     numa aba + grupos em outras abas/janelas). A versão ao vivo (entre
+     dispositivos, via Supabase + login) será integrada ao painel principal.
+     ========================================================================= -->
+<style>
+@font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"); font-weight:700; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-SemiBold.woff2") format("woff2"); font-weight:600; font-display:swap; }
+@font-face { font-family:"JetBrains Mono"; src:url("../fonts/JetBrainsMono-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+:root{
+  --paper:#F9F9F7; --paper-content:#fff; --sidebar-bg:#f2f2ee; --border-color:#e5e5e0;
+  --text-primary:#1a1a1a; --text-body:#333; --text-secondary:#444; --text-muted:#888;
+  --brand:#b45309; --brand-dark:#92400e; --brand-soft:rgba(180,83,9,.08); --brand-line:rgba(180,83,9,.22);
+  --live:#2f7d4f; --live-soft:rgba(47,125,79,.12);
+  --font-sans:"Inter",ui-sans-serif,system-ui,sans-serif; --font-serif:"Playfair Display",Georgia,serif; --font-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0}
+body{background:var(--paper); color:var(--text-body); font-family:var(--font-sans); line-height:1.5; font-size:18px; -webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px; margin:0 auto; padding:24px 22px 80px}
+h1{font-family:var(--font-serif); font-size:1.9rem; margin:0 0 .1em}
+.kicker{font-family:var(--font-mono); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--brand)}
+.muted{color:var(--text-muted)} .small{font-size:.85rem}
+.codebox{background:var(--paper-content); border:1px solid var(--border-color); border-radius:6px; padding:18px 20px; margin:16px 0; text-align:center}
+.code-big{font-family:var(--font-mono); font-weight:600; color:var(--brand); font-size:clamp(2.4rem,9vw,4rem); letter-spacing:.12em; line-height:1; margin:6px 0}
+.bar-ctrl{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin:14px 0}
+.btn{font-family:var(--font-sans); font-size:1rem; font-weight:600; cursor:pointer; border:1px solid var(--brand); background:var(--brand); color:#fff; padding:11px 20px; border-radius:4px}
+.btn:hover{background:var(--brand-dark)} .btn.ghost{background:transparent; color:var(--brand)} .btn.ghost:hover{background:var(--brand-soft)}
+.btn:disabled{opacity:.4; cursor:not-allowed}
+.fase-tag{font-family:var(--font-mono); font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; padding:6px 12px; border-radius:20px; background:var(--brand-soft); color:var(--brand); border:1px solid var(--brand-line)}
+.card{background:var(--paper-content); border:1px solid var(--border-color); border-radius:6px; padding:20px 22px; margin-top:16px}
+.vinheta{font-size:1.05rem; line-height:1.6; color:var(--text-secondary); border-left:3px solid var(--brand-line); padding-left:16px}
+.dist-row{display:grid; grid-template-columns:13em 1fr 3em; align-items:center; gap:10px; margin:8px 0; font-size:1rem}
+.dist-label{text-align:right; color:var(--text-secondary)}
+.dist-row.correta .dist-label{color:var(--live); font-weight:700}
+.dist-track{position:relative; height:24px; background:var(--sidebar-bg); border-radius:6px; overflow:hidden}
+.dist-fill{position:absolute; left:0; top:0; bottom:0; background:var(--brand); border-radius:6px; transition:width .35s}
+.dist-row.correta .dist-fill{background:var(--live)}
+.dist-fill.prev{background:var(--border-color)}
+.dist-count{font-family:var(--font-mono); font-weight:600; color:var(--brand); text-align:right}
+.dist-row.correta .dist-count{color:var(--live)}
+.big-status{font-family:var(--font-serif); font-size:1.6rem; color:var(--text-primary); text-align:center; padding:18px 0}
+.fronteira{margin-top:14px; padding:14px 16px; border:1px solid var(--brand-line); border-radius:6px; background:#fffdfa; font-size:.98rem}
+.note{background:var(--brand-soft); border:1px solid var(--brand-line); border-radius:6px; padding:12px 16px; font-size:.9rem; color:var(--text-secondary); margin-top:14px}
+.migra{font-family:var(--font-mono); font-size:.85rem; color:var(--text-muted); margin-left:8px}
+.zona-perigo{margin-top:64px; padding-top:22px; border-top:1px solid var(--border-color); text-align:center}
+.link-perigo{background:none; border:none; cursor:pointer; font-family:var(--font-sans); font-size:.9rem; color:#b4232a; text-decoration:underline; padding:4px}
+.link-perigo:hover{color:#8c1a20}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">Painel piloto · lockstep (Peer Instruction)</div>
+  <h1>Rodada 1 — Nomear o fenômeno</h1>
+
+  <div class="codebox">
+    <p class="small muted" style="margin:0 0 6px">Os alunos entram em <b>Atividades → Treinar/Entrar</b> e digitam o código:</p>
+    <div class="code-big" id="codigoBig">—</div>
+    <button class="btn ghost" id="novoCodigo">Gerar novo código</button>
+    <span class="small muted" id="modoTag" style="margin-left:10px"></span>
+  </div>
+
+  <div class="bar-ctrl">
+    <button class="btn" id="iniciarBtn">Iniciar rodada ▸</button>
+    <button class="btn" id="avancarBtn" style="display:none">Avançar ▸</button>
+    <span class="fase-tag" id="faseTag" style="display:none">—</span>
+    <span class="small muted" id="contadorResp" style="margin-left:auto"></span>
+  </div>
+
+  <div id="palco"></div>
+
+  <!-- Zona de perigo: ação destrutiva, de-enfatizada, no rodapé. -->
+  <div class="zona-perigo">
+    <button class="link-perigo" id="encerrarBtn">Encerrar sessão e recomeçar do zero</button>
+    <p class="small muted" style="margin:4px 0 0">Remove todos os grupos, apaga os votos e gera um novo código. Os alunos voltam à tela inicial.</p>
+  </div>
+</div>
+
+<script src="lib/supabase-config.js?v=6"></script>
+<script src="lib/supabase.js?v=6"></script>
+<script src="lib/ponteiro.js?v=7"></script>
+<script src="lib/01-nomear-data.js"></script>
+<script>
+"use strict";
+const ITENS = window.NOMEAR_DATA.ITENS, TOTAL = ITENS.length, ATIVIDADE = "nomear";
+const FASE_LABEL = { responder:"Votação", resultado:"Resultado" };
+/* O botão diz o que o PRÓXIMO clique fará. */
+function rotuloAvancar(fase, K){
+  if (fase==="responder") return "Mostrar os resultados ▸";
+  if (fase==="resultado") return (K < TOTAL-1) ? "Próxima questão ▸" : "Encerrar rodada ▸";
+  return "Avançar ▸";
+}
+const ALFA = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+
+/* Nº de grupos (capturado da sala de espera no Iniciar) + sinal de "todos votaram". */
+var _ac=null, bipItem=-1, nGrupos=0;
+function primeAudio(){ try{ _ac = _ac || new (window.AudioContext||window.webkitAudioContext)(); if(_ac.state==='suspended') _ac.resume(); }catch(e){} }
+function bip(){ try{ primeAudio(); [660,880].forEach(function(f,i){ var o=_ac.createOscillator(), g=_ac.createGain(); o.type='sine'; o.frequency.value=f; o.connect(g); g.connect(_ac.destination); var t=_ac.currentTime+i*0.12; g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(0.22,t+0.02); g.gain.linearRampToValueAtTime(0,t+0.22); o.start(t); o.stop(t+0.26); }); }catch(e){} }
+function numGrupos(){ return nGrupos; }   // capturado no Iniciar, a partir de quem entrou na sala de espera
+
+/* ---- Sessão (código) ---- */
+function gerarCodigo(){ let s=""; for(let i=0;i<5;i++) s+=ALFA[Math.floor(Math.random()*ALFA.length)]; return s; }
+let sessao = "";
+function setSessao(s){ sessao=s; try{localStorage.setItem("painel-nomear-sessao",s);}catch(e){} document.getElementById("codigoBig").textContent=s; }
+(function initSessao(){ let s=""; try{s=localStorage.getItem("painel-nomear-sessao")||"";}catch(e){} setSessao(s||gerarCodigo()); })();
+document.getElementById("modoTag").textContent = "(sincronização: "+PONTEIRO.modo()+")";
+
+/* ---- Estado do ponteiro (o painel é quem escreve) ---- */
+let estadoP = null;
+function definir(e){ estadoP=e; PONTEIRO.definir(sessao, ATIVIDADE, e); render(); }
+
+function novaEpoca(){ return Date.now(); }   // carimbo único do início da rodada
+document.getElementById("iniciarBtn").addEventListener("click", ()=>{ primeAudio(); bipItem=-1; nGrupos=gruposLocal().length; definir({item:0, fase:"responder", epoca:novaEpoca()}); });
+document.getElementById("avancarBtn").addEventListener("click", ()=>{ primeAudio(); definir(PONTEIRO.proxima(estadoP, TOTAL)); });
+
+/* TEARDOWN destrutivo: encerra a sessão, manda os alunos à tela inicial, gera novo código. */
+function encerrarSessao(){
+  if (!confirm("Encerrar a sessão?\n\nIsto remove TODOS os grupos, apaga os votos e gera um NOVO código. Os alunos voltam à tela inicial. Não dá para desfazer.")) return;
+  var antiga = sessao;
+  PONTEIRO.definir(antiga, ATIVIDADE, { fase:"reset", epoca:novaEpoca() });   // sinaliza: alunos → tela inicial
+  setSessao(gerarCodigo()); estadoP=null; nGrupos=0; bipItem=-1; render();    // painel: novo código, volta ao lobby
+  setTimeout(function(){                                                       // limpa dados da sessão antiga (após os alunos lerem o reset)
+    Object.keys(localStorage).filter(function(k){ return k.indexOf('nomear:estado:'+antiga+':')===0 || k==='ponteiro:'+antiga+':nomear'; }).forEach(function(k){ try{localStorage.removeItem(k);}catch(e){} });
+  }, 2500);
+}
+document.getElementById("encerrarBtn").addEventListener("click", encerrarSessao);
+document.getElementById("novoCodigo").addEventListener("click", ()=>{ setSessao(gerarCodigo()); estadoP=null; render(); });
+
+/* ---- Leitura dos grupos: Supabase (cache do poll, cross-device) ou localStorage ---- */
+const SB_ON = !!(window.SB && SB.configValida());
+let gruposCache = [];
+async function pollSupabase(){
+  if (!SB_ON) return;
+  try{
+    const rows = await SB.consultarSessao(sessao, ATIVIDADE);
+    gruposCache = rows.map(function(r){ return { grupo:r.grupo, itens:(r.dados&&r.dados.itens)||[] }; });
+    render();
+  }catch(e){}
+}
+function gruposLocal(){
+  if (SB_ON) return gruposCache;
+  const pre = `nomear:estado:${sessao}:`, out=[];
+  for (let i=0;i<localStorage.length;i++){
+    const k = localStorage.key(i);
+    if (k && k.indexOf(pre)===0){
+      try{ const v=JSON.parse(localStorage.getItem(k)); if(v&&v.grupo) out.push({grupo:v.grupo, itens:(v.respostas||[]).filter(Boolean)}); }catch(e){}
+    }
+  }
+  return out;
+}
+function escolhaNoItem(grupo, itemId, qual){
+  const it = (grupo.itens||[]).find(r=>r.item_id===itemId); if(!it) return null;
+  return qual===1 ? it.escolha1 : (it.escolha2!=null?it.escolha2:it.escolha1);
+}
+function contar(itemId, qual){
+  const m={}, grupos=gruposLocal(); let total=0;
+  grupos.forEach(g=>{ const e=escolhaNoItem(g,itemId,qual); if(e!=null){ m[e]=(m[e]||0)+1; total++; } });
+  return {m, total};
+}
+
+/* ---- Render ---- */
+function render(){
+  const ini=document.getElementById("iniciarBtn"), av=document.getElementById("avancarBtn"),
+        ft=document.getElementById("faseTag"), cr=document.getElementById("contadorResp"), palco=document.getElementById("palco");
+  if (!estadoP){
+    ini.style.display=""; av.style.display="none"; ft.style.display="none"; cr.textContent="";
+    var gs = gruposLocal();
+    palco.innerHTML = '<div class="card" style="text-align:center">'+
+      '<h3 style="font-family:var(--font-serif); margin:0 0 6px">Sala de espera</h3>'+
+      '<div style="font-family:var(--font-mono); font-size:3.4rem; color:var(--brand); line-height:1">'+gs.length+'</div>'+
+      '<p class="small muted" style="margin:4px 0 0">grupo(s) entraram'+(gs.length ? ': '+gs.map(function(g){return g.grupo;}).join(' · ') : '')+'</p>'+
+      '<p class="small muted" style="margin:12px 0 0">Quando todos tiverem entrado, clique em <b>Iniciar rodada</b>.</p>'+
+    '</div>';
+    return;
+  }
+  ini.style.display="none"; av.style.display=""; ft.style.display="";
+  if (estadoP.fase==="fim"){ ft.textContent="Fim"; av.disabled=true; cr.textContent=""; palco.innerHTML='<div class="big-status">Rodada encerrada — projete a classificação geral.</div>'; return; }
+  av.disabled=false;
+  const K=estadoP.item, it=ITENS[K];
+  ft.textContent = `Questão ${K+1}/${TOTAL} · ${FASE_LABEL[estadoP.fase]}`;
+  av.textContent = rotuloAvancar(estadoP.fase, K);
+  const correctLabel = it.opcoes.find(o=>o.chave===it.correta).label;
+
+  let html = `<div class="card"><div class="muted small" style="font-family:var(--font-mono)">Fenômeno ${it.id} · ${it.grupo_eem}</div>`+
+             `<p class="vinheta" style="margin-top:8px">${it.vinheta}</p></div>`;
+
+  if (estadoP.fase==="responder"){
+    const N=numGrupos(), c=contar(it.id,1);
+    const todos = (N>0 && c.total>=N);
+    if (todos && bipItem!==K){ bip(); bipItem=K; }
+    ft.style.background = todos ? "var(--live-soft)" : "";
+    ft.style.color      = todos ? "var(--live)" : "";
+    ft.style.borderColor= todos ? "var(--live)" : "";
+    cr.textContent = `${c.total}/${N} votaram`;
+    html += `<div class="big-status">`+
+      (todos
+        ? `<span style="color:var(--live)">✓ Todos votaram — ${c.total}/${N}</span><br><span class="small muted">Pode mostrar os resultados quando quiser.</span>`
+        : `Aguardando os votos… <b>${c.total} / ${N}</b><br><span class="small muted">Soa um sinal quando todos os grupos votarem.</span>`)+
+      `</div>`;
+  } else if (estadoP.fase==="resultado"){
+    const c=contar(it.id,1); cr.textContent="";
+    ft.style.background=""; ft.style.color=""; ft.style.borderColor="";
+    html += `<div class="card"><h3 style="font-family:var(--font-serif);margin:0 0 8px">Resultado: <span style="color:var(--live)">${correctLabel}</span></h3>`+
+            barras(it, c, it.correta) +
+            `<div class="fronteira">${it.fronteira}</div></div>`;
+  }
+  palco.innerHTML = html;
+}
+
+function barras(it, c, correta){
+  return it.opcoes.map(o=>{
+    const n=c.m[o.chave]||0, pct=c.total?Math.round(n/c.total*100):0, ok=(correta&&o.chave===correta);
+    return `<div class="dist-row${ok?" correta":""}"><span class="dist-label">${ok?"✓ ":""}${o.label}</span>`+
+      `<span class="dist-track"><span class="dist-fill" style="width:${pct}%"></span></span><span class="dist-count">${n}</span></div>`;
+  }).join("");
+}
+function barrasMigracao(it, c1, c2){
+  return it.opcoes.map(o=>{
+    const n1=c1.m[o.chave]||0, n2=c2.m[o.chave]||0;
+    const p1=c1.total?Math.round(n1/c1.total*100):0, p2=c2.total?Math.round(n2/c2.total*100):0;
+    const ok=(o.chave===it.correta);
+    return `<div class="dist-row${ok?" correta":""}"><span class="dist-label">${ok?"✓ ":""}${o.label}</span>`+
+      `<span class="dist-track"><span class="dist-fill prev" style="width:${p1}%"></span></span>`+
+      `<span class="dist-count">${n1}<span class="migra">→ ${n2}</span></span></div>`+
+      `<div class="dist-row${ok?" correta":""}" style="margin-top:-4px"><span class="dist-label small muted">depois</span>`+
+      `<span class="dist-track"><span class="dist-fill" style="width:${p2}%"></span></span><span class="dist-count">${n2}</span></div>`;
+  }).join("");
+}
+
+/* ---- Atualização ao vivo das contagens ---- */
+window.addEventListener("storage", ()=> render());                       // atualiza inclusive o lobby (modo local)
+setInterval(()=>{ if(!estadoP || estadoP.fase!=="fim") render(); }, 1200); // lobby (estadoP null) também atualiza
+if (SB_ON) setInterval(pollSupabase, 1500);                              // modo Supabase: puxa os votos dos grupos
+render();
+</script>
+</body>
+</html>

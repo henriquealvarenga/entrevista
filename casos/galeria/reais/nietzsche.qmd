@@ -1,0 +1,18 @@
+---
+title: "Friedrich Nietzsche (1844–1900)"
+nocite: |
+  @faschi2018, @hemelsoet2008
+---
+
+Friedrich Nietzsche (1844–1900) foi filósofo alemão revolucionário, famoso por obras como *Assim Falou Zaratustra*, *Além do Bem e do Mal* e *Crepúsculo dos Ídolos*. Sua filosofia aborda o niilismo, a morte de Deus, o eterno retorno e o super-homem. Nietzsche enfrentava dores de cabeça crônicas, problemas oculares e problemas digestivos ao longo da vida, o que influenciou seu ritmo de produção e humor. Em 3 de janeiro de 1889, durante sua estadia em Turim, ocorreu o episódio frequentemente considerado o início de seu colapso mental. Muitos relatos afirmam que ele viu um cocheiro chicoteando um cavalo, correu para proteger o animal abraçando-o, e caiu no chão inconsciente. Nos dias seguintes, enviou cartas delirantes (os *Wahnbriefe*) a amigos e figuras públicas sob assinaturas como "Dionísio", "O Crucificado" etc. Nietzsche foi internado brevemente em Basel e depois transferido para Jena, onde permaneceu o resto de sua vida sob cuidados, sem retomar a produção filosófica original.
+
+Friedrich, 44 anos, filósofo renomado, vinha experimentando meses de sufocantes dores de cabeça, insônia e crises visuais. Durante sua permanência em Turim, passou a manifestar risadas incontroláveis, expressões faciais contorcidas e episódios de euforia alternando-se com melancolia profunda. Certa manhã, ele teria observado um cocheiro castigando um cavalo, correu para abraçá-lo, chorando, e colapsou em público — episódio que muitos consideram o marco de seu surto psicótico. Logo em seguida, começou a remeter a diversos interlocutores cartas curtas de tom delirante, nas quais afirmava ter "Caiaphas acorrentado", que "Deus havia me crucificado com médicos alemães", e ordenava que delegados fossem presos ou mortos. Ele assinava como "Dionísio" ou "O Crucificado". Ambientado nesse surto, Nietzsche dizia sentir que exercia função messiânica, anunciava grandes destinos futuros, e tecia uma narrativa de poder universal e redenção. Apesar disso, mantinha reconhecimento de pessoas próximas e situações cotidianas — reconhecia amigos, familiares, mas "estava no escuro quanto a si mesmo". Franz Overbeck, ao chegar a Turim, relatou que Nietzsche passou a agir como se estivesse em um universo delirante próprio, com estalos musicais, frases fragmentadas e gestos dramáticos repetidos.
+
+## Referências
+
+::: {#refs}
+:::
+
+::: {.callout-note appearance="simple"}
+Caso da **Galeria de delírios**, usado na atividade interativa [Dimensões do delírio](../../../atividades/index.html) — em que se classifica o delírio em cinco dimensões (convicção, extensão, bizarrice, desorganização e preocupação).
+:::

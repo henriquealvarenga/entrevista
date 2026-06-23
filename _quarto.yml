@@ -1,6 +1,13 @@
 project:
   type: book
   output-dir: docs          # publicado via GitHub Actions; gitignored
+  resources:
+    # Atividades gamificadas em grupo (HTML/JS puro, fora do fluxo de render do
+    # livro). Copiadas como recursos para docs/. As fontes self-hosted são
+    # referenciadas por atividades/../fonts → precisam existir em docs/fonts/.
+    - atividades/*.html
+    - atividades/lib/
+    - fonts/
 
 lang: pt-BR
 language: _language-pt.yml
@@ -47,6 +54,7 @@ book:
     - index.qmd
     - apresentacao.qmd
     - agradecimentos.qmd
+    - atividades.qmd
     - part: "Parte I — A Entrevista Psiquiátrica"
       chapters:
         - capitulos/parte-1-entrevista/01-introducao.qmd
@@ -89,6 +97,24 @@ book:
         - casos/05-roberto.qmd
         - casos/06-ranier.qmd
         - casos/99-orientacoes.qmd
+    - part: "Galeria de delírios — casos fictícios"
+      chapters:
+        - casos/galeria/ficticios/julio.qmd
+        - casos/galeria/ficticios/antonio.qmd
+        - casos/galeria/ficticios/marina.qmd
+        - casos/galeria/ficticios/carla.qmd
+        - casos/galeria/ficticios/daniela.qmd
+        - casos/galeria/ficticios/marcos.qmd
+        - casos/galeria/ficticios/helena.qmd
+    - part: "Galeria de delírios — figuras históricas"
+      chapters:
+        - casos/galeria/reais/schumann.qmd
+        - casos/galeria/reais/syd-barrett.qmd
+        - casos/galeria/reais/philip-k-dick.qmd
+        - casos/galeria/reais/schreber.qmd
+        - casos/galeria/reais/nietzsche.qmd
+        - casos/galeria/reais/nash.qmd
+        - casos/galeria/reais/van-gogh.qmd
     - part: "Apêndices"
       chapters:
         - capitulos/apendices/discrepancias.qmd

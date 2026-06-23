@@ -1,0 +1,20 @@
+---
+title: "Daniel Paul Schreber (1842–1911)"
+nocite: |
+  @schreber2000, @freud1911, @robbins2000
+---
+
+Daniel Paul Schreber foi um jurista alemão de alta hierarquia em Saxônia e tornou-se célebre por publicar as próprias memórias de sua doença mental, texto que descreve com detalhes a estrutura de suas crenças delirantes.
+
+Durante seu adoecimento, Schreber desenvolveu um sistema delirante complexo em torno de "raios divinos" que interagiam diretamente com seus próprios nervos. Acreditava que esses raios podiam ler seus pensamentos, impor novas ideias e até destruir seus órgãos, mas também que realizavam milagres de restauração — chegando a afirmar ter vivido por anos "sem estômago, sem intestinos, quase sem pulmões", órgãos destruídos e recriados por intervenção divina. Um eixo central de sua cosmologia era a convicção de que sua missão de redimir a humanidade só poderia ser cumprida se ele fosse transformado em mulher e fecundado por Deus através dos raios. Schreber descreve que já percebia em seu corpo "nervos femininos", responsáveis pela voluptuosidade, e que a transformação levaria décadas ou séculos para se completar.
+
+Os delírios eram acompanhados por vozes incessantes (o que ele chama de *nervensprache*, "linguagem dos nervos"), que comentavam suas ações, faziam perguntas humilhantes — como "Você não tem vergonha diante de sua esposa?" — e reforçavam a necessidade de sua feminização. Muitas vezes interpretava as falas de pássaros e árvores como "restos de almas humanas transformadas por milagre", que lhe dirigiam mensagens. Descreveu ainda experiências corporais marcantes: retração dos genitais, sensação de desenvolvimento de seios e mudanças periódicas no corpo que confirmariam seu processo de "desmasculinização" (*unmanning*). Apesar da bizarrice, todo o sistema delirante é altamente sistematizado e coerente, articulando teologia, cosmologia e uma concepção de missão messiânica. Schreber permaneceu convicto de que era o centro da luta entre Deus e as forças da dissolução, e que somente por sua transformação em mulher a humanidade poderia ser salva.
+
+## Referências
+
+::: {#refs}
+:::
+
+::: {.callout-note appearance="simple"}
+Caso da **Galeria de delírios**, usado na atividade interativa [Dimensões do delírio](../../../atividades/index.html) — em que se classifica o delírio em cinco dimensões (convicção, extensão, bizarrice, desorganização e preocupação).
+:::

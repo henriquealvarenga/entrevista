@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rodada 2 — Fronteiras: onde um termo termina e o outro começa</title>
+
+<!-- =========================================================================
+     RODADA 2 — FRONTEIRAS (discriminar confundíveis)
+     App self-contained, sem dependências externas (sem CDN), orientado a dados.
+     Identidade visual herdada do tema editorial do livro (paper + laranja queimado).
+     Pensado para 1 dispositivo por grupo. Lightning round: SEM fase de palpite —
+     o item vai direto às opções embaralhadas (+1 se correta), e a revelação abre
+     com "O que decide". Esta atividade TEM gabarito → pontua (placar no topbar +
+     medalha na síntese). Envio INCREMENTAL ao Supabase via upsert
+     (atividade:"fronteiras", dados.itens cumulativo). Mesmo banco/lib das demais.
+     ========================================================================= -->
+
+<style>
+/* ---- Fontes self-hosted (mesmas do livro). Fallbacks se abertas fora do site. ---- */
+@font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+@font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Italic.woff2") format("woff2"); font-weight:400; font-style:italic; font-display:swap; }
+@font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"); font-weight:700; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-Medium.woff2") format("woff2"); font-weight:500; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-SemiBold.woff2") format("woff2"); font-weight:600; font-display:swap; }
+@font-face { font-family:"JetBrains Mono"; src:url("../fonts/JetBrainsMono-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+
+:root{
+  --paper:#F9F9F7; --paper-content:#ffffff; --sidebar-bg:#f2f2ee;
+  --border-color:#e5e5e0; --border-soft:#dcdcd8;
+  --text-primary:#1a1a1a; --text-body:#333; --text-secondary:#444; --text-muted:#888;
+  --brand:#b45309; --brand-dark:#92400e; --brand-soft:rgba(180,83,9,.08); --brand-line:rgba(180,83,9,.20);
+  --ok:#2f7d4f; --ok-soft:rgba(47,125,79,.10);
+  --warn:#b07a14; --warn-soft:rgba(176,122,20,.12);
+  --font-sans:"Inter",ui-sans-serif,system-ui,sans-serif;
+  --font-serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --font-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--text-body);
+  font-family:var(--font-sans); line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:780px; margin:0 auto; padding:24px 18px 80px}
+
+h1,h2,h3{font-family:var(--font-serif); font-weight:700; color:var(--text-primary); line-height:1.15; margin:0 0 .4em}
+h1{font-size:1.7rem} h2{font-size:1.3rem} h3{font-size:1.05rem}
+p{margin:0 0 1em}
+.muted{color:var(--text-muted)} .small{font-size:.86rem}
+.kicker{font-family:var(--font-mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--brand); margin-bottom:.5em}
+
+/* ---- Cartões / blocos ---- */
+.card{background:var(--paper-content); border:1px solid var(--border-color); border-radius:4px; padding:22px; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.vinheta{font-size:1.06rem; line-height:1.7; color:var(--text-secondary); border-left:3px solid var(--brand-line); padding-left:16px; margin:.2em 0 0}
+
+/* ---- Botões ---- */
+.btn{font-family:var(--font-sans); font-size:.95rem; font-weight:600; cursor:pointer;
+  border:1px solid var(--brand); background:var(--brand); color:#fff; padding:11px 20px; border-radius:3px; transition:background .15s}
+.btn:hover{background:var(--brand-dark); border-color:var(--brand-dark)}
+.btn:disabled{opacity:.4; cursor:not-allowed}
+.btn.ghost{background:transparent; color:var(--brand)}
+.btn.ghost:hover{background:var(--brand-soft)}
+.row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:18px}
+.row.end{justify-content:flex-end}
+
+/* ---- Opções de discriminação ---- */
+.options{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px}
+@media(max-width:540px){ .options{grid-template-columns:1fr} }
+.opt{text-align:left; border:1px solid var(--border-color); background:var(--paper-content); border-radius:4px;
+  padding:13px 14px; cursor:pointer; font-family:var(--font-sans); font-size:.95rem; color:var(--text-primary); transition:border-color .12s, background .12s}
+.opt:hover{border-color:var(--brand); background:var(--brand-soft)}
+.opt b{font-weight:600}
+.opt:disabled{cursor:default}
+.opt.correct{border-color:var(--ok); background:var(--ok-soft)}
+.opt.wrong{border-color:#c44; background:rgba(204,68,68,.08)}
+
+/* ---- Inputs ---- */
+input[type=text]{width:100%; font-family:var(--font-sans); font-size:1rem; padding:11px 12px; border:1px solid var(--border-color); border-radius:4px}
+input[type=text]:focus{outline:none; border-color:var(--brand)}
+input[type=text]:read-only{background:var(--sidebar-bg); color:var(--text-secondary)}
+label.lbl{display:block; font-size:.84rem; font-weight:600; color:var(--text-secondary); margin:14px 0 6px}
+
+/* ---- Reveal ---- */
+.reveal{margin-top:18px; padding:16px 18px; border:1px solid var(--brand-line); border-radius:4px; background:#fffdfa}
+.reveal .nota{font-style:italic; color:var(--text-muted); margin-bottom:8px}
+.reveal .saidv{font-size:1rem; margin-bottom:8px}
+.reveal .saidv .palpite{font-style:italic; color:var(--text-secondary)}
+.reveal .lab{font-family:var(--font-mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; color:var(--brand); margin-top:6px; margin-bottom:4px}
+.reveal p{margin:0 0 2px}
+.reveal .link a{color:var(--brand); text-decoration:none; font-weight:600}
+.reveal .link a:hover{color:var(--brand-dark); text-decoration:underline}
+
+/* ---- Progresso / topo ---- */
+.topbar{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; font-size:.82rem; color:var(--text-muted)}
+.progress{height:5px; background:var(--border-color); border-radius:3px; overflow:hidden; margin-bottom:22px}
+.progress > i{display:block; height:100%; background:var(--brand); width:0; transition:width .3s}
+.score{font-family:var(--font-mono); color:var(--brand); font-weight:500}
+
+/* ---- Síntese ---- */
+.badge{display:inline-block; font-family:var(--font-mono); font-size:.8rem; padding:6px 12px; border:1px solid var(--brand); color:var(--brand); border-radius:20px; margin:4px 0}
+.synth-list{margin-top:18px; border-top:1px solid var(--border-color)}
+.synth-list .item{border-bottom:1px solid var(--border-color); padding:12px 0}
+.synth-list .item b{font-family:var(--font-serif)}
+/* Aviso discreto e persistente de salvamento automático. Verde = salvo; laranja = só local. */
+.sync-msg{margin-top:4px}
+.sync-msg.ok{color:var(--ok)}
+.sync-msg.erro{color:var(--warn)}
+/* Convite de leitura ao fim — link discreto, não compete com "Refazer". */
+.read-cta{margin-top:26px; padding-top:18px; border-top:1px solid var(--border-color);
+  font-size:.92rem; color:var(--text-secondary)}
+.read-cta cite{font-family:var(--font-serif); font-style:italic; color:var(--text-primary)}
+.read-cta a{color:var(--brand); text-decoration:none; font-weight:600; white-space:nowrap}
+.read-cta a:hover{color:var(--brand-dark); text-decoration:underline}
+
+.hidden{display:none !important}
+.step{display:none} .step.active{display:block; animation:fade .25s ease}
+@keyframes fade{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ ENTRADA ============ -->
+  <section id="intro" class="step active">
+    <div class="kicker">Rodada 2 · Fronteiras</div>
+    <h1>Onde um termo termina e o outro começa?</h1>
+    <p>Na rodada anterior vocês nomearam fenômenos. Agora aperta: cada caso abaixo fica <b>em cima da linha</b> entre dois ou três termos que se confundem o tempo todo — ilusão e alucinação, obsessão e delírio, <i>delirium</i> e demência. O nome certo depende de um <b>detalhe que decide</b>.</p>
+    <p>Para cada relato, vocês <b>decidem</b> entre os vizinhos — rápido. A tela então mostra <b>o critério que decide</b>, e por que o parecido não serve.</p>
+    <p>É a habilidade mais difícil e mais clínica: a psicopatologia se aprende pelas <b>bordas</b>. Nos casos reais as fronteiras são ainda mais tênues — o foco é o critério, não o decoreba.</p>
+    <p>Nesta rodada não há o que digitar: é <b>ler e decidir</b>.</p>
+    <p class="small muted">Trabalhem em grupo, num só aparelho.</p>
+    <div class="row">
+      <button class="btn" id="startBtn">Começar →</button>
+    </div>
+  </section>
+
+  <!-- ============ LOOP DE ITENS ============ -->
+  <section id="loop" class="step">
+    <div class="topbar">
+      <span id="caseCounter">Fronteira 1 de 8</span>
+      <span class="score">Pontos: <span id="scoreVal">0</span></span>
+    </div>
+    <div class="progress"><i id="progressBar"></i></div>
+
+    <h2>O relato</h2>
+    <p class="vinheta" id="itemVinheta"></p>
+
+    <!-- (sem fase de palpite nesta rodada — vai direto às opções) -->
+
+    <!-- discriminação (pontua) -->
+    <div id="discrimBox" class="hidden">
+      <h3 style="margin-top:4px">Qual é o termo?</h3>
+      <div class="options" id="opcoesBox"></div>
+    </div>
+
+    <!-- revelação (após a escolha; opções permanecem visíveis com a correta destacada) -->
+    <div id="revealBox" class="reveal hidden">
+      <p class="nota small" id="revNota"></p>
+      <p class="saidv">O termo é: <b id="saidTermo"></b></p>
+      <div class="lab">A fronteira</div>
+      <p id="revFronteira"></p>
+      <p class="link" style="margin-top:14px"><a id="revLink" target="_blank" rel="noopener">Ver no Roteiro do EEM →</a></p>
+    </div>
+
+    <div class="row end hidden" id="nextRow"><button class="btn" id="nextBtn">Próxima fronteira →</button></div>
+  </section>
+
+  <!-- ============ SÍNTESE ============ -->
+  <section id="synth" class="step">
+    <div class="kicker">Fim da sessão</div>
+    <h1>O placar de vocês</h1>
+    <p>Grupo <b id="synthGroup"></b>. Vocês acertaram <span class="score" id="synthScore"></span> de <span id="synthTotal">8</span> fronteiras.</p>
+    <div id="synthBadge"></div>
+
+    <div class="synth-list" id="synthList"></div>
+
+    <div class="card" style="margin-top:18px; background:var(--sidebar-bg)">
+      <h3>Para o debate de turma</h3>
+      <p class="small">Antes de discutir com a sala:</p>
+      <p class="small" style="margin-bottom:0">• Em qual fronteira a turma mais se <b>dividiu</b> — e qual era o critério em jogo?<br>• Em algum caso o grupo <b>hesitou</b> entre dois termos? Qual foi o detalhe que desempatou?<br>• Qual par foi o <b>mais traiçoeiro</b> — ilusão × alucinação? obsessão × delírio? evocação × retenção?<br>• Para cada um, qual é a <b>pergunta única</b> que resolve a dúvida à beira do leito?</p>
+    </div>
+
+    <p class="small sync-msg" id="syncMsg" style="margin-top:14px"></p>
+    <div class="row">
+      <button class="btn ghost" id="restartBtn">Refazer</button>
+      <a class="btn" id="voltarHub" href="index.html" style="display:none">Voltar →</a>
+    </div>
+
+    <!-- Link discreto de volta ao livro (../index.html = raiz do site publicado). -->
+    <p class="read-cta"><a href="../index.html" title="Início" aria-label="Início">🏠 Início</a></p>
+  </section>
+
+</div>
+
+<!-- Config + helper do Supabase + banco de itens. Ordem importa. Sem CDN. -->
+<script src="lib/supabase-config.js"></script>
+<script src="lib/supabase.js"></script>
+<script src="lib/aula.js"></script>
+<script src="lib/sfx.js"></script>
+<script src="lib/02-fronteiras-data.js"></script>
+
+<script>
+"use strict";
+
+/* =========================================================================
+   BANCO DE ITENS — fonte única em lib/fenomenos-data.js (a atividade e o painel
+   consomem o mesmo arquivo).
+   ========================================================================= */
+const ITENS = window.FRONTEIRAS_DATA.ITENS;
+const TOTAL = ITENS.length;
+
+/* =========================================================================
+   ESTADO
+   ========================================================================= */
+
+const estado = { sessao:"", grupo:"", idx:0, score:0, respostas:[], _palpiteTmp:"" };
+// respostas[i] = { item_id, palpite, escolha, correto }  (palpite fica só local)
+
+/* =========================================================================
+   PERSISTÊNCIA LOCAL + ENVIO INCREMENTAL  (mesmo padrão do continuum/júri)
+   Cada item concluído: (1) salva o estado no localStorage por (sessao+grupo);
+   (2) envia o payload CUMULATIVO via upsert (fire-and-forget). A evocação
+   digitada NÃO é enviada ao painel (fica no aparelho, p/ a síntese do grupo).
+   ========================================================================= */
+const ATIVIDADE = "fronteiras"; // discriminador na tabela (casa com o painel)
+function chaveEstado(s,g){ return `fronteiras:estado:${s}:${g}`; }
+function chavePendente(s,g){ return `fronteiras:pendente:${s}:${g}`; }
+
+function lerEstadoSalvo(s,g){
+  try { return JSON.parse(localStorage.getItem(chaveEstado(s,g)) || "null"); }
+  catch(e){ return null; }
+}
+function salvarLocal(){
+  try {
+    localStorage.setItem(chaveEstado(estado.sessao, estado.grupo), JSON.stringify({
+      sessao:estado.sessao, grupo:estado.grupo, idx:estado.idx, score:estado.score, respostas:estado.respostas
+    }));
+  } catch(e){ /* localStorage indisponível: ignora, não quebra a UI */ }
+}
+function limparLocal(s,g){
+  try { localStorage.removeItem(chaveEstado(s,g)); localStorage.removeItem(chavePendente(s,g)); }
+  catch(e){ /* idem */ }
+}
+
+/* Payload CUMULATIVO: só os itens concluídos (com escolha). pontuacao = nº de
+   acertos. A evocação (palpite) NÃO entra no payload. */
+function montarPayload(){
+  const itens = estado.respostas
+    .filter(r => r && typeof r.escolha === "string")
+    .map(r => ({ item_id:r.item_id, escolha:r.escolha, correto:r.correto }));
+  const pontuacao = itens.filter(it => it.correto).length;
+  return { sessao:estado.sessao, atividade:ATIVIDADE, grupo:estado.grupo, pontuacao:pontuacao, dados:{ itens } };
+}
+
+let syncPendente = false;
+let reenvioTimer = null;
+
+function refletirSync(){
+  const el = document.getElementById("syncMsg");
+  if (!el) return;
+  if (MODO !== "aula"){   // treino: nada é enviado (SPEC §1)
+    el.className = "small sync-msg ok";
+    el.textContent = "Modo treino — as respostas ficam só neste aparelho.";
+    return;
+  }
+  if (syncPendente){
+    el.className = "small sync-msg erro";
+    el.textContent = "Respostas salvas neste aparelho. Sem conexão com a turma — tentando reenviar…";
+  } else {
+    el.className = "small sync-msg ok";
+    el.textContent = "✓ Respostas salvas automaticamente.";
+  }
+}
+function guardarPendente(payload){
+  syncPendente = true;
+  try { localStorage.setItem(chavePendente(estado.sessao, estado.grupo), JSON.stringify(payload)); } catch(e){}
+  agendarReenvio();
+}
+function limparPendente(){
+  syncPendente = false;
+  try { localStorage.removeItem(chavePendente(estado.sessao, estado.grupo)); } catch(e){}
+}
+function lerPendente(){
+  try { return JSON.parse(localStorage.getItem(chavePendente(estado.sessao, estado.grupo)) || "null"); }
+  catch(e){ return null; }
+}
+function agendarReenvio(){
+  if (reenvioTimer) return;
+  reenvioTimer = setInterval(async ()=>{
+    const pend = lerPendente();
+    if (!pend){ clearInterval(reenvioTimer); reenvioTimer = null; return; }
+    if (!(window.SB && SB.configValida())) return;
+    try {
+      const r = await SB.enviarResultado(pend);
+      if (r.ok){ limparPendente(); clearInterval(reenvioTimer); reenvioTimer = null; refletirSync(); }
+    } catch(e){ /* segue tentando no próximo tick */ }
+  }, 8000);
+}
+async function enviar(payload){
+  if (MODO !== "aula"){ return; }   // SPEC §1: treino calcula só na tela; nada vai ao Supabase
+  try {
+    if (!(window.SB && SB.configValida())){ guardarPendente(payload); return; }
+    const r = await SB.enviarResultado(payload);
+    if (r.ok) limparPendente(); else guardarPendente(payload);
+  } catch(e){ guardarPendente(payload); }
+  refletirSync();
+}
+function salvarProgresso(){
+  salvarLocal();
+  enviar(montarPayload());
+}
+
+/* =========================================================================
+   NAVEGAÇÃO ENTRE TELAS
+   ========================================================================= */
+function show(sectionId){
+  document.querySelectorAll(".wrap > .step").forEach(s=>s.classList.remove("active"));
+  document.getElementById(sectionId).classList.add("active");
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+/* =========================================================================
+   FLUXO
+   ========================================================================= */
+/* =========================================================================
+   IDENTIDADE COMPARTILHADA (SPEC §3) — sem login próprio (lê do hub).
+   ========================================================================= */
+const CTX = AULA.exigir();          // {modo, sessao, grupo} ou redireciona ao hub
+let MODO = CTX ? CTX.modo : "aula";
+if (CTX) bootAtividade();
+
+function bootAtividade(){
+  SFX.montarBotaoMudo();
+  estado.sessao = CTX.sessao;
+  estado.grupo  = CTX.grupo;
+  const salvo = lerEstadoSalvo(CTX.sessao, CTX.grupo);
+  const concluidos = salvo && Array.isArray(salvo.respostas)
+    ? salvo.respostas.filter(r => r && typeof r.escolha === "string").length : 0;
+
+  if (concluidos >= TOTAL){    // concluída → síntese (read-only em aula; rever em treino)
+    Object.assign(estado, { respostas:salvo.respostas.slice(0,TOTAL), score:salvo.score||0, idx:TOTAL });
+    montarSintese(); show("synth"); return;
+  }
+  if (concluidos > 0){         // retoma de onde parou
+    Object.assign(estado, { respostas:salvo.respostas.slice(0,concluidos), score:salvo.score||0, idx:concluidos });
+    show("loop"); carregarItem(); return;
+  }
+  show("intro");               // começo do zero: mostra a abertura instrucional
+}
+
+document.getElementById("startBtn").addEventListener("click", ()=>{
+  limparLocal(estado.sessao, estado.grupo);
+  Object.assign(estado, { idx:0, score:0, respostas:[] });
+  syncPendente = false;
+  SFX.click();
+  show("loop"); carregarItem();
+});
+
+/* embaralha uma cópia do array (Fisher–Yates) — opções nunca preveem a correta */
+function embaralhar(arr){
+  const a = arr.slice();
+  for (let i=a.length-1; i>0; i--){
+    const j = Math.floor(Math.random()*(i+1));
+    const t=a[i]; a[i]=a[j]; a[j]=t;
+  }
+  return a;
+}
+
+function carregarItem(){
+  const it = ITENS[estado.idx];
+  document.getElementById("caseCounter").textContent = `Fronteira ${estado.idx+1} de ${TOTAL}`;
+  document.getElementById("progressBar").style.width = (estado.idx/TOTAL*100)+"%";
+  document.getElementById("scoreVal").textContent = estado.score;
+  document.getElementById("itemVinheta").innerHTML = it.vinheta; // HTML confiável (data)
+
+  // sem fase de palpite: vai direto às opções (lightning round)
+  document.getElementById("revealBox").classList.add("hidden");
+  document.getElementById("nextRow").classList.add("hidden");
+  document.getElementById("opcoesBox").innerHTML = "";
+  renderOpcoes();
+  document.getElementById("discrimBox").classList.remove("hidden");
+
+  show("loop");
+}
+
+function renderOpcoes(){
+  const it = ITENS[estado.idx];
+  const box = document.getElementById("opcoesBox"); box.innerHTML = "";
+  embaralhar(it.opcoes).forEach(o=>{                    // ORDEM embaralhada
+    const b = document.createElement("button");
+    b.className = "opt"; b.dataset.k = o.chave;
+    b.innerHTML = `<b>${o.label}</b>`;
+    b.addEventListener("click", ()=>escolher(o.chave));
+    box.appendChild(b);
+  });
+}
+
+function escolher(chave){
+  const it = ITENS[estado.idx];
+  const correto = (chave === it.correta);
+
+  // trava as opções; destaca a correta (e a escolha errada, se for o caso)
+  document.querySelectorAll("#opcoesBox .opt").forEach(b=>{
+    b.disabled = true;
+    if (b.dataset.k === it.correta) b.classList.add("correct");
+    if (b.dataset.k === chave && !correto) b.classList.add("wrong");
+  });
+
+  if (correto){ estado.score += 1; SFX.acerto(); } else { SFX.erro(); }
+  document.getElementById("scoreVal").textContent = estado.score;
+
+  const correctLabel = it.opcoes.find(o => o.chave === it.correta).label;
+  estado.respostas[estado.idx] = { item_id: it.id, escolha: chave, correto: correto };
+
+  // revelação
+  document.getElementById("revNota").textContent = window.FRONTEIRAS_DATA.NOTA_REVELACAO;
+  document.getElementById("saidTermo").textContent = correctLabel;
+  document.getElementById("revFronteira").innerHTML = it.fronteira;       // HTML confiável (data)
+  document.getElementById("revLink").href = it.roteiro;
+
+  document.getElementById("nextBtn").textContent =
+    (estado.idx >= TOTAL-1) ? "Ver a síntese →" : "Próxima fronteira →";
+
+  document.getElementById("revealBox").classList.remove("hidden");
+  document.getElementById("nextRow").classList.remove("hidden");
+
+  salvarProgresso(); // item concluído → salva local + envia estado cumulativo (upsert)
+}
+
+document.getElementById("nextBtn").addEventListener("click", ()=>{
+  SFX.click();
+  estado.idx++;
+  if (estado.idx >= TOTAL){ montarSintese(); show("synth"); }
+  else carregarItem();
+});
+
+/* Botões do fim (SPEC §1,§5): em aula, read-only + volta ao campeonato; em treino, refaz. */
+function ajustarBotoesFim(){
+  const restart = document.getElementById("restartBtn");
+  const voltar  = document.getElementById("voltarHub");
+  if (!restart || !voltar) return;
+  if (MODO === "aula"){ restart.style.display = "none"; voltar.style.display = ""; voltar.textContent = "Voltar ao campeonato →"; }
+  else { restart.style.display = ""; voltar.style.display = ""; voltar.textContent = "Voltar às atividades →"; }
+}
+
+/* =========================================================================
+   SÍNTESE
+   ========================================================================= */
+function montarSintese(){
+  document.getElementById("progressBar").style.width = "100%";
+  document.getElementById("synthGroup").textContent = estado.grupo;
+  document.getElementById("synthScore").textContent = estado.score;
+  var _st = document.getElementById("synthTotal"); if (_st) _st.textContent = TOTAL;
+
+  // medalha — mesmo esquema do continuum (faixas proporcionais ao máximo)
+  let titulo;
+  if (estado.score >= 6) titulo = "Mestre das fronteiras";
+  else if (estado.score >= 3) titulo = "Afiado no fio da navalha";
+  else titulo = "Aprendiz das fronteiras";
+  document.getElementById("synthBadge").innerHTML = `<span class="badge">${titulo}</span>`;
+
+  // lista: item → palpite digitado → termo correto
+  const list = document.getElementById("synthList"); list.innerHTML = "";
+  estado.respostas.forEach((r,i)=>{
+    const it = ITENS[i];
+    const correctLabel = it.opcoes.find(o => o.chave === it.correta).label;
+    const escolhaLabel = (it.opcoes.find(o => o.chave === r.escolha) || {}).label || "—";
+    const acerto = r.correto ? "✓" : "✕";
+    const div = document.createElement("div"); div.className = "item";
+    const b = document.createElement("b"); b.textContent = `${i+1}. ${correctLabel}`;
+    const linha1 = document.createElement("div"); linha1.appendChild(b);
+    const linha3 = document.createElement("div"); linha3.className = "small";
+    linha3.innerHTML = `Escolha: ${acerto} ${escapeHtml(escolhaLabel)}`;
+    div.appendChild(linha1); div.appendChild(linha3);
+    list.appendChild(div);
+  });
+
+  refletirSync();   // estado otimista; enviar() corrige se falhar
+  salvarProgresso();
+  if (MODO === "aula") AULA.marcarConcluida(estado.sessao, estado.grupo, ATIVIDADE);
+  ajustarBotoesFim();
+}
+
+function escapeHtml(s){
+  return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
+}
+
+/* =========================================================================
+   REFAZER — recomeça o MESMO grupo/sessão (confirma; ato destrutivo local).
+   Não apaga no servidor (anon sem DELETE); o upsert sobrescreve a linha do
+   grupo no próximo envio. Limpa só o progresso LOCAL.
+   ========================================================================= */
+document.getElementById("restartBtn").addEventListener("click", ()=>{
+  if (!confirm("Isto recomeça do zero. Tem certeza?")) return;
+  limparLocal(estado.sessao, estado.grupo);
+  if (reenvioTimer){ clearInterval(reenvioTimer); reenvioTimer = null; }
+  syncPendente = false;
+  estado.idx = 0; estado.score = 0; estado.respostas = []; estado._palpiteTmp = "";
+  carregarItem();
+});
+</script>
+</body>
+</html>

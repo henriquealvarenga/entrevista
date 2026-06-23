@@ -1,0 +1,9 @@
+---
+title: "Marina, 48 anos"
+---
+
+Marina, 48 anos, professora do ensino fundamental, procura atendimento relatando que tem vivido com medo de estar transmitindo uma doença desconhecida para todos ao seu redor. Conta que evita abraçar os alunos, se sente culpada por sentar-se à mesa de jantar com a família e chegou a dormir em um quarto separado do marido para "não contaminá-lo". Em alguns momentos consegue pensar que isso pode ser apenas fruto da sua "cabeça doente", lembrando-se de um episódio depressivo grave que teve anos atrás. Contudo, em outros momentos sente convicção quase absoluta de que carrega um microrganismo perigoso e invisível. A família relata que ela passa horas pesquisando sobre epidemias na internet e pede repetidamente que todos façam exames médicos. Apesar disso, ainda consegue preparar aulas e conversar sobre outros assuntos, embora com crescente sofrimento. Nega ouvir vozes, mas afirma perceber "olhares de reprovação" quando passa pelas pessoas na rua, como se elas soubessem de seu risco de contágio.
+
+::: {.callout-note appearance="simple"}
+**Caso fictício**, elaborado para fins didáticos. Usado na atividade interativa [Dimensões do delírio](../../../atividades/index.html) — em que se classifica o delírio em cinco dimensões (convicção, extensão, bizarrice, desorganização e preocupação).
+:::

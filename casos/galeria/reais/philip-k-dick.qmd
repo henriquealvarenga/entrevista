@@ -1,0 +1,18 @@
+---
+title: "Philip K. Dick (1928–1982)"
+nocite: |
+  @dick1991valis, @dick2011exegesis, @sutin1989, @arnold2016
+---
+
+Philip K. Dick (1928–1982) foi um dos escritores de ficção científica mais influentes do século XX, autor de obras como *Do Androids Dream of Electric Sheep?* (adaptado em *Blade Runner*) e *A Scanner Darkly*. Além de sua produção literária inovadora, Dick relatou diversas experiências místicas e delirantes, que marcaram profundamente sua vida e escritos. Em 1974, descreveu ter recebido uma experiência de revelação divina através de um feixe de luz cor-de-rosa, evento que originou sua famosa "Exegese", uma coletânea de mais de 8.000 páginas de reflexões sobre realidades alternativas, conspirações e contato com inteligências cósmicas.
+
+Em fevereiro de 1974, após uma cirurgia dentária e sob uso de analgésicos, Philip K. Dick relatou que um feixe de luz cor-de-rosa penetrou em sua mente, transmitindo-lhe informações secretas sobre a natureza do universo. A partir desse episódio, afirmou que vivia em simultâneo no século I d.C. e no século XX, sendo parte de uma luta cósmica contra forças malignas que controlavam a humanidade. Passou a registrar diariamente experiências em que recebia mensagens telepáticas de uma entidade superior que chamava de VALIS (Vast Active Living Intelligence System). Acreditava que o Império Romano jamais havia terminado e que vivíamos em uma ilusão mantida por poderes autoritários. Seus escritos descrevem tanto conforto espiritual quanto profundo sofrimento, oscilando entre inspiração criativa e ansiedade persecutória. Apesar da intensidade das crenças, continuava a escrever romances e a manter algum contato social, embora muitos amigos relatassem preocupação com sua saúde mental.
+
+## Referências
+
+::: {#refs}
+:::
+
+::: {.callout-note appearance="simple"}
+Caso da **Galeria de delírios**, usado na atividade interativa [Dimensões do delírio](../../../atividades/index.html) — em que se classifica o delírio em cinco dimensões (convicção, extensão, bizarrice, desorganização e preocupação).
+:::

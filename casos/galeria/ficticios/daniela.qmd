@@ -1,0 +1,9 @@
+---
+title: "Daniela, 31 anos"
+---
+
+Daniela, 31 anos, bancária, foi encaminhada ao psiquiatra por preocupação crescente de que colegas comentam sua vida pessoal pelas costas. Ao ouvir risadas no corredor, pensa de imediato que falam dela — mas logo considera que pode ser "coisa da minha cabeça". Em algumas ocasiões tem quase certeza de uma conspiração; em outras, convence-se de que é apenas coincidência. O marido diz que ela tem dormido normalmente, mantém a rotina da casa e continua saindo com amigos, embora às vezes traga o assunto à tona em conversas sociais. Não apresenta isolamento importante e segue interessada em hobbies como corrida e leitura. Na entrevista, demonstra ansiedade ao narrar os episódios, mas também ri de si mesma: "sei que parece exagero, mas não consigo evitar a sensação".
+
+::: {.callout-note appearance="simple"}
+**Caso fictício**, elaborado para fins didáticos. Usado na atividade interativa [Dimensões do delírio](../../../atividades/index.html) — em que se classifica o delírio em cinco dimensões (convicção, extensão, bizarrice, desorganização e preocupação).
+:::

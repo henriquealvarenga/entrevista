@@ -1,0 +1,9 @@
+---
+title: "Júlio, 34 anos"
+---
+
+Júlio, 34 anos, solteiro, trabalha como técnico de informática em uma escola. Há cerca de dois anos começou a acreditar que o governo instalou um chip em sua cabeça durante uma consulta odontológica de rotina. Ele descreve a sensação de "ondas elétricas" no crânio e afirma que seus pensamentos estão sendo monitorados. Apesar de convicto da ideia, em raros momentos admite a possibilidade de estar "exagerando". A família relata que Júlio passou a evitar encontros sociais, afastou-se dos amigos e não confia mais nos colegas do trabalho, acreditando que todos podem ser informantes. Permanece, no entanto, capaz de cuidar da higiene pessoal, pagar contas e preparar suas refeições. Em sua narrativa, Júlio detalha que os sinais enviados pelo chip são transmitidos para satélites que se comunicam com militares estrangeiros. Alega ainda que sente dificuldade de dormir porque precisa "vigiar" se há drones sobrevoando sua casa. Ele passa horas na internet buscando provas de conspirações e envia e-mails semanais a deputados relatando sua situação. A ideia é sistemática e coerente dentro da sua lógica, mas torna-se cada vez mais angustiante para ele, que refere "não ter paz nem ao dormir".
+
+::: {.callout-note appearance="simple"}
+**Caso fictício**, elaborado para fins didáticos. Usado na atividade interativa [Dimensões do delírio](../../../atividades/index.html) — em que se classifica o delírio em cinco dimensões (convicção, extensão, bizarrice, desorganização e preocupação).
+:::

@@ -1,0 +1,18 @@
+---
+title: "Robert Schumann (1810–1856)"
+nocite: |
+  @cooper2018, @predota2022, @steinberg2015
+---
+
+Robert Schumann, compositor alemão, aos 45 anos começou a apresentar sintomas progressivos de sofrimento mental. Relatava ouvir vozes e melodias que identificava como vindas de anjos e espíritos, as quais lhe ditavam composições musicais. Em outros momentos, descrevia vozes demoníacas que o insultavam e ameaçavam. Passava longas horas ao piano tentando transcrever as músicas "reveladas", dormia pouco e mostrava sinais de exaustão.
+
+Também desenvolveu crenças persecutórias, afirmando que pessoas próximas tentavam envenená-lo com metais pesados, chegando a recusar refeições públicas e a desconfiar de utensílios metálicos em casa. A família relatava crescente isolamento social e abandono de compromissos profissionais. Nos últimos meses de vida, foi internado voluntariamente no hospital de Endenich, onde o caso foi descrito como "melancolia com delírios".
+
+## Referências
+
+::: {#refs}
+:::
+
+::: {.callout-note appearance="simple"}
+Caso da **Galeria de delírios**, usado na atividade interativa [Dimensões do delírio](../../../atividades/index.html) — em que se classifica o delírio em cinco dimensões (convicção, extensão, bizarrice, desorganização e preocupação).
+:::

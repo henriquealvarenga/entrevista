@@ -1,0 +1,18 @@
+---
+title: "Syd Barrett (1946–2006)"
+nocite: |
+  @garridopinzas2024, @hopkinson2021, @rollingstonebrasil2016
+---
+
+Roger Keith "Syd" Barrett (1946–2006) foi guitarrista, vocalista e um dos fundadores do grupo Pink Floyd, sendo o principal responsável pelo som experimental e psicodélico da banda em seus primeiros anos. Artista criativo e carismático, escreveu composições marcantes como *Arnold Layne* e *See Emily Play*. Contudo, no auge do sucesso, começou a apresentar mudanças de comportamento, isolamento social e sintomas psicóticos, que levaram ao seu afastamento da banda em 1968. Passou o restante da vida em relativa reclusão em Cambridge, vivendo sob os cuidados da família.
+
+Entre 1967 e 1968, Syd começou a exibir comportamentos estranhos e imprevisíveis durante ensaios e apresentações. Por vezes ficava imóvel no palco, tocando uma única nota repetidamente, ou desafinava deliberadamente sua guitarra. Relatava sentir que estava sendo observado constantemente e que mensagens ocultas eram transmitidas pela televisão e pelo rádio. Em sua casa, chegou a pintar paredes com cores intensas e cobrir janelas com papel alumínio para "bloquear ondas externas" que acreditava o atingirem. Amigos descreviam que ele parecia perdido em devaneios, com fala incoerente e dificuldade de manter diálogos lineares. Apesar de ainda compor letras fragmentadas, suas narrativas eram cada vez mais desconexas. O sofrimento e a desorganização mental levaram ao abandono progressivo da carreira musical e ao isolamento social quase completo.
+
+## Referências
+
+::: {#refs}
+:::
+
+::: {.callout-note appearance="simple"}
+Caso da **Galeria de delírios**, usado na atividade interativa [Dimensões do delírio](../../../atividades/index.html) — em que se classifica o delírio em cinco dimensões (convicção, extensão, bizarrice, desorganização e preocupação).
+:::

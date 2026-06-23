@@ -1,0 +1,18 @@
+---
+title: "Vincent van Gogh (1853–1890)"
+nocite: |
+  @blumer2002, @loftus1991, @vangogh2017cartas
+---
+
+Vincent van Gogh (1853–1890) foi um dos pintores mais influentes da história da arte ocidental, associado ao pós-impressionismo. Sua vida foi marcada por períodos de intensa produção artística e crises psíquicas graves. Viveu em pobreza, sofreu de alcoolismo, epilepsia e episódios de instabilidade emocional, além de apresentar delírios e alucinações, documentados em cartas e relatos médicos. Foi internado diversas vezes, incluindo em Saint-Rémy-de-Provence (1889), após o episódio célebre em que mutilou parte de sua orelha. Morreu em 1890, em Auvers-sur-Oise, de ferimento por arma de fogo, em circunstâncias debatidas (suicídio ou acidente).
+
+Aos 36 anos, durante sua estadia em Arles, Van Gogh passou a apresentar episódios de agitação intensa, seguidos de períodos de apatia. Relatava ouvir vozes e interpretar que vizinhos e estranhos o hostilizavam. Em cartas ao irmão Theo, mencionava temores de estar sendo envenenado e descrevia visões religiosas que o colocavam em uma missão divina para transmitir a verdade por meio da pintura. Após discutir violentamente com Paul Gauguin, Van Gogh mutilou parte de sua própria orelha e a entregou a uma mulher em um bordel local — gesto posteriormente relatado pelos habitantes de Arles como um ato incompreensível e perturbador. Em sua internação em Saint-Rémy, descrevia ataques nos quais acreditava estar possuído por forças externas, que controlavam seu corpo e o impediam de pintar. Apesar da gravidade dos episódios, continuava a produzir obras-primas em intervalos de relativa estabilidade, articulando em sua pintura elementos de sofrimento, transcendência e busca espiritual.
+
+## Referências
+
+::: {#refs}
+:::
+
+::: {.callout-note appearance="simple"}
+Caso da **Galeria de delírios**, usado na atividade interativa [Dimensões do delírio](../../../atividades/index.html) — em que se classifica o delírio em cinco dimensões (convicção, extensão, bizarrice, desorganização e preocupação).
+:::
