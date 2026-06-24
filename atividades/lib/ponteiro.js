@@ -152,6 +152,13 @@
     };
   }
 
+  /* Leitura ÚNICA do estado atual (sem assinar). Usada pelo painel ao (re)carregar
+     para retomar a rodada em curso em vez de voltar ao lobby. Promise<estado|null>. */
+  function lerLocalUnico(sessao, atividade) {
+    try { return Promise.resolve(JSON.parse(localStorage.getItem(chaveLocal(sessao, atividade)) || "null")); }
+    catch (e) { return Promise.resolve(null); }
+  }
+
   global.PONTEIRO = {
     FASES: FASES,
     proxima: proxima,
@@ -160,6 +167,9 @@
     },
     definir: function (s, a, estado) {
       return usaSupabase() ? definirSupabase(s, a, estado) : definirLocal(s, a, estado);
+    },
+    ler: function (s, a) {
+      return usaSupabase() ? SB.lerEstado(s, a) : lerLocalUnico(s, a);
     },
     modo: function () { return usaSupabase() ? "supabase" : "local"; }
   };

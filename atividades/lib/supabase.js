@@ -39,6 +39,7 @@
      reconhecer o professor. Os envios dos alunos seguem na chave anon. */
   var authToken = null;
   function setAuthToken(t) { authToken = t || null; }
+  function getAuthToken() { return authToken; }
 
   /* Cabeçalhos comuns. apikey é SEMPRE a chave anon (publishable); o Bearer pode
      ser sobrescrito pelo token de usuário (bearer) — senão, também é a anon. */
@@ -184,6 +185,7 @@
     consultarSessaoTudo: consultarSessaoTudo,
     lerEstado: lerEstado,
     definirEstado: definirEstado,
-    setAuthToken: setAuthToken
+    setAuthToken: setAuthToken,
+    getAuthToken: getAuthToken
   };
 })(window);

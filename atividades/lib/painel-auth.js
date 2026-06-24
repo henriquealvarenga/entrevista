@@ -1,14 +1,18 @@
 /* =============================================================================
-   AUTENTICAÇÃO DO PAINEL — login por email (magic link), via Supabase Auth/GoTrue
-   REST puro, sem SDK, sem CDN. Protege a tela do professor: só quem entra com o
-   email autorizado lê as respostas (a proteção REAL é o RLS do banco — ver
+   AUTENTICAÇÃO DO PAINEL — login do professor, via Supabase Auth/GoTrue. REST
+   puro, sem SDK, sem CDN. Protege a tela do professor: só quem entra com o email
+   autorizado lê as respostas (a proteção REAL é o RLS do banco — ver
    supabase/setup.sql; aqui é o fluxo de login + uso do token nas leituras).
 
-   Fluxo: o professor digita o email → POST /auth/v1/otp envia um link mágico →
-   ao clicar, o navegador volta ao painel com os tokens no #hash → guardamos a
-   sessão (localStorage), passamos o access_token ao SB (Bearer das leituras) e
-   liberamos o painel. O token é renovado automaticamente antes de expirar.
+   DOIS modos, escolhidos pela presença do campo de SENHA no portão (#authPassword):
+   • SENHA (painéis-piloto): o professor digita email + senha → POST
+     /auth/v1/token?grant_type=password → guardamos a sessão e liberamos o painel.
+     Confiável numa sala de aula (não depende de e-mail chegar). O usuário é criado
+     UMA vez no dashboard (Authentication → Users → Add user, com senha + confirmado).
+   • MAGIC LINK (painel.html original, sem #authPassword): email → POST /auth/v1/otp
+     manda um link; ao clicar, o navegador volta com os tokens no #hash.
 
+   Em ambos, a sessão fica em localStorage e o token é renovado antes de expirar.
    Depende de window.SUPABASE_CONFIG (url, anonKey) e de window.SB.setAuthToken.
    Expõe window.PAINEL_AUTH.proteger(onReady): chama onReady() só quando autenticado.
    ============================================================================= */
@@ -53,6 +57,23 @@
     return s;
   }
 
+  /* Login por SENHA (grant_type=password). Retorna a sessão {access_token,…} ou null. */
+  async function entrarComSenha(email, password){
+    try {
+      var resp = await fetch(AUTH + "/token?grant_type=password", {
+        method: "POST",
+        headers: { "apikey": cfg.anonKey, "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email, password: password })
+      });
+      if (!resp.ok) return null;
+      var d = await resp.json();
+      if (!d.access_token) return null;
+      var s = sessaoDeTokens(d.access_token, d.refresh_token);
+      salvarSessao(s);
+      return s;
+    } catch(e){ return null; }
+  }
+
   async function enviarLink(email){
     var redirect = location.origin + location.pathname; // precisa estar nas Redirect URLs do Supabase
     try {
@@ -94,6 +115,26 @@
     $("painelMain").hidden = true;
     $("authGate").hidden = false;
     var msg = $("authMsg");
+
+    /* Modo SENHA: o portão tem #authPassword (painéis-piloto). */
+    var pwEl = $("authPassword");
+    if (pwEl) {
+      var entrar = async function(){
+        var email = ($("authEmail").value || "").trim();
+        var senha = pwEl.value || "";
+        if (!email || !senha){ msg.textContent = "Digite o e-mail e a senha."; return; }
+        $("authSendBtn").disabled = true; msg.textContent = "Entrando…";
+        var s = await entrarComSenha(email, senha);
+        $("authSendBtn").disabled = false;
+        if (s && valida(s)) { ativar(s, onReady); }
+        else { msg.textContent = "E-mail ou senha incorretos."; }
+      };
+      $("authSendBtn").onclick = entrar;
+      pwEl.onkeydown = function(e){ if (e.key === "Enter") entrar(); };
+      return;
+    }
+
+    /* Modo MAGIC LINK (painel.html original, sem campo de senha). */
     $("authSendBtn").onclick = async function(){
       var email = ($("authEmail").value || "").trim();
       if (!email){ msg.textContent = "Digite seu email."; return; }

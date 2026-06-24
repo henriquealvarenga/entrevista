@@ -124,9 +124,11 @@ drop policy if exists "anon_select_estado" on public.sessao_estado;
 create policy "anon_select_estado" on public.sessao_estado
   for select to anon, authenticated using ( true );
 
--- Escrita do ponteiro via RPC SECURITY DEFINER.
--- ⚠️ PILOTO: liberado para anon (o painel piloto ainda não tem login). Para
---    PRODUÇÃO, troque o grant para `authenticated` e reative o check de e-mail.
+-- Escrita do ponteiro via RPC SECURITY DEFINER. PRODUÇÃO: só o PROFESSOR escreve.
+--    O grant é só para `authenticated` e a função CHECA o e-mail do professor (o
+--    mesmo de owner_select_respostas). Um aluno anônimo, ou outro usuário logado,
+--    não consegue mexer no ponteiro de nenhuma sessão. auth.jwt() funciona em
+--    SECURITY DEFINER (lê os claims do request, independente do role executor).
 drop function if exists public.definir_estado(text,text,int,text);
 drop function if exists public.definir_estado(text,text,int,text,bigint);
 create or replace function public.definir_estado(
@@ -134,19 +136,23 @@ create or replace function public.definir_estado(
 ) returns void
 language plpgsql security definer set search_path = public as $$
 begin
+  if (auth.jwt() ->> 'email') is distinct from 'henriquealvarenga@gmail.com' then
+    raise exception 'nao autorizado';
+  end if;
   insert into public.sessao_estado (sessao, atividade, item_atual, fase, epoca, atualizado_em)
   values (p_sessao, p_atividade, coalesce(p_item,0), p_fase, p_epoca, now())
   on conflict (sessao, atividade)
   do update set item_atual = excluded.item_atual, fase = excluded.fase, epoca = excluded.epoca, atualizado_em = now();
 end $$;
-grant execute on function public.definir_estado(text,text,int,text,bigint) to anon, authenticated;
+revoke all on function public.definir_estado(text,text,int,text,bigint) from public, anon;
+grant execute on function public.definir_estado(text,text,int,text,bigint) to authenticated;
 
--- ⚠️ PILOTO: leitura ANÔNIMA das respostas (o painel piloto não tem login).
---    Para PRODUÇÃO, REMOVA esta policy e use o login do professor (a leitura
---    autenticada owner_select já existe).
+-- PRODUÇÃO: SEM leitura anônima das respostas. A leitura é só do professor logado
+--    (policy owner_select_respostas, seção 3b). O painel lê com o token do usuário;
+--    o Realtime de `respostas` também passa o token no join (ver atividades/lib/
+--    realtime.js) — senão o RLS filtra as mudanças. (A antiga policy de piloto
+--    anon_select_piloto é removida aqui; este drop é idempotente se ela não existir.)
 drop policy if exists "anon_select_piloto" on public.respostas;
-create policy "anon_select_piloto" on public.respostas
-  for select to anon using ( true );
 
 -- Limpeza manual do ponteiro (efêmero, como as respostas):
 --   delete from public.sessao_estado where sessao = 'JTU96';

@@ -4,7 +4,7 @@ Ponto de partida para entender as atividades gamificadas do livro do Exame do Es
 
 Engenharia portada do `Intencionalidade_Project` (Quarto + JS puro, sem framework, sem CDN, fontes self-hosted) e estendida com o modo aula lockstep. O Intencionalidade é **só referência** — não se altera nada lá.
 
-Atualizado em 2026-06-23.
+Atualizado em 2026-06-24.
 
 ---
 
@@ -48,7 +48,8 @@ No lockstep, a discussão acontece **no calor de cada questão/caso** — logo a
 3. **Presença de sessão:** ao escolher o grupo, o painel **já mostra o grupo** — mesmo antes de entrar em qualquer rodada (resolve o "painel zerado" enquanto estão no mapa).
 4. O professor anuncia a rodada; os alunos tocam nela no mapa (as próximas ficam 🔒 até concluir a anterior) → sala de espera.
 5. O professor **conduz**: Iniciar → cada questão/caso passa por **Votação → Resultado** (o telão mostra a distribuição/divergência + o ponto de discussão; o aluno vê o próprio veredito + som).
-6. No fim da rodada: **"Ver a classificação ▸"** → **pódio** (barras animadas, medalhas, confete, fanfarra).
+6. No fim da rodada: **"Ver a classificação ▸"** → **pódio** da rodada (barras animadas, medalhas, confete, fanfarra).
+7. Do pódio, o professor segue por **"Próxima rodada ▸"** (vai direto ao painel da rodada seguinte) ou **"Mapa das rodadas"** (hub do professor: código único + lista das rodadas + **classificação geral acumulada**). Um **código único** vale o campeonato inteiro — os alunos digitam uma vez; cada rodada se distingue pelo `atividade`. A classificação geral **normaliza cada rodada /100** (R1=/10, R2=/8, R3=/24) e soma, então todas pesam igual. O mapa do professor espelha a **trava sequencial** do mapa do aluno (uma rodada só abre quando a anterior tem respostas).
 
 ---
 
@@ -79,15 +80,14 @@ Os 14 casos do `_ProjetoR_DelusionDimension` viraram **capítulos na seção de 
 ## 7. O que falta
 
 - **Construir R4 (Síndrome) e R5 (O caso completo).**
-- **Painel observar o ponteiro:** hoje o painel-piloto escreve o ponteiro mas não o lê — recarregar no meio da rodada volta ao lobby.
-- **Realtime nas respostas:** o ponteiro já é instantâneo; a contagem de votos no painel ainda faz poll de 1,5s (a tabela já está habilitada).
-- **Produção:** login do professor no painel + apertar o RLS (hoje o piloto usa anon). Ver a seção de Supabase em [`ENGENHARIA-lockstep.md`](ENGENHARIA-lockstep.md).
+- **Produção — ligar no dashboard do Supabase:** o **código** já está pronto (login do professor nos painéis + RLS apertado). Falta só o que é do dono no painel do Supabase: rodar o `setup.sql` atualizado, configurar o Auth (Redirect URLs + e-mail/SMTP) e o professor entrar uma vez. Passo a passo na seção 6 de [`ENGENHARIA-lockstep.md`](ENGENHARIA-lockstep.md).
 
 ---
 
 ## 8. Onde fica cada coisa (visão rápida)
 
-- **Hub:** `atividades/index.html` (mapa, presença de sessão).
+- **Hub do aluno:** `atividades/index.html` (mapa, presença de sessão).
+- **Hub do professor:** `atividades/painel-mapa.html` (código único, lista de rodadas com trava sequencial, classificação geral acumulada). Protegido por login.
 - **Alunos:** `atividades/0X-*.html` (cascas finas sobre os libs).
 - **Painéis-piloto (lockstep):** `atividades/painel-{nomear,fronteiras,dimensoes}.html`.
 - **Painel multi-atividade (original, agregado):** `atividades/painel.html` + `lib/painel-core.js` — outro sistema, com o pódio original; ver a engenharia.

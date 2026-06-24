@@ -60,6 +60,25 @@ h1{font-family:var(--font-serif); font-size:1.9rem; margin:0 0 .1em}
 </head>
 <body>
 <div class="wrap">
+
+  <!-- Portão de login (Supabase Auth, senha). painel-auth.js libera o #painelMain;
+       a proteção REAL é o RLS do banco (supabase/setup.sql). Em modo LOCAL (Supabase
+       não configurado) o portão é dispensado — ver o <script> de boot ao final. -->
+  <div id="authGate" hidden>
+    <div class="card" style="max-width:480px;margin:40px auto">
+      <h2 style="font-family:var(--font-serif);margin:0 0 8px;font-size:1.3rem">Painel restrito ao professor</h2>
+      <p style="margin:0 0 14px;color:var(--text-secondary)">Entre com seu e-mail e senha para conduzir a rodada.</p>
+      <input type="email" id="authEmail" autocomplete="username" placeholder="voce@exemplo.com"
+             style="font-family:var(--font-mono);font-size:1rem;padding:10px 12px;border:1px solid var(--border-color);border-radius:4px;width:100%;color:var(--text-primary);background:var(--paper-content)">
+      <input type="password" id="authPassword" autocomplete="current-password" placeholder="senha"
+             style="font-family:var(--font-mono);font-size:1rem;padding:10px 12px;border:1px solid var(--border-color);border-radius:4px;width:100%;margin-top:8px;color:var(--text-primary);background:var(--paper-content)">
+      <div style="margin-top:12px"><button class="btn" id="authSendBtn">Entrar</button></div>
+      <p class="small muted" id="authMsg" style="margin-top:10px"></p>
+    </div>
+  </div>
+
+  <div id="painelMain" hidden>
+  <div class="small muted" style="text-align:right;margin-bottom:2px"><a href="painel-mapa.html" style="color:var(--brand);text-decoration:none;margin-right:14px">▣ Mapa das rodadas</a><span id="authWho"></span> <button class="link-perigo" id="authSair" style="color:var(--text-muted)">Sair</button></div>
   <div class="kicker">Painel piloto · lockstep (Peer Instruction)</div>
   <h1>Rodada 3 — Dimensões do delírio</h1>
 
@@ -83,18 +102,26 @@ h1{font-family:var(--font-serif); font-size:1.9rem; margin:0 0 .1em}
     <button class="link-perigo" id="encerrarBtn">Encerrar sessão e recomeçar do zero</button>
     <p class="small muted" style="margin:4px 0 0">Remove todos os grupos, apaga os votos e gera um novo código. Os alunos voltam à tela inicial.</p>
   </div>
+  </div><!-- /#painelMain -->
 </div>
 
 <script src="lib/supabase-config.js?v=6"></script>
-<script src="lib/supabase.js?v=6"></script>
-<script src="lib/ponteiro.js?v=7"></script>
+<script src="lib/supabase.js?v=7"></script>
+<script src="lib/painel-auth.js?v=2"></script>
+<script src="lib/ponteiro.js?v=8"></script>
+<script src="lib/realtime.js?v=1"></script>
 <script src="lib/sfx.js"></script>
 <script src="lib/podio.js"></script>
+<script src="lib/hub-config.js?v=1"></script>
 <script src="lib/03-dimensoes-data.js"></script>
 <script src="lib/painel-dimensoes.js"></script>
 <script>
 "use strict";
-PainelDimensoes.init({ data: window.DIMENSOES_DATA, atividade: "dimensoes" });
+function boot(){ PainelDimensoes.init({ data: window.DIMENSOES_DATA, atividade: "dimensoes" }); }
+// Produção (Supabase configurado): exige login do professor antes de conduzir.
+// Modo LOCAL (config vazia): dispensa o login e roda direto (testar numa máquina só).
+if (window.SB && SB.configValida() && window.PAINEL_AUTH) { PAINEL_AUTH.proteger(boot); }
+else { var pm=document.getElementById("painelMain"); if(pm) pm.hidden=false; boot(); }
 </script>
 </body>
 </html>

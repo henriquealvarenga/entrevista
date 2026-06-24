@@ -30,11 +30,11 @@
     var _ac=null, bipItem=-1, nGrupos=0;
     function primeAudio(){ try{ _ac = _ac || new (window.AudioContext||window.webkitAudioContext)(); if(_ac.state==='suspended') _ac.resume(); }catch(e){} }
     function bip(){ try{ primeAudio(); [660,880].forEach(function(f,i){ var o=_ac.createOscillator(), g=_ac.createGain(); o.type='sine'; o.frequency.value=f; o.connect(g); g.connect(_ac.destination); var t=_ac.currentTime+i*0.12; g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(0.22,t+0.02); g.gain.linearRampToValueAtTime(0,t+0.22); o.start(t); o.stop(t+0.26); }); }catch(e){} }
-    function numGrupos(){ return nGrupos; }
+    function numGrupos(){ return nGrupos || gruposLobby().length; }   // após reload, nGrupos=0 → usa o roster vivo
 
     /* ---- Sessão (código) ---- */
     function gerarCodigo(){ var s=""; for(var i=0;i<5;i++) s+=ALFA[Math.floor(Math.random()*ALFA.length)]; return s; }
-    var sessaoKey = "painel-" + ATIVIDADE + "-sessao";
+    var sessaoKey = "painel-aula-sessao";   // UM código para o campeonato inteiro (compartilhado por todos os painéis)
     var sessao = "";
     function setSessao(s){ sessao=s; try{localStorage.setItem(sessaoKey,s);}catch(e){} document.getElementById("codigoBig").textContent=s; }
     (function initSessao(){ var s=""; try{s=localStorage.getItem(sessaoKey)||"";}catch(e){} setSessao(s||gerarCodigo()); })();
@@ -54,14 +54,14 @@
       if (!confirm("Encerrar a sessão?\n\nIsto remove TODOS os grupos, apaga os votos e gera um NOVO código. Os alunos voltam à tela inicial. Não dá para desfazer.")) return;
       var antiga = sessao;
       PONTEIRO.definir(antiga, ATIVIDADE, { fase:"reset", epoca:novaEpoca() });   // sinaliza: alunos → tela inicial
-      setSessao(gerarCodigo()); estadoP=null; nGrupos=0; bipItem=-1; render();    // painel: novo código, volta ao lobby
+      setSessao(gerarCodigo()); estadoP=null; nGrupos=0; bipItem=-1; render(); assinarRespostas();   // painel: novo código, volta ao lobby
       var prefEstado = ATIVIDADE + ":estado:" + antiga + ":", prefLobby = "_lobby:estado:" + antiga + ":", chavePonteiro = "ponteiro:" + antiga + ":" + ATIVIDADE;
       setTimeout(function(){                                                       // limpa dados da sessão antiga (após os alunos lerem o reset)
         Object.keys(localStorage).filter(function(k){ return k.indexOf(prefEstado)===0 || k.indexOf(prefLobby)===0 || k===chavePonteiro; }).forEach(function(k){ try{localStorage.removeItem(k);}catch(e){} });
       }, 2500);
     }
     document.getElementById("encerrarBtn").addEventListener("click", encerrarSessao);
-    document.getElementById("novoCodigo").addEventListener("click", function(){ setSessao(gerarCodigo()); estadoP=null; render(); });
+    document.getElementById("novoCodigo").addEventListener("click", function(){ setSessao(gerarCodigo()); estadoP=null; render(); assinarRespostas(); });
 
     /* ---- Leitura dos grupos: Supabase (cache do poll, cross-device) ou localStorage ---- */
     var SB_ON = !!(window.SB && SB.configValida());
@@ -76,6 +76,17 @@
         render();
       }catch(e){}
     }
+    /* Realtime das respostas: assina postgres_changes de `respostas` (filtrado pela
+       sessão → pega votos E entradas no _lobby) e dispara um refresh imediato; o poll
+       de 1,5s acima fica como rede de segurança. Re-assina quando o código muda. */
+    var subResp = null, pollPedido = null;
+    function pollDebounced(){ if (pollPedido) return; pollPedido = setTimeout(function(){ pollPedido = null; pollSupabase(); }, 250); }
+    function assinarRespostas(){
+      if (!SB_ON || !window.RT) return;
+      if (subResp){ try{ subResp(); }catch(e){} subResp = null; }
+      subResp = RT.assinar({ table:"respostas", sessao:sessao, topico:"resp:"+sessao+":"+ATIVIDADE, tokenFn: SB.getAuthToken, onChange: pollDebounced });
+    }
+
     /* Roster da SESSÃO (lobby): quem escolheu o grupo no hub, mesmo sem ter entrado
        numa rodada. É a fonte do placar de grupos e do N de "X/N votaram". */
     function gruposLobby(){
@@ -130,7 +141,7 @@
       ini.style.display="none"; av.style.display=""; ft.style.display="";
       if (estadoP.fase==="fim"){
         ft.textContent="Classificação"; av.disabled=true; cr.textContent="";
-        if (!fimRenderizado){ fimRenderizado = true; Podio.render(palco, { grupos: rankingDados(), max: TOTAL, titulo: "🏆 " + TITULO, sub: "Acertos da rodada", festa: true }); }
+        if (!fimRenderizado){ fimRenderizado = true; Podio.render(palco, { grupos: rankingDados(), max: TOTAL, titulo: "🏆 " + TITULO, sub: "Acertos da rodada", festa: true }); palco.insertAdjacentHTML("beforeend", navRodadas()); }
         return;
       }
       av.disabled=false;
@@ -173,6 +184,24 @@
       }).join("");
     }
 
+    /* ---- Navegação entre rodadas (no pódio): próxima rodada + mapa ---- */
+    function proximaRodada(){
+      var lista = window.HUB_ATIVIDADES || [], idx = -1;
+      for (var i=0;i<lista.length;i++){ if (lista[i].id===ATIVIDADE){ idx=i; break; } }
+      if (idx<0 || idx+1>=lista.length) return null;
+      var nxt = lista[idx+1];
+      return (nxt && nxt.painel) ? nxt : null;   // só se o painel da próxima existe
+    }
+    function navRodadas(){
+      var prox = proximaRodada();
+      return '<div style="text-align:center;margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">'+
+        '<button class="btn ghost" onclick="location.href=\'painel-mapa.html\'">▣ Mapa das rodadas</button>'+
+        (prox
+          ? '<button class="btn" onclick="location.href=\''+prox.painel+'\'">Próxima rodada: '+prox.titulo+' ▸</button>'
+          : '<span class="small muted" style="align-self:center">Próximas rodadas em construção</span>')+
+      '</div>';
+    }
+
     /* ---- Classificação da rodada (placar dos grupos por acertos) ---- */
     function scoreGrupo(g){ return (g.itens||[]).filter(function(it){ return it.correto1; }).length; }
     function rankingDados(){
@@ -187,10 +216,19 @@
     }
 
     /* ---- Atualização ao vivo das contagens ---- */
+    /* Retoma a rodada em curso: se o painel for recarregado no meio, lê o ponteiro
+       persistido e restaura o estado em vez de cair no lobby (a "fim" reabre o pódio). */
+    function restaurar(){
+      PONTEIRO.ler(sessao, ATIVIDADE).then(function(e){
+        if (estadoP===null && e && e.fase && e.fase!=="reset"){ estadoP = e; render(); }
+      }).catch(function(){});
+    }
+
     window.addEventListener("storage", function(){ render(); });                  // atualiza inclusive o lobby (modo local)
     setInterval(function(){ if(!estadoP || estadoP.fase!=="fim") render(); }, 1200); // lobby (estadoP null) também atualiza
-    if (SB_ON) setInterval(pollSupabase, 1500);                                   // modo Supabase: puxa os votos dos grupos
+    if (SB_ON){ setInterval(pollSupabase, 1500); assinarRespostas(); }            // poll de segurança + Realtime (refresh instantâneo)
     render();
+    restaurar();
   }
 
   global.PainelMC = { init: init };

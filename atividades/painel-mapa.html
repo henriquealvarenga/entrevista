@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel do professor — Mapa do campeonato</title>
+
+<!-- =========================================================================
+     MAPA DO PROFESSOR — hub do campeonato (lockstep). Mostra o CÓDIGO único da
+     aula (compartilhado por todos os painéis), a lista de rodadas em ordem (com
+     trava sequencial, espelhando o mapa do aluno) e a CLASSIFICAÇÃO GERAL
+     acumulada (soma normalizada /100 de cada rodada — ver hub-config.maxPontos).
+     Protegido por login (lê as respostas de todas as rodadas → leitura autenticada).
+     ========================================================================= -->
+<style>
+@font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"); font-weight:700; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-SemiBold.woff2") format("woff2"); font-weight:600; font-display:swap; }
+@font-face { font-family:"JetBrains Mono"; src:url("../fonts/JetBrainsMono-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+:root{
+  --paper:#F9F9F7; --paper-content:#fff; --sidebar-bg:#f2f2ee; --border-color:#e5e5e0;
+  --text-primary:#1a1a1a; --text-body:#333; --text-secondary:#444; --text-muted:#888;
+  --brand:#b45309; --brand-dark:#92400e; --brand-soft:rgba(180,83,9,.08); --brand-line:rgba(180,83,9,.22);
+  --live:#2f7d4f; --live-soft:rgba(47,125,79,.12);
+  --font-sans:"Inter",ui-sans-serif,system-ui,sans-serif; --font-serif:"Playfair Display",Georgia,serif; --font-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box} html,body{margin:0;padding:0}
+body{background:var(--paper); color:var(--text-body); font-family:var(--font-sans); line-height:1.5; font-size:18px; -webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px; margin:0 auto; padding:24px 22px 80px}
+h1{font-family:var(--font-serif); font-size:1.9rem; margin:0 0 .1em}
+h2{font-family:var(--font-serif); font-size:1.4rem; margin:28px 0 6px}
+.kicker{font-family:var(--font-mono); font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; color:var(--brand)}
+.muted{color:var(--text-muted)} .small{font-size:.85rem}
+.codebox{background:var(--paper-content); border:1px solid var(--border-color); border-radius:6px; padding:18px 20px; margin:16px 0; text-align:center}
+.code-big{font-family:var(--font-mono); font-weight:600; color:var(--brand); font-size:clamp(2.4rem,9vw,4rem); letter-spacing:.12em; line-height:1; margin:6px 0}
+.btn{font-family:var(--font-sans); font-size:1rem; font-weight:600; cursor:pointer; border:1px solid var(--brand); background:var(--brand); color:#fff; padding:11px 20px; border-radius:4px; text-decoration:none; display:inline-block}
+.btn:hover{background:var(--brand-dark)} .btn.ghost{background:transparent; color:var(--brand)} .btn.ghost:hover{background:var(--brand-soft)}
+.card{background:var(--paper-content); border:1px solid var(--border-color); border-radius:6px; padding:20px 22px; margin-top:16px}
+/* lista de rodadas */
+.rodada{display:flex; align-items:center; gap:14px; padding:14px 16px; border:1px solid var(--border-color); border-radius:6px; margin:10px 0; background:var(--paper-content)}
+.rodada .num{font-family:var(--font-mono); color:var(--text-muted); width:1.6em; text-align:right}
+.rodada .tit{flex:1 1 auto; font-weight:600; color:var(--text-primary)}
+.rodada .st{font-size:.85rem; color:var(--text-muted); white-space:nowrap}
+.rodada.locked{opacity:.5}
+.rodada.atual{border-color:var(--brand); background:var(--brand-soft)}
+.link-perigo{background:none; border:none; cursor:pointer; font-family:var(--font-sans); font-size:.9rem; color:#b4232a; text-decoration:underline; padding:4px}
+.link-perigo:hover{color:#8c1a20}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- Portão de login (Supabase Auth, senha). painel-auth.js libera o #painelMain.
+       O mapa lê as respostas de todas as rodadas (placar acumulado) → exige login.
+       Em modo LOCAL (Supabase não configurado) o portão é dispensado. -->
+  <div id="authGate" hidden>
+    <div class="card" style="max-width:480px;margin:40px auto">
+      <h2 style="font-family:var(--font-serif);margin:0 0 8px;font-size:1.3rem">Painel restrito ao professor</h2>
+      <p style="margin:0 0 14px;color:var(--text-secondary)">Entre com seu e-mail e senha para ver o campeonato.</p>
+      <input type="email" id="authEmail" autocomplete="username" placeholder="voce@exemplo.com"
+             style="font-family:var(--font-mono);font-size:1rem;padding:10px 12px;border:1px solid var(--border-color);border-radius:4px;width:100%;color:var(--text-primary);background:var(--paper-content)">
+      <input type="password" id="authPassword" autocomplete="current-password" placeholder="senha"
+             style="font-family:var(--font-mono);font-size:1rem;padding:10px 12px;border:1px solid var(--border-color);border-radius:4px;width:100%;margin-top:8px;color:var(--text-primary);background:var(--paper-content)">
+      <div style="margin-top:12px"><button class="btn" id="authSendBtn">Entrar</button></div>
+      <p class="small muted" id="authMsg" style="margin-top:10px"></p>
+    </div>
+  </div>
+
+  <div id="painelMain" hidden>
+  <div class="small muted" style="text-align:right;margin-bottom:2px"><span id="authWho"></span> <button class="link-perigo" id="authSair" style="color:var(--text-muted)">Sair</button></div>
+  <div class="kicker">Painel do professor · campeonato</div>
+  <h1>Mapa das rodadas</h1>
+
+  <div class="codebox">
+    <p class="small muted" style="margin:0 0 6px">Os alunos entram em <b>Atividades → Entrar na aula</b> e digitam o código:</p>
+    <div class="code-big" id="codigoBig">—</div>
+    <button class="btn ghost" id="novoCodigo">Gerar novo código</button>
+    <p class="small muted" style="margin:10px 0 0">O mesmo código vale para o campeonato inteiro.</p>
+  </div>
+
+  <h2>Rodadas</h2>
+  <p class="small muted" style="margin:0 0 8px">As rodadas abrem em sequência: cada uma só libera depois que a anterior tem respostas (igual ao mapa dos alunos).</p>
+  <div id="rodadas"></div>
+
+  <h2>Classificação geral <span class="small muted">(acumulada)</span></h2>
+  <p class="small muted" style="margin:0 0 8px">Soma das rodadas, cada uma normalizada para 0–100 (assim R1, R2 e R3 pesam igual). <button class="btn ghost" id="atualizarBtn" style="padding:6px 12px;font-size:.85rem">Atualizar</button></p>
+  <div id="geral"></div>
+
+  </div><!-- /#painelMain -->
+</div>
+
+<script src="lib/supabase-config.js?v=6"></script>
+<script src="lib/supabase.js?v=7"></script>
+<script src="lib/painel-auth.js?v=2"></script>
+<script src="lib/hub-config.js?v=1"></script>
+<script src="lib/sfx.js"></script>
+<script src="lib/podio.js"></script>
+<script>
+"use strict";
+(function(){
+  var SKEY = "painel-aula-sessao";
+  var ALFA = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+  function gerarCodigo(){ var s=""; for(var i=0;i<5;i++) s+=ALFA[Math.floor(Math.random()*ALFA.length)]; return s; }
+  function getCodigo(){ var s=""; try{ s=localStorage.getItem(SKEY)||""; }catch(e){} if(!s){ s=gerarCodigo(); try{localStorage.setItem(SKEY,s);}catch(e){} } return s; }
+  var sessao = getCodigo();
+  var SB_ON = !!(window.SB && SB.configValida());
+
+  function setCodigo(s){ sessao=s; try{localStorage.setItem(SKEY,s);}catch(e){} document.getElementById("codigoBig").textContent=s; }
+  function esc(s){ return String(s).replace(/[&<>\"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];}); }
+
+  function boot(){
+    document.getElementById("codigoBig").textContent = sessao;
+    document.getElementById("novoCodigo").addEventListener("click", function(){
+      if (!confirm("Gerar um NOVO código?\n\nUse só ANTES de a turma entrar — se trocar no meio, os grupos que já entraram ficam de fora.")) return;
+      setCodigo(gerarCodigo()); render([]);
+    });
+    document.getElementById("atualizarBtn").addEventListener("click", carregar);
+    carregar();
+  }
+
+  async function carregar(){
+    var all = [];
+    if (SB_ON){ try{ all = await SB.consultarSessaoTudo(sessao); }catch(e){ all = []; } }
+    render(all);
+  }
+
+  function render(all){
+    var lista = window.HUB_ATIVIDADES || [];
+    var temResp = {}, lobby = {};
+    all.forEach(function(r){ if (r.atividade==="_lobby") lobby[r.grupo]=1; else temResp[r.atividade]=1; });
+
+    /* --- Lista de rodadas com trava sequencial --- */
+    var rod = lista.map(function(r, i){
+      var prev = i>0 ? lista[i-1] : null;
+      var aberta = (i===0) || (prev && temResp[prev.id]);   // espelha a trava do aluno
+      var jogada = !!temResp[r.id];
+      var existe = !!r.painel;
+      var cls = "rodada" + (jogada ? "" : (aberta && existe ? " atual" : " locked"));
+      var st, acao = "";
+      if (!existe){ st = "em construção"; }
+      else if (jogada){ st = "✓ jogada"; acao = '<a class="btn ghost" href="'+r.painel+'" style="padding:7px 14px">Reabrir ▸</a>'; }
+      else if (aberta){ st = "▶ pronta"; acao = '<a class="btn" href="'+r.painel+'" style="padding:7px 14px">Abrir painel ▸</a>'; }
+      else { st = "🔒 aguardando a anterior"; }
+      return '<div class="'+cls+'"><span class="num">'+(i+1)+'</span>'+
+             '<span class="tit">'+esc(r.titulo)+'</span>'+
+             '<span class="st">'+st+'</span>'+ acao +'</div>';
+    }).join("");
+    document.getElementById("rodadas").innerHTML = rod;
+
+    /* --- Classificação geral acumulada (normalizada /100 por rodada) --- */
+    var geralEl = document.getElementById("geral");
+    if (!SB_ON){ geralEl.innerHTML = '<div class="card small muted">Sem Supabase configurado — o placar acumulado fica indisponível neste modo.</div>'; return; }
+    var maxBy = {}; lista.forEach(function(r){ if (r.maxPontos) maxBy[r.id]=r.maxPontos; });
+    var porGrupo = {};
+    Object.keys(lobby).forEach(function(g){ porGrupo[g] = { grupo:g, total:0 }; });   // grupos presentes, mesmo com 0
+    all.forEach(function(r){
+      if (r.atividade==="_lobby" || !(r.atividade in maxBy)) return;
+      var nota = Math.max(0, Math.min(100, (r.pontuacao||0) / maxBy[r.atividade] * 100));
+      porGrupo[r.grupo] = porGrupo[r.grupo] || { grupo:r.grupo, total:0 };
+      porGrupo[r.grupo]["et_"+r.atividade] = nota;   // última linha vence (1 por grupo/rodada)
+    });
+    var rodadasJogadas = Object.keys(maxBy).filter(function(a){ return temResp[a]; }).length;
+    var grupos = Object.keys(porGrupo).map(function(k){
+      var p = porGrupo[k], total = 0;
+      Object.keys(p).forEach(function(key){ if (key.indexOf("et_")===0) total += p[key]; });
+      return { grupo: p.grupo, pontos: Math.round(total) };
+    });
+    if (!grupos.length || !rodadasJogadas){ geralEl.innerHTML = '<div class="card small muted">Ainda sem pontuação — jogue a primeira rodada.</div>'; return; }
+    Podio.render(geralEl, { grupos: grupos, max: 100 * rodadasJogadas, titulo: "🏆 Classificação geral", sub: rodadasJogadas + " rodada(s) · normalizado /100 cada", festa: false });
+  }
+
+  if (SB_ON && window.PAINEL_AUTH) { PAINEL_AUTH.proteger(boot); }
+  else { var pm=document.getElementById("painelMain"); if(pm) pm.hidden=false; boot(); }
+})();
+</script>
+</body>
+</html>

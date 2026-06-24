@@ -2,7 +2,7 @@
 
 Arquitetura, mecanismos, decisões e pendências das atividades. Para a visão e o estado das rodadas, ver [`DESIGN.md`](DESIGN.md).
 
-Atualizado em 2026-06-23. Substitui o antigo `docs-internos/lockstep-engenharia.md` (que cobria só o piloto da R1).
+Atualizado em 2026-06-24. Substitui o antigo `docs-internos/lockstep-engenharia.md` (que cobria só o piloto da R1).
 
 ---
 
@@ -31,7 +31,9 @@ fases  = "responder" | "resultado" | "reset" | "fim"
 
 Escrita do ponteiro: sempre via REST (`SB.definirEstado` → RPC). Só a **leitura** virou push.
 
-API: `PONTEIRO.observar(sessao, atividade, cb)`, `PONTEIRO.definir(sessao, atividade, estado)`, `PONTEIRO.proxima(estado, total)` (avança fase/questão, preserva `epoca`), `PONTEIRO.modo()`.
+A mesma técnica vale para a **contagem de votos**: `lib/realtime.js` (`RT.assinar({table, sessao, topico, onChange})`) é um cliente Phoenix WS **genérico** (irmão do do ponteiro, sem tocá-lo) que assina `postgres_changes` de uma tabela filtrada por sessão. Os painéis assinam `respostas` (o filtro `sessao=eq.<sessao>` pega votos **e** entradas no `_lobby`, mesma tabela) e, a cada mudança, disparam um **refresh debounced (250ms)** do poll — que continua de 1,5s como **rede de segurança**. Sub re-assinada quando o código da sessão muda.
+
+API: `PONTEIRO.observar(sessao, atividade, cb)`, `PONTEIRO.definir(sessao, atividade, estado)`, `PONTEIRO.ler(sessao, atividade)` (leitura única, Promise — o painel retoma a rodada após reload), `PONTEIRO.proxima(estado, total)` (avança fase/questão, preserva `epoca`), `PONTEIRO.modo()`.
 
 ⚠️ O Realtime exige que as tabelas estejam na publicação `supabase_realtime` (seção 7). Sem isso, o sistema cai no poll de 1,5s.
 
@@ -100,7 +102,24 @@ Solução atual: o grupo registra **presença de sessão** assim que é escolhid
 - **Realtime:** seção 6 do `setup.sql` adiciona `sessao_estado` e `respostas` à publicação `supabase_realtime` (guardado para re-rodar sem erro).
 - **Por rodada não muda nada no banco** — só o `atividade` id ("nomear", "fronteiras", "dimensoes", "sindrome", "casos", "_lobby").
 
-⚠️ **Modelo PILOTO = anon** (painel sem login): `definir_estado` concedido a anon + policy `anon_select_piloto` (leitura anônima das respostas), ambos marcados `⚠️ PILOTO`. **Produção:** restringir a `authenticated`, checar e-mail do dono, remover `anon_select_piloto`, dar login ao painel (o `painel-auth.js` já existe). A chave **publishable** é pública (ok no cliente); segredos ficam no `.env` (fora do git).
+**Modelo de PRODUÇÃO (código pronto):** os painéis têm **login do professor por e-mail+senha** (portão `painel-auth.js`; `grant_type=password`) e o RLS está apertado:
+
+- `definir_estado` (escrever o ponteiro) → grant só a `authenticated` **e** a função checa o e-mail do professor (`henriquealvarenga@gmail.com`). Aluno anônimo ou outro usuário logado não mexe no ponteiro.
+- `respostas` → **sem leitura anônima** (policy `anon_select_piloto` removida). Só o professor logado lê (policy `owner_select_respostas`, por e-mail). Alunos **escrevem** por RPC `SECURITY DEFINER` (`enviar_resposta`, grant anon) sem poder ler.
+- `sessao_estado` → leitura anônima continua liberada (alunos precisam acompanhar o ponteiro; nada sensível: só índice + fase).
+- **Realtime de `respostas`** exige o token do professor: `RT.assinar({..., tokenFn: SB.getAuthToken})` passa o `access_token` no join do WS (lido fresco a cada (re)conexão), senão o RLS filtra as mudanças. O ponteiro (`sessao_estado`) não precisa de token (leitura anon). O poll autenticado de 1,5s é a rede de segurança.
+- **Modo LOCAL** (config do Supabase vazia): os painéis **dispensam o login** e rodam direto (`<script>` de boot: `if (SB.configValida() && PAINEL_AUTH) proteger(boot); else boot()`), para testar numa máquina só.
+
+A chave **publishable** é pública (ok no cliente); segredos ficam no `.env` (fora do git).
+
+**Para ativar a produção (passos do dono no dashboard do Supabase):**
+
+1. **SQL Editor → rodar o `supabase/setup.sql` atualizado** (idempotente; remove as concessões de piloto e cria o guard de e-mail no `definir_estado`). ✅ feito.
+2. **Authentication → Users → Add user → Create new user:** e-mail = `henriquealvarenga@gmail.com`, definir a **senha**, e marcar **Auto Confirm User** (senão a conta fica pendente de confirmação por e-mail). É o único usuário; criado uma vez.
+3. **Conferir** que o e-mail autorizado nas policies/função (`henriquealvarenga@gmail.com`) é o mesmo do usuário criado — trocar nos 2 lugares do `setup.sql` se mudar (e re-rodar).
+4. Entrar num painel → e-mail + senha → **Entrar** → conduzir. (Em outra aba/aparelho, abrir uma rodada de aluno e confirmar voto → contagem ao vivo no painel.)
+
+> O login por senha **não usa** Redirect URLs nem e-mail/SMTP (aquilo era do magic link). O **Site URL** / **Redirect URLs** já configurados (`…/entrevista/atividades/**` + localhost) são inofensivos e ficam prontos caso um dia se volte ao magic link. A sessão se renova sozinha (`agendarRefresh`), então o login é raro.
 
 ---
 
@@ -112,6 +131,8 @@ Solução atual: o grupo registra **presença de sessão** assim que é escolhid
 - **Sinal "todos votaram":** N vem do roster de sessão (`gruposLobby`); quando os votos chegam a N, toca um bip e o `faseTag` fica verde.
 - **Discussão por caso (R3):** cada caso tem `discussao` no data file, mostrado no resultado (aluno + telão); o bloco de debate do fim foi removido.
 - **Pódio render-once:** flag `fimRenderizado` evita re-animar/re-tocar o pódio a cada poll; resetada ao sair do fim.
+- **Campeonato multi-rodada (código único + mapa do professor + placar acumulado):** o código de sessão é **um só para a aula inteira** — todos os painéis usam a mesma chave `localStorage["painel-aula-sessao"]` (antes era por rodada, o que quebrava o lockstep da R2+ porque o aluno entra com UM código no hub). As rodadas se distinguem pelo `atividade`; o roster `_lobby` persiste entre rodadas. No pódio de cada rodada, `navRodadas()` mostra **"Próxima rodada ▸"** (próxima entrada de `HUB_ATIVIDADES` cujo `painel` ≠ null) e **"Mapa das rodadas"**. O **mapa do professor** (`painel-mapa.html`, protegido por login) lista as rodadas com **trava sequencial** (uma abre quando a anterior tem respostas — espelha a trava do aluno, evitando pular na frente e dessincronizar) e mostra a **classificação geral acumulada**: lê `SB.consultarSessaoTudo`, **normaliza cada rodada /100** (`pontuacao / maxPontos × 100`, clamp) e soma por grupo (mesma técnica do agregador do `painel-core.js`). `maxPontos` por rodada vive no `hub-config.js` (R1=10, R2=8, R3=24) — normalizar é essencial porque as escalas diferem.
+- **Retomar após reload (painel):** `PONTEIRO.ler(sessao, atividade)` é uma **leitura única** do ponteiro (backend-aware: Supabase ou local). No boot, os painéis (`painel-mc.js`/`painel-dimensoes.js`) chamam `restaurar()` — se há um estado persistido (`fase` ≠ `reset`) e `estadoP` ainda é `null`, retomam a rodada em curso em vez de cair no lobby (a fase `fim` reabre o pódio). Como `nGrupos` é capturado no Iniciar e zera no reload, o `N` de "X/N votaram" cai para `gruposLobby().length` (roster vivo) quando `nGrupos` é 0.
 
 ---
 
@@ -134,9 +155,7 @@ Solução atual: o grupo registra **presença de sessão** assim que é escolhid
 ## 10. Pendências
 
 - **R4 (Síndrome) e R5 (O caso completo):** não existem — build novo. R4 provavelmente reusa `atividade-mc.js`/`painel-mc.js`; R5 idem (sprint de MC + pódio final).
-- **Painel observar o ponteiro:** hoje só escreve — recarregar no meio volta ao lobby.
-- **Realtime nas respostas:** o ponteiro é instantâneo; a contagem ainda faz poll de 1,5s (tabela já habilitada).
-- **Produção:** login do professor + apertar RLS (seção 6).
+- **Produção (código pronto, falta o dashboard):** o login do professor e o RLS apertado já estão no código; faltam os passos do dono no Supabase (rodar o `setup.sql`, Redirect URLs, SMTP) — ver seção 6.
 - **Generalizar o shell de condução do painel:** `painel-mc.js` e `painel-dimensoes.js` duplicam a condução. Se vier um 3º tipo de painel, extrair um núcleo comum (hoje não vale o risco de mexer no já verificado).
 
 ---
@@ -147,8 +166,10 @@ Solução atual: o grupo registra **presença de sessão** assim que é escolhid
 |---|---|
 | `atividades/index.html` | hub: cards aula/treino, **mapa** do campeonato, **presença de sessão** |
 | `atividades/lib/aula.js` | identidade única (modo/sessão/grupo), progresso do campeonato |
-| `atividades/lib/hub-config.js` | registro das 5 rodadas (ids, títulos, arquivos) |
-| `atividades/lib/ponteiro.js` | sincronização: local + **Supabase Realtime** (WS) + poll de segurança |
+| `atividades/lib/hub-config.js` | registro das 5 rodadas (ids, títulos, arquivos do aluno **e do painel**, `maxPontos` p/ normalização) |
+| `atividades/painel-mapa.html` | **hub do professor**: código único, lista de rodadas (trava sequencial) e classificação geral acumulada (normalizada) — protegido por login |
+| `atividades/lib/ponteiro.js` | sincronização do ponteiro: local + **Supabase Realtime** (WS) + poll de segurança |
+| `atividades/lib/realtime.js` | cliente Phoenix WS **genérico** (`RT.assinar`): Realtime da contagem de votos (tabela `respostas`) |
 | `atividades/lib/sfx.js` | sons (aluno: click/acerto/erro; painel: whoosh/fanfarra) |
 | `atividades/lib/podio.js` | **pódio compartilhado** (barras, medalhas, confete, fanfarra) |
 | `atividades/lib/supabase.js` / `supabase-config.js` | REST helper + URL/chave publishable |
@@ -164,7 +185,8 @@ Solução atual: o grupo registra **presença de sessão** assim que é escolhid
 | `atividades/03-dimensoes.html` / `painel-dimensoes.html` | casca fina R3 (aluno / painel) |
 | `atividades/lib/03-dimensoes-data.js` | 8 casos, 5 dimensões, bandas, `discussao` |
 | **Painel multi-atividade (original, separado)** | |
-| `atividades/painel.html` + `lib/painel-core.js` + `painel-auth.js` | monitor agregado + pódio original (4 fases) |
+| `atividades/painel.html` + `lib/painel-core.js` | monitor agregado + pódio original (4 fases) |
+| `atividades/lib/painel-auth.js` | login do professor (Supabase Auth) — **senha** nos painéis-piloto (campo `#authPassword`), magic link no `painel.html` original |
 | `atividades/lib/painel-0X-*.js` | módulos por rodada do painel original (legado p/ os pilotos) |
 | **Backend / infra** | |
 | `supabase/setup.sql` | tabelas, RPCs, RLS, faxina, **Realtime** — genérico p/ as 5 rodadas |

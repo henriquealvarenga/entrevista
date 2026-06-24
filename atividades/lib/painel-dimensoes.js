@@ -29,7 +29,7 @@
 
     /* ---- Sessão ---- */
     function gerarCodigo(){ var s=""; for(var i=0;i<5;i++) s+=ALFA[Math.floor(Math.random()*ALFA.length)]; return s; }
-    var sessaoKey = "painel-" + ATIVIDADE + "-sessao", sessao = "";
+    var sessaoKey = "painel-aula-sessao", sessao = "";   // UM código para o campeonato inteiro (compartilhado)
     function setSessao(s){ sessao=s; try{localStorage.setItem(sessaoKey,s);}catch(e){} document.getElementById("codigoBig").textContent=s; }
     (function(){ var s=""; try{s=localStorage.getItem(sessaoKey)||"";}catch(e){} setSessao(s||gerarCodigo()); })();
     document.getElementById("modoTag").textContent = "(sincronização: "+PONTEIRO.modo()+")";
@@ -45,14 +45,14 @@
       if (!confirm("Encerrar a sessão?\n\nIsto remove TODOS os grupos, apaga os votos e gera um NOVO código. Os alunos voltam à tela inicial. Não dá para desfazer.")) return;
       var antiga = sessao;
       PONTEIRO.definir(antiga, ATIVIDADE, { fase:"reset", epoca:novaEpoca() });
-      setSessao(gerarCodigo()); estadoP=null; nGrupos=0; bipItem=-1; render();
+      setSessao(gerarCodigo()); estadoP=null; nGrupos=0; bipItem=-1; render(); assinarRespostas();
       var prefEstado = ATIVIDADE + ":estado:" + antiga + ":", prefLobby = "_lobby:estado:" + antiga + ":", chavePonteiro = "ponteiro:" + antiga + ":" + ATIVIDADE;
       setTimeout(function(){
         Object.keys(localStorage).filter(function(k){ return k.indexOf(prefEstado)===0 || k.indexOf(prefLobby)===0 || k===chavePonteiro; }).forEach(function(k){ try{localStorage.removeItem(k);}catch(e){} });
       }, 2500);
     }
     document.getElementById("encerrarBtn").addEventListener("click", encerrarSessao);
-    document.getElementById("novoCodigo").addEventListener("click", function(){ setSessao(gerarCodigo()); estadoP=null; render(); });
+    document.getElementById("novoCodigo").addEventListener("click", function(){ setSessao(gerarCodigo()); estadoP=null; render(); assinarRespostas(); });
 
     /* ---- Leitura dos grupos ---- */
     var SB_ON = !!(window.SB && SB.configValida());
@@ -67,6 +67,16 @@
         render();
       }catch(e){}
     }
+    /* Realtime das respostas (votos E entradas no _lobby): refresh imediato; o poll
+       de 1,5s fica como rede de segurança. Re-assina quando o código muda. */
+    var subResp = null, pollPedido = null;
+    function pollDebounced(){ if (pollPedido) return; pollPedido = setTimeout(function(){ pollPedido = null; pollSupabase(); }, 250); }
+    function assinarRespostas(){
+      if (!SB_ON || !window.RT) return;
+      if (subResp){ try{ subResp(); }catch(e){} subResp = null; }
+      subResp = RT.assinar({ table:"respostas", sessao:sessao, topico:"resp:"+sessao+":"+ATIVIDADE, tokenFn: SB.getAuthToken, onChange: pollDebounced });
+    }
+
     function gruposLobby(){
       if (SB_ON) return lobbyCache;
       var pre = "_lobby:estado:" + sessao + ":", out=[], vistos={};
@@ -111,6 +121,24 @@
     }
     function nivelLabel(chave){ var n = NIVEIS.find(function(x){ return x.chave===chave; }); return n ? n.label : chave; }
 
+    /* ---- Navegação entre rodadas (no pódio): próxima rodada + mapa ---- */
+    function proximaRodada(){
+      var lista = window.HUB_ATIVIDADES || [], idx = -1;
+      for (var i=0;i<lista.length;i++){ if (lista[i].id===ATIVIDADE){ idx=i; break; } }
+      if (idx<0 || idx+1>=lista.length) return null;
+      var nxt = lista[idx+1];
+      return (nxt && nxt.painel) ? nxt : null;
+    }
+    function navRodadas(){
+      var prox = proximaRodada();
+      return '<div style="text-align:center;margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">'+
+        '<button class="btn ghost" onclick="location.href=\'painel-mapa.html\'">▣ Mapa das rodadas</button>'+
+        (prox
+          ? '<button class="btn" onclick="location.href=\''+prox.painel+'\'">Próxima rodada: '+prox.titulo+' ▸</button>'
+          : '<span class="small muted" style="align-self:center">Próximas rodadas em construção</span>')+
+      '</div>';
+    }
+
     /* ---- Classificação da rodada (placar dos grupos por pontos de banda) ---- */
     function pontosDoCaso(caso_id, ratings){
       var caso = CASOS.find(function(c){ return c.id === caso_id; });
@@ -149,7 +177,7 @@
       ini.style.display="none"; av.style.display=""; ft.style.display="";
       if (estadoP.fase==="fim"){
         ft.textContent="Classificação"; av.disabled=true; cr.textContent="";
-        if (!fimRenderizado){ fimRenderizado = true; Podio.render(palco, { grupos: rankingDados(), max: MAX_PONTOS, titulo: "🏆 " + TITULO, sub: "Pontos nas dimensões com banda", festa: true }); }
+        if (!fimRenderizado){ fimRenderizado = true; Podio.render(palco, { grupos: rankingDados(), max: MAX_PONTOS, titulo: "🏆 " + TITULO, sub: "Pontos nas dimensões com banda", festa: true }); palco.insertAdjacentHTML("beforeend", navRodadas()); }
         return;
       }
       av.disabled=false;
@@ -161,7 +189,7 @@
                  '<p class="vinheta" style="margin-top:8px">'+caso.vinheta+'</p></div>';
 
       if (estadoP.fase==="responder"){
-        var N=nGrupos, v=contarVotantes(caso.id);
+        var N=nGrupos || gruposLobby().length, v=contarVotantes(caso.id);   // após reload, nGrupos=0 → usa o roster vivo
         var todos = (N>0 && v>=N);
         if (todos && bipItem!==K){ bip(); bipItem=K; }
         ft.style.background = todos ? "var(--live-soft)" : "";
@@ -213,10 +241,18 @@
     }
     function esc(s){ return String(s).replace(/[&<>\"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
 
+    /* Retoma a rodada em curso após reload (não volta ao lobby; "fim" reabre o pódio). */
+    function restaurar(){
+      PONTEIRO.ler(sessao, ATIVIDADE).then(function(e){
+        if (estadoP===null && e && e.fase && e.fase!=="reset"){ estadoP = e; render(); }
+      }).catch(function(){});
+    }
+
     window.addEventListener("storage", function(){ render(); });
     setInterval(function(){ if(!estadoP || estadoP.fase!=="fim") render(); }, 1200);
-    if (SB_ON) setInterval(pollSupabase, 1500);
+    if (SB_ON){ setInterval(pollSupabase, 1500); assinarRespostas(); }            // poll de segurança + Realtime (refresh instantâneo)
     render();
+    restaurar();
   }
 
   global.PainelDimensoes = { init: init };
