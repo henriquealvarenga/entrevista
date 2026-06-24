@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rodada 4 — Síndrome no EEM: da constelação ao quadro</title>
+
+<!-- =========================================================================
+     RODADA 4 — SÍNDROME NO EEM (da constelação ao quadro)
+     Casca fina: esqueleto HTML + cfg. A lógica vem de lib/atividade-mc.js.
+     TREINO = lightning (sem evocação, palpite:false); AULA = lockstep (voto →
+     resultado), idêntico às demais rodadas de múltipla escolha.
+     ========================================================================= -->
+
+<style>
+/* ---- Fontes self-hosted (mesmas do livro). Fallbacks se abertas fora do site. ---- */
+@font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+@font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Italic.woff2") format("woff2"); font-weight:400; font-style:italic; font-display:swap; }
+@font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"); font-weight:700; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-Medium.woff2") format("woff2"); font-weight:500; font-display:swap; }
+@font-face { font-family:"Inter"; src:url("../fonts/Inter-SemiBold.woff2") format("woff2"); font-weight:600; font-display:swap; }
+@font-face { font-family:"JetBrains Mono"; src:url("../fonts/JetBrainsMono-Regular.woff2") format("woff2"); font-weight:400; font-display:swap; }
+
+:root{
+  --paper:#F9F9F7; --paper-content:#ffffff; --sidebar-bg:#f2f2ee;
+  --border-color:#e5e5e0; --border-soft:#dcdcd8;
+  --text-primary:#1a1a1a; --text-body:#333; --text-secondary:#444; --text-muted:#888;
+  --brand:#b45309; --brand-dark:#92400e; --brand-soft:rgba(180,83,9,.08); --brand-line:rgba(180,83,9,.20);
+  --ok:#2f7d4f; --ok-soft:rgba(47,125,79,.10);
+  --warn:#b07a14; --warn-soft:rgba(176,122,20,.12);
+  --font-sans:"Inter",ui-sans-serif,system-ui,sans-serif;
+  --font-serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --font-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--paper); color:var(--text-body);
+  font-family:var(--font-sans); line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:780px; margin:0 auto; padding:24px 18px 80px}
+
+h1,h2,h3{font-family:var(--font-serif); font-weight:700; color:var(--text-primary); line-height:1.15; margin:0 0 .4em}
+h1{font-size:1.7rem} h2{font-size:1.3rem} h3{font-size:1.05rem}
+p{margin:0 0 1em}
+.muted{color:var(--text-muted)} .small{font-size:.86rem}
+.kicker{font-family:var(--font-mono); font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--brand); margin-bottom:.5em}
+
+/* ---- Cartões / blocos ---- */
+.card{background:var(--paper-content); border:1px solid var(--border-color); border-radius:4px; padding:22px; box-shadow:0 1px 2px rgba(0,0,0,.03)}
+.vinheta{font-size:1.06rem; line-height:1.7; color:var(--text-secondary); border-left:3px solid var(--brand-line); padding-left:16px; margin:.2em 0 0}
+
+/* ---- Botões ---- */
+.btn{font-family:var(--font-sans); font-size:.95rem; font-weight:600; cursor:pointer;
+  border:1px solid var(--brand); background:var(--brand); color:#fff; padding:11px 20px; border-radius:3px; transition:background .15s}
+.btn:hover{background:var(--brand-dark); border-color:var(--brand-dark)}
+.btn:disabled{opacity:.4; cursor:not-allowed}
+.btn.ghost{background:transparent; color:var(--brand)}
+.btn.ghost:hover{background:var(--brand-soft)}
+.row{display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:18px}
+.row.end{justify-content:flex-end}
+
+/* ---- Opções de discriminação ---- */
+.options{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:6px}
+@media(max-width:540px){ .options{grid-template-columns:1fr} }
+.opt{text-align:left; border:1px solid var(--border-color); background:var(--paper-content); border-radius:4px;
+  padding:13px 14px; cursor:pointer; font-family:var(--font-sans); font-size:.95rem; color:var(--text-primary); transition:border-color .12s, background .12s}
+.opt:hover{border-color:var(--brand); background:var(--brand-soft)}
+.opt b{font-weight:600}
+.opt:disabled{cursor:default}
+.opt.correct{border-color:var(--ok); background:var(--ok-soft)}
+.opt.wrong{border-color:#c44; background:rgba(204,68,68,.08)}
+.opt.sel{border-color:var(--brand); background:var(--brand-soft)}
+.opt.sel-prev{border-color:var(--brand-line)}
+
+/* ---- Inputs ---- */
+input[type=text]{width:100%; font-family:var(--font-sans); font-size:1rem; padding:11px 12px; border:1px solid var(--border-color); border-radius:4px}
+input[type=text]:focus{outline:none; border-color:var(--brand)}
+input[type=text]:read-only{background:var(--sidebar-bg); color:var(--text-secondary)}
+label.lbl{display:block; font-size:.84rem; font-weight:600; color:var(--text-secondary); margin:14px 0 6px}
+
+/* ---- Reveal ---- */
+.reveal{margin-top:18px; padding:16px 18px; border:1px solid var(--brand-line); border-radius:4px; background:#fffdfa}
+/* ---- Veredito do grupo (modo aula, fase resultado) ---- */
+.fb{padding:13px 16px; border-radius:6px; font-weight:600; font-size:1.08rem; margin-bottom:14px}
+.fb.ok{background:var(--ok-soft); color:var(--ok); border:1px solid var(--ok)}
+.fb.erro{background:rgba(204,68,68,.10); color:#b4232a; border:1px solid #d9534f}
+.fb.neutro{background:var(--sidebar-bg); color:var(--text-secondary); border:1px solid var(--border-color)}
+.reveal .nota{font-style:italic; color:var(--text-muted); margin-bottom:8px}
+.reveal .saidv{font-size:1rem; margin-bottom:8px}
+.reveal .saidv .palpite{font-style:italic; color:var(--text-secondary)}
+.reveal .lab{font-family:var(--font-mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; color:var(--brand); margin-top:6px; margin-bottom:4px}
+.reveal p{margin:0 0 2px}
+.reveal .link a{color:var(--brand); text-decoration:none; font-weight:600}
+.reveal .link a:hover{color:var(--brand-dark); text-decoration:underline}
+
+/* ---- Progresso / topo ---- */
+.topbar{display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; font-size:.82rem; color:var(--text-muted)}
+.progress{height:5px; background:var(--border-color); border-radius:3px; overflow:hidden; margin-bottom:22px}
+.progress > i{display:block; height:100%; background:var(--brand); width:0; transition:width .3s}
+.score{font-family:var(--font-mono); color:var(--brand); font-weight:500}
+
+/* ---- Síntese ---- */
+.badge{display:inline-block; font-family:var(--font-mono); font-size:.8rem; padding:6px 12px; border:1px solid var(--brand); color:var(--brand); border-radius:20px; margin:4px 0}
+.synth-list{margin-top:18px; border-top:1px solid var(--border-color)}
+.synth-list .item{border-bottom:1px solid var(--border-color); padding:12px 0}
+.synth-list .item b{font-family:var(--font-serif)}
+/* Aviso discreto e persistente de salvamento automático. Verde = salvo; laranja = só local. */
+.sync-msg{margin-top:4px}
+.sync-msg.ok{color:var(--ok)}
+.sync-msg.erro{color:var(--warn)}
+/* Convite de leitura ao fim — link discreto, não compete com "Refazer". */
+.read-cta{margin-top:26px; padding-top:18px; border-top:1px solid var(--border-color);
+  font-size:.92rem; color:var(--text-secondary)}
+.read-cta cite{font-family:var(--font-serif); font-style:italic; color:var(--text-primary)}
+.read-cta a{color:var(--brand); text-decoration:none; font-weight:600; white-space:nowrap}
+.read-cta a:hover{color:var(--brand-dark); text-decoration:underline}
+
+/* ---- Sala de espera (modo aula) ---- */
+.espera-box{max-width:460px; margin:46px auto 0; text-align:center; padding:38px 30px}
+.espera-ico{font-size:2.6rem; line-height:1}
+.espera-box h1{font-size:1.5rem; margin:.25em 0 .35em}
+.espera-id{font-family:var(--font-mono); color:var(--text-secondary); font-size:.95rem; margin-bottom:.7em}
+.espera-id b{color:var(--brand)}
+.espera-dots{display:flex; gap:9px; justify-content:center; margin:20px 0 8px}
+.espera-dots span{width:9px; height:9px; border-radius:50%; background:var(--brand); opacity:.3; animation:esperaPulse 1.2s infinite ease-in-out}
+.espera-dots span:nth-child(2){animation-delay:.2s} .espera-dots span:nth-child(3){animation-delay:.4s}
+@keyframes esperaPulse{0%,100%{opacity:.25; transform:translateY(0)} 50%{opacity:1; transform:translateY(-5px)}}
+.espera-sair{color:var(--text-muted); text-decoration:none; font-size:.86rem}
+.espera-sair:hover{color:var(--brand)}
+
+.hidden{display:none !important}
+.step{display:none} .step.active{display:block; animation:fade .25s ease}
+@keyframes fade{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ============ ENTRADA ============ -->
+  <section id="intro" class="step active">
+    <div class="kicker">Rodada 4 · Síndrome no EEM</div>
+    <h1>Da constelação ao quadro</h1>
+    <p>Até aqui vocês nomearam fenômenos e discriminaram termos vizinhos. Agora o passo é maior: cada caso traz uma pequena história — uma constelação de achados — e vocês decidem qual o quadro psicopatológico mais provável.</p>
+    <p>Para cada caso, escolham entre as alternativas. A tela então mostra como diferenciar o quadro certo daqueles que se parecem com ele.</p>
+    <p>O foco é o raciocínio: o que, no conjunto, decide por um quadro e descarta os vizinhos. Em alguns casos entra também o porquê — a causa por trás do achado.</p>
+    <p>Nesta rodada não há o que digitar: é ler e decidir.</p>
+    <p class="small muted">Trabalhem em grupo, num só aparelho.</p>
+    <div class="row">
+      <button class="btn" id="startBtn">Começar →</button>
+    </div>
+  </section>
+
+  <!-- ============ SALA DE ESPERA (modo aula) ============ -->
+  <section id="espera" class="step">
+    <div class="card espera-box">
+      <div class="espera-ico">⏳</div>
+      <div class="kicker">Sala de espera</div>
+      <h1>Vocês estão na sala</h1>
+      <p class="espera-id">Grupo <b id="esperaGrupo"></b> · sessão <b id="esperaSessao"></b></p>
+      <p class="muted">Aguardando o professor iniciar a atividade. A primeira questão aparece aqui automaticamente.</p>
+      <div class="espera-dots"><span></span><span></span><span></span></div>
+      <p style="margin:0"><a class="espera-sair" id="esperaSair" href="#">sair / trocar grupo</a></p>
+    </div>
+  </section>
+
+  <!-- ============ LOOP DE ITENS ============ -->
+  <section id="loop" class="step">
+    <div class="topbar">
+      <span id="caseCounter">Fronteira 1 de 8</span>
+      <span class="score">Pontos: <span id="scoreVal">0</span></span>
+    </div>
+    <div class="progress"><i id="progressBar"></i></div>
+
+    <h2>O relato</h2>
+    <p class="vinheta" id="itemVinheta"></p>
+
+    <!-- (sem fase de palpite nesta rodada — vai direto às opções no treino) -->
+
+    <!-- discriminação / votação -->
+    <div id="discrimBox" class="hidden">
+      <h3 style="margin-top:4px">Qual é o termo?</h3>
+      <div class="options" id="opcoesBox"></div>
+    </div>
+
+    <!-- revelação (após a escolha; opções permanecem visíveis com a correta destacada) -->
+    <div id="revealBox" class="reveal hidden">
+      <div id="aulaFeedback" class="fb" style="display:none"></div>
+      <p class="nota small" id="revNota"></p>
+      <p class="saidv">O termo é: <b id="saidTermo"></b></p>
+      <div class="lab">A fronteira</div>
+      <p id="revFronteira"></p>
+      <p class="link" style="margin-top:14px"><a id="revLink" target="_blank" rel="noopener">Ver no Roteiro do EEM →</a></p>
+    </div>
+
+    <div class="row end hidden" id="nextRow"><button class="btn" id="nextBtn">Próxima fronteira →</button></div>
+  </section>
+
+  <!-- ============ SÍNTESE ============ -->
+  <section id="synth" class="step">
+    <div class="kicker">Fim da sessão</div>
+    <h1>O placar de vocês</h1>
+    <p>Grupo <b id="synthGroup"></b>. Vocês acertaram <span class="score" id="synthScore"></span> de <span id="synthTotal">8</span> fronteiras.</p>
+    <div id="synthBadge"></div>
+
+    <div class="synth-list" id="synthList"></div>
+
+    <div class="card" style="margin-top:18px; background:var(--sidebar-bg)">
+      <h3>Para o debate de turma</h3>
+      <p class="small">Antes de discutir com a sala:</p>
+      <p class="small" style="margin-bottom:0">• Em qual fronteira a turma mais se <b>dividiu</b> — e qual era o critério em jogo?<br>• Em algum caso o grupo <b>hesitou</b> entre dois termos? Qual foi o detalhe que desempatou?<br>• Qual par foi o <b>mais traiçoeiro</b> — ilusão × alucinação? obsessão × delírio? evocação × retenção?<br>• Para cada um, qual é a <b>pergunta única</b> que resolve a dúvida à beira do leito?</p>
+    </div>
+
+    <p class="small sync-msg" id="syncMsg" style="margin-top:14px"></p>
+    <div class="row">
+      <button class="btn ghost" id="restartBtn">Refazer</button>
+      <a class="btn" id="voltarHub" href="index.html" style="display:none">Voltar →</a>
+    </div>
+
+    <!-- Link discreto de volta ao livro (../index.html = raiz do site publicado). -->
+    <p class="read-cta"><a href="../index.html" title="Início" aria-label="Início">🏠 Início</a></p>
+  </section>
+
+</div>
+
+<!-- Config + helpers + banco de itens + motor genérico. Ordem importa. Sem CDN. -->
+<script src="lib/supabase-config.js?v=6"></script>
+<script src="lib/supabase.js?v=7"></script>
+<script src="lib/aula.js"></script>
+<script src="lib/sfx.js"></script>
+<script src="lib/ponteiro.js?v=8"></script>
+<script src="lib/04-sindrome-data.js"></script>
+<script src="lib/atividade-mc.js"></script>
+
+<script>
+"use strict";
+AtividadeMC.init({
+  data:          window.SINDROME_DATA,
+  atividade:     "sindrome",
+  unidade:       "Caso",
+  rotuloProximo: "Próximo caso →",
+  palpite:       false,   // sem evocação: vai direto às alternativas
+  medalha: function(score, total){
+    if (score >= 10) return "Olho clínico afiado";
+    if (score >= 6)  return "Bom raciocínio sindrômico";
+    return "Aprendiz das síndromes";
+  }
+});
+</script>
+</body>
+</html>

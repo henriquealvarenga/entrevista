@@ -60,13 +60,13 @@ No lockstep, a discussão acontece **no calor de cada questão/caso** — logo a
 | 1 | Nomear o fenômeno | Múltipla escolha (com evocação) | ✅ | ✅ | `painel-nomear.html` | **Feita + verificada** |
 | 2 | Fronteiras | Múltipla escolha (lightning, sem evocação) | ✅ | ✅ | `painel-fronteiras.html` | **Feita + verificada** |
 | 3 | Dimensões do delírio | Grade 5 dimensões × Baixa/Média/Alta | ✅ | ✅ | `painel-dimensoes.html` | **Feita + verificada** |
-| 4 | Síndrome no EEM | (a definir — provável MC) | — | — | — | **A construir** |
+| 4 | Síndrome no EEM | Múltipla escolha (constelação → quadro + discriminador) | ✅ | ✅ | `painel-sindrome.html` | **Feita + verificada** |
 | 5 | O caso completo | Sprint de MC + pódio final | — | — | — | **A construir** |
 
-Verificação de R1–R3: feita no preview (treino + aula end-to-end via Supabase Realtime + painel com lobby/condução/pódio).
+Verificação de R1–R3: feita no preview (treino + aula end-to-end via Supabase Realtime + painel com lobby/condução/pódio). R4 verificada no preview (treino + painel + integração no mapa); o modo aula herda o motor já verificado de R1/R2.
 
-Reservas de conteúdo já combinadas:
-- **R4** tem um item planejado: paciente com esquizofrenia em haloperidol há meses + quadro motor (face em máscara, tremor de repouso, marcha em pequenos passos) → **parkinsonismo induzido por neuroléptico**. Princípio: R1 = o QUÊ (fenômeno descritivo); R4 = o PORQUÊ (causa/etiologia).
+Reservas de conteúdo:
+- **R4 (feita):** 12 casos de múltipla escolha em linguagem **psicopatológica** (constelação de achados → quadro/fenômeno + discriminador no campo "Como diferenciar"). Cobre o **parkinsonismo induzido por neuroléptico** (R1 = o QUÊ; R4 = o PORQUÊ), depressão/pseudodemência, mania, delírio, delirium, pânico, catatonia, trema, despersonalização, 1ª ordem (Schneider), TEPT/revivência e obsessivo-compulsivo. Sem palpite; sem negrito; pacientes com nome.
 - **R5** = os 6 casos do livro (Maria/depressão, João/mania, Carlos/transt. delirante, Ana/psicose, Roberto/demência+parkinsonismo, Ranier/esquizofrenia incipiente) como sprint pontuado, com o EEM escrito completo + súmula como entrega pós-aula.
 
 ---
@@ -79,8 +79,8 @@ Os 14 casos do `_ProjetoR_DelusionDimension` viraram **capítulos na seção de 
 
 ## 7. O que falta
 
-- **Construir R4 (Síndrome) e R5 (O caso completo).**
-- **Produção — ligar no dashboard do Supabase:** o **código** já está pronto (login do professor nos painéis + RLS apertado). Falta só o que é do dono no painel do Supabase: rodar o `setup.sql` atualizado, configurar o Auth (Redirect URLs + e-mail/SMTP) e o professor entrar uma vez. Passo a passo na seção 6 de [`ENGENHARIA-lockstep.md`](ENGENHARIA-lockstep.md).
+- **Construir R5 (O caso completo)** — sprint dos 6 casos do livro + pódio final.
+- **Produção: ✅ concluída.** Login do professor por **senha**, RLS apertado e Realtime; banco e código publicados em `henriquealvarenga.com/entrevista`. Reset de senha pelo dashboard (Authentication → Users → recriar com o mesmo e-mail). Detalhes na seção 6 de [`ENGENHARIA-lockstep.md`](ENGENHARIA-lockstep.md).
 
 ---
 

@@ -154,7 +154,7 @@ A chave **publishable** é pública (ok no cliente); segredos ficam no `.env` (f
 
 ## 10. Pendências
 
-- **R4 (Síndrome) e R5 (O caso completo):** não existem — build novo. R4 provavelmente reusa `atividade-mc.js`/`painel-mc.js`; R5 idem (sprint de MC + pódio final).
+- **R5 (O caso completo):** não existe — build novo (sprint de MC + pódio final). **R4 já feita** (reusa `atividade-mc.js`/`painel-mc.js`; 12 casos psicopatológicos, sem palpite, sem negrito).
 - **Produção (código pronto, falta o dashboard):** o login do professor e o RLS apertado já estão no código; faltam os passos do dono no Supabase (rodar o `setup.sql`, Redirect URLs, SMTP) — ver seção 6.
 - **Generalizar o shell de condução do painel:** `painel-mc.js` e `painel-dimensoes.js` duplicam a condução. Se vier um 3º tipo de painel, extrair um núcleo comum (hoje não vale o risco de mexer no já verificado).
 
@@ -179,6 +179,8 @@ A chave **publishable** é pública (ok no cliente); segredos ficam no `.env` (f
 | `atividades/01-nomear.html` / `painel-nomear.html` | casca fina R1 (aluno / painel) |
 | `atividades/02-fronteiras.html` / `painel-fronteiras.html` | casca fina R2 (aluno / painel) |
 | `atividades/lib/01-nomear-data.js` / `02-fronteiras-data.js` | bancos de itens R1 / R2 |
+| `atividades/04-sindrome.html` / `painel-sindrome.html` | casca fina R4 (aluno / painel) |
+| `atividades/lib/04-sindrome-data.js` | banco de itens R4 (12 casos; linguagem psicopatológica; rótulo "Como diferenciar:") |
 | **R3 (dimensional)** | |
 | `atividades/lib/atividade-dimensoes.js` | motor do aluno R3 (grade B/M/A, treino + aula) |
 | `atividades/lib/painel-dimensoes.js` | condução R3 (divergência + ponto de discussão) |
