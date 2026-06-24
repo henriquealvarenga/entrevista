@@ -23,5 +23,5 @@ o **grupo**. Sem código, dá para **treinar sozinho**, em qualquer ordem.
 :::
 
 <p class="text-muted" style="font-size:.9em">Professor — o
-<a href="atividades/painel.html">painel de controle</a> gera o código da sessão e
-mostra o placar ao vivo (acesso restrito por login).</p>
+<a href="atividades/painel-mapa.html">mapa das rodadas</a> gera o código da sessão,
+abre cada rodada e mostra a classificação geral do campeonato (acesso restrito por login).</p>
