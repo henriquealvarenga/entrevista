@@ -194,7 +194,10 @@ label.lbl{display:block; font-size:.84rem; font-weight:600; color:var(--text-sec
 
 </div>
 
-<!-- Sem CDN. O hub só precisa da identidade e do registry; não fala com o backend. -->
+<!-- Sem CDN. Identidade + registry; e o Supabase só para registrar a PRESENÇA de
+     sessão (o grupo aparece no painel já no mapa, antes de entrar numa rodada). -->
+<script src="lib/supabase-config.js?v=6"></script>
+<script src="lib/supabase.js?v=6"></script>
 <script src="lib/aula.js"></script>
 <script src="lib/hub-config.js"></script>
 <script>
@@ -248,14 +251,28 @@ function irGrupo(sessao){
     b.className = "grupo-opt"; b.textContent = nome;
     b.addEventListener("click", () => {
       AULA.gravar({ modo:"aula", sessao:sessao, grupo:nome });   // identidade gravada UMA vez
-      location.href = ATIVIDADES[0].arquivo;   // aula: direto para a SALA DE ESPERA da atividade (sem o mapa)
+      irMapa(sessao, nome);                                       // vai ao MAPA (a presença de sessão é registrada lá)
     });
     lista.appendChild(b);
   }
   mostrar("v-grupo");
 }
 
+/* Presença de SESSÃO (lobby): registra o grupo assim que ele entra no mapa, antes
+   de qualquer rodada — assim o painel já conta os grupos enquanto estão no mapa.
+   Supabase: linha com atividade "_lobby"; modo local: chave equivalente no localStorage. */
+function registrarPresenca(sessao, grupo){
+  try {
+    if (window.SB && SB.configValida && SB.configValida()){
+      SB.enviarResultado({ sessao:sessao, atividade:"_lobby", grupo:grupo, pontuacao:0, dados:{} });
+    } else {
+      localStorage.setItem("_lobby:estado:"+sessao+":"+grupo, JSON.stringify({ sessao:sessao, grupo:grupo, respostas:[] }));
+    }
+  } catch(e){}
+}
+
 function irMapa(sessao, grupo){
+  registrarPresenca(sessao, grupo);   // o painel já mostra este grupo, mesmo antes de tocar numa rodada
   document.getElementById("mapaSessao").textContent = sessao;
   document.getElementById("mapaGrupo").textContent = grupo;
   const done = AULA.concluidas(sessao, grupo);
@@ -320,7 +337,7 @@ document.getElementById("sairTreino").addEventListener("click", () => {
    ========================================================================= */
 (function boot(){
   const id = AULA.ler();
-  if (id && id.modo === "aula" && id.sessao && id.grupo){ location.href = ATIVIDADES[0].arquivo; return; }
+  if (id && id.modo === "aula" && id.sessao && id.grupo){ irMapa(id.sessao, id.grupo); return; }
   if (id && id.modo === "treino"){ irGrade(); return; }
   mostrar("v-cards");
 })();

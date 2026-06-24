@@ -7,13 +7,9 @@
 
 <!-- =========================================================================
      RODADA 2 — FRONTEIRAS (discriminar confundíveis)
-     App self-contained, sem dependências externas (sem CDN), orientado a dados.
-     Identidade visual herdada do tema editorial do livro (paper + laranja queimado).
-     Pensado para 1 dispositivo por grupo. Lightning round: SEM fase de palpite —
-     o item vai direto às opções embaralhadas (+1 se correta), e a revelação abre
-     com "O que decide". Esta atividade TEM gabarito → pontua (placar no topbar +
-     medalha na síntese). Envio INCREMENTAL ao Supabase via upsert
-     (atividade:"fronteiras", dados.itens cumulativo). Mesmo banco/lib das demais.
+     Casca fina: esqueleto HTML + cfg. A lógica vem de lib/atividade-mc.js.
+     TREINO = lightning (sem evocação, palpite:false); AULA = lockstep (voto →
+     resultado), idêntico às demais rodadas de múltipla escolha.
      ========================================================================= -->
 
 <style>
@@ -77,6 +73,8 @@ p{margin:0 0 1em}
 .opt:disabled{cursor:default}
 .opt.correct{border-color:var(--ok); background:var(--ok-soft)}
 .opt.wrong{border-color:#c44; background:rgba(204,68,68,.08)}
+.opt.sel{border-color:var(--brand); background:var(--brand-soft)}
+.opt.sel-prev{border-color:var(--brand-line)}
 
 /* ---- Inputs ---- */
 input[type=text]{width:100%; font-family:var(--font-sans); font-size:1rem; padding:11px 12px; border:1px solid var(--border-color); border-radius:4px}
@@ -86,6 +84,11 @@ label.lbl{display:block; font-size:.84rem; font-weight:600; color:var(--text-sec
 
 /* ---- Reveal ---- */
 .reveal{margin-top:18px; padding:16px 18px; border:1px solid var(--brand-line); border-radius:4px; background:#fffdfa}
+/* ---- Veredito do grupo (modo aula, fase resultado) ---- */
+.fb{padding:13px 16px; border-radius:6px; font-weight:600; font-size:1.08rem; margin-bottom:14px}
+.fb.ok{background:var(--ok-soft); color:var(--ok); border:1px solid var(--ok)}
+.fb.erro{background:rgba(204,68,68,.10); color:#b4232a; border:1px solid #d9534f}
+.fb.neutro{background:var(--sidebar-bg); color:var(--text-secondary); border:1px solid var(--border-color)}
 .reveal .nota{font-style:italic; color:var(--text-muted); margin-bottom:8px}
 .reveal .saidv{font-size:1rem; margin-bottom:8px}
 .reveal .saidv .palpite{font-style:italic; color:var(--text-secondary)}
@@ -116,6 +119,19 @@ label.lbl{display:block; font-size:.84rem; font-weight:600; color:var(--text-sec
 .read-cta a{color:var(--brand); text-decoration:none; font-weight:600; white-space:nowrap}
 .read-cta a:hover{color:var(--brand-dark); text-decoration:underline}
 
+/* ---- Sala de espera (modo aula) ---- */
+.espera-box{max-width:460px; margin:46px auto 0; text-align:center; padding:38px 30px}
+.espera-ico{font-size:2.6rem; line-height:1}
+.espera-box h1{font-size:1.5rem; margin:.25em 0 .35em}
+.espera-id{font-family:var(--font-mono); color:var(--text-secondary); font-size:.95rem; margin-bottom:.7em}
+.espera-id b{color:var(--brand)}
+.espera-dots{display:flex; gap:9px; justify-content:center; margin:20px 0 8px}
+.espera-dots span{width:9px; height:9px; border-radius:50%; background:var(--brand); opacity:.3; animation:esperaPulse 1.2s infinite ease-in-out}
+.espera-dots span:nth-child(2){animation-delay:.2s} .espera-dots span:nth-child(3){animation-delay:.4s}
+@keyframes esperaPulse{0%,100%{opacity:.25; transform:translateY(0)} 50%{opacity:1; transform:translateY(-5px)}}
+.espera-sair{color:var(--text-muted); text-decoration:none; font-size:.86rem}
+.espera-sair:hover{color:var(--brand)}
+
 .hidden{display:none !important}
 .step{display:none} .step.active{display:block; animation:fade .25s ease}
 @keyframes fade{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
@@ -138,6 +154,19 @@ label.lbl{display:block; font-size:.84rem; font-weight:600; color:var(--text-sec
     </div>
   </section>
 
+  <!-- ============ SALA DE ESPERA (modo aula) ============ -->
+  <section id="espera" class="step">
+    <div class="card espera-box">
+      <div class="espera-ico">⏳</div>
+      <div class="kicker">Sala de espera</div>
+      <h1>Vocês estão na sala</h1>
+      <p class="espera-id">Grupo <b id="esperaGrupo"></b> · sessão <b id="esperaSessao"></b></p>
+      <p class="muted">Aguardando o professor iniciar a atividade. A primeira questão aparece aqui automaticamente.</p>
+      <div class="espera-dots"><span></span><span></span><span></span></div>
+      <p style="margin:0"><a class="espera-sair" id="esperaSair" href="#">sair / trocar grupo</a></p>
+    </div>
+  </section>
+
   <!-- ============ LOOP DE ITENS ============ -->
   <section id="loop" class="step">
     <div class="topbar">
@@ -149,9 +178,9 @@ label.lbl{display:block; font-size:.84rem; font-weight:600; color:var(--text-sec
     <h2>O relato</h2>
     <p class="vinheta" id="itemVinheta"></p>
 
-    <!-- (sem fase de palpite nesta rodada — vai direto às opções) -->
+    <!-- (sem fase de palpite nesta rodada — vai direto às opções no treino) -->
 
-    <!-- discriminação (pontua) -->
+    <!-- discriminação / votação -->
     <div id="discrimBox" class="hidden">
       <h3 style="margin-top:4px">Qual é o termo?</h3>
       <div class="options" id="opcoesBox"></div>
@@ -159,6 +188,7 @@ label.lbl{display:block; font-size:.84rem; font-weight:600; color:var(--text-sec
 
     <!-- revelação (após a escolha; opções permanecem visíveis com a correta destacada) -->
     <div id="revealBox" class="reveal hidden">
+      <div id="aulaFeedback" class="fb" style="display:none"></div>
       <p class="nota small" id="revNota"></p>
       <p class="saidv">O termo é: <b id="saidTermo"></b></p>
       <div class="lab">A fronteira</div>
@@ -196,311 +226,28 @@ label.lbl{display:block; font-size:.84rem; font-weight:600; color:var(--text-sec
 
 </div>
 
-<!-- Config + helper do Supabase + banco de itens. Ordem importa. Sem CDN. -->
-<script src="lib/supabase-config.js"></script>
-<script src="lib/supabase.js"></script>
+<!-- Config + helpers + banco de itens + motor genérico. Ordem importa. Sem CDN. -->
+<script src="lib/supabase-config.js?v=6"></script>
+<script src="lib/supabase.js?v=6"></script>
 <script src="lib/aula.js"></script>
 <script src="lib/sfx.js"></script>
+<script src="lib/ponteiro.js?v=7"></script>
 <script src="lib/02-fronteiras-data.js"></script>
+<script src="lib/atividade-mc.js"></script>
 
 <script>
 "use strict";
-
-/* =========================================================================
-   BANCO DE ITENS — fonte única em lib/fenomenos-data.js (a atividade e o painel
-   consomem o mesmo arquivo).
-   ========================================================================= */
-const ITENS = window.FRONTEIRAS_DATA.ITENS;
-const TOTAL = ITENS.length;
-
-/* =========================================================================
-   ESTADO
-   ========================================================================= */
-
-const estado = { sessao:"", grupo:"", idx:0, score:0, respostas:[], _palpiteTmp:"" };
-// respostas[i] = { item_id, palpite, escolha, correto }  (palpite fica só local)
-
-/* =========================================================================
-   PERSISTÊNCIA LOCAL + ENVIO INCREMENTAL  (mesmo padrão do continuum/júri)
-   Cada item concluído: (1) salva o estado no localStorage por (sessao+grupo);
-   (2) envia o payload CUMULATIVO via upsert (fire-and-forget). A evocação
-   digitada NÃO é enviada ao painel (fica no aparelho, p/ a síntese do grupo).
-   ========================================================================= */
-const ATIVIDADE = "fronteiras"; // discriminador na tabela (casa com o painel)
-function chaveEstado(s,g){ return `fronteiras:estado:${s}:${g}`; }
-function chavePendente(s,g){ return `fronteiras:pendente:${s}:${g}`; }
-
-function lerEstadoSalvo(s,g){
-  try { return JSON.parse(localStorage.getItem(chaveEstado(s,g)) || "null"); }
-  catch(e){ return null; }
-}
-function salvarLocal(){
-  try {
-    localStorage.setItem(chaveEstado(estado.sessao, estado.grupo), JSON.stringify({
-      sessao:estado.sessao, grupo:estado.grupo, idx:estado.idx, score:estado.score, respostas:estado.respostas
-    }));
-  } catch(e){ /* localStorage indisponível: ignora, não quebra a UI */ }
-}
-function limparLocal(s,g){
-  try { localStorage.removeItem(chaveEstado(s,g)); localStorage.removeItem(chavePendente(s,g)); }
-  catch(e){ /* idem */ }
-}
-
-/* Payload CUMULATIVO: só os itens concluídos (com escolha). pontuacao = nº de
-   acertos. A evocação (palpite) NÃO entra no payload. */
-function montarPayload(){
-  const itens = estado.respostas
-    .filter(r => r && typeof r.escolha === "string")
-    .map(r => ({ item_id:r.item_id, escolha:r.escolha, correto:r.correto }));
-  const pontuacao = itens.filter(it => it.correto).length;
-  return { sessao:estado.sessao, atividade:ATIVIDADE, grupo:estado.grupo, pontuacao:pontuacao, dados:{ itens } };
-}
-
-let syncPendente = false;
-let reenvioTimer = null;
-
-function refletirSync(){
-  const el = document.getElementById("syncMsg");
-  if (!el) return;
-  if (MODO !== "aula"){   // treino: nada é enviado (SPEC §1)
-    el.className = "small sync-msg ok";
-    el.textContent = "Modo treino — as respostas ficam só neste aparelho.";
-    return;
+AtividadeMC.init({
+  data:          window.FRONTEIRAS_DATA,
+  atividade:     "fronteiras",
+  unidade:       "Fronteira",
+  rotuloProximo: "Próxima fronteira →",
+  palpite:       false,   // lightning round: treino vai direto às opções
+  medalha: function(score, total){
+    if (score >= 6) return "Mestre das fronteiras";
+    if (score >= 3) return "Afiado no fio da navalha";
+    return "Aprendiz das fronteiras";
   }
-  if (syncPendente){
-    el.className = "small sync-msg erro";
-    el.textContent = "Respostas salvas neste aparelho. Sem conexão com a turma — tentando reenviar…";
-  } else {
-    el.className = "small sync-msg ok";
-    el.textContent = "✓ Respostas salvas automaticamente.";
-  }
-}
-function guardarPendente(payload){
-  syncPendente = true;
-  try { localStorage.setItem(chavePendente(estado.sessao, estado.grupo), JSON.stringify(payload)); } catch(e){}
-  agendarReenvio();
-}
-function limparPendente(){
-  syncPendente = false;
-  try { localStorage.removeItem(chavePendente(estado.sessao, estado.grupo)); } catch(e){}
-}
-function lerPendente(){
-  try { return JSON.parse(localStorage.getItem(chavePendente(estado.sessao, estado.grupo)) || "null"); }
-  catch(e){ return null; }
-}
-function agendarReenvio(){
-  if (reenvioTimer) return;
-  reenvioTimer = setInterval(async ()=>{
-    const pend = lerPendente();
-    if (!pend){ clearInterval(reenvioTimer); reenvioTimer = null; return; }
-    if (!(window.SB && SB.configValida())) return;
-    try {
-      const r = await SB.enviarResultado(pend);
-      if (r.ok){ limparPendente(); clearInterval(reenvioTimer); reenvioTimer = null; refletirSync(); }
-    } catch(e){ /* segue tentando no próximo tick */ }
-  }, 8000);
-}
-async function enviar(payload){
-  if (MODO !== "aula"){ return; }   // SPEC §1: treino calcula só na tela; nada vai ao Supabase
-  try {
-    if (!(window.SB && SB.configValida())){ guardarPendente(payload); return; }
-    const r = await SB.enviarResultado(payload);
-    if (r.ok) limparPendente(); else guardarPendente(payload);
-  } catch(e){ guardarPendente(payload); }
-  refletirSync();
-}
-function salvarProgresso(){
-  salvarLocal();
-  enviar(montarPayload());
-}
-
-/* =========================================================================
-   NAVEGAÇÃO ENTRE TELAS
-   ========================================================================= */
-function show(sectionId){
-  document.querySelectorAll(".wrap > .step").forEach(s=>s.classList.remove("active"));
-  document.getElementById(sectionId).classList.add("active");
-  window.scrollTo({top:0, behavior:"smooth"});
-}
-
-/* =========================================================================
-   FLUXO
-   ========================================================================= */
-/* =========================================================================
-   IDENTIDADE COMPARTILHADA (SPEC §3) — sem login próprio (lê do hub).
-   ========================================================================= */
-const CTX = AULA.exigir();          // {modo, sessao, grupo} ou redireciona ao hub
-let MODO = CTX ? CTX.modo : "aula";
-if (CTX) bootAtividade();
-
-function bootAtividade(){
-  SFX.montarBotaoMudo();
-  estado.sessao = CTX.sessao;
-  estado.grupo  = CTX.grupo;
-  const salvo = lerEstadoSalvo(CTX.sessao, CTX.grupo);
-  const concluidos = salvo && Array.isArray(salvo.respostas)
-    ? salvo.respostas.filter(r => r && typeof r.escolha === "string").length : 0;
-
-  if (concluidos >= TOTAL){    // concluída → síntese (read-only em aula; rever em treino)
-    Object.assign(estado, { respostas:salvo.respostas.slice(0,TOTAL), score:salvo.score||0, idx:TOTAL });
-    montarSintese(); show("synth"); return;
-  }
-  if (concluidos > 0){         // retoma de onde parou
-    Object.assign(estado, { respostas:salvo.respostas.slice(0,concluidos), score:salvo.score||0, idx:concluidos });
-    show("loop"); carregarItem(); return;
-  }
-  show("intro");               // começo do zero: mostra a abertura instrucional
-}
-
-document.getElementById("startBtn").addEventListener("click", ()=>{
-  limparLocal(estado.sessao, estado.grupo);
-  Object.assign(estado, { idx:0, score:0, respostas:[] });
-  syncPendente = false;
-  SFX.click();
-  show("loop"); carregarItem();
-});
-
-/* embaralha uma cópia do array (Fisher–Yates) — opções nunca preveem a correta */
-function embaralhar(arr){
-  const a = arr.slice();
-  for (let i=a.length-1; i>0; i--){
-    const j = Math.floor(Math.random()*(i+1));
-    const t=a[i]; a[i]=a[j]; a[j]=t;
-  }
-  return a;
-}
-
-function carregarItem(){
-  const it = ITENS[estado.idx];
-  document.getElementById("caseCounter").textContent = `Fronteira ${estado.idx+1} de ${TOTAL}`;
-  document.getElementById("progressBar").style.width = (estado.idx/TOTAL*100)+"%";
-  document.getElementById("scoreVal").textContent = estado.score;
-  document.getElementById("itemVinheta").innerHTML = it.vinheta; // HTML confiável (data)
-
-  // sem fase de palpite: vai direto às opções (lightning round)
-  document.getElementById("revealBox").classList.add("hidden");
-  document.getElementById("nextRow").classList.add("hidden");
-  document.getElementById("opcoesBox").innerHTML = "";
-  renderOpcoes();
-  document.getElementById("discrimBox").classList.remove("hidden");
-
-  show("loop");
-}
-
-function renderOpcoes(){
-  const it = ITENS[estado.idx];
-  const box = document.getElementById("opcoesBox"); box.innerHTML = "";
-  embaralhar(it.opcoes).forEach(o=>{                    // ORDEM embaralhada
-    const b = document.createElement("button");
-    b.className = "opt"; b.dataset.k = o.chave;
-    b.innerHTML = `<b>${o.label}</b>`;
-    b.addEventListener("click", ()=>escolher(o.chave));
-    box.appendChild(b);
-  });
-}
-
-function escolher(chave){
-  const it = ITENS[estado.idx];
-  const correto = (chave === it.correta);
-
-  // trava as opções; destaca a correta (e a escolha errada, se for o caso)
-  document.querySelectorAll("#opcoesBox .opt").forEach(b=>{
-    b.disabled = true;
-    if (b.dataset.k === it.correta) b.classList.add("correct");
-    if (b.dataset.k === chave && !correto) b.classList.add("wrong");
-  });
-
-  if (correto){ estado.score += 1; SFX.acerto(); } else { SFX.erro(); }
-  document.getElementById("scoreVal").textContent = estado.score;
-
-  const correctLabel = it.opcoes.find(o => o.chave === it.correta).label;
-  estado.respostas[estado.idx] = { item_id: it.id, escolha: chave, correto: correto };
-
-  // revelação
-  document.getElementById("revNota").textContent = window.FRONTEIRAS_DATA.NOTA_REVELACAO;
-  document.getElementById("saidTermo").textContent = correctLabel;
-  document.getElementById("revFronteira").innerHTML = it.fronteira;       // HTML confiável (data)
-  document.getElementById("revLink").href = it.roteiro;
-
-  document.getElementById("nextBtn").textContent =
-    (estado.idx >= TOTAL-1) ? "Ver a síntese →" : "Próxima fronteira →";
-
-  document.getElementById("revealBox").classList.remove("hidden");
-  document.getElementById("nextRow").classList.remove("hidden");
-
-  salvarProgresso(); // item concluído → salva local + envia estado cumulativo (upsert)
-}
-
-document.getElementById("nextBtn").addEventListener("click", ()=>{
-  SFX.click();
-  estado.idx++;
-  if (estado.idx >= TOTAL){ montarSintese(); show("synth"); }
-  else carregarItem();
-});
-
-/* Botões do fim (SPEC §1,§5): em aula, read-only + volta ao campeonato; em treino, refaz. */
-function ajustarBotoesFim(){
-  const restart = document.getElementById("restartBtn");
-  const voltar  = document.getElementById("voltarHub");
-  if (!restart || !voltar) return;
-  if (MODO === "aula"){ restart.style.display = "none"; voltar.style.display = ""; voltar.textContent = "Voltar ao campeonato →"; }
-  else { restart.style.display = ""; voltar.style.display = ""; voltar.textContent = "Voltar às atividades →"; }
-}
-
-/* =========================================================================
-   SÍNTESE
-   ========================================================================= */
-function montarSintese(){
-  document.getElementById("progressBar").style.width = "100%";
-  document.getElementById("synthGroup").textContent = estado.grupo;
-  document.getElementById("synthScore").textContent = estado.score;
-  var _st = document.getElementById("synthTotal"); if (_st) _st.textContent = TOTAL;
-
-  // medalha — mesmo esquema do continuum (faixas proporcionais ao máximo)
-  let titulo;
-  if (estado.score >= 6) titulo = "Mestre das fronteiras";
-  else if (estado.score >= 3) titulo = "Afiado no fio da navalha";
-  else titulo = "Aprendiz das fronteiras";
-  document.getElementById("synthBadge").innerHTML = `<span class="badge">${titulo}</span>`;
-
-  // lista: item → palpite digitado → termo correto
-  const list = document.getElementById("synthList"); list.innerHTML = "";
-  estado.respostas.forEach((r,i)=>{
-    const it = ITENS[i];
-    const correctLabel = it.opcoes.find(o => o.chave === it.correta).label;
-    const escolhaLabel = (it.opcoes.find(o => o.chave === r.escolha) || {}).label || "—";
-    const acerto = r.correto ? "✓" : "✕";
-    const div = document.createElement("div"); div.className = "item";
-    const b = document.createElement("b"); b.textContent = `${i+1}. ${correctLabel}`;
-    const linha1 = document.createElement("div"); linha1.appendChild(b);
-    const linha3 = document.createElement("div"); linha3.className = "small";
-    linha3.innerHTML = `Escolha: ${acerto} ${escapeHtml(escolhaLabel)}`;
-    div.appendChild(linha1); div.appendChild(linha3);
-    list.appendChild(div);
-  });
-
-  refletirSync();   // estado otimista; enviar() corrige se falhar
-  salvarProgresso();
-  if (MODO === "aula") AULA.marcarConcluida(estado.sessao, estado.grupo, ATIVIDADE);
-  ajustarBotoesFim();
-}
-
-function escapeHtml(s){
-  return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]));
-}
-
-/* =========================================================================
-   REFAZER — recomeça o MESMO grupo/sessão (confirma; ato destrutivo local).
-   Não apaga no servidor (anon sem DELETE); o upsert sobrescreve a linha do
-   grupo no próximo envio. Limpa só o progresso LOCAL.
-   ========================================================================= */
-document.getElementById("restartBtn").addEventListener("click", ()=>{
-  if (!confirm("Isto recomeça do zero. Tem certeza?")) return;
-  limparLocal(estado.sessao, estado.grupo);
-  if (reenvioTimer){ clearInterval(reenvioTimer); reenvioTimer = null; }
-  syncPendente = false;
-  estado.idx = 0; estado.score = 0; estado.respostas = []; estado._palpiteTmp = "";
-  carregarItem();
 });
 </script>
 </body>

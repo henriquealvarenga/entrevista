@@ -3,12 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Painel piloto — Rodada 1 (lockstep)</title>
+<title>Painel piloto — Rodada 2 (lockstep)</title>
 
 <!-- =========================================================================
-     PAINEL PILOTO — Rodada 1 "Nomear o fenômeno", modo AULA lockstep.
+     PAINEL PILOTO — Rodada 2 "Fronteiras", modo AULA lockstep.
      Casca fina: só o esqueleto + o cfg. A condução vem de lib/painel-mc.js.
-     O professor conduz a turma questão a questão: Votação → Resultado.
      ========================================================================= -->
 <style>
 @font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"); font-weight:700; font-display:swap; }
@@ -58,7 +57,7 @@ h1{font-family:var(--font-serif); font-size:1.9rem; margin:0 0 .1em}
 <body>
 <div class="wrap">
   <div class="kicker">Painel piloto · lockstep (Peer Instruction)</div>
-  <h1>Rodada 1 — Nomear o fenômeno</h1>
+  <h1>Rodada 2 — Fronteiras</h1>
 
   <div class="codebox">
     <p class="small muted" style="margin:0 0 6px">Os alunos entram em <b>Atividades → Treinar/Entrar</b> e digitam o código:</p>
@@ -88,11 +87,11 @@ h1{font-family:var(--font-serif); font-size:1.9rem; margin:0 0 .1em}
 <script src="lib/ponteiro.js?v=7"></script>
 <script src="lib/sfx.js"></script>
 <script src="lib/podio.js"></script>
-<script src="lib/01-nomear-data.js"></script>
+<script src="lib/02-fronteiras-data.js"></script>
 <script src="lib/painel-mc.js"></script>
 <script>
 "use strict";
-PainelMC.init({ data: window.NOMEAR_DATA, atividade: "nomear", unidade: "Fenômeno" });
+PainelMC.init({ data: window.FRONTEIRAS_DATA, atividade: "fronteiras", unidade: "Fronteira" });
 </script>
 </body>
 </html>

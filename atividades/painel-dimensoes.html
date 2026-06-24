@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Painel piloto — Rodada 1 (lockstep)</title>
+<title>Painel piloto — Rodada 3 (lockstep)</title>
 
 <!-- =========================================================================
-     PAINEL PILOTO — Rodada 1 "Nomear o fenômeno", modo AULA lockstep.
-     Casca fina: só o esqueleto + o cfg. A condução vem de lib/painel-mc.js.
-     O professor conduz a turma questão a questão: Votação → Resultado.
+     PAINEL PILOTO — Rodada 3 "Dimensões do delírio", modo AULA lockstep.
+     Casca fina: esqueleto + cfg. A condução vem de lib/painel-dimensoes.js.
+     Lobby (presença de sessão) → Classificação ("X/N classificaram") → Resultado
+     com a DIVERGÊNCIA da turma por dimensão (barras B/M/A + banda de referência).
      ========================================================================= -->
 <style>
 @font-face { font-family:"Playfair Display"; src:url("../fonts/PlayfairDisplay-Bold.woff2") format("woff2"); font-weight:700; font-display:swap; }
@@ -36,29 +37,31 @@ h1{font-family:var(--font-serif); font-size:1.9rem; margin:0 0 .1em}
 .btn:disabled{opacity:.4; cursor:not-allowed}
 .fase-tag{font-family:var(--font-mono); font-size:.8rem; text-transform:uppercase; letter-spacing:.05em; padding:6px 12px; border-radius:20px; background:var(--brand-soft); color:var(--brand); border:1px solid var(--brand-line)}
 .card{background:var(--paper-content); border:1px solid var(--border-color); border-radius:6px; padding:20px 22px; margin-top:16px}
-.vinheta{font-size:1.05rem; line-height:1.6; color:var(--text-secondary); border-left:3px solid var(--brand-line); padding-left:16px}
-.dist-row{display:grid; grid-template-columns:13em 1fr 3em; align-items:center; gap:10px; margin:8px 0; font-size:1rem}
-.dist-label{text-align:right; color:var(--text-secondary)}
-.dist-row.correta .dist-label{color:var(--live); font-weight:700}
-.dist-track{position:relative; height:24px; background:var(--sidebar-bg); border-radius:6px; overflow:hidden}
-.dist-fill{position:absolute; left:0; top:0; bottom:0; background:var(--brand); border-radius:6px; transition:width .35s}
-.dist-row.correta .dist-fill{background:var(--live)}
-.dist-fill.prev{background:var(--border-color)}
-.dist-count{font-family:var(--font-mono); font-weight:600; color:var(--brand); text-align:right}
-.dist-row.correta .dist-count{color:var(--live)}
+.vinheta{font-size:1.02rem; line-height:1.55; color:var(--text-secondary); border-left:3px solid var(--brand-line); padding-left:16px}
 .big-status{font-family:var(--font-serif); font-size:1.6rem; color:var(--text-primary); text-align:center; padding:18px 0}
-.fronteira{margin-top:14px; padding:14px 16px; border:1px solid var(--brand-line); border-radius:6px; background:#fffdfa; font-size:.98rem}
-.note{background:var(--brand-soft); border:1px solid var(--brand-line); border-radius:6px; padding:12px 16px; font-size:.9rem; color:var(--text-secondary); margin-top:14px}
-.migra{font-family:var(--font-mono); font-size:.85rem; color:var(--text-muted); margin-left:8px}
+.fronteira{padding:14px 16px; border:1px solid var(--brand-line); border-radius:6px; background:#fffdfa; font-size:.92rem; color:var(--text-secondary)}
 .zona-perigo{margin-top:64px; padding-top:22px; border-top:1px solid var(--border-color); text-align:center}
 .link-perigo{background:none; border:none; cursor:pointer; font-family:var(--font-sans); font-size:.9rem; color:#b4232a; text-decoration:underline; padding:4px}
 .link-perigo:hover{color:#8c1a20}
+
+/* ---- Divergência da turma por dimensão (resultado) ---- */
+.dim-leg{display:flex; gap:14px; flex-wrap:wrap; margin:0 0 14px; font-size:.8rem; color:var(--text-muted)}
+.dim-leg .sw{display:inline-block; width:12px; height:12px; border-radius:3px; vertical-align:middle; margin-right:5px}
+.dd-row{display:grid; grid-template-columns:8.5em 1fr 7em; align-items:center; gap:9px; margin:9px 0; font-size:.86rem}
+.dd-name{color:var(--text-secondary); text-align:right; line-height:1.15; font-weight:600}
+.dd-bar{display:flex; height:24px; border-radius:5px; overflow:hidden; background:var(--sidebar-bg)}
+.dd-seg{display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:.74rem; color:#fff; font-weight:600; min-width:0; transition:flex-grow .3s}
+.dd-seg.baixa{background:#8aa996} .dd-seg.media{background:#d6a574} .dd-seg.alta{background:var(--brand)}
+.dd-seg.band{box-shadow:inset 0 0 0 2px var(--live), inset 0 0 0 3px #fff}
+.dd-band{font-family:var(--font-mono); font-size:.68rem; color:var(--live); line-height:1.1}
+.dd-band.deb{color:var(--text-muted)}
+.dim-empty{font-size:.9rem; color:var(--text-muted); text-align:center; padding:10px 0}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="kicker">Painel piloto · lockstep (Peer Instruction)</div>
-  <h1>Rodada 1 — Nomear o fenômeno</h1>
+  <h1>Rodada 3 — Dimensões do delírio</h1>
 
   <div class="codebox">
     <p class="small muted" style="margin:0 0 6px">Os alunos entram em <b>Atividades → Treinar/Entrar</b> e digitam o código:</p>
@@ -76,7 +79,6 @@ h1{font-family:var(--font-serif); font-size:1.9rem; margin:0 0 .1em}
 
   <div id="palco"></div>
 
-  <!-- Zona de perigo: ação destrutiva, de-enfatizada, no rodapé. -->
   <div class="zona-perigo">
     <button class="link-perigo" id="encerrarBtn">Encerrar sessão e recomeçar do zero</button>
     <p class="small muted" style="margin:4px 0 0">Remove todos os grupos, apaga os votos e gera um novo código. Os alunos voltam à tela inicial.</p>
@@ -88,11 +90,11 @@ h1{font-family:var(--font-serif); font-size:1.9rem; margin:0 0 .1em}
 <script src="lib/ponteiro.js?v=7"></script>
 <script src="lib/sfx.js"></script>
 <script src="lib/podio.js"></script>
-<script src="lib/01-nomear-data.js"></script>
-<script src="lib/painel-mc.js"></script>
+<script src="lib/03-dimensoes-data.js"></script>
+<script src="lib/painel-dimensoes.js"></script>
 <script>
 "use strict";
-PainelMC.init({ data: window.NOMEAR_DATA, atividade: "nomear", unidade: "Fenômeno" });
+PainelDimensoes.init({ data: window.DIMENSOES_DATA, atividade: "dimensoes" });
 </script>
 </body>
 </html>
