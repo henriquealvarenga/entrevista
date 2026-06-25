@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Painel piloto — Rodada 4 (lockstep)</title>
+<title>Painel piloto — Rodada 5 (lockstep)</title>
 
 <!-- =========================================================================
-     PAINEL PILOTO — Rodada 4 "Síndrome no EEM", modo AULA lockstep.
+     PAINEL PILOTO — Rodada 5 "O caso completo", modo AULA lockstep.
      Casca fina: só o esqueleto + o cfg. A condução vem de lib/painel-mc.js.
      ========================================================================= -->
 <style>
@@ -76,7 +76,7 @@ h1{font-family:var(--font-serif); font-size:1.9rem; margin:0 0 .1em}
   <div id="painelMain" hidden>
   <div class="small muted" style="text-align:right;margin-bottom:2px"><a href="painel-mapa.html" style="color:var(--brand);text-decoration:none;margin-right:14px">▣ Mapa das rodadas</a><span id="authWho"></span> <button class="link-perigo" id="authSair" style="color:var(--text-muted)">Sair</button></div>
   <div class="kicker">Painel piloto · lockstep (Peer Instruction)</div>
-  <h1>Rodada 4 — Síndrome no EEM</h1>
+  <h1>Rodada 5 — O caso completo</h1>
 
   <div class="codebox">
     <p class="small muted" style="margin:0 0 6px">Os alunos entram em <b>Atividades → Treinar/Entrar</b> e digitam o código:</p>
@@ -94,6 +94,9 @@ h1{font-family:var(--font-serif); font-size:1.9rem; margin:0 0 .1em}
 
   <div id="palco"></div>
 
+  <!-- Lembrete da tarefa final: a súmula é redigida pelos grupos fora do app. -->
+  <div class="note">Depois do pódio: cada grupo redige, no próprio aparelho, o EEM e a súmula de um caso à escolha, com devolutiva de uma IA. As instruções e o prompt aparecem na tela final dos alunos (não conta pontos).</div>
+
   <!-- Zona de perigo: ação destrutiva, de-enfatizada, no rodapé. -->
   <div class="zona-perigo">
     <button class="link-perigo" id="encerrarBtn">Encerrar sessão e recomeçar do zero</button>
@@ -110,11 +113,11 @@ h1{font-family:var(--font-serif); font-size:1.9rem; margin:0 0 .1em}
 <script src="lib/sfx.js"></script>
 <script src="lib/podio.js"></script>
 <script src="lib/hub-config.js?v=3"></script>
-<script src="lib/04-sindrome-data.js"></script>
+<script src="lib/05-casos-data.js"></script>
 <script src="lib/painel-mc.js?v=2"></script>
 <script>
 "use strict";
-function boot(){ PainelMC.init({ data: window.SINDROME_DATA, atividade: "sindrome", unidade: "Caso" }); }
+function boot(){ PainelMC.init({ data: window.CASOS_DATA, atividade: "casos", unidade: "Caso" }); }
 // Produção (Supabase configurado): exige login do professor antes de conduzir.
 // Modo LOCAL (config vazia): dispensa o login e roda direto (testar numa máquina só).
 if (window.SB && SB.configValida() && window.PAINEL_AUTH) { PAINEL_AUTH.proteger(boot); }

@@ -4,7 +4,7 @@ Ponto de partida para entender as atividades gamificadas do livro do Exame do Es
 
 Engenharia portada do `Intencionalidade_Project` (Quarto + JS puro, sem framework, sem CDN, fontes self-hosted) e estendida com o modo aula lockstep. O Intencionalidade é **só referência** — não se altera nada lá.
 
-Atualizado em 2026-06-24.
+Atualizado em 2026-06-25.
 
 ---
 
@@ -61,13 +61,13 @@ No lockstep, a discussão acontece **no calor de cada questão/caso** — logo a
 | 2 | Fronteiras | Múltipla escolha (lightning, sem evocação) | ✅ | ✅ | `painel-fronteiras.html` | **Feita + verificada** |
 | 3 | Dimensões do delírio | Grade 5 dimensões × Baixa/Média/Alta | ✅ | ✅ | `painel-dimensoes.html` | **Feita + verificada** |
 | 4 | Síndrome no EEM | Múltipla escolha (constelação → quadro + discriminador) | ✅ | ✅ | `painel-sindrome.html` | **Feita + verificada** |
-| 5 | O caso completo | Sprint de MC + pódio final | — | — | — | **A construir** |
+| 5 | O caso completo | Múltipla escolha (caso inteiro → hipótese) | ✅ | ✅ | `painel-casos.html` | **Feita + verificada** |
 
 Verificação de R1–R3: feita no preview (treino + aula end-to-end via Supabase Realtime + painel com lobby/condução/pódio). R4 verificada no preview (treino + painel + integração no mapa); o modo aula herda o motor já verificado de R1/R2.
 
 Reservas de conteúdo:
 - **R4 (feita):** 12 casos de múltipla escolha em linguagem **psicopatológica** (constelação de achados → quadro/fenômeno + discriminador no campo "Como diferenciar"). Cobre o **parkinsonismo induzido por neuroléptico** (R1 = o QUÊ; R4 = o PORQUÊ), depressão/pseudodemência, mania, delírio, delirium, pânico, catatonia, trema, despersonalização, 1ª ordem (Schneider), TEPT/revivência e obsessivo-compulsivo. Sem palpite; sem negrito; pacientes com nome.
-- **R5** = os 6 casos do livro (Maria/depressão, João/mania, Carlos/transt. delirante, Ana/psicose, Roberto/demência+parkinsonismo, Ranier/esquizofrenia incipiente) como sprint pontuado, com o EEM escrito completo + súmula como entrega pós-aula.
+- **R5 (feita):** 10 casos inteiros do livro (Maria/depressão, João/mania, Ana/esquizofrenia 1º episódio, Roberto/demência+parkinsonismo, Carlos/delirante persecutório, Marcos/delirante ciumento, Ingrid/delirante somático-Ekbom, Ranier/esquizofrenia incipiente, Schreber/esquizofrenia paranoide, Helena/delirante grandioso) — lê-se o caso e escolhe-se a hipótese diagnóstica (mesmo motor MC de R1/R2/R4). `maxPontos=10`. A síntese escrita (EEM dos 20 itens + súmula) é feita FORA do app, em grupo (1 por grupo, sem pontos), com um prompt de IA para a devolutiva, embutido na tela final de `05-casos.html`.
 
 ---
 
@@ -79,7 +79,6 @@ Os 14 casos do `_ProjetoR_DelusionDimension` viraram **capítulos na seção de 
 
 ## 7. O que falta
 
-- **Construir R5 (O caso completo)** — sprint dos 6 casos do livro + pódio final.
 - **Produção: ✅ concluída.** Login do professor por **senha**, RLS apertado e Realtime; banco e código publicados em `henriquealvarenga.com/entrevista`. Reset de senha pelo dashboard (Authentication → Users → recriar com o mesmo e-mail). Detalhes na seção 6 de [`ENGENHARIA-lockstep.md`](ENGENHARIA-lockstep.md).
 
 ---

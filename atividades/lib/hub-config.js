@@ -23,5 +23,5 @@ window.HUB_ATIVIDADES = [
   { id:"fronteiras", arquivo:"02-fronteiras.html", painel:"painel-fronteiras.html", titulo:"Fronteiras",           pontua:true, maxPontos:8  },
   { id:"dimensoes",  arquivo:"03-dimensoes.html",  painel:"painel-dimensoes.html",  titulo:"Dimensões do delírio", pontua:true, maxPontos:24 },
   { id:"sindrome",   arquivo:"04-sindrome.html",   painel:"painel-sindrome.html",   titulo:"Síndrome no EEM",      pontua:true, maxPontos:12 },
-  { id:"casos",      arquivo:"05-casos.html",      painel:null,                     titulo:"O caso completo",      pontua:true, maxPontos:null },
+  { id:"casos",      arquivo:"05-casos.html",      painel:"painel-casos.html",      titulo:"O caso completo",      pontua:true, maxPontos:10 },
 ];

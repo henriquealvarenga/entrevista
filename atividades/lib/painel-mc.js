@@ -195,13 +195,21 @@
       var nxt = lista[idx+1];
       return (nxt && nxt.painel) ? nxt : null;   // só se o painel da próxima existe
     }
+    function ehUltima(){
+      var lista = window.HUB_ATIVIDADES || [], idx = -1;
+      for (var i=0;i<lista.length;i++){ if (lista[i].id===ATIVIDADE){ idx=i; break; } }
+      return idx>=0 && idx+1>=lista.length;
+    }
     function navRodadas(){
       var prox = proximaRodada();
+      var semProx = ehUltima()
+        ? '<span class="small muted" style="align-self:center">🏆 Fim do campeonato — a classificação geral está no mapa das rodadas.</span>'
+        : '<span class="small muted" style="align-self:center">Próximas rodadas em construção</span>';
       return '<div style="text-align:center;margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">'+
         '<button class="btn ghost" onclick="location.href=\'painel-mapa.html\'">▣ Mapa das rodadas</button>'+
         (prox
           ? '<button class="btn" onclick="location.href=\''+prox.painel+'\'">Próxima rodada: '+prox.titulo+' ▸</button>'
-          : '<span class="small muted" style="align-self:center">Próximas rodadas em construção</span>')+
+          : semProx)+
       '</div>';
     }
 
