@@ -168,7 +168,7 @@
         palco.innerHTML = '<div class="card" style="text-align:center">'+
           '<h3 style="font-family:var(--font-serif); margin:0 0 6px">Sala de espera</h3>'+
           '<div style="font-family:var(--font-mono); font-size:3.4rem; color:var(--brand); line-height:1">'+gs.length+'</div>'+
-          '<p class="small muted" style="margin:4px 0 0">grupo(s) entraram'+(gs.length ? ': '+gs.map(function(g){return g.grupo;}).join(' · ') : '')+'</p>'+
+          '<p class="small muted" style="margin:4px 0 0">grupo(s) entraram'+(gs.length ? ': '+gs.map(function(g){return esc(g.grupo);}).join(' · ') : '')+'</p>'+
           '<p class="small muted" style="margin:12px 0 0">Quando todos tiverem entrado, clique em <b>Iniciar rodada</b>.</p>'+
         '</div>';
         return;
@@ -177,11 +177,12 @@
       ini.style.display="none"; av.style.display=""; ft.style.display="";
       if (estadoP.fase==="fim"){
         ft.textContent="Classificação"; av.disabled=true; cr.textContent="";
-        if (!fimRenderizado){ fimRenderizado = true; Podio.render(palco, { grupos: rankingDados(), max: MAX_PONTOS, titulo: "🏆 " + TITULO, sub: "Pontos nas dimensões com banda", festa: true }); palco.insertAdjacentHTML("beforeend", navRodadas()); }
+        var rk = rankingDados(); if (!fimRenderizado && rk.length){ fimRenderizado = true; Podio.render(palco, { grupos: rk, max: MAX_PONTOS, titulo: "🏆 " + TITULO, sub: "Pontos nas dimensões com banda", festa: true }); palco.insertAdjacentHTML("beforeend", navRodadas()); }
         return;
       }
       av.disabled=false;
       var K=estadoP.item, caso=CASOS[K];
+      if (!caso){ estadoP=null; render(); return; }   // ponteiro obsoleto/fora de faixa → volta ao lobby
       ft.textContent = "Caso " + (K+1) + "/" + TOTAL + " · " + FASE_LABEL[estadoP.fase];
       av.textContent = rotuloAvancar(estadoP.fase, K);
 

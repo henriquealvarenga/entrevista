@@ -111,7 +111,14 @@
   function observarRealtime(sessao, atividade, cb) {
     var cfg = global.SUPABASE_CONFIG || {};
     var ultimo, parado = false, ws = null, hb = null, reconnectT = null;
-    function emitir(e) { if (!igual(e, ultimo)) { ultimo = e; cb(e); } }
+    /* Ordem de progressão dentro de uma época — para não REGREDIR a fase por um
+       poll atrasado que leu o estado antigo depois de o WS já ter emitido o novo. */
+    function ordem(e) { if (!e) return -1; if (e.fase === "fim") return 1e9; var fi = FASES.indexOf(e.fase); return (e.item || 0) * FASES.length + (fi < 0 ? 0 : fi); }
+    function emitir(e) {
+      if (igual(e, ultimo)) return;
+      if (ultimo && e && ultimo.epoca === e.epoca && ordem(e) < ordem(ultimo)) return;   // mesma época: nunca regride
+      ultimo = e; cb(e);
+    }
     function buscar() { if (parado) return; SB.lerEstado(sessao, atividade).then(emitir).catch(function () {}); }
     buscar();                                  // estado inicial imediato
     var pollT = setInterval(buscar, 1500);     // rede de segurança
