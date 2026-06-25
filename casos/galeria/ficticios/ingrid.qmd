@@ -1,0 +1,20 @@
+---
+title: "Ingrid, 55 anos"
+---
+
+Ingrid, 55 anos, nascida na Suécia e radicada no Brasil há mais de vinte anos, procura atendimento por insistência de uma vizinha. Há cerca de um ano — pouco depois de entrar na menopausa — começou a sentir uma coceira intensa no couro cabeludo, na nuca, ao redor das orelhas e na linha do cabelo. Está convencida de que a coceira é provocada por pequenos bichos que caminham sob a sua pele — não sabe dizer ao certo que bichos são, mas garante que existem, que são reais e que os sente se mexendo.
+
+Para matá-los, passou a queimar a própria pele com fósforos e a cortar o cabelo bem rente. Exibe, na testa, nas têmporas e na nuca, várias pequenas queimaduras e escoriações em diferentes estágios de cicatrização — sem qualquer sinal de parasita. Conta que, ao pentear os cabelos sobre uma bacia, vê os bichos boiarem na água "como peixinhos", e trouxe à consulta, embrulhados num papel, alguns "exemplares" que recolheu — ao exame, cascas de pele e partículas de sujeira.
+
+Já procurou vários médicos e dermatologistas, que não encontraram doença de pele e lhe disseram não haver bicho algum; ela rejeita essas explicações sem hesitar, embora não saiba dizer de onde os bichos vieram. Fora do tema dos bichos, está orientada e lúcida, com a memória preservada, e até pouco tempo dava conta da casa e dos afazeres. Não há alucinações de outro tipo, nem ideias de perseguição, de grandeza ou de referência, nem qualquer desorganização do pensamento.
+
+O afeto é angustiado quando fala dos bichos — chora, refere "não ter mais paz". Por temer ser tomada por louca, às vezes minimiza as queixas diante do médico. Nega tristeza profunda e persistente, nega ouvir vozes, e nega uso de álcool ou outras drogas.
+
+## Referências
+
+::: {#refs}
+:::
+
+::: {.callout-note appearance="simple"}
+**Caso fictício**, recriado a partir de um dos casos descritos por K. A. Ekbom — neurologista sueco — no trabalho que deu nome à síndrome: o delírio dermatozoico **presenil** (*Der präsenile Dermatozoenwahn*, 1938) [@ekbom1938]. Como na descrição original, trata-se de uma paciente no período pré-senil, em torno da menopausa.
+:::

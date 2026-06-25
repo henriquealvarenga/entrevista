@@ -20,4 +20,6 @@ Questionada sobre o que causou essa mudança, Maria diz: "Eu falhei... perdi meu
 
 Maria reconhece que está se sentindo mal e aceita quando é sugerido que ela precisa de ajuda, embora sem demonstrar muita expectativa: "Não sei se vai adiantar, mas tudo bem, vamos tentar".
 
----
+::: {.callout-note appearance="simple"}
+**Caso fictício**, elaborado para fins didáticos.
+:::

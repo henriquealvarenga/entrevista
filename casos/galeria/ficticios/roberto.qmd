@@ -28,4 +28,6 @@ Roberto admite que tem percebido "algumas dificuldades", mas minimiza: "É a ida
 
 Ao final da consulta, quando se levanta para sair, Roberto caminha com passos curtos e arrastados. Antes de sair, ele se vira e pergunta: "Doutor, qual é mesmo seu nome? Desculpe, já me esqueci".
 
----
+::: {.callout-note appearance="simple"}
+**Caso fictício**, elaborado para fins didáticos.
+:::

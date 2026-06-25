@@ -55,6 +55,7 @@ book:
     - apresentacao.qmd
     - agradecimentos.qmd
     - atividades.qmd
+    - atividade-eem.qmd
     - part: "Parte I — A Entrevista Psiquiátrica"
       chapters:
         - capitulos/parte-1-entrevista/01-introducao.qmd
@@ -87,18 +88,13 @@ book:
         - capitulos/parte-2-roteiro/19-insight.qmd
         - capitulos/parte-2-roteiro/20-desejo-de-ajuda-e-motivacao.qmd
         - capitulos/parte-2-roteiro/21-sumula.qmd
-    - part: "Parte III — Casos Clínicos"
+    - part: "Casos clínicos — fictícios"
       chapters:
-        - casos/00-instrucoes.qmd
-        - casos/01-maria.qmd
-        - casos/02-joao.qmd
-        - casos/03-carlos.qmd
-        - casos/04-ana.qmd
-        - casos/05-roberto.qmd
-        - casos/06-ranier.qmd
-        - casos/99-orientacoes.qmd
-    - part: "Galeria de delírios — casos fictícios"
-      chapters:
+        - casos/galeria/ficticios/maria.qmd
+        - casos/galeria/ficticios/joao.qmd
+        - casos/galeria/ficticios/carlos.qmd
+        - casos/galeria/ficticios/ana.qmd
+        - casos/galeria/ficticios/roberto.qmd
         - casos/galeria/ficticios/julio.qmd
         - casos/galeria/ficticios/antonio.qmd
         - casos/galeria/ficticios/marina.qmd
@@ -106,8 +102,10 @@ book:
         - casos/galeria/ficticios/daniela.qmd
         - casos/galeria/ficticios/marcos.qmd
         - casos/galeria/ficticios/helena.qmd
-    - part: "Galeria de delírios — figuras históricas"
+        - casos/galeria/ficticios/ingrid.qmd
+    - part: "Casos clínicos — figuras reais"
       chapters:
+        - casos/galeria/reais/ranier.qmd
         - casos/galeria/reais/schumann.qmd
         - casos/galeria/reais/syd-barrett.qmd
         - casos/galeria/reais/philip-k-dick.qmd

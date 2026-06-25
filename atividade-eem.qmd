@@ -1,5 +1,11 @@
 ---
-title: "Orientações para o Exercício"
+title: "Exercício do EEM"
+---
+
+Leia atentamente os casos clínicos do livro (nas seções **Casos clínicos — fictícios** e **Casos clínicos — figuras reais**). Escolha **UM** dos casos e elabore um Exame do Estado Mental completo, seguindo o roteiro fornecido. Utilize os descritores apropriados para cada item do exame.
+
+Ao final, redija uma **súmula do exame psíquico**, resumindo de forma concisa os achados mais relevantes utilizando terminologia técnica apropriada.
+
 ---
 
 Para o caso escolhido, elabore:
@@ -11,7 +17,7 @@ Para o caso escolhido, elabore:
 **Exemplo de estrutura para sua resposta:**
 
 ```
-CASO ESCOLHIDO: [Número e nome]
+CASO ESCOLHIDO: [Nome do caso]
 
 EXAME DO ESTADO MENTAL
 

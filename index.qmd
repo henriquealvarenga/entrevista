@@ -17,7 +17,7 @@ O conteúdo está organizado em três partes complementares:
 - **Parte II — Roteiro do Exame do Estado Mental:** a referência detalhada de
   consulta, com um capítulo para cada um dos 20 itens do EEM e seus descritores
   psicopatológicos.
-- **Parte III — Casos Clínicos:** casos para prática da elaboração do EEM.
+- **Casos clínicos:** uma coleção de casos — fictícios e figuras reais — para leitura e prática. O **Exercício do EEM** (logo no início do livro) propõe elaborar o exame completo de um caso à sua escolha.
 
 ::: {.callout-tip appearance="simple"}
 A Parte I apresenta cada item do exame em visão geral; para os descritores

@@ -28,4 +28,6 @@ Perguntada se ela acha que está doente ou se precisa de ajuda, Ana parece não 
 
 Os pais relatam que Ana era uma estudante brilhante até seis meses atrás, quando começou a "mudar completamente" - isolou-se, parou de ir às aulas, começou a fazer comentários estranhos sobre ser vigiada e sobre "coisas caminhando dentro dela".
 
----
+::: {.callout-note appearance="simple"}
+**Caso fictício**, elaborado para fins didáticos.
+:::

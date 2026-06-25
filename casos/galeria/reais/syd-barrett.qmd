@@ -14,5 +14,5 @@ Entre 1967 e 1968, Syd começou a exibir comportamentos estranhos e imprevisíve
 :::
 
 ::: {.callout-note appearance="simple"}
-Caso da **Galeria de delírios**, usado na atividade interativa [Dimensões do delírio](../../../atividades/index.html) — em que se classifica o delírio em cinco dimensões (convicção, extensão, bizarrice, desorganização e preocupação).
+Caso da **figura histórica**, usado na atividade interativa [Dimensões do delírio](../../../atividades/index.html) — em que se classifica o delírio em cinco dimensões (convicção, extensão, bizarrice, desorganização e preocupação).
 :::

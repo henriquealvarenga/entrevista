@@ -43,7 +43,8 @@ git add -A && git commit -m "sua mensagem" && git push
 ├── capitulos/
 │   ├── parte-1-entrevista/      # Parte I — A Entrevista (6 capítulos)
 │   └── parte-2-roteiro/         # Parte II — Roteiro do EEM (20 itens + súmula)
-├── casos/                       # Parte III — Casos Clínicos
+├── casos/galeria/              # Casos clínicos — fictícios e figuras reais
+├── atividade-eem.qmd            # Exercício do EEM (escrever o exame de um caso)
 │
 ├── references/
 │   ├── references.bib           # bibliografia (estilo ABNT)

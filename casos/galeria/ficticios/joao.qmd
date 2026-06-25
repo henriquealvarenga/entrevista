@@ -22,4 +22,6 @@ A família relata, quando João sai brevemente da sala, que ele dormiu apenas 2 
 
 Quando sugerimos que João talvez precise de um acompanhamento, ele responde: "Acompanhamento? Doutor, com todo respeito, mas quem precisa de tratamento são as pessoas negativas que não conseguem acompanhar meu ritmo! Mas tudo bem, venho aqui para conversar se o senhor quiser, adoro conversar!" Ele não demonstra nenhum reconhecimento de que seu comportamento possa ser problemático.
 
----
+::: {.callout-note appearance="simple"}
+**Caso fictício**, elaborado para fins didáticos.
+:::

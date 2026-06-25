@@ -28,4 +28,6 @@ Quando perguntado se gostaria de tratamento, Carlos responde: "Tratamento para q
 
 Apesar da resistência, Carlos concorda em continuar conversando "para provar que não há nada de errado comigo".
 
----
+::: {.callout-note appearance="simple"}
+**Caso fictício**, elaborado para fins didáticos.
+:::
