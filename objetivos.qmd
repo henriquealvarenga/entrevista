@@ -1,0 +1,13 @@
+---
+number-sections: false
+---
+
+# Objetivos de aprendizagem {.unnumbered}
+
+Ao final, espera-se que o estudante seja capaz de:
+
+1. Compreender a importância e os princípios fundamentais da entrevista psiquiátrica.
+2. Realizar um Exame do Estado Mental completo e sistemático.
+3. Utilizar terminologia técnica apropriada para descrever fenômenos psicopatológicos (evitando jargão desnecessário).
+4. Documentar adequadamente os achados da avaliação psiquiátrica.
+5. Elaborar súmulas concisas e informativas do exame psíquico.

@@ -53,6 +53,8 @@ book:
   chapters:
     - index.qmd
     - apresentacao.qmd
+    - objetivos.qmd
+    - como-usar.qmd
     - agradecimentos.qmd
     - atividades.qmd
     - atividade-eem.qmd

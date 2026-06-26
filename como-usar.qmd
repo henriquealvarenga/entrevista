@@ -1,0 +1,23 @@
+---
+toc: true
+number-sections: false
+---
+
+# Como usar o material {.unnumbered}
+
+## Para estudo individual
+
+1. Comece lendo a **Parte I — A Entrevista Psiquiátrica** na íntegra.
+2. Familiarize-se com a **Parte II — Roteiro do EEM** e seus descritores.
+3. Pratique com os **Casos clínicos** (fictícios e figuras reais).
+4. Faça o **Exercício do EEM**: elabore o exame completo de um caso à sua escolha.
+5. Discuta suas respostas com colegas ou preceptores.
+
+## Atividade prática sugerida
+
+Escolha um dos casos clínicos e:
+
+1. Leia atentamente toda a descrição.
+2. Elabore um Exame do Estado Mental completo (20 itens).
+3. Redija uma súmula técnica dos achados principais.
+4. Liste 2–3 hipóteses diagnósticas baseadas apenas no EEM.

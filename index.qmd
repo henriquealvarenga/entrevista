@@ -5,41 +5,14 @@ number-sections: false
 
 # Prefácio {.unnumbered}
 
-Este é um material didático resumido sobre a **Entrevista Psiquiátrica** e o
-**Exame do Estado Mental (EEM)**, desenvolvido para estudantes de medicina.
+Esta obra nasceu de pequenas apostilas de resumos preparadas para estudantes do curso de medicina da UFSJ (Universidade Federal de São João del-Rei), nas disciplinas de Psiquiatria e Psicopatologia e no Internato de Saúde Mental. Reúne, de forma resumida, o essencial da entrevista psiquiátrica e do exame do estado mental (EEM).
 
-## Sobre este material
+A motivação é prática: a psicopatologia costuma chegar ao estudante em referências dispersas ou densas demais para o primeiro contato — a proposta é juntar o núcleo (a terminologia descritiva, um roteiro de 20 itens e casos para praticar) num texto enxuto.
 
-O conteúdo está organizado em três partes complementares:
-
-- **Parte I — A Entrevista Psiquiátrica:** a parte teórica — princípios da
-  entrevista, técnicas de condução e uma visão geral dos componentes do EEM.
-- **Parte II — Roteiro do Exame do Estado Mental:** a referência detalhada de
-  consulta, com um capítulo para cada um dos 20 itens do EEM e seus descritores
-  psicopatológicos.
-- **Casos clínicos:** uma coleção de casos — fictícios e figuras reais — para leitura e prática. O **Exercício do EEM** (logo no início do livro) propõe elaborar o exame completo de um caso à sua escolha.
-
-::: {.callout-tip appearance="simple"}
-A Parte I apresenta cada item do exame em visão geral; para os descritores
-completos e a terminologia técnica de cada item, consulte o capítulo
-correspondente na Parte II.
-:::
-
-## A quem se destina
+A ênfase é na semiologia descritiva: descrever e nomear o fenômeno antes de interpretá-lo. Os casos — fictícios e de figuras históricas — e as atividades em grupo existem para treinar esse olhar.
 
 ::: {.callout-note appearance="simple"}
-## Público
+## Uma obra em construção
 
-- **Estudantes de Medicina**
+Este material ainda está **em construção** e em constante revisão. **Sugestões, correções e revisões são muito bem-vindas** — de colegas, estudantes e preceptores. Você pode contribuir pelo [repositório no GitHub](https://github.com/henriquealvarenga/entrevista) (via *issues* ou *pull requests*) ou por e-mail ([henriquealvarenga@ufsj.edu.br](mailto:henriquealvarenga@ufsj.edu.br)).
 :::
-
-## Como navegar
-
-O material é dividido em partes (ver barra lateral). Use a busca (canto superior)
-para localizar termos, e o sumário "Nesta página" à direita para saltar entre
-seções do capítulo atual.
-
----
-
-**Nota:** Este material é destinado exclusivamente para fins educacionais. A
-prática clínica deve sempre ocorrer sob supervisão apropriada.

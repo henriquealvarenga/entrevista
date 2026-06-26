@@ -1,42 +1,22 @@
 ---
-title: "Apresentação"
 toc: true
 number-sections: false
 ---
 
 # Apresentação {.unnumbered}
 
-## Objetivos de Aprendizagem
+O material está organizado em:
 
-1. Compreender a importância e os princípios fundamentais da entrevista psiquiátrica.
-3. Realizar um Exame do Estado Mental completo e sistemático.
-4. Utilizar terminologia técnica apropriada para descrever fenômenos psicopatológicos (evitando jargão desnecessário).
-5. Documentar adequadamente os achados da avaliação psiquiátrica.
-6. Elaborar súmulas concisas e informativas do exame psíquico.
+- **Parte I — A Entrevista Psiquiátrica:** a parte teórica — princípios da entrevista, técnicas de condução e uma visão geral dos componentes do EEM.
+- **Parte II — Roteiro do Exame do Estado Mental:** a referência de consulta, com um capítulo para cada um dos 20 itens do EEM e seus descritores psicopatológicos.
+- **Casos clínicos:** uma coleção de casos — fictícios e figuras reais — para leitura e prática.
+- **Atividades em grupo:** um campeonato em sala, em cinco rodadas, do fenômeno isolado ao caso completo.
+- **Exercício do EEM:** elaborar o exame completo de um caso à sua escolha.
 
-## Como Usar Este Material
+## Como navegar
 
-### Para Estudo Individual
+O material é dividido em partes (ver barra lateral). Use a busca (canto superior) para localizar termos, e o sumário "Nesta página" à direita para saltar entre seções do capítulo atual.
 
-1. Comece lendo a **Parte I — A Entrevista Psiquiátrica** na íntegra.
-2. Familiarize-se com a **Parte II — Roteiro do EEM** e seus descritores.
-3. Pratique com os **Casos clínicos** (fictícios e figuras reais).
-4. Faça o **Exercício do EEM**: elabore o exame completo de um caso à sua escolha.
-5. Discuta suas respostas com colegas ou preceptores.
-
-### Atividade Prática Sugerida
-
-Escolha um dos casos clínicos e:
-
-1. Leia atentamente toda a descrição.
-2. Elabore um Exame do Estado Mental completo (20 itens).
-3. Redija uma súmula técnica dos achados principais.
-4. Liste 2–3 hipóteses diagnósticas baseadas apenas no EEM.
-
-::: {.callout-note appearance="simple"}
-## Uma obra em construção
-
-Este material ainda está **em construção** e em constante revisão. **Sugestões, correções e revisões são muito bem-vindas** — de colegas, estudantes e preceptores. Você pode contribuir pelo [repositório no GitHub](https://github.com/henriquealvarenga/entrevista) (via *issues* ou *pull requests*) ou por e-mail ([henriquealvarenga@ufsj.edu.br](mailto:henriquealvarenga@ufsj.edu.br)).
+::: {.callout-tip appearance="simple"}
+A Parte I apresenta cada item do exame em visão geral; para os descritores completos e a terminologia técnica de cada item, consulte o capítulo correspondente na Parte II.
 :::
-
-
