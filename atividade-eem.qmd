@@ -37,3 +37,37 @@ HIPÓTESES DIAGNÓSTICAS PRINCIPAIS
 2. [Hipótese 2]
 3. [Hipótese 3]
 ```
+
+---
+
+## Devolutiva com uma IA
+
+Depois de escrever o Exame do Estado Mental e a súmula, você pode pedir uma devolutiva a uma inteligência artificial (ChatGPT, Claude, Gemini etc.). Cole o **texto do caso**, o **seu trabalho** e o prompt abaixo:
+
+```text
+Você é professor de psicopatologia e semiologia psiquiátrica. Avalie o trabalho de um estudante de medicina sobre um caso clínico — o material vem colado ao final: (1) a descrição do caso e (2) o Exame do Estado Mental (EEM), a súmula e as hipóteses que o estudante redigiu.
+
+Baseie-se SOMENTE no que está no caso colado — não invente dados clínicos que o caso não fornece. Muitos casos são vinhetas curtas ou relatos históricos, então vários itens podem não ser avaliáveis: quando o caso não trouxer informação para um item, marque-o como "não avaliável neste caso", sem penalizar o estudante por isso.
+
+O EEM deste material tem 20 itens, nesta ordem: 1) Aspectos gerais; 2) Nível de consciência; 3) Atenção; 4) Orientação; 5) Memória; 6) Sensopercepção; 7) Pensamento; 8) Linguagem; 9) Inteligência; 10) Juízo de realidade; 11) Vida afetiva; 12) Volição; 13) Controle de impulsos; 14) Consciência do eu; 15) Vivência do tempo e do espaço; 16) Psicomotricidade; 17) Personalidade; 18) Contratransferência; 19) Insight; 20) Desejo de ajuda e motivação. (Roteiro com os descritores de cada item: https://henriquealvarenga.com/entrevista/)
+
+Dê uma devolutiva formativa, rigorosa e gentil, em português, avaliando:
+1. Cobertura dos 20 itens acima: o que está bem descrito, o que faltou (e era avaliável pelo caso) e o que poderia ser mais preciso.
+2. Terminologia psicopatológica: se os fenômenos foram nomeados corretamente (ex.: delírio vs. ideia sobrevalorada; alucinação vs. ilusão; embotamento vs. tristeza), corrigindo o que estiver impreciso.
+3. Descrição antes da interpretação: se o estudante descreveu o que observou antes de concluir.
+4. A súmula: se é concisa, fiel ao exame e destaca o essencial.
+5. As hipóteses diagnósticas: se são coerentes com os achados e se o diferencial relevante foi considerado — sem cobrar certeza, já que o EEM é um recorte transversal.
+
+Formato: comece com 2–3 pontos fortes; depois os ajustes em itens numerados, citando o trecho do caso que sustenta cada observação; termine com uma versão-modelo curta da súmula. Não atribua nota.
+
+[CASO]
+(cole aqui a descrição do caso)
+
+[EEM, SÚMULA E HIPÓTESES DO ESTUDANTE]
+(cole aqui o seu trabalho)
+```
+
+::: {.callout-tip appearance="simple"}
+Este é o mesmo prompt que aparece ao final da atividade gamificada **O caso completo**. Se um dia você melhorar um, lembre de atualizar o outro.
+:::
+

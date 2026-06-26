@@ -228,12 +228,14 @@ label.lbl{display:block; font-size:.84rem; font-weight:600; color:var(--text-sec
           <b style="font-size:.9rem">Prompt de IA para a devolutiva</b>
           <button class="btn ghost" id="sumCopy" style="margin-left:auto; padding:6px 12px; font-size:.82rem">Copiar</button>
         </div>
-        <pre id="sumPrompt">Você é professor de psicopatologia e semiologia psiquiátrica, avaliando o trabalho de um estudante de medicina. Abaixo vêm (1) a descrição de um caso clínico e (2) o Exame do Estado Mental (EEM) e a súmula que o estudante redigiu sobre esse caso.
+        <pre id="sumPrompt">Você é professor de psicopatologia e semiologia psiquiátrica. Avalie o trabalho de um estudante de medicina sobre um caso clínico — o material vem colado ao final: (1) a descrição do caso e (2) o Exame do Estado Mental (EEM), a súmula e as hipóteses que o estudante redigiu.
 
-Dê uma devolutiva formativa, rigorosa e gentil, em português, baseando-se SOMENTE no que está no caso — não invente dados clínicos que o caso não fornece.
+Baseie-se SOMENTE no que está no caso colado — não invente dados clínicos que o caso não fornece. Muitos casos são vinhetas curtas ou relatos históricos, então vários itens podem não ser avaliáveis: quando o caso não trouxer informação para um item, marque-o como "não avaliável neste caso", sem penalizar o estudante por isso.
 
-Avalie:
-1. Cobertura dos 20 itens do EEM: o que está bem descrito, o que falta, o que poderia ser mais preciso.
+O EEM deste material tem 20 itens, nesta ordem: 1) Aspectos gerais; 2) Nível de consciência; 3) Atenção; 4) Orientação; 5) Memória; 6) Sensopercepção; 7) Pensamento; 8) Linguagem; 9) Inteligência; 10) Juízo de realidade; 11) Vida afetiva; 12) Volição; 13) Controle de impulsos; 14) Consciência do eu; 15) Vivência do tempo e do espaço; 16) Psicomotricidade; 17) Personalidade; 18) Contratransferência; 19) Insight; 20) Desejo de ajuda e motivação. (Roteiro com os descritores de cada item: https://henriquealvarenga.com/entrevista/)
+
+Dê uma devolutiva formativa, rigorosa e gentil, em português, avaliando:
+1. Cobertura dos 20 itens acima: o que está bem descrito, o que faltou (e era avaliável pelo caso) e o que poderia ser mais preciso.
 2. Terminologia psicopatológica: se os fenômenos foram nomeados corretamente (ex.: delírio vs. ideia sobrevalorada; alucinação vs. ilusão; embotamento vs. tristeza), corrigindo o que estiver impreciso.
 3. Descrição antes da interpretação: se o estudante descreveu o que observou antes de concluir.
 4. A súmula: se é concisa, fiel ao exame e destaca o essencial.
@@ -244,7 +246,7 @@ Formato: comece com 2–3 pontos fortes; depois os ajustes em itens numerados, c
 [CASO]
 (cole aqui a descrição do caso)
 
-[EEM E SÚMULA DO ESTUDANTE]
+[EEM, SÚMULA E HIPÓTESES DO ESTUDANTE]
 (cole aqui o seu trabalho)</pre>
       </div>
     </div>
