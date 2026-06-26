@@ -212,33 +212,45 @@
     }
 
     function legenda(){
-      return '<div class="dim-leg">' +
-        '<span><span class="sw" style="background:#8aa996"></span>Baixa</span>' +
-        '<span><span class="sw" style="background:#d6a574"></span>Média</span>' +
-        '<span><span class="sw" style="background:var(--brand)"></span>Alta</span>' +
-        '<span><span class="sw" style="box-shadow:inset 0 0 0 2px var(--live),inset 0 0 0 3px #fff;background:var(--sidebar-bg)"></span>banda de referência</span>' +
+      return '<div class="dg-leg">' +
+        '<span><span class="dg-sw-exp"></span>faixa esperada</span>' +
+        '<span><span class="dg-sw-bar"></span>quantos grupos caíram em cada nível</span>' +
+        '<span class="muted">coluna = nível · barra/número = nº de grupos</span>' +
         '</div>';
     }
+    /* Grade fixa Baixa|Média|Alta por dimensão: a faixa esperada (verde) fica
+       SEMPRE visível — mesmo vazia — e a contagem mostra onde a turma caiu. */
     function divergencia(caso){
       var algum = gruposLocal().some(function(g){ return ratingsDe(g, caso.id); });
       if (!algum) return '<div class="dim-empty">— sem classificações ainda —</div>';
-      return DIMENSOES.map(function(d){
+      var rows = DIMENSOES.map(function(d){
         var c = contarDim(caso.id, d.chave);
         var banda = (caso.banda && caso.banda[d.chave]) || null;
         var pontua = d.pontua && banda;
-        var segs = NIVEIS.map(function(n){
+        var cells = NIVEIS.map(function(n){
           var qt = c.m[n.chave] || 0;
-          var pct = c.total ? (qt / c.total * 100) : 0;
+          var h = c.total ? Math.round(qt / c.total * 100) : 0;
           var isBand = pontua && banda.indexOf(n.chave) !== -1;
-          if (pct === 0) return "";
-          return '<span class="dd-seg ' + n.chave + (isBand ? " band" : "") + '" style="flex:' + pct + ' 0 0">' + (qt || "") + '</span>';
+          return '<div class="dg-cell' + (isBand ? " exp" : "") + '">' +
+            (isBand ? '<span class="dg-mk">✓</span>' : '') +
+            '<span class="dg-bar" style="height:' + h + '%"></span>' +
+            '<span class="dg-cnt">' + qt + '</span></div>';
         }).join("");
-        var bandTxt = pontua
-          ? '<span class="dd-band">banda ' + banda.map(nivelLabel).join("/") + '</span>'
-          : '<span class="dd-band deb">discussão</span>';
-        return '<div class="dd-row"><span class="dd-name">' + esc(d.nome) + '</span>' +
-          '<span class="dd-bar">' + (c.total ? segs : '') + '</span>' + bandTxt + '</div>';
+        var verd;
+        if (!pontua){ verd = '<span class="dg-verd v-disc">discussão</span>'; }
+        else {
+          var inBand = 0; banda.forEach(function(k){ inBand += (c.m[k] || 0); });
+          var ratio = c.total ? inBand / c.total : 0;
+          if (inBand === 0)        verd = '<span class="dg-verd v-fora">fora da faixa</span>';
+          else if (ratio >= 0.67)  verd = '<span class="dg-verd v-na">na faixa</span>';
+          else                     verd = '<span class="dg-verd v-div">dividido</span>';
+        }
+        return '<div class="dg-name">' + esc(d.nome) + '<span class="dg-tag">' + (pontua ? "pontua" : "discussão") + '</span></div>' +
+          cells + verd;
       }).join("");
+      return '<div class="dg-grid">' +
+        '<div></div><div class="dg-colh">Baixa</div><div class="dg-colh">Média</div><div class="dg-colh">Alta</div><div></div>' +
+        rows + '</div>';
     }
     function esc(s){ return String(s).replace(/[&<>\"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
 

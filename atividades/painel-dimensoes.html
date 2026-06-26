@@ -45,16 +45,26 @@ h1{font-family:var(--font-serif); font-size:1.9rem; margin:0 0 .1em}
 .link-perigo:hover{color:#8c1a20}
 
 /* ---- Divergência da turma por dimensão (resultado) ---- */
-.dim-leg{display:flex; gap:14px; flex-wrap:wrap; margin:0 0 14px; font-size:.8rem; color:var(--text-muted)}
-.dim-leg .sw{display:inline-block; width:12px; height:12px; border-radius:3px; vertical-align:middle; margin-right:5px}
-.dd-row{display:grid; grid-template-columns:8.5em 1fr 7em; align-items:center; gap:9px; margin:9px 0; font-size:.86rem}
-.dd-name{color:var(--text-secondary); text-align:right; line-height:1.15; font-weight:600}
-.dd-bar{display:flex; height:24px; border-radius:5px; overflow:hidden; background:var(--sidebar-bg)}
-.dd-seg{display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-size:.74rem; color:#fff; font-weight:600; min-width:0; transition:flex-grow .3s}
-.dd-seg.baixa{background:#8aa996} .dd-seg.media{background:#d6a574} .dd-seg.alta{background:var(--brand)}
-.dd-seg.band{box-shadow:inset 0 0 0 2px var(--live), inset 0 0 0 3px #fff}
-.dd-band{font-family:var(--font-mono); font-size:.68rem; color:var(--live); line-height:1.1}
-.dd-band.deb{color:var(--text-muted)}
+/* Grade de divergência: colunas fixas Baixa|Média|Alta; faixa esperada em verde */
+.dg-leg{display:flex; gap:16px; flex-wrap:wrap; margin:0 0 12px; font-size:.8rem; color:var(--text-secondary); align-items:center}
+.dg-leg .muted{color:var(--text-muted)}
+.dg-sw-exp{display:inline-block; width:14px; height:14px; border-radius:3px; background:#eef6f0; box-shadow:inset 0 0 0 2px var(--live); vertical-align:-2px; margin-right:5px}
+.dg-sw-bar{display:inline-block; width:8px; height:14px; border-radius:2px; background:var(--brand); vertical-align:-2px; margin-right:5px}
+.dg-grid{display:grid; grid-template-columns:132px repeat(3,1fr) 104px; gap:6px; align-items:end; margin-top:2px}
+.dg-colh{font-family:var(--font-mono); font-size:.7rem; color:var(--text-muted); text-align:center; padding-bottom:2px}
+.dg-name{font-size:.95rem; font-weight:600; color:var(--text-primary); line-height:1.15; padding-bottom:8px}
+.dg-tag{display:block; font-family:var(--font-mono); font-size:.62rem; font-weight:400; color:var(--text-muted)}
+.dg-cell{position:relative; height:62px; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; gap:3px; border:1px solid var(--border-color); border-radius:6px; padding:4px 0 5px}
+.dg-cell.exp{border-color:var(--live); background:#eef6f0; box-shadow:inset 0 0 0 1px var(--live)}
+.dg-bar{width:52%; background:var(--brand); border-radius:3px 3px 0 0}
+.dg-cnt{font-family:var(--font-mono); font-size:.78rem; font-weight:600; color:var(--text-secondary)}
+.dg-cell.exp .dg-cnt{color:var(--live)}
+.dg-mk{position:absolute; top:3px; right:4px; font-family:var(--font-mono); font-size:.62rem; color:var(--live)}
+.dg-verd{display:flex; align-items:center; justify-content:center; height:62px; font-size:.72rem; font-weight:600; border-radius:6px; text-align:center; line-height:1.15; padding:0 4px}
+.dg-verd.v-fora{background:#fbeeec; color:#b4232a}
+.dg-verd.v-div{background:#faf0dd; color:#8a5a12}
+.dg-verd.v-na{background:var(--live-soft); color:var(--live)}
+.dg-verd.v-disc{background:var(--sidebar-bg); color:var(--text-muted)}
 .dim-empty{font-size:.9rem; color:var(--text-muted); text-align:center; padding:10px 0}
 </style>
 </head>
@@ -114,7 +124,7 @@ h1{font-family:var(--font-serif); font-size:1.9rem; margin:0 0 .1em}
 <script src="lib/podio.js"></script>
 <script src="lib/hub-config.js?v=3"></script>
 <script src="lib/03-dimensoes-data.js"></script>
-<script src="lib/painel-dimensoes.js?v=1"></script>
+<script src="lib/painel-dimensoes.js?v=2"></script>
 <script>
 "use strict";
 function boot(){ PainelDimensoes.init({ data: window.DIMENSOES_DATA, atividade: "dimensoes" }); }

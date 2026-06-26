@@ -29,7 +29,7 @@
     }, 0);
 
     /* ---- Estado ---- */
-    var estado = { sessao:"", grupo:"", idx:0, respostas:[], atual:{} };
+    var estado = { sessao:"", grupo:"", idx:0, respostas:[], atual:{}, atualCaso:-1 };
     // respostas[i] = { caso_id, ratings:{conviccao,extensao,bizarrice,desorganizacao,preocupacao} }
 
     function chaveEstado(s,g){ return ATIVIDADE + ":estado:" + s + ":" + g; }
@@ -123,18 +123,27 @@
       DIMENSOES.forEach(function(d){
         var row = document.createElement("div"); row.className = "dim-row"; row.dataset.dim = d.chave;
         var sel = ratings ? ratings[d.chave] : null;
+        var banda = caso.banda && caso.banda[d.chave];
+        var pontua = d.pontua && banda;
         var niv = NIVEIS.map(function(n){
-          var cls = "niv" + (sel===n.chave ? " sel" : "");
+          var cls = "niv";
+          if (opts.mostrarBanda){
+            var inBand = pontua && banda.indexOf(n.chave) !== -1;
+            if (inBand) cls += " ok";                                  // nível dentro da faixa esperada → verde
+            if (sel===n.chave){ cls += " pick"; if (pontua && !inBand) cls += " bad"; }  // escolha do grupo; vermelho se fora da faixa
+          } else if (sel===n.chave){ cls += " sel"; }
           return '<button class="'+cls+'" data-niv="'+n.chave+'"'+(opts.clickable?"":" disabled")+'>'+n.label+'</button>';
         }).join("");
         var verdict = "";
         if (opts.mostrarBanda){
-          var banda = caso.banda && caso.banda[d.chave];
-          if (d.pontua && banda){
+          if (pontua){
             var hit = banda.indexOf(sel) !== -1;
-            verdict = '<div class="dim-verd '+(hit?"hit":"miss")+'">'+(hit?"✓":"✗")+' banda: '+banda.map(nivelLabel).join("/")+'</div>';
+            var faixa = banda.map(nivelLabel).join("/");
+            verdict = hit
+              ? '<div class="dim-cap ok">✓ faixa esperada: '+faixa+' — vocês acertaram</div>'
+              : '<div class="dim-cap bad">faixa esperada: '+faixa+' · vocês marcaram '+nivelLabel(sel)+'</div>';
           } else {
-            verdict = '<div class="dim-verd deb">• discussão (sem gabarito)</div>';
+            verdict = '<div class="dim-cap deb">discussão — sem gabarito</div>';
           }
         }
         row.innerHTML =
@@ -196,11 +205,12 @@
       aulaStatus("sync " + PONTEIRO.modo() + " · sessão " + estado.sessao + " · " + (p ? ("C" + (p.item+1) + " " + p.fase) : "aguardando"));
       if (p && p.fase === "reset"){ if (aulaUnsub){ aulaUnsub(); aulaUnsub=null; } AULA.limpar(); location.href = "index.html"; return; }
       if (!p){ aulaEspera(); return; }
-      if (p.epoca !== estado.epoca){ estado.epoca = p.epoca; estado.respostas = []; estado.atual = {}; aulaSomItem = -1; salvarLocal(); }
+      if (p.epoca !== estado.epoca){ estado.epoca = p.epoca; estado.respostas = []; estado.atual = {}; estado.atualCaso = -1; aulaSomItem = -1; salvarLocal(); }
       if (p.fase === "fim"){ if (aulaUnsub){ aulaUnsub(); aulaUnsub=null; } montarSinteseAula(); show("synth"); return; }
       aulaEstadoAtual = p;
       var K = p.item, caso = CASOS[K];
       if (!caso){ aulaEspera(); return; }
+      estado.idx = K;   // mantém o índice sincronizado (montarGrade lê CASOS[estado.idx] p/ a faixa esperada)
       show("loop");
       document.getElementById("caseCounter").textContent = "Caso " + (K+1) + " de " + TOTAL;
       document.getElementById("progressBar").style.width = (K/TOTAL*100)+"%";
@@ -220,7 +230,7 @@
           confirmRow.classList.add("hidden");
           aulaMsg("✅ Classificação registrada — aguardem a turma.");
         } else {
-          if (!estado.atual) estado.atual = {};
+          if (estado.atualCaso !== K){ estado.atual = {}; estado.atualCaso = K; }   // zera ao trocar de caso (não herda as marcações do anterior)
           montarGrade(estado.atual, { clickable:true, onComplete:function(completo){ document.getElementById("confirmBtn").disabled = !completo; } });
           confirmRow.classList.remove("hidden");
           var cb = document.getElementById("confirmBtn");
@@ -342,7 +352,7 @@
           var banda = caso.banda && caso.banda[d.chave];
           if (d.pontua && banda){
             var hit = banda.indexOf(rate) !== -1;
-            line.innerHTML = '<span class="'+(hit?"hit":"miss")+'">'+(hit?"✓":"✗")+'</span> '+d.nome+': vocês <b>'+nivelLabel(rate)+'</b> · banda '+banda.map(nivelLabel).join("/");
+            line.innerHTML = '<span class="'+(hit?"hit":"miss")+'">'+(hit?"✓":"✗")+'</span> '+d.nome+': vocês <b>'+nivelLabel(rate)+'</b> · faixa esperada '+banda.map(nivelLabel).join("/");
           } else {
             line.innerHTML = '<span class="deb">•</span> '+d.nome+': vocês <b>'+nivelLabel(rate)+'</b> <span class="deb">(discussão)</span>';
           }
