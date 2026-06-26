@@ -120,7 +120,9 @@ book:
     - references.qmd
 
   page-footer:
-    left: "© 2026 Henrique Alvarenga — Material didático UFSJ · CC BY-NC-SA 4.0"
+    center:
+      - text: "Prof. Henrique Alvarenga"
+        href: "https://henriquealvarenga.com"
     right:
       - icon: github
         href: https://github.com/henriquealvarenga/entrevista

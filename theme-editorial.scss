@@ -427,16 +427,25 @@ footer.nav-footer {
   background: $footer-bar !important;
   color: #ffffff !important;
   border-top: none;
-  padding: 0.7rem 1.5rem;
+  padding: 0.3rem 1.5rem;
   font-family: $font-family-sans-serif;
-  font-size: 0.65rem;
+  font-size: 0.55rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   font-weight: 500;
-  min-height: 2.5rem;
+  min-height: 0;
   display: flex;
   align-items: center;
 }
+
+// O texto vive em .nav-footer-{left,center,right}; o padrão do Quarto
+// (font-size .825em + margens/paddings nos itens) inflava a barra. Compactamos:
+.nav-footer .nav-footer-left,
+.nav-footer .nav-footer-center,
+.nav-footer .nav-footer-right { font-size: 0.55rem !important; }
+.nav-footer .footer-items { padding: 0 !important; }
+.nav-footer .footer-items li { margin: 0 !important; }
+.nav-footer a { line-height: 1.2; padding-top: 0; padding-bottom: 0; }
 
 // Links do footer: especificidade (0,1,1) supera a regra global a {} (0,0,1)
 // e a regra .navbar .nav-link (que tem mesma especificidade mas vive em outro
