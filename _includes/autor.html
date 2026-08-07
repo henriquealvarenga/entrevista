@@ -1,0 +1,56 @@
+<!-- Identificação do autor em dados estruturados (schema.org, JSON-LD).
+     Invisível para o leitor; lido por Google, ChatGPT, Claude e Gemini.
+
+     O @id da Pessoa é o MESMO usado em henriquealvarenga.com. É isso que
+     faz os buscadores entenderem que o autor deste material e o médico do
+     site principal são a mesma pessoa, consolidando a autoria de toda a
+     obra publicada no domínio numa única entidade. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://henriquealvarenga.com/#pessoa",
+      "name": "Henrique Alvarenga da Silva",
+      "honorificPrefix": "Dr.",
+      "jobTitle": "Médico Psiquiatra e Professor de Medicina",
+      "url": "https://henriquealvarenga.com",
+      "identifier": [
+        { "@type": "PropertyValue", "propertyID": "CRM-MG", "value": "31.778" },
+        { "@type": "PropertyValue", "propertyID": "RQE", "value": "8381" },
+        { "@type": "PropertyValue", "propertyID": "ORCID", "value": "0000-0001-9799-5240" }
+      ],
+      "affiliation": [
+        { "@type": "CollegeOrUniversity", "name": "Universidade Federal de São João del-Rei (UFSJ)" },
+        { "@type": "CollegeOrUniversity", "name": "Centro Universitário Presidente Tancredo de Almeida Neves (UNIPTAN)" }
+      ],
+      "sameAs": [
+        "https://orcid.org/0000-0001-9799-5240",
+        "https://lattes.cnpq.br/6147640440978297",
+        "https://scholar.google.com/citations?user=Fbv4vDsAAAAJ",
+        "https://www.linkedin.com/in/henriquealvarengasilva"
+      ]
+    },
+    {
+      "@type": "Book",
+      "@id": "https://henriquealvarenga.com/entrevista/#livro",
+      "name": "Entrevista Psiquiátrica e Exame do Estado Mental",
+      "alternateName": "Material didático resumido para estudantes de medicina",
+      "author": { "@id": "https://henriquealvarenga.com/#pessoa" },
+      "url": "https://henriquealvarenga.com/entrevista/",
+      "inLanguage": "pt-BR",
+      "bookFormat": "https://schema.org/EBook",
+      "isAccessibleForFree": true,
+      "learningResourceType": "Material didático",
+      "educationalLevel": "Graduação em Medicina",
+      "about": [
+        { "@type": "Thing", "name": "Exame do estado mental" },
+        { "@type": "Thing", "name": "Entrevista psiquiátrica" },
+        { "@type": "Thing", "name": "Psicopatologia" },
+        { "@type": "Thing", "name": "Semiologia psiquiátrica" }
+      ]
+    }
+  ]
+}
+</script>

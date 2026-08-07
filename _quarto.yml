@@ -123,7 +123,7 @@ book:
 
   page-footer:
     center:
-      - text: "Prof. Henrique Alvarenga"
+      - text: "Dr. Henrique Alvarenga da Silva · Médico Psiquiatra · CRM-MG 31.778 · RQE 8381"
         href: "https://henriquealvarenga.com"
     right:
       - icon: github
@@ -141,6 +141,9 @@ format:
       - cosmo
       - theme-editorial.scss
     css: styles.css
+    canonical-url: true
+    include-in-header:
+      - file: _includes/autor.html
     fontsize: 1.05em
     linestretch: 1.65
     mainfont: "Inter"
