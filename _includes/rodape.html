@@ -1,17 +1,23 @@
 <!-- Apresentação do rodapé com a identificação profissional.
 
-     A coluna do rodapé do Quarto ocupa por padrão apenas um terço da barra,
-     o que partia a identificação exigida pelo CFM no meio de um dado — por
-     exemplo, "CRM-MG" numa linha e "31.778 · RQE 8381" na seguinte.
+     As colunas do rodapé do Quarto (esquerda, centro, direita) dividem a barra
+     em três partes iguais, o que partia a identificação exigida pelo CFM no
+     meio de um dado — por exemplo, "Médico Psiquiatra" numa linha e
+     "· CRM-MG 31.778 · RQE 8381" na seguinte.
 
-     Aqui a coluna passa a usar a largura disponível, e o texto quebra apenas
-     entre o nome/registros e o endereço do site. -->
+     Aqui as colunas que carregam a identificação (esquerda e centro) recebem o
+     espaço restante da barra, e a da direita ocupa apenas o necessário. O texto
+     quebra só entre os registros e o endereço do site. -->
 <style>
+  .nav-footer > *,
+  .nav-footer .nav-footer-left,
   .nav-footer .nav-footer-center,
-  .nav-footer .nav-footer-left {
+  .nav-footer .nav-footer-right {
     max-width: none;
     line-height: 1.6;
     text-wrap: pretty;
   }
+  .nav-footer .nav-footer-left,
   .nav-footer .nav-footer-center { flex: 1 1 auto; }
+  .nav-footer .nav-footer-right { flex: 0 0 auto; }
 </style>
