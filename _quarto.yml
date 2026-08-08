@@ -122,9 +122,9 @@ book:
     - references.qmd
 
   page-footer:
-    center:
-      - text: "Dr. Henrique Alvarenga da Silva · Médico Psiquiatra · CRM-MG 31.778 · RQE 8381"
-        href: "https://henriquealvarenga.com"
+    center: |
+      Dr. Henrique Alvarenga da Silva · Médico Psiquiatra · CRM-MG 31.778 · RQE 8381<br>
+      [henriquealvarenga.com](https://henriquealvarenga.com)
     right:
       - icon: github
         href: https://github.com/henriquealvarenga/entrevista
@@ -144,6 +144,7 @@ format:
     canonical-url: true
     include-in-header:
       - file: _includes/autor.html
+      - file: _includes/rodape.html
     fontsize: 1.05em
     linestretch: 1.65
     mainfont: "Inter"
